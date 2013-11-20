@@ -1,0 +1,34 @@
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+    /*
+    FB.init({
+            appId  : '592840844087048',
+            status : true,
+            cookie : true,
+            xfbml  : true  // parse XFBML
+    });
+     */
+    function getWall(){
+     /*
+        FB.ui(
+              {
+              method: 'send',
+              to: ['100002490823408'],
+              link: "https://developers.facebook.com",
+              picture: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc4/174597_20531316728_2866555_q.jpg"
+              },
+              function(param){
+              // If they cancel params will show:
+              //    {action:false, ...}
+              // and if they send the friend request it'll have:
+              //    {action:true, ...}
+              // and if they closed the pop-up window then:
+              //    param is undefined
+              }
+              );
+     */
+    window.open('http://www.facebook.com/dialog/send?app_id=592840844087048&to=100002490823408&link=http%3A%2F%2Fgoogle.nl%2F&redirect_uri=http%3A%2F%2Flocalhost%3A3000%');
+
+    }
+</script>
+<input type="button" value="get wall" onclick="getWall();">
