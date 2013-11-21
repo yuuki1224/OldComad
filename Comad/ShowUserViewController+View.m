@@ -54,7 +54,12 @@
     
     if(self.me){
         nameLabel.text = [userInfo objectForKey:@"name"];
-        userIdLabel.text = [userInfo objectForKey:@"comadId"];
+        
+        if([[userInfo objectForKey:@"comadId"] isEqualToString:@""]){
+            userIdLabel.text = @"コマドIDは設定されていません。";
+        }else{
+            userIdLabel.text = [userInfo objectForKey:@"comadId"];
+        }
         occupationLabel.text = [userInfo objectForKey:@"occupation"];
     
         [nameLabel sizeToFit];
@@ -66,7 +71,11 @@
         occupationLabel.frame = CGRectMake(windowSize.size.width/2 - occupationLabel.frame.size.width/2, 160, occupationLabel.frame.size.width, occupationLabel.frame.size.height);
     }else{
         nameLabel.text = [self.userInfo objectForKey:@"name"];
-        userIdLabel.text = [self.userInfo objectForKey:@"comad_id"];
+        if([[self.userInfo objectForKey:@"comad_id"] isEqualToString:@""]){
+            userIdLabel.text = @"コマドIDは設定されていません。";
+        }else{
+            userIdLabel.text = [self.userInfo objectForKey:@"comad_id"];
+        }
         occupationLabel.text = [self.userInfo objectForKey:@"occupation"];
         
         [nameLabel sizeToFit];
@@ -103,6 +112,13 @@
         
         //[btn setImage:buttonImage forState:UIControlStateNormal];
         [scrollView addSubview:editProfileBtn];
+        
+        [showUserList setContent:[self.userInfo objectForKey:@"description"]];
+        
+        [question1 setContent:[userInfo objectForKey:@"question1"]];
+        [question2 setContent:[userInfo objectForKey:@"question2"]];
+        [question3 setContent:[userInfo objectForKey:@"question3"]];
+        [question4 setContent:[userInfo objectForKey:@"question4"]];
     }else{
         UIButton *inviteComadBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         UIButton *sendMessageBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -132,15 +148,13 @@
         //[btn setImage:buttonImage forState:UIControlStateNormal];
         [scrollView addSubview:inviteComadBtn];
         [scrollView addSubview:sendMessageBtn];
+        
+        [showUserList setContent:[self.userInfo objectForKey:@"description"]];
+        
+        [question1 setContent:[self.userInfo objectForKey:@"question1"]];
+        [question2 setContent:[self.userInfo objectForKey:@"question2"]];
+        [question3 setContent:[self.userInfo objectForKey:@"question3"]];
+        [question4 setContent:[self.userInfo objectForKey:@"question4"]];
     }
-    
-    NSLog(@"userInfo: %@", userInfo);
-    
-    [showUserList setContent:[self.userInfo objectForKey:@"description"]];
-    
-    [question1 setContent:[userInfo objectForKey:@"question1"]];
-    [question2 setContent:[userInfo objectForKey:@"question2"]];
-    [question3 setContent:[userInfo objectForKey:@"question3"]];
-    [question4 setContent:[userInfo objectForKey:@"question4"]];
 }
 @end

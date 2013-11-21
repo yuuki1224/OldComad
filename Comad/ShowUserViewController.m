@@ -41,9 +41,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSLog(@"userInfo: %@", userInfo);
-    NSLog(@"me: %hhd", me);
-    
     [self reloadLabel];
     [self.navigationController.tabBarController.tabBar setHidden:YES];
 }

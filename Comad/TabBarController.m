@@ -137,7 +137,7 @@
     [userModal removeFromSuperview];
     [blackMask removeFromSuperview];
     ShowUserViewController *sc = [[ShowUserViewController alloc]init];
-    
+    NSLog(@"userModal: %@", userModal.userInfo);
     [sc setMe: NO];
     sc.userInfo = userModal.userInfo;
     [fc.navigationController pushViewController:sc animated:YES];
