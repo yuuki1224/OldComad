@@ -12,6 +12,7 @@
 #import "BasicLabel.h"
 #import "RoundedButton.h"
 #import "Image.h"
+#import "SelectPeopleView.h"
 
 @implementation CreateGroupViewController (View)
 
@@ -59,7 +60,7 @@
     editGroup.layer.borderColor = [UIColor whiteColor].CGColor;
     editGroup.layer.borderWidth = 1.0f;
 
-    UIView *addFriendIntoGroup = [[UIView alloc]initWithFrame:CGRectMake(0, 156, windowSize.size.width, 80)];
+    addFriendIntoGroup = [[UIView alloc]initWithFrame:CGRectMake(0, 156, windowSize.size.width, 80)];
     addFriendIntoGroup.backgroundColor = [[UIColor alloc]initWithRed:0.855 green:0.886 blue:0.929 alpha:1.0];
     [self.view addSubview: addFriendIntoGroup];
     
@@ -69,24 +70,51 @@
     memberName.frame = CGRectMake(10, 10, memberName.frame.size.width, memberName.frame.size.height);
     [addFriendIntoGroup addSubview:memberName];
     
-    RoundedButton *name = [[RoundedButton alloc]initWithName:AddFriendInCreateGroup];
-    NSString *nameString = @"村田温美";
-    [name setName:@"村田温美"];
-    name.frame = CGRectMake(10, 28, 60, 20);
-    
     UIImage *addMember = [UIImage imageNamed: @"addInCreateGroup.png"];
     UIImage *addMemberResize = [Image resizeImage:addMember resizeWidth:30 resizeHeight:30];
     UIImageView *addMemberView = [[UIImageView alloc]initWithImage: addMemberResize];
     addMemberView.frame = CGRectMake(windowSize.size.width - 50, 25, 30, 30);
     
-    //UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addFriendTapped:)];
-    //[addMemberView setGestureRecognizers: tapGesture];
-    
     [addFriendIntoGroup addSubview: addMemberView];
-    [addFriendIntoGroup addSubview: name];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addFriendTapped:)];
+    [addMemberView setUserInteractionEnabled:YES];
+    [addMemberView addGestureRecognizer: tapGesture];
 }
 
-- (void)addFriendTapped:(UIGestureRecognizer *)sender {
-    NSLog(@"add friend");
+- (void)tapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"tapped");
 }
+
+- (void)addFriendTapped:(UITapGestureRecognizer *)sender {
+    [tv resignFirstResponder];
+    //一番上にUIViewを追加する。これだけでok
+    selectPeopleView = [[SelectPeopleView alloc]init];
+    selectPeopleView.delegate = self;
+    [self.view addSubview: selectPeopleView];
+    
+    NSLog(@"add");
+    
+    RoundedButton *name = [[RoundedButton alloc]initWithName: AddFriendInCreateGroup];
+    NSString *nameString = @"村田温美";
+    CGSize bounds = CGSizeMake(500, 500);
+    UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3"size:11];
+    UILineBreakMode mode = UILineBreakModeWordWrap;
+    CGSize size = [nameString sizeWithFont:font forWidth:bounds.width lineBreakMode:mode];
+    NSLog(@"size width: %f", size.width);
+
+    [name setName:@"村田温美"];
+    name.frame = CGRectMake(memberLabelWidth, memberLabelHeight, size.width + 16, 20);
+    [addFriendIntoGroup addSubview: name];
+    if(memberLabelWidth > 200){
+        memberLabelWidth = 10;
+        memberLabelHeight += 27;
+        if(memberLabelHeight > 40){
+            addFriendIntoGroup.frame = CGRectMake(0, 156, windowSize.size.width, 120);
+        }
+    }else{
+        memberLabelWidth += (size.width + 20);
+    }
+}
+
 @end

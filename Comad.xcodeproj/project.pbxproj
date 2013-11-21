@@ -83,6 +83,9 @@
 		BA74F941183B9D9C00FE4629 /* misawa.png in Resources */ = {isa = PBXBuildFile; fileRef = BA74F940183B9D9C00FE4629 /* misawa.png */; };
 		BA74F943183B9DBD00FE4629 /* tomatoman.png in Resources */ = {isa = PBXBuildFile; fileRef = BA74F942183B9DBD00FE4629 /* tomatoman.png */; };
 		BA74F945183B9E2300FE4629 /* nikochan.png in Resources */ = {isa = PBXBuildFile; fileRef = BA74F944183B9E2300FE4629 /* nikochan.png */; };
+		BA74F949183D15A900FE4629 /* SelectPeopleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F948183D15A900FE4629 /* SelectPeopleView.m */; };
+		BA74F94C183D15CE00FE4629 /* SelectPeopleTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F94B183D15CE00FE4629 /* SelectPeopleTable.m */; };
+		BA74F94F183D15EB00FE4629 /* SelectPeopleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F94E183D15EB00FE4629 /* SelectPeopleTableCell.m */; };
 		BAB1470B1837C8770078486B /* AddFriendMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1470A1837C8770078486B /* AddFriendMenu.m */; };
 		BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB1470C1837CC960078486B /* idSearchMenu.png */; };
 		BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB1470D1837CC960078486B /* qrCodeMenu.png */; };
@@ -280,6 +283,12 @@
 		BA74F940183B9D9C00FE4629 /* misawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = misawa.png; sourceTree = "<group>"; };
 		BA74F942183B9DBD00FE4629 /* tomatoman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tomatoman.png; sourceTree = "<group>"; };
 		BA74F944183B9E2300FE4629 /* nikochan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nikochan.png; sourceTree = "<group>"; };
+		BA74F947183D15A800FE4629 /* SelectPeopleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPeopleView.h; sourceTree = "<group>"; };
+		BA74F948183D15A900FE4629 /* SelectPeopleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPeopleView.m; sourceTree = "<group>"; };
+		BA74F94A183D15CE00FE4629 /* SelectPeopleTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPeopleTable.h; sourceTree = "<group>"; };
+		BA74F94B183D15CE00FE4629 /* SelectPeopleTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPeopleTable.m; sourceTree = "<group>"; };
+		BA74F94D183D15EB00FE4629 /* SelectPeopleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPeopleTableCell.h; sourceTree = "<group>"; };
+		BA74F94E183D15EB00FE4629 /* SelectPeopleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPeopleTableCell.m; sourceTree = "<group>"; };
 		BAB147091837C8770078486B /* AddFriendMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendMenu.h; sourceTree = "<group>"; };
 		BAB1470A1837C8770078486B /* AddFriendMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendMenu.m; sourceTree = "<group>"; };
 		BAB1470C1837CC960078486B /* idSearchMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idSearchMenu.png; sourceTree = "<group>"; };
@@ -723,6 +732,7 @@
 		BA515207180C5ADA00FD69D8 /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				BA74F946183D153B00FE4629 /* SelectPeople */,
 				BAE482AA181A2A1200BB1456 /* ConversationTextBox.h */,
 				BAE482AB181A2A1200BB1456 /* ConversationTextBox.m */,
 				BA515208180C5B1100FD69D8 /* BlackMask.h */,
@@ -756,6 +766,19 @@
 				BA74F93A183B9B3500FE4629 /* sally.png */,
 			);
 			name = stamps;
+			sourceTree = "<group>";
+		};
+		BA74F946183D153B00FE4629 /* SelectPeople */ = {
+			isa = PBXGroup;
+			children = (
+				BA74F947183D15A800FE4629 /* SelectPeopleView.h */,
+				BA74F948183D15A900FE4629 /* SelectPeopleView.m */,
+				BA74F94A183D15CE00FE4629 /* SelectPeopleTable.h */,
+				BA74F94B183D15CE00FE4629 /* SelectPeopleTable.m */,
+				BA74F94D183D15EB00FE4629 /* SelectPeopleTableCell.h */,
+				BA74F94E183D15EB00FE4629 /* SelectPeopleTableCell.m */,
+			);
+			name = SelectPeople;
 			sourceTree = "<group>";
 		};
 		BAB147121837DAE00078486B /* AddFriend */ = {
@@ -1075,6 +1098,7 @@
 				BA03F62018362164001E9BBE /* UserJsonClient.m in Sources */,
 				BADD955518262F4600DAB12F /* BasicLabel.m in Sources */,
 				BADD95811828B27300DAB12F /* EditLimitFormViewController+View.m in Sources */,
+				BA74F94F183D15EB00FE4629 /* SelectPeopleTableCell.m in Sources */,
 				BADD95841828BE6500DAB12F /* EditGroupOnlyFormViewController+View.m in Sources */,
 				BADD95871828DA0500DAB12F /* ShowGroupViewController+View.m in Sources */,
 				BAE4829C18193F6A00BB1456 /* ShowGroup.m in Sources */,
@@ -1089,10 +1113,12 @@
 				BADD955918263C5800DAB12F /* EditTimeFormViewController.m in Sources */,
 				BADD954B182561D700DAB12F /* CreateComadViewController.m in Sources */,
 				BAE482AC181A2A1200BB1456 /* ConversationTextBox.m in Sources */,
+				BA74F949183D15A900FE4629 /* SelectPeopleView.m in Sources */,
 				BA2A74C41811858D00167837 /* ComadJsonClient.m in Sources */,
 				BA03F6231836390F001E9BBE /* ShowUserViewController+View.m in Sources */,
 				BADD95651826679200DAB12F /* EditLocationStatusFormViewController.m in Sources */,
 				BADD95D61832A6B500DAB12F /* ShowComadViewController+View.m in Sources */,
+				BA74F94C183D15CE00FE4629 /* SelectPeopleTable.m in Sources */,
 				BADD95AF182F3E0900DAB12F /* MessageViewController+View.m in Sources */,
 				BAB1471B1838B0770078486B /* InviteFriendViewController.m in Sources */,
 				BA5151AA18095FBB00FD69D8 /* TabBarController.m in Sources */,

@@ -8,8 +8,11 @@
 
 #import "IdSearchViewController.h"
 #import "UserJsonClient.h"
+#import "FriendJsonClient.h"
 #import "Image.h"
 #import "BasicLabel.h"
+#import "RoundedButton.h"
+#import "SVProgressHUD.h"
 
 @implementation IdSearchViewController (View)
 - (void)configure {
@@ -26,20 +29,21 @@
 }
 
 - (void)findUser:(id)responseObject {
+    self.addFriendID = [[responseObject objectForKey:@"id"] intValue];
     //ここでViewをセットする
     NSString *userName = [responseObject objectForKey:@"name"];
     NSString *imageName = [responseObject objectForKey:@"image_name"];
     
-    UIView *addFriendView = [[UIView alloc]init];
-    addFriendView.frame = CGRectMake(0, 200, windowSize.size.width, 150);
-    addFriendView.backgroundColor = [UIColor yellowColor];
+    addFriendView = [[UIView alloc]init];
+    addFriendView.frame = CGRectMake(0, 180, windowSize.size.width, 180);
+    addFriendView.backgroundColor = [UIColor colorWithRed:0.855 green:0.886 blue:0.929 alpha:1.0];
     [self.view addSubview: addFriendView];
     
     //Image
     UIImage *thumbnailImage = [UIImage imageNamed: imageName];
     UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:80 resizeHeight:80];
     UIImage *cornerThumbnailImage = [Image makeCornerRoundImage:thumbnailImageResize];
-    UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnailImage];
+    UIImageView *thumbnail = [[UIImageView alloc]initWithImage: cornerThumbnailImage];
     thumbnail.frame = CGRectMake((windowSize.size.width - 80)/2, 10, 80, 80);
     [addFriendView addSubview:thumbnail];
     
@@ -48,13 +52,19 @@
     [name sizeToFit];
     name.frame = CGRectMake((windowSize.size.width - name.frame.size.width)/2, 100, name.frame.size.width, name.frame.size.height);
     [addFriendView addSubview:name];
+    
+    RoundedButton *addButton = [[RoundedButton alloc]initWithName:AddFriendInvite];
+    addButton.frame = CGRectMake((windowSize.size.width - 150)/2, 135, 150, 30);
+    [addButton setTitleInButton:@"追加する"];
+    [addButton addTarget:self action:@selector(addButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [addFriendView addSubview:addButton];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField{
-    NSLog(@"textFied: %@", textField.text);
+    [addFriendView removeFromSuperview];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [[UserJsonClient sharedClient]findUserWithComadId:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
+    [[UserJsonClient sharedClient]findUserWithComadId:textField.text success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
         NSLog(@"comad user: %@", responseObject);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         [self findUser:responseObject];
@@ -65,6 +75,17 @@
     
     [tv resignFirstResponder];
     return YES;
+}
+
+-(void)addButtonClicked:(UIButton *)button {
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
+    [[FriendJsonClient sharedClient]addFriend:10 friendId:self.addFriendID success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
+        NSLog(@"成功!");
+        [SVProgressHUD dismiss];
+    } failure:^(int statusCode, NSString *errorString) {
+        NSLog(@"失敗!");
+        [SVProgressHUD dismiss];
+    }];
 }
 
 @end

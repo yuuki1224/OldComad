@@ -16,6 +16,7 @@
 @end
 
 @implementation IdSearchViewController
+@synthesize addFriendID;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

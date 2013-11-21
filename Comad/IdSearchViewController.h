@@ -11,7 +11,9 @@
 @interface IdSearchViewController : UIViewController<UITextFieldDelegate> {
     UITextField *tv;
     CGRect windowSize;
+    UIView *addFriendView;
 }
+@property (nonatomic)int addFriendID;
 
 - (void)configure;
 @end

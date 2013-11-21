@@ -14,6 +14,6 @@
 - (void)getAddFriendInfo:(void (^)(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject))success
                     failure:(void (^)(int statusCode, NSString *errorString))failure;
 - (void)updateUserProfile:(NSDictionary *)params :(void (^)(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject))success failure:(void (^)(int statusCode, NSString *errorString))failure;
-- (void)findUserWithComadId:(void (^)(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject))success
-                    failure:(void (^)(int statusCode, NSString *errorString))failure;
+- (void)findUserWithComadId:(NSString *)idString success:(void (^)(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject))success failure:(void (^)(int statusCode, NSString *errorString))failure;
+- (void)createGroup:(NSDictionary *)params success:(void (^)(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject))success failure:(void (^)(int statusCode, NSString *errorString))failure;
 @end

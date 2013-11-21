@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SelectPeopleView.h"
 
-@interface CreateGroupViewController : UIViewController<UITextFieldDelegate> {
+@interface CreateGroupViewController : UIViewController<UITextFieldDelegate, SelectPeopleViewDelegate> {
     CGRect windowSize;
     UITextField *tv;
+    UIView *addFriendIntoGroup;
+    SelectPeopleView *selectPeopleView;
+    int memberLabelWidth;
+    int memberLabelHeight;
 }
 
 - (void)configure;
+- (void)addFriendTapped:(UITapGestureRecognizer *)sender;
 @end

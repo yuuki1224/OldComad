@@ -106,6 +106,12 @@
                 self.font = font;
                 break;
             }
+            case SelectPeopleHeader:{
+                self.textColor = [UIColor whiteColor];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:20.0f];
+                self.font = font;
+                break;
+            }
             default:
                 break;
         }

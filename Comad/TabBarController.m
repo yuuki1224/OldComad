@@ -42,9 +42,11 @@
         //[[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"tab2.png"]];
          [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, 0)];
         self.tabBar.backgroundColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
-        //self.tabBar.tintColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
-        //self.tabBar.barTintColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
         
+        if(iOSVersion == 7.00){
+            self.tabBar.tintColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
+            self.tabBar.barTintColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
+        }
         wc = [[WorksViewController alloc]init];
         fc = [[FriendsViewController alloc]init];
         oc = [[OthersViewController alloc]init];

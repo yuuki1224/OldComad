@@ -22,7 +22,8 @@ typedef enum : NSInteger{
     AddFriendCreateGroup,
     TableHeader,
     FriendCellName,
-    GroupNameLabel
+    GroupNameLabel,
+    SelectPeopleHeader
 }BasicLabelName;
 
 @interface BasicLabel : UILabel

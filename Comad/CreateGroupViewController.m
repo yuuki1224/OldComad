@@ -11,6 +11,8 @@
 #import "Header.h"
 #import "Image.h"
 #import "RoundedButton.h"
+#import "UserJsonClient.h"
+#import "SVProgressHUD.h"
 
 @interface CreateGroupViewController ()
 
@@ -22,7 +24,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        memberLabelWidth = 10;
+        memberLabelHeight = 28;
         windowSize = [[UIScreen mainScreen] bounds];
         self.view.backgroundColor = [UIColor whiteColor];
         Header *header = [[Header alloc]init];
@@ -68,7 +71,19 @@
 }
 
 - (void)saveClicked:(UIButton *)button {
-    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            @"hoge", @"name",
+                            @"999-9999-9999", @"tel",
+                            @"東京都", @"address",nil];
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
+    [[UserJsonClient sharedClient]createGroup:params success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
+        NSLog(@"成功!");
+        [SVProgressHUD dismiss];
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(int statusCode, NSString *errorString) {
+        NSLog(@"失敗");
+        [SVProgressHUD dismiss];
+    }];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField{
@@ -76,4 +91,11 @@
     return YES;
 }
 
+- (void)cancelButtonDelegate {
+    [selectPeopleView removeFromSuperview];
+}
+
+- (void)inviteButtonDelegate {
+    [selectPeopleView removeFromSuperview];
+}
 @end
