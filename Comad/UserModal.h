@@ -31,6 +31,6 @@ typedef enum : NSInteger{
 - (void)showUserBtnClickedDelegate;
 - (void)inviteComadBtnClickedDelegate;
 - (void)sendMessageBtnClickedDelegate;
-- (void)addFriendBtnClickedDelegate;
+- (void)addFriendBtnClickedDelegate:(int)friendId;
 - (void)blockBtnClickedDelegate;
 @end

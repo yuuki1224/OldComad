@@ -80,12 +80,26 @@
 -(void)addButtonClicked:(UIButton *)button {
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     [[FriendJsonClient sharedClient]addFriend:10 friendId:self.addFriendID success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSLog(@"成功!");
         [SVProgressHUD dismiss];
+        UIAlertView *alert = [[UIAlertView alloc]init];
+        alert.delegate = self;
+        alert.title = @"お知らせ";
+        alert.message = @"友達を追加しました";
+        [alert addButtonWithTitle:@"閉じる"];
+        [alert show];
     } failure:^(int statusCode, NSString *errorString) {
         NSLog(@"失敗!");
         [SVProgressHUD dismiss];
+        UIAlertView *alert = [[UIAlertView alloc]init];
+        alert.title = @"お知らせ";
+        alert.message = @"友達追加に失敗しました。";
+        [alert addButtonWithTitle:@"閉じる"];
+        [alert show];
     }];
+}
+
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

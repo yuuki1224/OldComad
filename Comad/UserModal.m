@@ -142,7 +142,8 @@
 }
 
 - (void)addFriendBtnClicked {
-    [self.delegate addFriendBtnClickedDelegate];
+    int userId = [[userInfo objectForKey:@"id"] intValue];
+    [self.delegate addFriendBtnClickedDelegate: userId];
 }
 
 - (void)blockBtnClicked {

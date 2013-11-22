@@ -18,6 +18,7 @@
 #import "BlackMask.h"
 #import "UserModal.h"
 #import "SVProgressHUD.h"
+#import "FriendJsonClient.h"
 
 @interface AddFriendViewController ()
 
@@ -128,10 +129,30 @@
     [blackMask removeFromSuperview];
 }
 
-- (void)addFriendBtnClickedDelegate {
-    NSLog(@"フレンド追加");
-    [userModal removeFromSuperview];
-    [blackMask removeFromSuperview];
+- (void)addFriendBtnClickedDelegate:(int)friendId {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *userInfo = [defaults dictionaryForKey:@"user"];
+    
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
+    [[FriendJsonClient sharedClient]addFriend:[[userInfo objectForKey:@"id"] intValue] friendId:friendId success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
+        [userModal removeFromSuperview];
+        [blackMask removeFromSuperview];
+        [SVProgressHUD dismiss];
+        UIAlertView *alert = [[UIAlertView alloc]init];
+        alert.title = @"お知らせ";
+        alert.message = @"友達を追加しました";
+        [alert addButtonWithTitle:@"閉じる"];
+        [alert show];
+    } failure:^(int statusCode, NSString *errorString) {
+        [userModal removeFromSuperview];
+        [blackMask removeFromSuperview];
+        [SVProgressHUD dismiss];
+        UIAlertView *alert = [[UIAlertView alloc]init];
+        alert.title = @"お知らせ";
+        alert.message = @"友達追加に失敗しました。";
+        [alert addButtonWithTitle:@"閉じる"];
+        [alert show];
+    }];
 }
 
 - (void)blockBtnClickedDelegate {

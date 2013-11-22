@@ -36,7 +36,11 @@
             _friends = [responseObject objectForKey:@"friends"];
             _groups = [responseObject objectForKey:@"groups"];
           
-            NSLog(@"success");
+            //userDefaultのfriendsにしまう。
+            //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            //[userDefaults setObject:[responseObject objectForKey:@"friends"] forKey:@"friends"];
+            //[userDefaults synchronize];
+            
             [SVProgressHUD dismiss];
             [self reloadData];
         } failure:^(int statusCode, NSString *errorString) {

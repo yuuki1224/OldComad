@@ -222,6 +222,7 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSLog(@"%f",scrollView.contentOffset.y);
+    CGPoint offset =  editProfileTable.contentOffset;
 }
 
 - (void)tapped:(UITapGestureRecognizer *)recognizer {

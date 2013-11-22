@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IdSearchViewController : UIViewController<UITextFieldDelegate> {
+@interface IdSearchViewController : UIViewController<UITextFieldDelegate, UIAlertViewDelegate> {
     UITextField *tv;
     CGRect windowSize;
     UIView *addFriendView;

@@ -72,18 +72,21 @@
             switch (indexPath.row) {
                 case 0:{
                     userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"7", @"id",
                                 @"村田温美", @"name",
                                 @"murata.png", @"image_name",nil];
                     break;
                 }
                 case 1:{
                     userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"2", @"id",
                                 @"足立壮大", @"name",
                                 @"adachi.png", @"image_name",nil];
                     break;
                 }
                 case 2:{
                     userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"8", @"id",
                                 @"小林大志", @"name",
                                 @"kobayashi.png", @"image_name",nil];
                     break;
