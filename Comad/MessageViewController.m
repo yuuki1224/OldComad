@@ -46,6 +46,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"contetHeight: %d", conversation.conversationHeight);
+    conversation.scrollsToTop = conversation.conversationHeight - 100;
     [self.navigationController.tabBarController.tabBar setHidden:YES];
 }
 
@@ -78,11 +80,14 @@
                      onPort:9000
                  withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]
      ];
-    [socketIO sendEvent:@"init" withData:@{@"room":@"test", @"name":@"asano"}];
+    [socketIO sendEvent:@"init" withData:@{@"userId":@10, @"friendId":@1, @"type":@"private", @"room":@"test", @"name":@"asano"}];
 }
 
 - (void)sendClicked:(NSString *)text {
-    [socketIO sendEvent:@"message" withData:@{@"message" : text}];
+    //userDefaultからとってくる
+    
+    
+    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": @10, @"type": @"private", @"roomName": roomName}];
 }
 
 - (void)plusClicked {
@@ -101,19 +106,72 @@
 - (void)socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet {
     NSLog(@"イベント受け取った");
     
-    NSLog(@"%@", packet.args[0]);
-    if ([packet.args[0] isEqual:@"yuuki1224"]) {
-        // 存在する場合の処理
-        [conversation addConversation:packet.args[1] :@"murata.png"];
-    }else if([packet.args[0] isEqual:@"asano"]){
-        [conversation addConversation:packet.args[1] :@"asano.png"];
+    if([packet.args[0] isEqual: @"endInit"]){
+        roomName = packet.args[1];
+        NSLog(@"endInitしました roomName: %@", roomName);
+        NSLog(@"いままでのmessage: %@", packet.args[2]);
+        NSArray *messages = packet.args[2];
+        for (int i = 0; [messages count]>i; i++) {
+            NSLog(@"user_id :%@",[messages[i] objectForKey:@"user_id"]);
+            NSLog(@"user_idのclass :%@",[[messages[i] objectForKey:@"user_id"] class]);
+            NSLog(@"user_id :%@",[messages[i] objectForKey:@"content"]);
+            NSLog(@"user_id :%@",[messages[i] objectForKey:@"datetime"]);
+            
+            if([[messages[i] objectForKey:@"user_id"] isEqual:@10]){
+                NSString *content = [messages[i] objectForKey:@"content"];
+                NSRange range = [content rangeOfString:@"(stamp_"];
+                if (range.location != NSNotFound) {
+                    //stampがあった場合 左側の描画
+                    NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
+                    [conversation addStamp: [stampNum intValue]:@"asano"];
+                } else {
+                    //stampがない場合
+                    [conversation addConversation:content :@"asano.png"];
+                }
+            }else if([[messages[i] objectForKey:@"user_id"] isEqual:@1]){
+                NSString *content = [messages[i] objectForKey:@"content"];
+                NSRange range = [content rangeOfString:@"(stamp_"];
+                if (range.location != NSNotFound) {
+                    //stampがあった場合 左側の描画
+                    NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
+                    [conversation addStamp: [stampNum intValue]:@"yuuki1224"];
+                } else {
+                    //stampがない場合
+                    [conversation addConversation:content :@"murata.png"];
+                }
+            }
+        }
+    }else if([packet.args[0] isEqual: @"privateMessage"]){
+        NSString *statement = packet.args[2];
+        if ([packet.args[1] isEqual:@1]) {
+            NSRange range = [statement rangeOfString:@"(stamp_"];
+            if (range.location != NSNotFound) {
+                //stampがあった場合 左側の描画
+                NSString *stampNum = [statement substringWithRange: NSMakeRange(7, statement.length - 8)];
+                [conversation addStamp: [stampNum intValue]:@"yuuki1224"];
+            } else {
+                //stampがない場合
+                [conversation addConversation:statement :@"murata.png"];
+            }
+        }else if([packet.args[1] isEqual:@10]){
+            NSRange range = [statement rangeOfString:@"(stamp_"];
+            if (range.location != NSNotFound) {
+                //stampがあった場合 右側の描画
+                NSString *stampNum = [statement substringWithRange:NSMakeRange(7, statement.length - 8)];
+                [conversation addStamp:[stampNum intValue] :@"asano"];
+            } else {
+                //stampがない場合
+                [conversation addConversation:statement :@"asano.png"];
+            }
+        }
     }
 }
 
 - (void)stampClickedDelegate:(int)stampNum {
     [mask removeFromSuperview];
     [sm removeFromSuperview];
-    [conversation addStamp:stampNum :@"asano"];
+    NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
+    [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": @10, @"type": @"private", @"roomName": roomName}];
 }
 
 @end

@@ -36,4 +36,9 @@ typedef enum : NSInteger{
     Question4
 }EditProfileCell;
 
+typedef enum : NSInteger{
+    Left = 0,
+    Right
+}Side;
+
 #endif

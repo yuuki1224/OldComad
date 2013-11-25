@@ -86,6 +86,7 @@
 		BA74F949183D15A900FE4629 /* SelectPeopleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F948183D15A900FE4629 /* SelectPeopleView.m */; };
 		BA74F94C183D15CE00FE4629 /* SelectPeopleTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F94B183D15CE00FE4629 /* SelectPeopleTable.m */; };
 		BA74F94F183D15EB00FE4629 /* SelectPeopleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F94E183D15EB00FE4629 /* SelectPeopleTableCell.m */; };
+		BA74F952183F743F00FE4629 /* Stamp.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F951183F743F00FE4629 /* Stamp.m */; };
 		BAB1470B1837C8770078486B /* AddFriendMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1470A1837C8770078486B /* AddFriendMenu.m */; };
 		BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB1470C1837CC960078486B /* idSearchMenu.png */; };
 		BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB1470D1837CC960078486B /* qrCodeMenu.png */; };
@@ -289,6 +290,8 @@
 		BA74F94B183D15CE00FE4629 /* SelectPeopleTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPeopleTable.m; sourceTree = "<group>"; };
 		BA74F94D183D15EB00FE4629 /* SelectPeopleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPeopleTableCell.h; sourceTree = "<group>"; };
 		BA74F94E183D15EB00FE4629 /* SelectPeopleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPeopleTableCell.m; sourceTree = "<group>"; };
+		BA74F950183F743F00FE4629 /* Stamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stamp.h; sourceTree = "<group>"; };
+		BA74F951183F743F00FE4629 /* Stamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stamp.m; sourceTree = "<group>"; };
 		BAB147091837C8770078486B /* AddFriendMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendMenu.h; sourceTree = "<group>"; };
 		BAB1470A1837C8770078486B /* AddFriendMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendMenu.m; sourceTree = "<group>"; };
 		BAB1470C1837CC960078486B /* idSearchMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idSearchMenu.png; sourceTree = "<group>"; };
@@ -747,11 +750,13 @@
 				BADD95B1182F4B5400DAB12F /* Conversation.m */,
 				BADD95B3182F5AFA00DAB12F /* Bubble.h */,
 				BADD95B4182F5AFA00DAB12F /* Bubble.m */,
+				BA74F950183F743F00FE4629 /* Stamp.h */,
+				BA74F951183F743F00FE4629 /* Stamp.m */,
 				BADD95CA1830ACC700DAB12F /* RoundedButton.h */,
 				BADD95CB1830ACC700DAB12F /* RoundedButton.m */,
-				BADD95D01832001B00DAB12F /* Basic.h */,
 				BA74F936183B7E7400FE4629 /* SpecialMoji.h */,
 				BA74F937183B7E7500FE4629 /* SpecialMoji.m */,
+				BADD95D01832001B00DAB12F /* Basic.h */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -1095,6 +1100,7 @@
 				BADD958E1828F66A00DAB12F /* NotificationSettingsViewController.m in Sources */,
 				BADD955C18263C6C00DAB12F /* EditLoacationFormViewController.m in Sources */,
 				BADD955F18263CA900DAB12F /* EditLimitFormViewController.m in Sources */,
+				BA74F952183F743F00FE4629 /* Stamp.m in Sources */,
 				BA03F62018362164001E9BBE /* UserJsonClient.m in Sources */,
 				BADD955518262F4600DAB12F /* BasicLabel.m in Sources */,
 				BADD95811828B27300DAB12F /* EditLimitFormViewController+View.m in Sources */,

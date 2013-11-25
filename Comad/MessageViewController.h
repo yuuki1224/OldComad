@@ -19,6 +19,8 @@
     SocketIO *socketIO;
     BlackMask *mask;
     SpecialMoji *sm;
+    NSString *roomName;
 }
+
 -(void)configure;
 @end
