@@ -41,4 +41,9 @@ typedef enum : NSInteger{
     Right
 }Side;
 
+typedef enum : NSInteger{
+    PrivateMessage = 0,
+    GroupMessage
+}MessageType;
+
 #endif

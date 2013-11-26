@@ -30,6 +30,11 @@
         [self.view addSubview:header];
         [self setBackBtnInHeader];
         
+        //friendsをセット
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSData* friendsData = [defaults dataForKey:@"friends"];
+        friendsArray = [NSKeyedUnarchiver unarchiveObjectWithData: friendsData];
+        
         [self configure];
     }
     return self;

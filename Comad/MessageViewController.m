@@ -19,6 +19,7 @@
 @end
 
 @implementation MessageViewController
+@synthesize type, friendId, groupId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,12 +41,24 @@
 
 - (void)viewDidLoad
 {
-    [self intoRoom];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    switch (type) {
+        case PrivateMessage:{
+            [self intoRoom];
+            break;
+        }
+        case GroupMessage:{
+            break;
+        }
+        default:
+            break;
+    }
+    
+    NSLog(@"ここでselfの値を読む %d, %d", type, friendId);
     NSLog(@"contetHeight: %d", conversation.conversationHeight);
     conversation.scrollsToTop = conversation.conversationHeight - 100;
     [self.navigationController.tabBarController.tabBar setHidden:YES];
@@ -73,6 +86,9 @@
 }
 
 - (void)intoRoom {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    int userId = [[[defaults objectForKey:@"user"] objectForKey:@"id"] intValue];
+    
     socketIO = [[SocketIO alloc] initWithDelegate:self];
     socketIO.delegate = self;
     
@@ -80,7 +96,7 @@
                      onPort:9000
                  withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]
      ];
-    [socketIO sendEvent:@"init" withData:@{@"userId":@10, @"friendId":@1, @"type":@"private", @"room":@"test", @"name":@"asano"}];
+    [socketIO sendEvent:@"init" withData:@{@"userId":@(userId), @"friendId":@(friendId), @"type":@"private", @"room":@"test", @"name":@"asano"}];
 }
 
 - (void)sendClicked:(NSString *)text {

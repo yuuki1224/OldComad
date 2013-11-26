@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Basic.h"
 
 @interface MessagesListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
     CGRect windowSize;
+    UITableView *messageListView;
+    NSMutableArray *friendsArray;
 }
 
+-(void)configure;
 @end
