@@ -16,6 +16,7 @@
     BasicLabel *timeLabel;
 }
 @property (nonatomic, retain)NSString *userName;
+@property (nonatomic, retain)NSString *imageName;
 @property (nonatomic)Side side;
 
 - (id)initWithName:(Side)name;

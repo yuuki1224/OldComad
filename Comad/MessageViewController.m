@@ -19,7 +19,7 @@
 @end
 
 @implementation MessageViewController
-@synthesize type, friendId, groupId;
+@synthesize type, userId, friendId, friendImageName, groupId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +33,9 @@
         
         [self.view addSubview:header];
         [self setBackBtnInHeader];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        userId = [[[defaults objectForKey:@"user"] objectForKey:@"id"] intValue];
         
         [self configure];
     }
@@ -86,24 +89,35 @@
 }
 
 - (void)intoRoom {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    int userId = [[[defaults objectForKey:@"user"] objectForKey:@"id"] intValue];
-    
-    socketIO = [[SocketIO alloc] initWithDelegate:self];
-    socketIO.delegate = self;
-    
-    [socketIO connectToHost:@"localhost"
-                     onPort:9000
-                 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]
-     ];
-    [socketIO sendEvent:@"init" withData:@{@"userId":@(userId), @"friendId":@(friendId), @"type":@"private", @"room":@"test", @"name":@"asano"}];
+    switch (type) {
+        case PrivateMessage:{
+            
+            NSLog(@"privatemessageはじまるよ！userId: %d, friend: %d", userId, friendId);
+            
+            socketIO = [[SocketIO alloc] initWithDelegate:self];
+            socketIO.delegate = self;
+            
+            [socketIO connectToHost:@"localhost"
+                             onPort:9000
+                         withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]
+             ];
+            [socketIO sendEvent:@"init" withData:@{@"userId":@(userId), @"friendId":@(friendId), @"type":@"private", @"room":@"test", @"name":@"asano"}];
+            break;
+        }
+        case GroupMessage:
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)sendClicked:(NSString *)text {
     //userDefaultからとってくる
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
+    NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
     
-    
-    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": @10, @"type": @"private", @"roomName": roomName}];
+    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": @10, @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
 }
 
 - (void)plusClicked {
@@ -118,66 +132,76 @@
 }
 
 # pragma SocketIODelegate
-
 - (void)socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet {
     NSLog(@"イベント受け取った");
     
+    //表示するとき
     if([packet.args[0] isEqual: @"endInit"]){
         roomName = packet.args[1];
-        NSLog(@"endInitしました roomName: %@", roomName);
-        NSLog(@"いままでのmessage: %@", packet.args[2]);
         NSArray *messages = packet.args[2];
+        
         for (int i = 0; [messages count]>i; i++) {
-            NSLog(@"user_id :%@",[messages[i] objectForKey:@"user_id"]);
-            NSLog(@"user_idのclass :%@",[[messages[i] objectForKey:@"user_id"] class]);
-            NSLog(@"user_id :%@",[messages[i] objectForKey:@"content"]);
-            NSLog(@"user_id :%@",[messages[i] objectForKey:@"datetime"]);
-            
-            if([[messages[i] objectForKey:@"user_id"] isEqual:@10]){
+            //自分のIDのとき
+            if([[messages[i] objectForKey:@"user_id"] isEqual:@(userId)]){
                 NSString *content = [messages[i] objectForKey:@"content"];
                 NSRange range = [content rangeOfString:@"(stamp_"];
+                NSString *imageName = [messages[i] objectForKey:@"image_name"];
+                NSString *userName = [messages[i] objectForKey:@"user_name"];
+                
                 if (range.location != NSNotFound) {
                     //stampがあった場合 左側の描画
                     NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
-                    [conversation addStamp: [stampNum intValue]:@"asano"];
+                    [conversation addStamp:[stampNum intValue] :userName :imageName];
                 } else {
                     //stampがない場合
-                    [conversation addConversation:content :@"asano.png"];
+                    [conversation addConversation:content :userName :imageName];
                 }
-            }else if([[messages[i] objectForKey:@"user_id"] isEqual:@1]){
+            //相手のIDのとき
+            }else{
                 NSString *content = [messages[i] objectForKey:@"content"];
                 NSRange range = [content rangeOfString:@"(stamp_"];
+                NSString *imageName = [messages[i] objectForKey:@"image_name"];
+                NSString *userName = [messages[i] objectForKey:@"user_name"];
+                
+                NSLog(@"imageName: %@, userName: %@", imageName, userName);
+                
                 if (range.location != NSNotFound) {
                     //stampがあった場合 左側の描画
                     NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
-                    [conversation addStamp: [stampNum intValue]:@"yuuki1224"];
+                    [conversation addStamp:[stampNum intValue] :userName :imageName];
                 } else {
                     //stampがない場合
-                    [conversation addConversation:content :@"murata.png"];
+                    [conversation addConversation:content :userName :imageName];
                 }
             }
         }
     }else if([packet.args[0] isEqual: @"privateMessage"]){
         NSString *statement = packet.args[2];
-        if ([packet.args[1] isEqual:@1]) {
+        NSString *imageName = packet.args[3];
+        NSString *userName = packet.args[4];
+        
+        NSLog(@"imageName: %@, userName: %@", imageName, userName);
+        //自分のIDのとき
+        if ([packet.args[1] isEqual: @(userId)]) {
             NSRange range = [statement rangeOfString:@"(stamp_"];
             if (range.location != NSNotFound) {
                 //stampがあった場合 左側の描画
                 NSString *stampNum = [statement substringWithRange: NSMakeRange(7, statement.length - 8)];
-                [conversation addStamp: [stampNum intValue]:@"yuuki1224"];
+                [conversation addStamp:[stampNum intValue] :userName :imageName];
             } else {
                 //stampがない場合
-                [conversation addConversation:statement :@"murata.png"];
+                [conversation addConversation:statement :userName :imageName];
             }
-        }else if([packet.args[1] isEqual:@10]){
+        //相手のIDのとき
+        }else if([packet.args[1] isEqual: @(friendId)]){
             NSRange range = [statement rangeOfString:@"(stamp_"];
             if (range.location != NSNotFound) {
                 //stampがあった場合 右側の描画
                 NSString *stampNum = [statement substringWithRange:NSMakeRange(7, statement.length - 8)];
-                [conversation addStamp:[stampNum intValue] :@"asano"];
+                [conversation addStamp:[stampNum intValue] :userName :imageName];
             } else {
                 //stampがない場合
-                [conversation addConversation:statement :@"asano.png"];
+                [conversation addConversation:statement :userName :imageName];
             }
         }
     }
@@ -189,5 +213,4 @@
     NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
     [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": @10, @"type": @"private", @"roomName": roomName}];
 }
-
 @end

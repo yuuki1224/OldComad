@@ -10,7 +10,7 @@
 #import "Image.h"
 
 @implementation Stamp
-@synthesize side, userName;
+@synthesize side, userName, imageName;
 
 - (id)initWithName:(Side)name {
     self = [super init];
@@ -50,7 +50,7 @@
         stampView.frame = CGRectMake(77, 0, 120, 120);
         [self addSubview: stampView];
         
-        nameLabel.text = @"村田温美";
+        nameLabel.text = userName;
         [nameLabel sizeToFit];
         nameLabel.frame = CGRectMake(15, 50, nameLabel.frame.size.width, nameLabel.frame.size.height);
         NSDate *now = [NSDate date];
@@ -64,7 +64,7 @@
 
         NSLog(@"userName: %@", self.userName);
         
-        UIImage *thumbnailImage = [UIImage imageNamed: self.userName];
+        UIImage *thumbnailImage = [UIImage imageNamed: imageName];
         UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:40 resizeHeight:40];
         UIImageView *thumbnail = [[UIImageView alloc]initWithImage: thumbnailImageResize];
         thumbnail.frame = CGRectMake(18, 65, 40, 40);

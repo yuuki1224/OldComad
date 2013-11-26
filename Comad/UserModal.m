@@ -138,7 +138,7 @@
 }
 
 - (void)sendMessageBtnClicked {
-    [self.delegate sendMessageBtnClickedDelegate];
+    [self.delegate sendMessageBtnClickedDelegate:[[userInfo objectForKey:@"id"] intValue]];
 }
 
 - (void)addFriendBtnClicked {

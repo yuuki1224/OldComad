@@ -27,12 +27,19 @@
 - (void)viewDidLoad {
 }
 
-- (void)addConversation:(NSString *)conversationText :(NSString *)userName {
+- (void)addConversation:(NSString *)conversationText :(NSString *)userName :(NSString *)imageName{
     Bubble *bubble;
-    if([userName isEqual:@"asano.png"]){
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *meImageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
+    
+    //自分のだったら右に付け足す
+    if([meImageName isEqual:imageName]){
+        NSLog(@"右につける");
         bubble = [[Bubble alloc]initWithName:Right];
         bubble.mail = conversationText;
-        bubble.userName = userName;
+        bubble.userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
+        bubble.imageName = imageName;
+        [bubble setLabel];
         
         CGSize bounds = CGSizeMake(150, 500);
         UILineBreakMode mode = UILineBreakModeWordWrap;
@@ -43,10 +50,15 @@
         [self addSubview: bubble];
         self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
         conversationHeight += bubble.frame.size.height;
+    
+    //自分の以外だったら左に付け足す
     }else{
+        NSLog(@"左につける");
         bubble = [[Bubble alloc]initWithName:Left];
         bubble.mail = conversationText;
         bubble.userName = userName;
+        bubble.imageName = imageName;
+        [bubble setLabel];
         
         CGSize bounds = CGSizeMake(150, 500);
         UILineBreakMode mode = UILineBreakModeWordWrap;
@@ -60,29 +72,33 @@
     }
 }
 
-- (void)addStamp:(int)stampNum :(NSString *)userName {
+- (void)addStamp:(int)stampNum :(NSString *)userName :(NSString *)imageName {
     NSBundle* bundle = [NSBundle mainBundle];
     NSString* path = [bundle pathForResource:@"Stamp" ofType:@"plist"];
     NSDictionary* dic = [NSDictionary dictionaryWithContentsOfFile:path];
     NSString *stampImageName = [dic objectForKey: [NSString stringWithFormat:@"%i", stampNum]];
     
-    if([userName isEqual:@"asano"]){
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *meImageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
+    
+    //自分のだったら右に付け足す
+    if([meImageName isEqual:imageName]){
         Stamp *stamp = [[Stamp alloc]initWithName: Right];
         stamp.userName = userName;
         [stamp setStamp: stampImageName conversationHeight: conversationHeight];
         [self addSubview: stamp];
         
         self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
-        NSLog(@"%d", conversationHeight);
         conversationHeight += stamp.frame.size.height;
+    //自分以外だったら左に付け足す
     }else{
         Stamp *stamp = [[Stamp alloc]initWithName: Left];
-        stamp.userName = @"murata.png";
+        stamp.userName = userName;
+        stamp.imageName = imageName;
         [stamp setStamp: stampImageName conversationHeight:conversationHeight];
         [self addSubview: stamp];
         
         self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
-        NSLog(@"%d", conversationHeight);
         conversationHeight += stamp.frame.size.height;
     }
 }

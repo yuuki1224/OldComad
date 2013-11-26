@@ -24,7 +24,12 @@
 }
 
 @property (nonatomic)MessageType type;
+
+@property (nonatomic)int userId;
+//for Private
 @property (nonatomic)int friendId;
+@property (nonatomic, retain)NSString *friendImageName;
+//for Group
 @property (nonatomic)int groupId;
 -(void)configure;
 @end

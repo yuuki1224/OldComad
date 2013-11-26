@@ -10,7 +10,7 @@
 #import "BasicLabel.h"
 
 @implementation Bubble
-@synthesize userName, mail, bubbleHeight;
+@synthesize userName, mail, bubbleHeight, imageName;
 
 - (id)initWithName:(Side)name {
     self = [super init];
@@ -26,7 +26,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    nameLabel.text = @"浅野友希";
+    nameLabel.text = userName;
     [nameLabel sizeToFit];
     NSDate *now = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -200,7 +200,7 @@
     
     //画像描画
     CGContextClip(context);
-    UIImage *profImage = [UIImage imageNamed: self.userName];
+    UIImage *profImage = [UIImage imageNamed: imageName];
     [profImage drawInRect: profRect];
     
     //縁取り
@@ -294,5 +294,9 @@ void CGContextRoundRectPath(CGContextRef context, CGRect rect, CGFloat radius)
     CGContextAddArcToPoint(context, rx, by, rx-radius, by, radius);
     
     CGContextClosePath(context);
+}
+
+- (void)setLabel {
+    nameLabel.text = self.userName;
 }
 @end

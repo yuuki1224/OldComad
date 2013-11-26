@@ -155,7 +155,7 @@
 }
 
 //MessageViewControllerへ
-- (void)sendMessageBtnClickedDelegate {
+- (void)sendMessageBtnClickedDelegate:(int)friendId {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *dict = [defaults dictionaryForKey:@"user"];
     if (dict) {
@@ -167,6 +167,9 @@
     [userModal removeFromSuperview];
     [blackMask removeFromSuperview];
     MessageViewController *mc = [[MessageViewController alloc]init];
+    mc.type = PrivateMessage;
+    mc.friendId = friendId;
     [fc.navigationController pushViewController:mc animated:YES];
+    NSLog(@"friendId, %d", friendId);
 }
 @end

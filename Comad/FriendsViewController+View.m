@@ -38,8 +38,8 @@
         [userDefaults setObject: friendsData forKey:@"friends"];
         [userDefaults synchronize];
         
-        [SVProgressHUD dismiss];
         [friendsTable reloadData];
+        [SVProgressHUD dismiss];
     } failure:^(int statusCode, NSString *errorString) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:errorString message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];

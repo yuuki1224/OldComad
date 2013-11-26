@@ -39,6 +39,7 @@
     return 0;
 }
 
+//フッターの高さ
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0;
 }
@@ -64,7 +65,6 @@
     cell.detailTextLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
 
     cell.textLabel.text = [[friendsArray objectAtIndex:indexPath.row] objectForKey:@"name"];
-    cell.detailTextLabel.text = @"bazbaz";
     return cell;
 }
 

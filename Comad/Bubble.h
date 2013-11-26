@@ -17,8 +17,10 @@
 }
 @property (nonatomic, retain)NSString *userName;
 @property (nonatomic, retain)NSString *mail;
+@property (nonatomic, retain)NSString *imageName;
 @property (nonatomic)float bubbleHeight;
 @property (nonatomic)Side side;
 
 - (id)initWithName:(Side)name;
+- (void)setLabel;
 @end
