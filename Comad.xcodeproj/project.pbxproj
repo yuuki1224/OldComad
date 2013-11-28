@@ -12,6 +12,28 @@
 		BA03F6231836390F001E9BBE /* ShowUserViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F6221836390F001E9BBE /* ShowUserViewController+View.m */; };
 		BA03F6261836516F001E9BBE /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F6251836516F001E9BBE /* Date.m */; };
 		BA03F62918375D35001E9BBE /* AddFriendViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F62818375D35001E9BBE /* AddFriendViewController+View.m */; };
+		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
+		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
+		BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFBD18474E7D007F64FE /* NewComadViewController.m */; };
+		BA21DFC118474E95007F64FE /* DateComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFC018474E95007F64FE /* DateComadViewController.m */; };
+		BA21DFC418474EA1007F64FE /* PopularComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFC318474EA1007F64FE /* PopularComadViewController.m */; };
+		BA21DFC718474EB0007F64FE /* MyComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFC618474EB0007F64FE /* MyComadViewController.m */; };
+		BA21DFD518479E4B007F64FE /* comadTab1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFD118479E4B007F64FE /* comadTab1.png */; };
+		BA21DFD618479E4B007F64FE /* comadTab2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFD218479E4B007F64FE /* comadTab2.png */; };
+		BA21DFD718479E4B007F64FE /* comadTab3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFD318479E4B007F64FE /* comadTab3.png */; };
+		BA21DFD818479E4B007F64FE /* comadTab4.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFD418479E4B007F64FE /* comadTab4.png */; };
+		BA21DFDE1847AAA8007F64FE /* nowRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFDA1847AAA8007F64FE /* nowRibbon.png */; };
+		BA21DFDF1847AAA8007F64FE /* todayRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFDB1847AAA8007F64FE /* todayRibbon.png */; };
+		BA21DFE01847AAA8007F64FE /* TommorowRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFDC1847AAA8007F64FE /* TommorowRibbon.png */; };
+		BA21DFE11847AAA8007F64FE /* wheneverRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFDD1847AAA8007F64FE /* wheneverRibbon.png */; };
+		BA21DFE31847AABF007F64FE /* futureRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE21847AABF007F64FE /* futureRibbon.png */; };
+		BA21DFEB1847AAFD007F64FE /* datetimeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE41847AAFD007F64FE /* datetimeIcon.png */; };
+		BA21DFEC1847AAFD007F64FE /* locationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE51847AAFD007F64FE /* locationIcon.png */; };
+		BA21DFED1847AAFD007F64FE /* commentIconPinc.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE61847AAFD007F64FE /* commentIconPinc.png */; };
+		BA21DFEE1847AAFD007F64FE /* commentIconOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE71847AAFD007F64FE /* commentIconOrange.png */; };
+		BA21DFEF1847AAFD007F64FE /* commentIconGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE81847AAFD007F64FE /* commentIconGreen.png */; };
+		BA21DFF01847AAFD007F64FE /* commentIconBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE91847AAFD007F64FE /* commentIconBlue.png */; };
+		BA21DFF11847AAFD007F64FE /* commentIconPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFEA1847AAFD007F64FE /* commentIconPurple.png */; };
 		BA2A74AD180FBEFB00167837 /* yoshida.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A1180FBEFB00167837 /* yoshida.png */; };
 		BA2A74AE180FBEFB00167837 /* nakagawa.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A2180FBEFB00167837 /* nakagawa.png */; };
 		BA2A74AF180FBEFB00167837 /* sato.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A3180FBEFB00167837 /* sato.png */; };
@@ -47,7 +69,6 @@
 		BA515194180900E200FD69D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA515192180900E200FD69D8 /* InfoPlist.strings */; };
 		BA515196180900E200FD69D8 /* ComadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA515195180900E200FD69D8 /* ComadTests.m */; };
 		BA5151AA18095FBB00FD69D8 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151A918095FBB00FD69D8 /* TabBarController.m */; };
-		BA5151AD18095FDD00FD69D8 /* WorksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151AC18095FDD00FD69D8 /* WorksViewController.m */; };
 		BA5151B018095FEC00FD69D8 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151AF18095FEC00FD69D8 /* FriendsViewController.m */; };
 		BA5151B318095FFB00FD69D8 /* OthersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151B218095FFB00FD69D8 /* OthersViewController.m */; };
 		BA5151B6180964CD00FD69D8 /* ComadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151B5180964CD00FD69D8 /* ComadAppDelegate.m */; };
@@ -185,6 +206,33 @@
 		BA03F6241836516F001E9BBE /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
 		BA03F6251836516F001E9BBE /* Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Date.m; sourceTree = "<group>"; };
 		BA03F62818375D35001E9BBE /* AddFriendViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AddFriendViewController+View.m"; sourceTree = "<group>"; };
+		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
+		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
+		BA21DFAE18473251007F64FE /* ComadsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ComadsViewController+View.m"; sourceTree = "<group>"; };
+		BA21DFBC18474E7D007F64FE /* NewComadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewComadViewController.h; sourceTree = "<group>"; };
+		BA21DFBD18474E7D007F64FE /* NewComadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewComadViewController.m; sourceTree = "<group>"; };
+		BA21DFBF18474E95007F64FE /* DateComadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateComadViewController.h; sourceTree = "<group>"; };
+		BA21DFC018474E95007F64FE /* DateComadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateComadViewController.m; sourceTree = "<group>"; };
+		BA21DFC218474EA1007F64FE /* PopularComadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularComadViewController.h; sourceTree = "<group>"; };
+		BA21DFC318474EA1007F64FE /* PopularComadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularComadViewController.m; sourceTree = "<group>"; };
+		BA21DFC518474EB0007F64FE /* MyComadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyComadViewController.h; sourceTree = "<group>"; };
+		BA21DFC618474EB0007F64FE /* MyComadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyComadViewController.m; sourceTree = "<group>"; };
+		BA21DFD118479E4B007F64FE /* comadTab1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comadTab1.png; sourceTree = "<group>"; };
+		BA21DFD218479E4B007F64FE /* comadTab2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comadTab2.png; sourceTree = "<group>"; };
+		BA21DFD318479E4B007F64FE /* comadTab3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comadTab3.png; sourceTree = "<group>"; };
+		BA21DFD418479E4B007F64FE /* comadTab4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comadTab4.png; sourceTree = "<group>"; };
+		BA21DFDA1847AAA8007F64FE /* nowRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nowRibbon.png; sourceTree = "<group>"; };
+		BA21DFDB1847AAA8007F64FE /* todayRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todayRibbon.png; sourceTree = "<group>"; };
+		BA21DFDC1847AAA8007F64FE /* TommorowRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TommorowRibbon.png; sourceTree = "<group>"; };
+		BA21DFDD1847AAA8007F64FE /* wheneverRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheneverRibbon.png; sourceTree = "<group>"; };
+		BA21DFE21847AABF007F64FE /* futureRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = futureRibbon.png; sourceTree = "<group>"; };
+		BA21DFE41847AAFD007F64FE /* datetimeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = datetimeIcon.png; sourceTree = "<group>"; };
+		BA21DFE51847AAFD007F64FE /* locationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationIcon.png; sourceTree = "<group>"; };
+		BA21DFE61847AAFD007F64FE /* commentIconPinc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconPinc.png; sourceTree = "<group>"; };
+		BA21DFE71847AAFD007F64FE /* commentIconOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconOrange.png; sourceTree = "<group>"; };
+		BA21DFE81847AAFD007F64FE /* commentIconGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconGreen.png; sourceTree = "<group>"; };
+		BA21DFE91847AAFD007F64FE /* commentIconBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconBlue.png; sourceTree = "<group>"; };
+		BA21DFEA1847AAFD007F64FE /* commentIconPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconPurple.png; sourceTree = "<group>"; };
 		BA2A74A1180FBEFB00167837 /* yoshida.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoshida.png; sourceTree = "<group>"; };
 		BA2A74A2180FBEFB00167837 /* nakagawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nakagawa.png; sourceTree = "<group>"; };
 		BA2A74A3180FBEFB00167837 /* sato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sato.png; sourceTree = "<group>"; };
@@ -227,8 +275,6 @@
 		BA515195180900E200FD69D8 /* ComadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComadTests.m; sourceTree = "<group>"; };
 		BA5151A818095FBB00FD69D8 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		BA5151A918095FBB00FD69D8 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		BA5151AB18095FDD00FD69D8 /* WorksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorksViewController.h; sourceTree = "<group>"; };
-		BA5151AC18095FDD00FD69D8 /* WorksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorksViewController.m; sourceTree = "<group>"; };
 		BA5151AE18095FEC00FD69D8 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		BA5151AF18095FEC00FD69D8 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		BA5151B118095FFB00FD69D8 /* OthersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthersViewController.h; sourceTree = "<group>"; };
@@ -438,6 +484,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA21DFC818477416007F64FE /* ComadsTab */ = {
+			isa = PBXGroup;
+			children = (
+				BA21DFD118479E4B007F64FE /* comadTab1.png */,
+				BA21DFD218479E4B007F64FE /* comadTab2.png */,
+				BA21DFD318479E4B007F64FE /* comadTab3.png */,
+				BA21DFD418479E4B007F64FE /* comadTab4.png */,
+			);
+			name = ComadsTab;
+			sourceTree = "<group>";
+		};
+		BA21DFD91847AA8C007F64FE /* ComadCell */ = {
+			isa = PBXGroup;
+			children = (
+				BA21DFE41847AAFD007F64FE /* datetimeIcon.png */,
+				BA21DFE51847AAFD007F64FE /* locationIcon.png */,
+				BA21DFE61847AAFD007F64FE /* commentIconPinc.png */,
+				BA21DFE71847AAFD007F64FE /* commentIconOrange.png */,
+				BA21DFE81847AAFD007F64FE /* commentIconGreen.png */,
+				BA21DFE91847AAFD007F64FE /* commentIconBlue.png */,
+				BA21DFEA1847AAFD007F64FE /* commentIconPurple.png */,
+				BA21DFE21847AABF007F64FE /* futureRibbon.png */,
+				BA21DFDA1847AAA8007F64FE /* nowRibbon.png */,
+				BA21DFDB1847AAA8007F64FE /* todayRibbon.png */,
+				BA21DFDC1847AAA8007F64FE /* TommorowRibbon.png */,
+				BA21DFDD1847AAA8007F64FE /* wheneverRibbon.png */,
+			);
+			name = ComadCell;
+			sourceTree = "<group>";
+		};
 		BA2A74A0180FB0C800167837 /* profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +663,8 @@
 		BA5151C31809B5AB00FD69D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA21DFD91847AA8C007F64FE /* ComadCell */,
+				BA21DFC818477416007F64FE /* ComadsTab */,
 				BA74F939183B9AE600FE4629 /* stamps */,
 				BA74F934183B6B4C00FE4629 /* addInCreateGroup.png */,
 				BAB147101837CCB60078486B /* addFriendMenu.png */,
@@ -620,11 +698,12 @@
 				BADD955618263C1A00DAB12F /* CreateComadForm */,
 				BA5151A818095FBB00FD69D8 /* TabBarController.h */,
 				BA5151A918095FBB00FD69D8 /* TabBarController.m */,
-				BA5151AB18095FDD00FD69D8 /* WorksViewController.h */,
-				BA5151AC18095FDD00FD69D8 /* WorksViewController.m */,
 				BA5151AE18095FEC00FD69D8 /* FriendsViewController.h */,
 				BA5151AF18095FEC00FD69D8 /* FriendsViewController.m */,
 				BA74F9541843E14300FE4629 /* FriendsViewController+View.m */,
+				BA21DFAA1847323F007F64FE /* ComadsViewController.h */,
+				BA21DFAB1847323F007F64FE /* ComadsViewController.m */,
+				BA21DFAE18473251007F64FE /* ComadsViewController+View.m */,
 				BA5151B118095FFB00FD69D8 /* OthersViewController.h */,
 				BA5151B218095FFB00FD69D8 /* OthersViewController.m */,
 				BA5151E2180C116F00FD69D8 /* ShowComadViewController.h */,
@@ -686,6 +765,14 @@
 				BA5151BC1809A62400FD69D8 /* Works.m */,
 				BA2A74B9180FC5A200167837 /* ComadCell.h */,
 				BA2A74BA180FC5A200167837 /* ComadCell.m */,
+				BA21DFBC18474E7D007F64FE /* NewComadViewController.h */,
+				BA21DFBD18474E7D007F64FE /* NewComadViewController.m */,
+				BA21DFBF18474E95007F64FE /* DateComadViewController.h */,
+				BA21DFC018474E95007F64FE /* DateComadViewController.m */,
+				BA21DFC218474EA1007F64FE /* PopularComadViewController.h */,
+				BA21DFC318474EA1007F64FE /* PopularComadViewController.m */,
+				BA21DFC518474EB0007F64FE /* MyComadViewController.h */,
+				BA21DFC618474EB0007F64FE /* MyComadViewController.m */,
 			);
 			name = Comads;
 			sourceTree = "<group>";
@@ -980,10 +1067,13 @@
 			files = (
 				BA74F941183B9D9C00FE4629 /* misawa.png in Resources */,
 				BAD4AF04180F16E40068104B /* asano.png in Resources */,
+				BA21DFF01847AAFD007F64FE /* commentIconBlue.png in Resources */,
 				BA74F92F183B5A4F00FE4629 /* icon.png in Resources */,
 				BA74F93F183B9D8400FE4629 /* browny.png in Resources */,
 				BAB1471D1838CDD10078486B /* invite_friend.html in Resources */,
+				BA21DFE01847AAA8007F64FE /* TommorowRibbon.png in Resources */,
 				BA74F932183B6AD700FE4629 /* modalAddFriend.png in Resources */,
+				BA21DFDF1847AAA8007F64FE /* todayRibbon.png in Resources */,
 				BADD95A1182901C000DAB12F /* OthersAddFriend.png in Resources */,
 				BADD95A51829048800DAB12F /* loginTitle.png in Resources */,
 				BA2A74B8180FBEFB00167837 /* asano2.png in Resources */,
@@ -995,7 +1085,9 @@
 				BA2A74CF1815059C00167837 /* modal1.png in Resources */,
 				BADD95A7182A4D9200DAB12F /* comadPlus.png in Resources */,
 				BA5151DB180ADD5E00FD69D8 /* settings.png in Resources */,
+				BA21DFF11847AAFD007F64FE /* commentIconPurple.png in Resources */,
 				BAD4AF02180F128E0068104B /* addFriend.png in Resources */,
+				BA21DFD518479E4B007F64FE /* comadTab1.png in Resources */,
 				BA2A74D91816166C00167837 /* modalInvite.png in Resources */,
 				BADD95A2182901C000DAB12F /* OthersMyPage.png in Resources */,
 				BA51521E180E59C100FD69D8 /* tab1.png in Resources */,
@@ -1003,10 +1095,13 @@
 				BA515206180C191F00FD69D8 /* plus.png in Resources */,
 				BA74F935183B6B4C00FE4629 /* addInCreateGroup.png in Resources */,
 				BAE4829E1819888F00BB1456 /* Default-568h@2x.png in Resources */,
+				BA21DFE31847AABF007F64FE /* futureRibbon.png in Resources */,
 				BA51521C180E59C100FD69D8 /* tab3.png in Resources */,
+				BA21DFEF1847AAFD007F64FE /* commentIconGreen.png in Resources */,
 				BADD955118260B7700DAB12F /* createComadForm1.png in Resources */,
 				BADD955218260B7700DAB12F /* createComadForm2.png in Resources */,
 				BA2A74B0180FBEFB00167837 /* matsumoto.png in Resources */,
+				BA21DFDE1847AAA8007F64FE /* nowRibbon.png in Resources */,
 				BA51521D180E59C100FD69D8 /* tab2.png in Resources */,
 				BA74F933183B6AD700FE4629 /* modalBlock.png in Resources */,
 				BA2A74CE1815059C00167837 /* modal2.png in Resources */,
@@ -1014,6 +1109,8 @@
 				BAD4AF00180EFD7F0068104B /* back.png in Resources */,
 				BA2A74B3180FBEFB00167837 /* murata.png in Resources */,
 				BA2A74D71816165D00167837 /* modalHome.png in Resources */,
+				BA21DFED1847AAFD007F64FE /* commentIconPinc.png in Resources */,
+				BA21DFE11847AAA8007F64FE /* wheneverRibbon.png in Resources */,
 				BA2A74D1181506BD00167837 /* close.png in Resources */,
 				BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */,
 				BAE482B7181D859B00BB1456 /* hayashi.png in Resources */,
@@ -1023,16 +1120,22 @@
 				BA74F945183B9E2300FE4629 /* nikochan.png in Resources */,
 				BADD959E182901C000DAB12F /* OthersHistory.png in Resources */,
 				BA2A74AF180FBEFB00167837 /* sato.png in Resources */,
+				BA21DFD718479E4B007F64FE /* comadTab3.png in Resources */,
 				BA2A74B5180FBEFB00167837 /* arduino.png in Resources */,
 				BADD95A9182A4FF100DAB12F /* createComad.png in Resources */,
+				BA21DFEE1847AAFD007F64FE /* commentIconOrange.png in Resources */,
 				BADD95A0182901C000DAB12F /* OthersMessage.png in Resources */,
+				BA21DFD818479E4B007F64FE /* comadTab4.png in Resources */,
 				BA2A74B6180FBEFB00167837 /* kimisaki.png in Resources */,
 				BA2A74D5181613E000167837 /* modalMessage.png in Resources */,
+				BA21DFEC1847AAFD007F64FE /* locationIcon.png in Resources */,
 				BA74F93B183B9B3500FE4629 /* sally.png in Resources */,
 				BA515183180900E200FD69D8 /* Images.xcassets in Resources */,
 				BADD959F182901C000DAB12F /* OthersMap.png in Resources */,
 				BAB147111837CCB60078486B /* addFriendMenu.png in Resources */,
 				BA2A74CD1815059B00167837 /* modal3.png in Resources */,
+				BA21DFEB1847AAFD007F64FE /* datetimeIcon.png in Resources */,
+				BA21DFD618479E4B007F64FE /* comadTab2.png in Resources */,
 				BA515175180900E200FD69D8 /* InfoPlist.strings in Resources */,
 				BADD95A3182901C000DAB12F /* OthersSettings.png in Resources */,
 			);
@@ -1117,28 +1220,33 @@
 				BADD954B182561D700DAB12F /* CreateComadViewController.m in Sources */,
 				BAE482AC181A2A1200BB1456 /* ConversationTextBox.m in Sources */,
 				BA74F949183D15A900FE4629 /* SelectPeopleView.m in Sources */,
+				BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */,
 				BA2A74C41811858D00167837 /* ComadJsonClient.m in Sources */,
 				BA03F6231836390F001E9BBE /* ShowUserViewController+View.m in Sources */,
 				BADD95651826679200DAB12F /* EditLocationStatusFormViewController.m in Sources */,
 				BADD95D61832A6B500DAB12F /* ShowComadViewController+View.m in Sources */,
 				BA74F94C183D15CE00FE4629 /* SelectPeopleTable.m in Sources */,
 				BADD95AF182F3E0900DAB12F /* MessageViewController+View.m in Sources */,
+				BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */,
 				BAB1471B1838B0770078486B /* InviteFriendViewController.m in Sources */,
+				BA21DFC418474EA1007F64FE /* PopularComadViewController.m in Sources */,
 				BA5151AA18095FBB00FD69D8 /* TabBarController.m in Sources */,
 				BA5151E4180C116F00FD69D8 /* ShowComadViewController.m in Sources */,
 				BADD9571182793B200DAB12F /* EditThumbnailMask.m in Sources */,
 				BA5151F9180C120200FD69D8 /* SettingsViewController.m in Sources */,
 				BA5151EA180C119A00FD69D8 /* CreateGroupViewController.m in Sources */,
+				BA21DFC718474EB0007F64FE /* MyComadViewController.m in Sources */,
 				BA03F6261836516F001E9BBE /* Date.m in Sources */,
 				BADD957B1827EECE00DAB12F /* EditProfileFormViewController+View.m in Sources */,
 				BA515221180E614E00FD69D8 /* Image.m in Sources */,
 				BAB1470B1837C8770078486B /* AddFriendMenu.m in Sources */,
 				BA515218180DA07D00FD69D8 /* Header.m in Sources */,
+				BA21DFC118474E95007F64FE /* DateComadViewController.m in Sources */,
 				BA5151F6180C11E900FD69D8 /* MessageViewController.m in Sources */,
 				BA5151CC180A5C9400FD69D8 /* UserModal.m in Sources */,
-				BA5151AD18095FDD00FD69D8 /* WorksViewController.m in Sources */,
 				BA5151B318095FFB00FD69D8 /* OthersViewController.m in Sources */,
 				BAE482A6181A22CF00BB1456 /* Participation.m in Sources */,
+				BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */,
 				BADD95781827A04400DAB12F /* EditTimeFormViewController+View.m in Sources */,
 				BADD95911828F67B00DAB12F /* NotificationSettingsViewController+View.m in Sources */,
 				BADD95941828F8E000DAB12F /* MailSettingsViewController.m in Sources */,

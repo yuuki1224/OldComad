@@ -112,6 +112,30 @@
                 self.font = font;
                 break;
             }
+            case BlueTitle:{
+                self.textColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:13.0f];
+                self.font = font;
+                break;
+            }
+            case ComadCellTitle:{
+                self.textColor = [UIColor blackColor];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
+                self.font = font;
+                break;
+            }
+            case GrayLabel:{
+                self.textColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:11.0f];
+                self.font = font;
+                break;
+            }
+            case ComadId:{
+                self.textColor = [UIColor colorWithRed:0.455 green:0.686 blue:0.937 alpha:1.0];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:10.0f];
+                self.font = font;
+                break;
+            }
             default:
                 break;
         }

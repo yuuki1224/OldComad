@@ -7,7 +7,7 @@
 //
 
 #import "TabBarController.h"
-#import "WorksViewController.h"
+#import "ComadsViewController.h"
 #import "FriendsViewController.h"
 #import "OthersViewController.h"
 #import "UserModal.h"
@@ -47,7 +47,7 @@
             self.tabBar.tintColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
             self.tabBar.barTintColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
         }
-        wc = [[WorksViewController alloc]init];
+        cc = [[ComadsViewController alloc]init];
         fc = [[FriendsViewController alloc]init];
         oc = [[OthersViewController alloc]init];
         
@@ -59,7 +59,7 @@
         UIImage *tab2Resize = [Image resizeImage:tab2 resizePer:0.5];
         UIImage *tab3Resize = [Image resizeImage:tab3 resizePer:0.5];
         
-        UINavigationController *comadTabNav = [[UINavigationController alloc]initWithRootViewController:wc];
+        UINavigationController *comadTabNav = [[UINavigationController alloc]initWithRootViewController:cc];
         UINavigationController *friendTabNav = [[UINavigationController alloc]initWithRootViewController:fc];
         UINavigationController *accountTabNav = [[UINavigationController alloc]initWithRootViewController:oc];
         
@@ -76,7 +76,7 @@
         [comadTabNav.tabBarItem setTitlePositionAdjustment:offset2];
         [accountTabNav.tabBarItem setTitlePositionAdjustment:offset3];
         
-        [wc.navigationController setNavigationBarHidden:YES];
+        [cc.navigationController setNavigationBarHidden:YES];
         [fc.navigationController setNavigationBarHidden:YES];
         [oc.navigationController setNavigationBarHidden:YES];
         

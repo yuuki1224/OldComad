@@ -23,7 +23,11 @@ typedef enum : NSInteger{
     TableHeader,
     FriendCellName,
     GroupNameLabel,
-    SelectPeopleHeader
+    SelectPeopleHeader,
+    BlueTitle,
+    ComadCellTitle,
+    GrayLabel,
+    ComadId
 }BasicLabelName;
 
 @interface BasicLabel : UILabel

@@ -10,7 +10,7 @@
 #import "FriendsViewController.h"
 #import "UserModal.h"
 #import "BlackMask.h"
-#import "WorksViewController.h"
+#import "ComadsViewController.h"
 #import "FriendsViewController.h"
 #import "OthersViewController.h"
 
@@ -18,7 +18,7 @@
     UserModal *userModal;
     BlackMask *blackMask;
     
-    WorksViewController *wc;
+    ComadsViewController *cc;
     FriendsViewController *fc;
     OthersViewController *oc;
 }

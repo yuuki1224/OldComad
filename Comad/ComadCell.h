@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ComadCell : UITableViewCell
+@interface ComadCell : UITableViewCell {
+    CGRect windowSize;
+}
 
 @property (nonatomic, retain)NSDictionary *comadInfo;
-@property (nonatomic, retain)NSDate *start_time;
-@property (nonatomic, retain)NSDate *end_time;
 - (void)setComadCell;
 @end
