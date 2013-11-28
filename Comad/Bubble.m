@@ -10,10 +10,9 @@
 #import "BasicLabel.h"
 
 @implementation Bubble
-@synthesize userName;
-@synthesize mail;
+@synthesize userName, mail, bubbleHeight, imageName;
 
-- (id)initWithName:(BubbleSide)name {
+- (id)initWithName:(Side)name {
     self = [super init];
     if(self){
         windowSize = [[UIScreen mainScreen] bounds];
@@ -27,28 +26,20 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    nameLabel.text = @"浅野友希";
+    nameLabel.text = userName;
     [nameLabel sizeToFit];
     NSDate *now = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYY/MM/dd HH:mm:ss"];
+    [formatter setDateFormat:@"HH:mm a"];
     timeLabel.text = [formatter stringFromDate:now];
     [timeLabel sizeToFit];
     
     switch (self.side) {
         case Left:
             [self drawLeftBubble];
-            nameLabel.frame = CGRectMake(18, 45, nameLabel.frame.size.width, nameLabel.frame.size.height);
-            timeLabel.frame = CGRectMake(windowSize.size.width - 130, 95, timeLabel.frame.size.width, timeLabel.frame.size.height);
-            [self addSubview:nameLabel];
-            [self addSubview:timeLabel];
             break;
         case Right:
             [self drawRightBubble];
-            nameLabel.frame = CGRectMake(windowSize.size.width - 58, 45, nameLabel.frame.size.width, nameLabel.frame.size.height);
-            timeLabel.frame = CGRectMake(20, 88, timeLabel.frame.size.width, timeLabel.frame.size.height);
-            [self addSubview:nameLabel];
-            [self addSubview:timeLabel];
             break;
         default:
             break;
@@ -56,11 +47,15 @@
 }
 
 -(void)drawRightBubble {
+    //self.mailに入ってる文字を描画する
     CGSize bounds = CGSizeMake(150, 500);
-    UILineBreakMode mode = UILineBreakModeWordWrap;
-    CGSize size = [self.mail sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode:mode];
     
+    UILineBreakMode mode = UILineBreakModeWordWrap;
+    CGSize size = [self.mail sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode: mode];
     int rowNum = (int)size.height/14;
+    
+    float height = size.height + 16;
+    self.bubbleHeight = height;
     
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -68,7 +63,8 @@
     CGContextSaveGState(context);
     
     //バブルを描く領域
-    CGRect bubbleRect = CGRectMake(windowSize.size.width - 230.5, 10.5, 170, 70);
+    //ここだけ指定したらいいようにしたい
+    CGRect bubbleRect = CGRectMake(windowSize.size.width - 180, 5, 170, height);
     CGContextBubblePathRight(context, bubbleRect);
     CGContextBubblePathRight(context, bubbleRect);
     CGPathRef bubblePath = CGContextCopyPath(context);
@@ -111,50 +107,38 @@
     //保存してた状態に戻す
     CGContextRestoreGState(context);
     
-    CGRect textRect = CGRectMake(windowSize.size.width - 225, 25, 150, 60);
+    //テキストの描画領域指定
+    //CGRect textRect = CGRectMake(windowSize.size.width - 225, 25, 150, 60);
+    CGRect textRect = CGRectMake(bubbleRect.origin.x + 10 , bubbleRect.origin.y + 8, bubbleRect.size.width - 23 , bubbleRect.size.height - 16);
     
     //NSString *text = @"こんにちは。\n吹き出し描いたよ。\nくちばし部分の構造は下の絵を見てね。";
     NSString *text = self.mail;
     [[UIColor colorWithWhite:0.1 alpha:1] set];
     [text drawInRect:textRect withFont:[UIFont systemFontOfSize:12]];
     
-    //---------
-    // 顔Icon
-    
-    //状態保存
-    CGContextSaveGState(context);
-    
-    //Path作成
-    CGRect profRect = CGRectMake(windowSize.size.width - 55, 60, 40, 40);
-    CGContextRoundRectPath(context, profRect, 4.0);
-    CGPathRef profPath = CGContextCopyPath(context);
-    
-    //画像描画
-    CGContextClip(context);
-    UIImage *profImage = [UIImage imageNamed:self.userName];
-    [profImage drawInRect:profRect];
-    
-    //縁取り
-    CGContextAddPath(context, profPath);
-    CGContextSetRGBStrokeColor(context, 0, 0, 0, 0.3);
-    CGContextSetLineWidth(context, 1);
-    CGContextStrokePath(context);
-    
-    //Path解放
-    CGPathRelease(profPath);
-    
-    //保存してた状態に戻す
-    CGContextRestoreGState(context);
+    timeLabel.frame = CGRectMake(bubbleRect.origin.x - timeLabel.frame.size.width - 7 , bubbleRect.origin.y + bubbleRect.size.height - 10, timeLabel.frame.size.width, timeLabel.frame.size.height);
+    [self addSubview:timeLabel];
+     
 }
 
 -(void)drawLeftBubble {
+    CGSize bounds = CGSizeMake(150, 500);
+    
+    UILineBreakMode mode = UILineBreakModeWordWrap;
+    CGSize size = [self.mail sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode: mode];
+    int rowNum = (int)size.height/14;
+    
+    float height = size.height + 16;
+    self.bubbleHeight = height;
+    
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
     //状態保存
     CGContextSaveGState(context);
     
     //バブルを描く領域
-    CGRect bubbleRect = CGRectMake(60.5, 20.5, 170, 70);
+    CGRect bubbleRect = CGRectMake(65, 10, 170, height);
     CGContextBubblePath(context, bubbleRect);
     CGContextBubblePath(context, bubbleRect);
     CGPathRef bubblePath = CGContextCopyPath(context);
@@ -198,7 +182,7 @@
     CGContextRestoreGState(context);
     
     //テキスト
-    CGRect textRect = CGRectMake(75, 25, 150, 60);
+    CGRect textRect = CGRectMake(bubbleRect.origin.x + 18, bubbleRect.origin.y + 8, bubbleRect.size.width - 25 , bubbleRect.size.height - 16);;
     NSString *text = self.mail;
     [[UIColor colorWithWhite:0.1 alpha:1] set];
     [text drawInRect:textRect withFont:[UIFont systemFontOfSize:12]];
@@ -210,14 +194,14 @@
     CGContextSaveGState(context);
     
     //Path作成
-    CGRect profRect = CGRectMake(15, 60, 40, 40);
+    CGRect profRect = CGRectMake(15, bubbleRect.origin.y + bubbleRect.size.height - 20, 40, 40);
     CGContextRoundRectPath(context, profRect, 4.0);
     CGPathRef profPath = CGContextCopyPath(context);
     
     //画像描画
     CGContextClip(context);
-    UIImage *profImage = [UIImage imageNamed:self.userName];
-    [profImage drawInRect:profRect];
+    UIImage *profImage = [UIImage imageNamed: imageName];
+    [profImage drawInRect: profRect];
     
     //縁取り
     CGContextAddPath(context, profPath);
@@ -230,6 +214,11 @@
     
     //保存してた状態に戻す
     CGContextRestoreGState(context);
+    
+    nameLabel.frame = CGRectMake(13, bubbleRect.origin.y + bubbleRect.size.height - 35, nameLabel.frame.size.width, nameLabel.frame.size.height);
+    timeLabel.frame = CGRectMake(bubbleRect.origin.x + bubbleRect.size.width + 10, bubbleRect.origin.y + bubbleRect.size.height - 10, timeLabel.frame.size.width, timeLabel.frame.size.height);
+    [self addSubview:nameLabel];
+    [self addSubview:timeLabel];
 }
 
 //角度→ラジアン変換
@@ -305,5 +294,9 @@ void CGContextRoundRectPath(CGContextRef context, CGRect rect, CGFloat radius)
     CGContextAddArcToPoint(context, rx, by, rx-radius, by, radius);
     
     CGContextClosePath(context);
+}
+
+- (void)setLabel {
+    nameLabel.text = self.userName;
 }
 @end

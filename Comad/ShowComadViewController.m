@@ -101,9 +101,10 @@
     NSLog(@"%@", packet.args[0]);
     if ([packet.args[0] isEqual:@"yuuki1224"]) {
         // 存在する場合の処理
-        [conversation addConversation:packet.args[1] :@"murata.png"];
+        //[conversation addConversation:packet.args[1] :@"murata.png"];
+        
     }else if([packet.args[0] isEqual:@"asano"]){
-        [conversation addConversation:packet.args[1] :@"asano.png"];
+        //[conversation addConversation:packet.args[1] :@"asano.png"];
     }
 }
 

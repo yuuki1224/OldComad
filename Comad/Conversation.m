@@ -9,6 +9,7 @@
 #import "Conversation.h"
 #import "Bubble.h"
 #import "Image.h"
+#import "Stamp.h"
 
 @implementation Conversation
 @synthesize conversationHeight;
@@ -26,36 +27,80 @@
 - (void)viewDidLoad {
 }
 
-- (void)addConversation:(NSString *)conversationText :(NSString *)userName {
+- (void)addConversation:(NSString *)conversationText :(NSString *)userName :(NSString *)imageName{
     Bubble *bubble;
-    if([userName isEqual:@"asano.png"]){
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *meImageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
+    
+    //自分のだったら右に付け足す
+    if([meImageName isEqual:imageName]){
+        NSLog(@"右につける");
         bubble = [[Bubble alloc]initWithName:Right];
+        bubble.mail = conversationText;
+        bubble.userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
+        bubble.imageName = imageName;
+        [bubble setLabel];
+        
+        CGSize bounds = CGSizeMake(150, 500);
+        UILineBreakMode mode = UILineBreakModeWordWrap;
+        CGSize size = [bubble.mail sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode:mode];
+        float height = size.height + 16;
+        
+        bubble.frame = CGRectMake(0, conversationHeight, windowSize.size.width, (int)height + 15);
+        [self addSubview: bubble];
+        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
+        conversationHeight += bubble.frame.size.height;
+    
+    //自分の以外だったら左に付け足す
     }else{
+        NSLog(@"左につける");
         bubble = [[Bubble alloc]initWithName:Left];
+        bubble.mail = conversationText;
+        bubble.userName = userName;
+        bubble.imageName = imageName;
+        [bubble setLabel];
+        
+        CGSize bounds = CGSizeMake(150, 500);
+        UILineBreakMode mode = UILineBreakModeWordWrap;
+        CGSize size = [bubble.mail sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode:mode];
+        float height = size.height + 16;
+        
+        bubble.frame = CGRectMake(0, conversationHeight, windowSize.size.width, (int)height + 30);
+        [self addSubview: bubble];
+        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
+        conversationHeight += bubble.frame.size.height;
     }
-    bubble.mail = conversationText;
-    bubble.userName = userName;
-    bubble.frame = CGRectMake(0, conversationHeight, windowSize.size.width, 100);
-    [self addSubview: bubble];
-    self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
-    NSLog(@"%d", conversationHeight);
-    conversationHeight += bubble.frame.size.height;
 }
 
-- (void)addStamp:(int)stampNum :(NSString *)userName {
+- (void)addStamp:(int)stampNum :(NSString *)userName :(NSString *)imageName {
     NSBundle* bundle = [NSBundle mainBundle];
     NSString* path = [bundle pathForResource:@"Stamp" ofType:@"plist"];
     NSDictionary* dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSString *stampImageName = [dic objectForKey: [NSString stringWithFormat:@"%i", stampNum]];
     
-    UIImage *stampImage = [UIImage imageNamed: [dic objectForKey:[NSString stringWithFormat:@"%i",stampNum]]];
-    UIImage *stampResize = [Image resizeImage:stampImage resizeWidth:120 resizeHeight:120];
-    UIImageView *stampView = [[UIImageView alloc]initWithImage: stampResize];
-    stampView.frame = CGRectMake(150, conversationHeight, 120, 120);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *meImageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
     
-    [self addSubview: stampView];
-    self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
-    NSLog(@"%d", conversationHeight);
-    conversationHeight += stampView.frame.size.height;
+    //自分のだったら右に付け足す
+    if([meImageName isEqual:imageName]){
+        Stamp *stamp = [[Stamp alloc]initWithName: Right];
+        stamp.userName = userName;
+        [stamp setStamp: stampImageName conversationHeight: conversationHeight];
+        [self addSubview: stamp];
+        
+        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
+        conversationHeight += stamp.frame.size.height;
+    //自分以外だったら左に付け足す
+    }else{
+        Stamp *stamp = [[Stamp alloc]initWithName: Left];
+        stamp.userName = userName;
+        stamp.imageName = imageName;
+        [stamp setStamp: stampImageName conversationHeight:conversationHeight];
+        [self addSubview: stamp];
+        
+        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
+        conversationHeight += stamp.frame.size.height;
+    }
 }
 
 @end

@@ -12,6 +12,7 @@
 #import "SocketIO.h"
 #import "SpecialMoji.h"
 #import "BlackMask.h"
+#import "Basic.h"
 
 @interface MessageViewController : UIViewController <ConversationTextBoxDelegate, SocketIODelegate, SpecialMojiDelegate> {
     CGRect windowSize;
@@ -19,6 +20,16 @@
     SocketIO *socketIO;
     BlackMask *mask;
     SpecialMoji *sm;
+    NSString *roomName;
 }
+
+@property (nonatomic)MessageType type;
+
+@property (nonatomic)int userId;
+//for Private
+@property (nonatomic)int friendId;
+@property (nonatomic, retain)NSString *friendImageName;
+//for Group
+@property (nonatomic)int groupId;
 -(void)configure;
 @end

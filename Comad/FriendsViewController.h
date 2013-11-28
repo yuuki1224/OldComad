@@ -7,17 +7,33 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Friends.h"
+
+typedef enum {
+    HeaderViewStateHidden = 0,          // ヘッダが隠れた状態
+    HeaderViewStatePullingDown,         // プルダウン状態１（ただし閾値は超えていない）
+    HeaderViewStateOveredThreshold,     // プルダウン状態２（閾値を越えている）
+    HeaderViewStateStopping             // プルダウン停止状態（処理中）
+} HeaderViewState;
 
 @protocol FriendViewControllerDelegate;
 
-@interface FriendsViewController : UITabBarController <UITableViewDelegate, UIScrollViewDelegate, UISearchBarDelegate>{
-    Friends *friendsView;
+@interface FriendsViewController : UITabBarController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UISearchBarDelegate>{
     UISearchBar *search;
+    CGRect windowSize;
+    NSMutableArray *_newFriends;
+    NSMutableArray *_friends;
+    NSMutableArray *_groups;
+    UITableView *friendsTable;
 }
+
 @property (nonatomic, weak) id<FriendViewControllerDelegate> delegate;
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+@property (strong, nonatomic) NSDictionary *me;
+//@property (strong, nonatomic) NSMutableArray *hoge;
+@property (nonatomic, assign) HeaderViewState state;
 
+-(void)setInfo;
+-(void)configure;
 @end
 
 @protocol FriendViewControllerDelegate

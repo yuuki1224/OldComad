@@ -13,7 +13,7 @@
 @implementation MessagesListViewController (View)
 
 - (void)configure {
-    UITableView *messageListView = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77) style:UITableViewStylePlain];
+    messageListView = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77) style:UITableViewStylePlain];
     [self.view addSubview: messageListView];
     messageListView.dataSource = self;
     messageListView.delegate = self;
@@ -21,7 +21,7 @@
 
 //Rowの数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [friendsArray count];
 }
 
 //セクションの数
@@ -39,6 +39,11 @@
     return 0;
 }
 
+//フッターの高さ
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0;
+}
+
 //ヘッダーの内容
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *header = [[UIView alloc]init];
@@ -47,8 +52,11 @@
 
 //セルの内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"friendsList: %@", friendsArray);
+    
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"a"];
-    UIImage *thumbnailImage = [UIImage imageNamed: @"asano.png"];
+    UIImage *thumbnailImage = [UIImage imageNamed: [[friendsArray objectAtIndex:indexPath.row] objectForKey:@"image_name"]];
     UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:60 resizeHeight:60];
     
     cell.imageView.image = thumbnailImageResize;
@@ -56,13 +64,16 @@
     cell.textLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
     cell.detailTextLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
 
-    cell.textLabel.text = @"hoge";
-    cell.detailTextLabel.text = @"bazbaz";
+    cell.textLabel.text = [[friendsArray objectAtIndex:indexPath.row] objectForKey:@"name"];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [friendsArray objectAtIndex:indexPath.row];
+    
     MessageViewController *mc = [[MessageViewController alloc]init];
+    mc.type = PrivateMessage;
+    mc.friendId = [[[friendsArray objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];
     [self.navigationController pushViewController:mc animated:YES];
 }
 

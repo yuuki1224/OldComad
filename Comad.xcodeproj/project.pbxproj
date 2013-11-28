@@ -51,7 +51,6 @@
 		BA5151B018095FEC00FD69D8 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151AF18095FEC00FD69D8 /* FriendsViewController.m */; };
 		BA5151B318095FFB00FD69D8 /* OthersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151B218095FFB00FD69D8 /* OthersViewController.m */; };
 		BA5151B6180964CD00FD69D8 /* ComadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151B5180964CD00FD69D8 /* ComadAppDelegate.m */; };
-		BA5151BA1809690500FD69D8 /* Friends.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151B91809690500FD69D8 /* Friends.m */; };
 		BA5151BD1809A62400FD69D8 /* Works.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151BC1809A62400FD69D8 /* Works.m */; };
 		BA5151C01809B1C200FD69D8 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151BF1809B1C200FD69D8 /* FriendCell.m */; };
 		BA5151CC180A5C9400FD69D8 /* UserModal.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151CB180A5C9400FD69D8 /* UserModal.m */; };
@@ -86,6 +85,8 @@
 		BA74F949183D15A900FE4629 /* SelectPeopleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F948183D15A900FE4629 /* SelectPeopleView.m */; };
 		BA74F94C183D15CE00FE4629 /* SelectPeopleTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F94B183D15CE00FE4629 /* SelectPeopleTable.m */; };
 		BA74F94F183D15EB00FE4629 /* SelectPeopleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F94E183D15EB00FE4629 /* SelectPeopleTableCell.m */; };
+		BA74F952183F743F00FE4629 /* Stamp.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F951183F743F00FE4629 /* Stamp.m */; };
+		BA74F9551843E14300FE4629 /* FriendsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F9541843E14300FE4629 /* FriendsViewController+View.m */; };
 		BAB1470B1837C8770078486B /* AddFriendMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1470A1837C8770078486B /* AddFriendMenu.m */; };
 		BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB1470C1837CC960078486B /* idSearchMenu.png */; };
 		BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB1470D1837CC960078486B /* qrCodeMenu.png */; };
@@ -234,8 +235,6 @@
 		BA5151B218095FFB00FD69D8 /* OthersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthersViewController.m; sourceTree = "<group>"; };
 		BA5151B4180964CD00FD69D8 /* ComadAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadAppDelegate.h; sourceTree = "<group>"; };
 		BA5151B5180964CD00FD69D8 /* ComadAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadAppDelegate.m; sourceTree = "<group>"; };
-		BA5151B81809690500FD69D8 /* Friends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friends.h; sourceTree = "<group>"; };
-		BA5151B91809690500FD69D8 /* Friends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friends.m; sourceTree = "<group>"; };
 		BA5151BB1809A62400FD69D8 /* Works.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Works.h; sourceTree = "<group>"; };
 		BA5151BC1809A62400FD69D8 /* Works.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Works.m; sourceTree = "<group>"; };
 		BA5151BE1809B1C200FD69D8 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
@@ -289,6 +288,9 @@
 		BA74F94B183D15CE00FE4629 /* SelectPeopleTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPeopleTable.m; sourceTree = "<group>"; };
 		BA74F94D183D15EB00FE4629 /* SelectPeopleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPeopleTableCell.h; sourceTree = "<group>"; };
 		BA74F94E183D15EB00FE4629 /* SelectPeopleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPeopleTableCell.m; sourceTree = "<group>"; };
+		BA74F950183F743F00FE4629 /* Stamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stamp.h; sourceTree = "<group>"; };
+		BA74F951183F743F00FE4629 /* Stamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stamp.m; sourceTree = "<group>"; };
+		BA74F9541843E14300FE4629 /* FriendsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FriendsViewController+View.m"; sourceTree = "<group>"; };
 		BAB147091837C8770078486B /* AddFriendMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendMenu.h; sourceTree = "<group>"; };
 		BAB1470A1837C8770078486B /* AddFriendMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendMenu.m; sourceTree = "<group>"; };
 		BAB1470C1837CC960078486B /* idSearchMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idSearchMenu.png; sourceTree = "<group>"; };
@@ -622,6 +624,7 @@
 				BA5151AC18095FDD00FD69D8 /* WorksViewController.m */,
 				BA5151AE18095FEC00FD69D8 /* FriendsViewController.h */,
 				BA5151AF18095FEC00FD69D8 /* FriendsViewController.m */,
+				BA74F9541843E14300FE4629 /* FriendsViewController+View.m */,
 				BA5151B118095FFB00FD69D8 /* OthersViewController.h */,
 				BA5151B218095FFB00FD69D8 /* OthersViewController.m */,
 				BA5151E2180C116F00FD69D8 /* ShowComadViewController.h */,
@@ -690,8 +693,6 @@
 		BA5151FB180C142400FD69D8 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				BA5151B81809690500FD69D8 /* Friends.h */,
-				BA5151B91809690500FD69D8 /* Friends.m */,
 				BA5151BE1809B1C200FD69D8 /* FriendCell.h */,
 				BA5151BF1809B1C200FD69D8 /* FriendCell.m */,
 				BA5151CA180A5C9400FD69D8 /* UserModal.h */,
@@ -747,11 +748,13 @@
 				BADD95B1182F4B5400DAB12F /* Conversation.m */,
 				BADD95B3182F5AFA00DAB12F /* Bubble.h */,
 				BADD95B4182F5AFA00DAB12F /* Bubble.m */,
+				BA74F950183F743F00FE4629 /* Stamp.h */,
+				BA74F951183F743F00FE4629 /* Stamp.m */,
 				BADD95CA1830ACC700DAB12F /* RoundedButton.h */,
 				BADD95CB1830ACC700DAB12F /* RoundedButton.m */,
-				BADD95D01832001B00DAB12F /* Basic.h */,
 				BA74F936183B7E7400FE4629 /* SpecialMoji.h */,
 				BA74F937183B7E7500FE4629 /* SpecialMoji.m */,
+				BADD95D01832001B00DAB12F /* Basic.h */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -1091,10 +1094,10 @@
 				BA5151BD1809A62400FD69D8 /* Works.m in Sources */,
 				BADD95B2182F4B5400DAB12F /* Conversation.m in Sources */,
 				BAB147201839D41F0078486B /* IdSearchViewController+View.m in Sources */,
-				BA5151BA1809690500FD69D8 /* Friends.m in Sources */,
 				BADD958E1828F66A00DAB12F /* NotificationSettingsViewController.m in Sources */,
 				BADD955C18263C6C00DAB12F /* EditLoacationFormViewController.m in Sources */,
 				BADD955F18263CA900DAB12F /* EditLimitFormViewController.m in Sources */,
+				BA74F952183F743F00FE4629 /* Stamp.m in Sources */,
 				BA03F62018362164001E9BBE /* UserJsonClient.m in Sources */,
 				BADD955518262F4600DAB12F /* BasicLabel.m in Sources */,
 				BADD95811828B27300DAB12F /* EditLimitFormViewController+View.m in Sources */,
@@ -1157,6 +1160,7 @@
 				BA5151ED180C11AB00FD69D8 /* ShowGroupViewController.m in Sources */,
 				BADD95CC1830ACC700DAB12F /* RoundedButton.m in Sources */,
 				BADD95361825016100DAB12F /* HistoryViewController.m in Sources */,
+				BA74F9551843E14300FE4629 /* FriendsViewController+View.m in Sources */,
 				BA5151B6180964CD00FD69D8 /* ComadAppDelegate.m in Sources */,
 				BAB147181837DB0E0078486B /* QrCodeViewController.m in Sources */,
 				BADD95421825406B00DAB12F /* OthersLabel.m in Sources */,

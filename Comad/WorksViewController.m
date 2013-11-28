@@ -25,15 +25,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
-        worksView = [[Works alloc]init];
         Header *header = [[Header alloc]init];
         [header setTitle:@"コマド"];
         
-        worksView.delegate = self;
-        
         [self.view addSubview:header];
-        [self.view addSubview:worksView];
         [self setCreateComadBtnInHeader];
     }
     return self;

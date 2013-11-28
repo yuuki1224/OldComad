@@ -72,7 +72,10 @@
 }
 
 - (void)sendMessageBtnClicked:(UIButton *)button {
+    int userId = [[userInfo objectForKey:@"id"] intValue];
     MessageViewController *mc = [[MessageViewController alloc]init];
+    mc.type = PrivateMessage;
+    mc.friendId = userId;
     [self.navigationController pushViewController:mc animated:YES];
 }
 

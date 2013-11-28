@@ -36,4 +36,14 @@ typedef enum : NSInteger{
     Question4
 }EditProfileCell;
 
+typedef enum : NSInteger{
+    Left = 0,
+    Right
+}Side;
+
+typedef enum : NSInteger{
+    PrivateMessage = 0,
+    GroupMessage
+}MessageType;
+
 #endif

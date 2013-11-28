@@ -1,8 +1,8 @@
 //
-//  Bubble.h
+//  Stamp.h
 //  Comad
 //
-//  Created by 浅野 友希 on 2013/11/10.
+//  Created by 浅野 友希 on 2013/11/22.
 //  Copyright (c) 2013年 Yuki Asano. All rights reserved.
 //
 
@@ -10,17 +10,15 @@
 #import "BasicLabel.h"
 #import "Basic.h"
 
-@interface Bubble : UIView {
+@interface Stamp : UIView {
     CGRect windowSize;
     BasicLabel *nameLabel;
     BasicLabel *timeLabel;
 }
 @property (nonatomic, retain)NSString *userName;
-@property (nonatomic, retain)NSString *mail;
 @property (nonatomic, retain)NSString *imageName;
-@property (nonatomic)float bubbleHeight;
 @property (nonatomic)Side side;
 
 - (id)initWithName:(Side)name;
-- (void)setLabel;
+- (void)setStamp:(NSString *)stampName conversationHeight:(int)conversationHeight;
 @end

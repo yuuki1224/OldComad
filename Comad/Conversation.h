@@ -13,6 +13,6 @@
 }
 @property (nonatomic) int conversationHeight;
 
--(void)addConversation:(NSString *)conversationText:(NSString *)userName;
--(void)addStamp:(int)stampNum:(NSString *)userName;
+-(void)addConversation:(NSString *)conversationText:(NSString *)userName:(NSString *)imageName;
+-(void)addStamp:(int)stampNum:(NSString *)userName:(NSString *)imageName;
 @end
