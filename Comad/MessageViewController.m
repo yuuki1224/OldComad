@@ -207,10 +207,19 @@
     }
 }
 
+# pragma SpecialMojiDelegate
+
 - (void)stampClickedDelegate:(int)stampNum {
+    NSLog(@"add stamp");
+    
     [mask removeFromSuperview];
     [sm removeFromSuperview];
     NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
-    [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": @10, @"type": @"private", @"roomName": roomName}];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
+    NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
+    
+    [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": @(10), @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
 }
+
 @end
