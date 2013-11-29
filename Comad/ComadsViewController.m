@@ -20,6 +20,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         windowSize = [[UIScreen mainScreen] bounds];
         // Custom initializatio
         Header *header = [[Header alloc]init];
@@ -33,7 +34,12 @@
         
         //Tabの背景色を載せるViewを作成
         //CGSize tabBarSize = [self.tabBar frame].size;
-        self.tabBar.frame = CGRectMake(5, 82, windowSize.size.width - 10, 50);
+        if(iOSVersion == 7.00){
+            self.tabBar.frame = CGRectMake(5, 82, windowSize.size.width - 10, 50);
+        }else{
+            self.tabBar.frame = CGRectMake(5, 130, windowSize.size.width - 10, 50);
+        }
+        
         UIImage *tabBackImage = [UIImage imageNamed:@"comadTab1.png"];
         [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:windowSize.size.width resizeHeight:50]];
         
@@ -47,6 +53,7 @@
 
 - (void)viewDidLoad
 {
+    [self setInfo];
     [self configure];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -74,21 +81,25 @@
     NSLog(@"setTabBarImage");
     switch (self.selectedIndex) {
         case 0:{
+            [newComadTable.tableView reloadData];
             UIImage *tabBackImage = [UIImage imageNamed:@"comadTab1.png"];
             [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:(windowSize.size.width - 10) resizeHeight:50]];
             break;
         }
         case 1:{
+            [dateComadTable.tableView reloadData];
             UIImage *tabBackImage = [UIImage imageNamed:@"comadTab2.png"];
             [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:(windowSize.size.width - 10) resizeHeight:50]];
             break;
         }
         case 2:{
+            [popularComadTable.tableView reloadData];
             UIImage *tabBackImage = [UIImage imageNamed:@"comadTab3.png"];
             [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:(windowSize.size.width - 10) resizeHeight:50]];
             break;
         }
         case 3:{
+            [myComadTable.tableView reloadData];
             UIImage *tabBackImage = [UIImage imageNamed:@"comadTab4.png"];
             [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:(windowSize.size.width - 10) resizeHeight:50]];
             break;

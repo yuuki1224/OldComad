@@ -10,4 +10,5 @@
 
 @interface MyComadViewController : UITableViewController
 
+@property (nonatomic, retain)NSArray *myComad;
 @end

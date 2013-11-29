@@ -8,12 +8,14 @@
 
 #import "PopularComadViewController.h"
 #import "ComadCell.h"
+#import "ShowComadViewController.h"
 
 @interface PopularComadViewController ()
 
 @end
 
 @implementation PopularComadViewController
+@synthesize PopularComad;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -48,6 +50,7 @@
 // セルのView
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ComadCell *cell = [[ComadCell alloc]initWithFrame:CGRectMake(0, 0, 380, 95)];
+    cell.comadInfo = [PopularComad objectAtIndex:indexPath.row];
     [cell setComadCell];
     return cell;
 }
@@ -59,7 +62,7 @@
 
 // セルの数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [PopularComad count];
 }
 
 // セルの高さ
@@ -77,4 +80,8 @@
     return 0;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ShowComadViewController *sc = [[ShowComadViewController alloc]init];
+    [self.tabBarController.navigationController pushViewController:sc animated:YES];
+}
 @end

@@ -10,4 +10,6 @@
 
 @interface DateComadViewController : UITableViewController
 
+
+@property (nonatomic, retain)NSArray *DateComad;
 @end

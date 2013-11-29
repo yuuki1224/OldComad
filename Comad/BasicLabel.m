@@ -20,6 +20,7 @@
                 self.textColor = [UIColor colorWithRed:0.188 green:0.239 blue:0.314 alpha:1.0];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
                 self.font = font;
+                self.backgroundColor = [UIColor colorWithRed:0.298 green:0.541 blue:0.925 alpha:1.0];
                 break;
             }
             case EditProfileHeaderTitle:{
@@ -92,6 +93,7 @@
                 self.textColor = [UIColor colorWithRed:0.678 green:0.698 blue:0.733 alpha:1.0];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
                 self.font = font;
+                self.backgroundColor = [UIColor colorWithRed:0.965 green:0.969 blue:0.973 alpha:1.0];
                 break;
             }
             case FriendCellName:{

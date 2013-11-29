@@ -14,8 +14,13 @@
 @implementation ShowUserViewController (View)
 
 - (void)configure {
+    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     scrollView = [[UIScrollView alloc]init];
-    scrollView.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77);
+    if(iOSVersion == 7.00){
+        scrollView.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77);
+    }else{
+        scrollView.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height);
+    }
     scrollView.contentSize = CGSizeMake(windowSize.size.width, 610);
     [self.view addSubview: scrollView];
     

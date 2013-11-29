@@ -8,12 +8,14 @@
 
 #import "DateComadViewController.h"
 #import "ComadCell.h"
+#import "ShowComadViewController.h"
 
 @interface DateComadViewController ()
 
 @end
 
 @implementation DateComadViewController
+@synthesize DateComad;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -48,6 +50,7 @@
 // セルのView
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ComadCell *cell = [[ComadCell alloc]initWithFrame:CGRectMake(0, 0, 380, 95)];
+    cell.comadInfo = [DateComad objectAtIndex:indexPath.row];
     [cell setComadCell];
     return cell;
 }
@@ -59,7 +62,7 @@
 
 // セルの数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [DateComad count];
 }
 
 // セルの高さ
@@ -75,6 +78,11 @@
 //フッターの高さ
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ShowComadViewController *sc = [[ShowComadViewController alloc]init];
+    [self.tabBarController.navigationController pushViewController:sc animated:YES];
 }
 
 @end

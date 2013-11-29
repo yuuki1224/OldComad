@@ -24,7 +24,7 @@
 		BA21DFD818479E4B007F64FE /* comadTab4.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFD418479E4B007F64FE /* comadTab4.png */; };
 		BA21DFDE1847AAA8007F64FE /* nowRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFDA1847AAA8007F64FE /* nowRibbon.png */; };
 		BA21DFDF1847AAA8007F64FE /* todayRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFDB1847AAA8007F64FE /* todayRibbon.png */; };
-		BA21DFE01847AAA8007F64FE /* TommorowRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFDC1847AAA8007F64FE /* TommorowRibbon.png */; };
+		BA21DFE01847AAA8007F64FE /* tommorowRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFDC1847AAA8007F64FE /* tommorowRibbon.png */; };
 		BA21DFE11847AAA8007F64FE /* wheneverRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFDD1847AAA8007F64FE /* wheneverRibbon.png */; };
 		BA21DFE31847AABF007F64FE /* futureRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE21847AABF007F64FE /* futureRibbon.png */; };
 		BA21DFEB1847AAFD007F64FE /* datetimeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE41847AAFD007F64FE /* datetimeIcon.png */; };
@@ -34,6 +34,9 @@
 		BA21DFEF1847AAFD007F64FE /* commentIconGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE81847AAFD007F64FE /* commentIconGreen.png */; };
 		BA21DFF01847AAFD007F64FE /* commentIconBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE91847AAFD007F64FE /* commentIconBlue.png */; };
 		BA21DFF11847AAFD007F64FE /* commentIconPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFEA1847AAFD007F64FE /* commentIconPurple.png */; };
+		BA21DFF61847CE8C007F64FE /* hoge_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF31847CE8C007F64FE /* hoge_05.png */; };
+		BA21DFF71847CE8C007F64FE /* hoge_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF41847CE8C007F64FE /* hoge_11.png */; };
+		BA21DFF81847CE8C007F64FE /* hoge_18.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF51847CE8C007F64FE /* hoge_18.png */; };
 		BA2A74AD180FBEFB00167837 /* yoshida.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A1180FBEFB00167837 /* yoshida.png */; };
 		BA2A74AE180FBEFB00167837 /* nakagawa.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A2180FBEFB00167837 /* nakagawa.png */; };
 		BA2A74AF180FBEFB00167837 /* sato.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A3180FBEFB00167837 /* sato.png */; };
@@ -223,7 +226,7 @@
 		BA21DFD418479E4B007F64FE /* comadTab4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comadTab4.png; sourceTree = "<group>"; };
 		BA21DFDA1847AAA8007F64FE /* nowRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nowRibbon.png; sourceTree = "<group>"; };
 		BA21DFDB1847AAA8007F64FE /* todayRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todayRibbon.png; sourceTree = "<group>"; };
-		BA21DFDC1847AAA8007F64FE /* TommorowRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TommorowRibbon.png; sourceTree = "<group>"; };
+		BA21DFDC1847AAA8007F64FE /* tommorowRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tommorowRibbon.png; sourceTree = "<group>"; };
 		BA21DFDD1847AAA8007F64FE /* wheneverRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheneverRibbon.png; sourceTree = "<group>"; };
 		BA21DFE21847AABF007F64FE /* futureRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = futureRibbon.png; sourceTree = "<group>"; };
 		BA21DFE41847AAFD007F64FE /* datetimeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = datetimeIcon.png; sourceTree = "<group>"; };
@@ -233,6 +236,9 @@
 		BA21DFE81847AAFD007F64FE /* commentIconGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconGreen.png; sourceTree = "<group>"; };
 		BA21DFE91847AAFD007F64FE /* commentIconBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconBlue.png; sourceTree = "<group>"; };
 		BA21DFEA1847AAFD007F64FE /* commentIconPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconPurple.png; sourceTree = "<group>"; };
+		BA21DFF31847CE8C007F64FE /* hoge_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoge_05.png; sourceTree = "<group>"; };
+		BA21DFF41847CE8C007F64FE /* hoge_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoge_11.png; sourceTree = "<group>"; };
+		BA21DFF51847CE8C007F64FE /* hoge_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoge_18.png; sourceTree = "<group>"; };
 		BA2A74A1180FBEFB00167837 /* yoshida.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoshida.png; sourceTree = "<group>"; };
 		BA2A74A2180FBEFB00167837 /* nakagawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nakagawa.png; sourceTree = "<group>"; };
 		BA2A74A3180FBEFB00167837 /* sato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sato.png; sourceTree = "<group>"; };
@@ -508,10 +514,20 @@
 				BA21DFE21847AABF007F64FE /* futureRibbon.png */,
 				BA21DFDA1847AAA8007F64FE /* nowRibbon.png */,
 				BA21DFDB1847AAA8007F64FE /* todayRibbon.png */,
-				BA21DFDC1847AAA8007F64FE /* TommorowRibbon.png */,
+				BA21DFDC1847AAA8007F64FE /* tommorowRibbon.png */,
 				BA21DFDD1847AAA8007F64FE /* wheneverRibbon.png */,
 			);
 			name = ComadCell;
+			sourceTree = "<group>";
+		};
+		BA21DFF21847CE74007F64FE /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				BA21DFF31847CE8C007F64FE /* hoge_05.png */,
+				BA21DFF41847CE8C007F64FE /* hoge_11.png */,
+				BA21DFF51847CE8C007F64FE /* hoge_18.png */,
+			);
+			name = Header;
 			sourceTree = "<group>";
 		};
 		BA2A74A0180FB0C800167837 /* profile */ = {
@@ -663,6 +679,7 @@
 		BA5151C31809B5AB00FD69D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA21DFF21847CE74007F64FE /* Header */,
 				BA21DFD91847AA8C007F64FE /* ComadCell */,
 				BA21DFC818477416007F64FE /* ComadsTab */,
 				BA74F939183B9AE600FE4629 /* stamps */,
@@ -1065,13 +1082,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA21DFF71847CE8C007F64FE /* hoge_11.png in Resources */,
 				BA74F941183B9D9C00FE4629 /* misawa.png in Resources */,
 				BAD4AF04180F16E40068104B /* asano.png in Resources */,
 				BA21DFF01847AAFD007F64FE /* commentIconBlue.png in Resources */,
 				BA74F92F183B5A4F00FE4629 /* icon.png in Resources */,
 				BA74F93F183B9D8400FE4629 /* browny.png in Resources */,
 				BAB1471D1838CDD10078486B /* invite_friend.html in Resources */,
-				BA21DFE01847AAA8007F64FE /* TommorowRibbon.png in Resources */,
+				BA21DFE01847AAA8007F64FE /* tommorowRibbon.png in Resources */,
 				BA74F932183B6AD700FE4629 /* modalAddFriend.png in Resources */,
 				BA21DFDF1847AAA8007F64FE /* todayRibbon.png in Resources */,
 				BADD95A1182901C000DAB12F /* OthersAddFriend.png in Resources */,
@@ -1117,6 +1135,7 @@
 				BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */,
 				BA2A74C618118C2200167837 /* kobayashi.png in Resources */,
 				BA2A74B4180FBEFB00167837 /* bosscolle.png in Resources */,
+				BA21DFF81847CE8C007F64FE /* hoge_18.png in Resources */,
 				BA74F945183B9E2300FE4629 /* nikochan.png in Resources */,
 				BADD959E182901C000DAB12F /* OthersHistory.png in Resources */,
 				BA2A74AF180FBEFB00167837 /* sato.png in Resources */,
@@ -1134,6 +1153,7 @@
 				BADD959F182901C000DAB12F /* OthersMap.png in Resources */,
 				BAB147111837CCB60078486B /* addFriendMenu.png in Resources */,
 				BA2A74CD1815059B00167837 /* modal3.png in Resources */,
+				BA21DFF61847CE8C007F64FE /* hoge_05.png in Resources */,
 				BA21DFEB1847AAFD007F64FE /* datetimeIcon.png in Resources */,
 				BA21DFD618479E4B007F64FE /* comadTab2.png in Resources */,
 				BA515175180900E200FD69D8 /* InfoPlist.strings in Resources */,

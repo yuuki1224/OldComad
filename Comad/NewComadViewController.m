@@ -8,12 +8,14 @@
 
 #import "NewComadViewController.h"
 #import "ComadCell.h"
+#import "ShowComadViewController.h"
 
 @interface NewComadViewController ()
 
 @end
 
 @implementation NewComadViewController
+@synthesize NewComad;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -48,7 +50,10 @@
 #pragma Delegate
 // セルのView
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"中身 %@", [NewComad objectAtIndex:indexPath.row]);
+    
     ComadCell *cell = [[ComadCell alloc]initWithFrame:CGRectMake(0, 0, 380, 95)];
+    cell.comadInfo = [NewComad objectAtIndex:indexPath.row];
     [cell setComadCell];
     return cell;
 }
@@ -60,7 +65,7 @@
 
 // セルの数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [NewComad count];
 }
 
 // セルの高さ
@@ -76,6 +81,11 @@
 //フッターの高さ
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ShowComadViewController *sc = [[ShowComadViewController alloc]init];
+    [self.tabBarController.navigationController pushViewController:sc animated:YES];
 }
 
 @end

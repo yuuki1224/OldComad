@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewComadViewController : UITableViewController
+@interface NewComadViewController : UITableViewController {
+}
 
+@property (nonatomic, retain)NSArray *NewComad;
 @end

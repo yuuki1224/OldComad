@@ -10,4 +10,6 @@
 
 @interface PopularComadViewController : UITableViewController
 
+
+@property (nonatomic, retain)NSArray *PopularComad;
 @end

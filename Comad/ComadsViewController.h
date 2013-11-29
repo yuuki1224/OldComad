@@ -21,5 +21,6 @@
     MyComadViewController *myComadTable;
 }
 
+- (void)setInfo;
 - (void)configure;
 @end
