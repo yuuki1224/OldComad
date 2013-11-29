@@ -20,6 +20,7 @@
                 self.textColor = [UIColor colorWithRed:0.188 green:0.239 blue:0.314 alpha:1.0];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
                 self.font = font;
+                self.backgroundColor = [UIColor colorWithRed:0.298 green:0.541 blue:0.925 alpha:1.0];
                 break;
             }
             case EditProfileHeaderTitle:{
@@ -92,6 +93,7 @@
                 self.textColor = [UIColor colorWithRed:0.678 green:0.698 blue:0.733 alpha:1.0];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
                 self.font = font;
+                self.backgroundColor = [UIColor colorWithRed:0.965 green:0.969 blue:0.973 alpha:1.0];
                 break;
             }
             case FriendCellName:{
@@ -109,6 +111,30 @@
             case SelectPeopleHeader:{
                 self.textColor = [UIColor whiteColor];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:20.0f];
+                self.font = font;
+                break;
+            }
+            case BlueTitle:{
+                self.textColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:13.0f];
+                self.font = font;
+                break;
+            }
+            case ComadCellTitle:{
+                self.textColor = [UIColor blackColor];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
+                self.font = font;
+                break;
+            }
+            case GrayLabel:{
+                self.textColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:11.0f];
+                self.font = font;
+                break;
+            }
+            case ComadId:{
+                self.textColor = [UIColor colorWithRed:0.455 green:0.686 blue:0.937 alpha:1.0];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:10.0f];
                 self.font = font;
                 break;
             }

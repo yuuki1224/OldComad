@@ -42,6 +42,7 @@
     float width = titleLabel.frame.size.width;
     float height = titleLabel.frame.size.height;
     titleLabel.frame = CGRectMake(10, 11, width, height);
+    titleLabel.backgroundColor = [UIColor colorWithRed:0.965 green:0.969 blue:0.973 alpha:1.0];
     
     [content addSubview: titleLabel];
     

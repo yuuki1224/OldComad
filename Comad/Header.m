@@ -36,6 +36,7 @@
     UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:20.0f];
     title.font = font;
     title.text = titleString;
+    title.backgroundColor = [UIColor colorWithRed:0.298 green:0.541 blue:0.925 alpha:1.0];
     [title sizeToFit];
     float width = title.frame.size.width;
     float height = title.frame.size.height;
