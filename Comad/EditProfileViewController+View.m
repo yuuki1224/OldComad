@@ -14,7 +14,14 @@
 @implementation EditProfileViewController (View) 
 
 -(void)configure {
+    iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     editProfileTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, 495) style:UITableViewStylePlain];
+    if((int)iOSVersion == 7){
+        editProfileTable.frame = CGRectMake(0, 77, windowSize.size.width, 495);
+    }else if((int)iOSVersion == 6){
+        editProfileTable.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48);
+        editProfileTable.contentSize = CGSizeMake(windowSize.size.width, 1000);
+    }
     [self.view addSubview: editProfileTable];
     editProfileTable.delegate = self;
     editProfileTable.dataSource = self;

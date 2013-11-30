@@ -28,17 +28,27 @@
     if (self) {
         // Custom initialization
         windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         Header *header = [[Header alloc]init];
         [header setTitle:@"プロフィール編集"];
         
         [self.view addSubview:header];
         [self setBackBtnInHeader];
-        self.view.frame = CGRectMake(0, 77, windowSize.size.width, 800);
+        if((int)iOSVersion == 7){
+            self.view.frame = CGRectMake(0, 77, windowSize.size.width, 800);
+        }else if((int)iOSVersion == 6){
+            self.view.frame = CGRectMake(0, 0, windowSize.size.width, 800);
+        }
         self.view.backgroundColor = [UIColor whiteColor];
         
         RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
         [button setTitleInButton:@"完了"];
-        button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
+        if((int)iOSVersion == 7){
+            button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
+        }else if((int)iOSVersion == 6){
+            button.frame = CGRectMake(windowSize.size.width - 60, 10, 48, 28);
+            [button setTitleEdgeInsets:UIEdgeInsetsMake(10, 0, 0, 0)];
+        }
         [button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         
@@ -84,7 +94,11 @@
     UIImage *image = [UIImage imageNamed:@"back.png"];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(15, 36, 20, 28);
+    if((int)iOSVersion == 7){
+        btn.frame = CGRectMake(15, 36, 20, 28);
+    }else if ((int)iOSVersion == 6){
+        btn.frame = CGRectMake(15, 11, 20, 28);
+    }
     [btn setImage:imageResize forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
     

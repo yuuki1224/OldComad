@@ -12,6 +12,7 @@
 
 @interface EditProfileViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, EditProfileFormDelegate> {
     CGRect windowSize;
+    float iOSVersion;
     UITableView *editProfileTable;
     UIPopoverController *popover;
 }
