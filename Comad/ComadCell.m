@@ -21,6 +21,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         windowSize = [[UIScreen mainScreen] bounds];
         self.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
@@ -174,6 +175,17 @@
     UIImageView *commentIconView = [[UIImageView alloc]initWithImage: commentIconResize];
     commentIconView.frame = CGRectMake(commentNum.frame.origin.x - 15, dateTime.frame.origin.y + dateTime.frame.size.height + 5, commentIconResize.size.width, commentIconResize.size.height);
 
+    //iOS6対応
+    if((int)iOSVersion == 6){
+        title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height - 2, title.frame.size.width, title.frame.size.height);
+        datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 1, datetimeIconResize.size.width, datetimeIconResize.size.height);
+        dateTime.frame = CGRectMake(93, title.frame.origin.y + title.frame.size.height + 3, dateTime.frame.size.width, dateTime.frame.size.height);
+        locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height - 4, locationIconResize.size.width, locationIconResize.size.height);
+        location.frame = CGRectMake(93, dateTime.frame.origin.y + dateTime.frame.size.height - 2, location.frame.size.width, location.frame.size.height);
+        conversationNum.frame = CGRectMake(cellView.frame.size.width - conversationNum.frame.size.width - 5, title.frame.origin.y + title.frame.size.height + 3, conversationNum.frame.size.width, conversationNum.frame.size.height);
+        commentNum.frame = CGRectMake(cellView.frame.size.width - commentNum.frame.size.width - 2, conversationNum.frame.origin.y + conversationNum.frame.size.height + 2, commentNum.frame.size.width, commentNum.frame.size.height);
+        commentIconView.frame = CGRectMake(commentNum.frame.origin.x - 15, commentNum.frame.origin.y, commentIconResize.size.width, commentIconResize.size.height);
+    }
     
     [cellView addSubview: name];
     [cellView addSubview: comadId];
@@ -207,7 +219,7 @@
     UIImage *ribbon = [UIImage imageNamed: ribbonImageName];
     UIImage *ribbonResize = [Image resizeImage:ribbon resizePer:0.5];
     UIImageView *ribbonView = [[UIImageView alloc]initWithImage:ribbonResize];
-    ribbonView.frame = CGRectMake(8, 3, ribbonResize.size.width, ribbonResize.size.height);
+    ribbonView.frame = CGRectMake(8, 2, ribbonResize.size.width, ribbonResize.size.height);
     [self addSubview: ribbonView];
 }
 

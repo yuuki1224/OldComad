@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PopularComadViewController : UITableViewController
+@interface PopularComadViewController : UITableViewController {
+    float iOSVersion;
+}
 
 
 @property (nonatomic, retain)NSArray *PopularComad;

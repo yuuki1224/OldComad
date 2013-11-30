@@ -15,8 +15,13 @@
 - (id)initWithName:(UserModalType)name {
     self = [super init];
     if (self) {
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         self.backgroundColor = [UIColor whiteColor];
-        self.frame = CGRectMake(25, 180, 269, 190);
+        if((int)iOSVersion == 7){
+            self.frame = CGRectMake(25, 180, 269, 190);
+        }else if ((int)iOSVersion == 6){
+            self.frame = CGRectMake(25, 145, 269, 190);
+        }
         UIButton *closeModalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         closeModalBtn.backgroundColor = [UIColor whiteColor];
         UIImage *closeImage = [Image resizeImage:[UIImage imageNamed:@"close.png"] resizeWidth:10 resizeHeight:10];

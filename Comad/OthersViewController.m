@@ -115,6 +115,7 @@
 
 - (void)addFriendBtn:(UIButton *)button {
     AddFriendViewController *ac = [[AddFriendViewController alloc]init];
+    ac.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:ac animated:YES];
 }
 
@@ -128,28 +129,33 @@
                          @"学生エンジニアです。好きな言語はPHPです。", @"description", nil];
     sc.userInfo = dic;
     sc.me = YES;
+    sc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:sc animated:YES];
 }
 
 - (void)settingsBtn:(UIButton *)button {
     SettingsViewController *sc = [[SettingsViewController alloc]init];
+    sc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:sc animated:YES];
 }
 
 - (void)mapBtn:(UIButton *)button {
     [self.navigationController.tabBarController.tabBar setHidden:YES];
     MapViewController *mc = [[MapViewController alloc]init];
+    mc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:mc animated:YES];
 }
 
 - (void)historyBtn:(UIButton *)button {
     [self.navigationController.tabBarController.tabBar setHidden:YES];
     HistoryViewController *hc = [[HistoryViewController alloc]init];
+    hc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:hc animated:YES];
 }
 
 - (void)messageBtn:(UIButton *)button {
     MessagesListViewController *mc = [[MessagesListViewController alloc]init];
+    mc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:mc animated:YES];
 }
 @end

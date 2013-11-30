@@ -32,10 +32,17 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        CGRect windowSize = [[UIScreen mainScreen] bounds];
+        windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         
         Header *header = [[Header alloc]init];
         [header setTitle:@"コマとも"];
+        
+        if((int)iOSVersion == 6){
+            float statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+            header.frame = CGRectMake(0, statusBarHeight, windowSize.size.width, 48);
+        }
+        
         [self.view addSubview: header];
         [self setAddFriendBtnInHeader];
         
@@ -78,7 +85,7 @@
     UIImage *image = [UIImage imageNamed:@"addFriend.png"];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(270, 42, imageResize.size.width, imageResize.size.height);
+    btn.frame = CGRectMake(270, 36, imageResize.size.width, imageResize.size.height);
     [btn setImage:imageResize forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(addFriendBtnClicked:)forControlEvents:UIControlEventTouchDown];
     

@@ -20,6 +20,8 @@ typedef enum {
 @interface FriendsViewController : UITabBarController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UISearchBarDelegate>{
     UISearchBar *search;
     CGRect windowSize;
+    float iOSVersion;
+    
     NSMutableArray *_newFriends;
     NSMutableArray *_friends;
     NSMutableArray *_groups;

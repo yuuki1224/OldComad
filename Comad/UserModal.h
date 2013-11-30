@@ -16,6 +16,7 @@ typedef enum : NSInteger{
 }UserModalType;
 
 @interface UserModal : UIView {
+    float iOSVersion;
 }
 
 @property (nonatomic, weak) id<UserModalDelegate> delegate;

@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DateComadViewController : UITableViewController
+@interface DateComadViewController : UITableViewController {
+    float iOSVersion;
+}
 
 
 @property (nonatomic, retain)NSArray *DateComad;

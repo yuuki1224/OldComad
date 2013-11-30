@@ -22,10 +22,17 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+        
         self.view.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
-        self.view.frame = CGRectMake(0, 127, 380, 400);
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        self.tableView.contentInset = UIEdgeInsetsMake(113, 0, 0, 0);
+        
+        if((int)iOSVersion == 7){
+            self.tableView.contentInset = UIEdgeInsetsMake(113, 0, 0, 0);
+        }else if((int)iOSVersion == 6){
+            self.tableView.contentInset = UIEdgeInsetsMake(105, 0, 0, 0);
+        }
     }
     return self;
 }
@@ -34,9 +41,11 @@
 {
     [super viewDidLoad];
 
+    self.tableView.frame = CGRectMake(0, 0, 300, 600);
+    self.tableView.contentSize = CGSizeMake(300, 400);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -85,6 +94,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ShowComadViewController *sc = [[ShowComadViewController alloc]init];
+    sc.hidesBottomBarWhenPushed = YES;
     [self.tabBarController.navigationController pushViewController:sc animated:YES];
 }
 

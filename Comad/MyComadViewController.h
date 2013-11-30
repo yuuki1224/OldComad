@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyComadViewController : UITableViewController
+@interface MyComadViewController : UITableViewController {
+    float iOSVersion;
+}
 
 @property (nonatomic, retain)NSArray *myComad;
 @end

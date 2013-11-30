@@ -21,11 +21,17 @@
 {
     self = [super initWithStyle:style];
     if (self) {
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         // Custom initialization
         self.view.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
         self.view.frame = CGRectMake(0, 127, 380, 400);
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        self.tableView.contentInset = UIEdgeInsetsMake(133, 0, 0, 0);
+        
+        if((int)iOSVersion == 7){
+            self.tableView.contentInset = UIEdgeInsetsMake(133, 0, 0, 0);
+        }else if((int)iOSVersion == 6){
+            self.tableView.contentInset = UIEdgeInsetsMake(105, 0, 0, 0);
+        }
     }
     return self;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "Header.h"
+#import "Image.h"
 
 @implementation Header
 
@@ -15,41 +16,68 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        CGRect windowSize = [[UIScreen mainScreen] bounds];
+        windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         
-        UIView *headerRect = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 77)];
-        headerRect.backgroundColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
-        
-        UIView *bottomBorder = [[UIView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, 1)];
-        bottomBorder.backgroundColor = [UIColor colorWithRed:0.608 green:0.624 blue:0.639 alpha:1.0];
-        
-        [self addSubview:headerRect];
-        [self addSubview:bottomBorder];
+        // iOS7
+        if((int)iOSVersion == 7){
+            UIView *headerRect = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 77)];
+            headerRect.backgroundColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
+            
+            UIView *bottomBorder = [[UIView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, 1)];
+            bottomBorder.backgroundColor = [UIColor colorWithRed:0.608 green:0.624 blue:0.639 alpha:1.0];
+            
+            [self addSubview:headerRect];
+            [self addSubview:bottomBorder];
+        //iOS6
+        }else if((int)iOSVersion == 6){
+            self.frame = CGRectMake(0, 0, windowSize.size.width, 48);
+            self.backgroundColor = [UIColor blackColor];
+            UIImage *headerImage = [UIImage imageNamed:@"headerForiOS6.png"];
+            UIImage *headerImageResize = [Image resizeImage:headerImage resizeWidth:windowSize.size.width resizeHeight: 48];
+            UIImageView *headerImageView = [[UIImageView alloc]initWithImage: headerImageResize];
+            headerImageView.frame = CGRectMake(0, 0, windowSize.size.width, 48);
+            [self addSubview: headerImageView];
+        }
     }
     return self;
 }
 
 - (void)setTitle:(NSString *)titleString {
-    CGRect windowSize = [[UIScreen mainScreen] bounds];
     UILabel *title = [[UILabel alloc]init];
     title.textColor = [UIColor whiteColor];
-    UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:20.0f];
+    UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:17.0f];
     title.font = font;
     title.text = titleString;
     title.backgroundColor = [UIColor colorWithRed:0.298 green:0.541 blue:0.925 alpha:1.0];
     [title sizeToFit];
-    float width = title.frame.size.width;
-    float height = title.frame.size.height;
-    title.frame = CGRectMake(windowSize.size.width/2 - width/2, 40, width, height);
+    
+    if((int)iOSVersion == 7){
+        title.frame = CGRectMake(windowSize.size.width/2 - title.frame.size.width/2, 40, title.frame.size.width, title.frame.size.height);
+    }else if ((int)iOSVersion == 6){
+        title.frame = CGRectMake(windowSize.size.width/2 - title.frame.size.width/2, 17, title.frame.size.width, title.frame.size.height);
+    }
     [self addSubview:title];
 }
 
+- (void)setComadTitle {
+    UIImage *comadLogo = [UIImage imageNamed:@"comadInHeader.png"];
+    UIImage *comadLogoResize = [Image resizeImage:comadLogo resizeWidth:97 resizeHeight:20];
+    UIImageView *comadLogoImageView = [[UIImageView alloc]initWithImage: comadLogo];
+    comadLogoImageView.frame = CGRectMake((windowSize.size.width - comadLogoResize.size.width)/2, 16, comadLogoResize.size.width, comadLogoResize.size.height);
+    [self addSubview: comadLogoImageView];
+}
+
 - (void)setButton:(NSString *)btnImageName {
-    CGRect windowSize = [[UIScreen mainScreen] bounds];
-    
     UIImage *buttonImage = [UIImage imageNamed:btnImageName];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btn.frame = CGRectMake(10, 10, 50, 50);
+    
+    if((int)iOSVersion == 7){
+        btn.frame = CGRectMake(10, 10, 50, 50);
+    }else if((int)iOSVersion == 6){
+        btn.frame = CGRectMake(10, 0, 50, 50);
+    }
+    
     [btn setImage:buttonImage forState:UIControlStateNormal];
     [self addSubview:btn];
 }

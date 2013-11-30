@@ -20,11 +20,18 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+        
         // Custom initializatio
         Header *header = [[Header alloc]init];
-        [header setTitle:@"コマド"];
+        if((int)iOSVersion == 7){
+            [header setTitle:@"コマド"];
+        }else if((int)iOSVersion == 6){
+            [header setComadTitle];
+            float statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+            header.frame = CGRectMake(0, statusBarHeight, windowSize.size.width, 48);
+        }
         [self.view addSubview: header];
         [self setAddFriendBtnInHeader];
         
@@ -34,10 +41,10 @@
         
         //Tabの背景色を載せるViewを作成
         //CGSize tabBarSize = [self.tabBar frame].size;
-        if(iOSVersion == 7.00){
+        if((int)iOSVersion == 7.00){
             self.tabBar.frame = CGRectMake(5, 82, windowSize.size.width - 10, 50);
-        }else{
-            self.tabBar.frame = CGRectMake(5, 130, windowSize.size.width - 10, 50);
+        }else if((int)iOSVersion == 6){
+            self.tabBar.frame = CGRectMake(5, 120, windowSize.size.width - 10, 50);
         }
         
         UIImage *tabBackImage = [UIImage imageNamed:@"comadTab1.png"];
@@ -53,6 +60,11 @@
 
 - (void)viewDidLoad
 {
+    iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if((int)iOSVersion == 6){
+        UIView * contentView = [[[self.tabBar superview] subviews] objectAtIndex:0];
+        contentView.frame = CGRectMake(0, 0, 320, 480);
+    }
     [self setInfo];
     [self configure];
     [super viewDidLoad];

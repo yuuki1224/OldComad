@@ -25,6 +25,7 @@
             }
             case EditProfileHeaderTitle:{
                 self.textColor = [UIColor colorWithRed:0.427 green:0.427 blue:0.447 alpha:1.0];
+                self.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
                 self.font = font;
                 break;
@@ -32,6 +33,7 @@
             case EditThumbnailMaskLabel:{
                 self.textColor = [UIColor whiteColor];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
+                self.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0];
                 self.font = font;
                 break;
             }
@@ -87,6 +89,7 @@
                 self.textColor = [UIColor colorWithRed:0.333 green:0.333 blue:0.333 alpha:1.0];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:16.0f];
                 self.font = font;
+                self.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0];
                 break;
             }
             case TableHeader:{

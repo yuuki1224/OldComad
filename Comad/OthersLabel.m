@@ -17,6 +17,7 @@
         // Initialization code
         self.textColor = [UIColor colorWithRed:0.188 green:0.239 blue:0.314 alpha:1.0];
         UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:11.0f];
+        self.backgroundColor = [UIColor colorWithRed:0.855 green:0.886 blue:0.929 alpha:1.0];
         self.font = font;
         self.text = name;
         [self sizeToFit];

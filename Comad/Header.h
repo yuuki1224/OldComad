@@ -11,11 +11,14 @@
 @protocol HeaderDelegate;
 
 @interface Header : UIView {
+    CGRect windowSize;
+    float iOSVersion;
 }
 
 @property (nonatomic, weak) id<HeaderDelegate> delegate;
 
 - (void)setTitle:(NSString *)titleString;
+- (void)setComadTitle;
 - (void)setButton:(NSString *)btnImageName;
 - (void)setBackBtn;
 @end

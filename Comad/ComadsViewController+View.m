@@ -50,11 +50,15 @@
 - (void)configure {
     float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     NSLog(@"iosVersion: %f", iOSVersion);
-    
+
     newComadTable = [[NewComadViewController alloc]init];
     dateComadTable = [[DateComadViewController alloc]init];
     popularComadTable = [[PopularComadViewController alloc]init];
     myComadTable = [[MyComadViewController alloc]init];
+
+    NSLog(@"tabbar Height: %f", self.tabBar.frame.size.height);
+    NSLog(@"newComad: %f", newComadTable.view.frame.size.height);
+    
    
     NSArray *tabs = [NSArray arrayWithObjects: newComadTable, dateComadTable, popularComadTable, myComadTable,nil];
     [self setViewControllers:tabs animated:NO];

@@ -13,6 +13,7 @@
 @interface ShowUserViewController : UIViewController {
     NSString *_name;
     CGRect windowSize;
+    float iOSVersion;
     BasicLabel *nameLabel;
     BasicLabel *userIdLabel;
     BasicLabel *occupationLabel;

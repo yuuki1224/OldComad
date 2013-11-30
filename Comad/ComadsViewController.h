@@ -14,6 +14,7 @@
 
 @interface ComadsViewController : UITabBarController {
     CGRect windowSize;
+    float iOSVersion;
     
     NewComadViewController *newComadTable;
     DateComadViewController *dateComadTable;

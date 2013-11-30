@@ -53,7 +53,13 @@
     friendsTable.delegate = self;
     
     windowSize = [[UIScreen mainScreen] bounds];
-    friendsTable.frame = CGRectMake(0, 78, windowSize.size.width, windowSize.size.height - 127);
+    if((int)iOSVersion == 7){
+        friendsTable.frame = CGRectMake(0, 78, windowSize.size.width, windowSize.size.height - 127);
+    }else if ((int)iOSVersion == 6){
+        float statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+        float tabHeight = [[[self tabBarController] rotatingFooterView] frame].size.height;
+        friendsTable.frame = CGRectMake(0, 48 + statusBarHeight, windowSize.size.width, (windowSize.size.height - statusBarHeight - tabHeight - 96));
+    }
     
     [self.view addSubview:friendsTable];
 }
@@ -256,6 +262,7 @@
         ShowUserViewController *sc =[[ShowUserViewController alloc]init];
         [sc setMe: YES];
         sc.userInfo = userInfo;
+        sc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:sc animated:YES];
     }else if (indexPath.section == 2){
         [self.delegate showModalView: userInfo];

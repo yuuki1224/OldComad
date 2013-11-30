@@ -22,6 +22,8 @@
 
 - (id)init {
     windowSize = [[UIScreen mainScreen] bounds];
+    iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    
     if (self = [super init]) {
         self.view.backgroundColor = [UIColor whiteColor];
         Header *header = [[Header alloc]init];
@@ -42,7 +44,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self reloadLabel];
-    [self.navigationController.tabBarController.tabBar setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +56,11 @@
     UIImage *image = [UIImage imageNamed:@"back.png"];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(15, 36, 20, 28);
+    if((int)iOSVersion == 7){
+        btn.frame = CGRectMake(15, 36, 20, 28);
+    }else if ((int)iOSVersion == 6){
+        btn.frame = CGRectMake(15, 11, 20, 28);
+    }
     [btn setImage:imageResize forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
     

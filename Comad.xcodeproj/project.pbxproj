@@ -34,9 +34,9 @@
 		BA21DFEF1847AAFD007F64FE /* commentIconGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE81847AAFD007F64FE /* commentIconGreen.png */; };
 		BA21DFF01847AAFD007F64FE /* commentIconBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFE91847AAFD007F64FE /* commentIconBlue.png */; };
 		BA21DFF11847AAFD007F64FE /* commentIconPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFEA1847AAFD007F64FE /* commentIconPurple.png */; };
-		BA21DFF61847CE8C007F64FE /* hoge_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF31847CE8C007F64FE /* hoge_05.png */; };
-		BA21DFF71847CE8C007F64FE /* hoge_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF41847CE8C007F64FE /* hoge_11.png */; };
-		BA21DFF81847CE8C007F64FE /* hoge_18.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF51847CE8C007F64FE /* hoge_18.png */; };
+		BA21DFF61847CE8C007F64FE /* comadInHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF31847CE8C007F64FE /* comadInHeader.png */; };
+		BA21DFF71847CE8C007F64FE /* plusForiOS6.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF41847CE8C007F64FE /* plusForiOS6.png */; };
+		BA21DFF81847CE8C007F64FE /* headerForiOS6.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF51847CE8C007F64FE /* headerForiOS6.png */; };
 		BA2A74AD180FBEFB00167837 /* yoshida.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A1180FBEFB00167837 /* yoshida.png */; };
 		BA2A74AE180FBEFB00167837 /* nakagawa.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A2180FBEFB00167837 /* nakagawa.png */; };
 		BA2A74AF180FBEFB00167837 /* sato.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A3180FBEFB00167837 /* sato.png */; };
@@ -75,7 +75,6 @@
 		BA5151B018095FEC00FD69D8 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151AF18095FEC00FD69D8 /* FriendsViewController.m */; };
 		BA5151B318095FFB00FD69D8 /* OthersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151B218095FFB00FD69D8 /* OthersViewController.m */; };
 		BA5151B6180964CD00FD69D8 /* ComadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151B5180964CD00FD69D8 /* ComadAppDelegate.m */; };
-		BA5151BD1809A62400FD69D8 /* Works.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151BC1809A62400FD69D8 /* Works.m */; };
 		BA5151C01809B1C200FD69D8 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151BF1809B1C200FD69D8 /* FriendCell.m */; };
 		BA5151CC180A5C9400FD69D8 /* UserModal.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151CB180A5C9400FD69D8 /* UserModal.m */; };
 		BA5151DB180ADD5E00FD69D8 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5151DA180ADD5E00FD69D8 /* settings.png */; };
@@ -236,9 +235,9 @@
 		BA21DFE81847AAFD007F64FE /* commentIconGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconGreen.png; sourceTree = "<group>"; };
 		BA21DFE91847AAFD007F64FE /* commentIconBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconBlue.png; sourceTree = "<group>"; };
 		BA21DFEA1847AAFD007F64FE /* commentIconPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentIconPurple.png; sourceTree = "<group>"; };
-		BA21DFF31847CE8C007F64FE /* hoge_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoge_05.png; sourceTree = "<group>"; };
-		BA21DFF41847CE8C007F64FE /* hoge_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoge_11.png; sourceTree = "<group>"; };
-		BA21DFF51847CE8C007F64FE /* hoge_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hoge_18.png; sourceTree = "<group>"; };
+		BA21DFF31847CE8C007F64FE /* comadInHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comadInHeader.png; sourceTree = "<group>"; };
+		BA21DFF41847CE8C007F64FE /* plusForiOS6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusForiOS6.png; sourceTree = "<group>"; };
+		BA21DFF51847CE8C007F64FE /* headerForiOS6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerForiOS6.png; sourceTree = "<group>"; };
 		BA2A74A1180FBEFB00167837 /* yoshida.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoshida.png; sourceTree = "<group>"; };
 		BA2A74A2180FBEFB00167837 /* nakagawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nakagawa.png; sourceTree = "<group>"; };
 		BA2A74A3180FBEFB00167837 /* sato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sato.png; sourceTree = "<group>"; };
@@ -287,8 +286,6 @@
 		BA5151B218095FFB00FD69D8 /* OthersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthersViewController.m; sourceTree = "<group>"; };
 		BA5151B4180964CD00FD69D8 /* ComadAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadAppDelegate.h; sourceTree = "<group>"; };
 		BA5151B5180964CD00FD69D8 /* ComadAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadAppDelegate.m; sourceTree = "<group>"; };
-		BA5151BB1809A62400FD69D8 /* Works.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Works.h; sourceTree = "<group>"; };
-		BA5151BC1809A62400FD69D8 /* Works.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Works.m; sourceTree = "<group>"; };
 		BA5151BE1809B1C200FD69D8 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
 		BA5151BF1809B1C200FD69D8 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
 		BA5151CA180A5C9400FD69D8 /* UserModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModal.h; sourceTree = "<group>"; };
@@ -523,9 +520,9 @@
 		BA21DFF21847CE74007F64FE /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				BA21DFF31847CE8C007F64FE /* hoge_05.png */,
-				BA21DFF41847CE8C007F64FE /* hoge_11.png */,
-				BA21DFF51847CE8C007F64FE /* hoge_18.png */,
+				BA21DFF31847CE8C007F64FE /* comadInHeader.png */,
+				BA21DFF41847CE8C007F64FE /* plusForiOS6.png */,
+				BA21DFF51847CE8C007F64FE /* headerForiOS6.png */,
 			);
 			name = Header;
 			sourceTree = "<group>";
@@ -778,8 +775,6 @@
 		BA5151FA180C13FF00FD69D8 /* Comads */ = {
 			isa = PBXGroup;
 			children = (
-				BA5151BB1809A62400FD69D8 /* Works.h */,
-				BA5151BC1809A62400FD69D8 /* Works.m */,
 				BA2A74B9180FC5A200167837 /* ComadCell.h */,
 				BA2A74BA180FC5A200167837 /* ComadCell.m */,
 				BA21DFBC18474E7D007F64FE /* NewComadViewController.h */,
@@ -1082,7 +1077,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA21DFF71847CE8C007F64FE /* hoge_11.png in Resources */,
+				BA21DFF71847CE8C007F64FE /* plusForiOS6.png in Resources */,
 				BA74F941183B9D9C00FE4629 /* misawa.png in Resources */,
 				BAD4AF04180F16E40068104B /* asano.png in Resources */,
 				BA21DFF01847AAFD007F64FE /* commentIconBlue.png in Resources */,
@@ -1135,7 +1130,7 @@
 				BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */,
 				BA2A74C618118C2200167837 /* kobayashi.png in Resources */,
 				BA2A74B4180FBEFB00167837 /* bosscolle.png in Resources */,
-				BA21DFF81847CE8C007F64FE /* hoge_18.png in Resources */,
+				BA21DFF81847CE8C007F64FE /* headerForiOS6.png in Resources */,
 				BA74F945183B9E2300FE4629 /* nikochan.png in Resources */,
 				BADD959E182901C000DAB12F /* OthersHistory.png in Resources */,
 				BA2A74AF180FBEFB00167837 /* sato.png in Resources */,
@@ -1153,7 +1148,7 @@
 				BADD959F182901C000DAB12F /* OthersMap.png in Resources */,
 				BAB147111837CCB60078486B /* addFriendMenu.png in Resources */,
 				BA2A74CD1815059B00167837 /* modal3.png in Resources */,
-				BA21DFF61847CE8C007F64FE /* hoge_05.png in Resources */,
+				BA21DFF61847CE8C007F64FE /* comadInHeader.png in Resources */,
 				BA21DFEB1847AAFD007F64FE /* datetimeIcon.png in Resources */,
 				BA21DFD618479E4B007F64FE /* comadTab2.png in Resources */,
 				BA515175180900E200FD69D8 /* InfoPlist.strings in Resources */,
@@ -1214,7 +1209,6 @@
 				BA5151C01809B1C200FD69D8 /* FriendCell.m in Sources */,
 				BADD95331825014900DAB12F /* MapViewController.m in Sources */,
 				BA5151F0180C11BE00FD69D8 /* ShowUserViewController.m in Sources */,
-				BA5151BD1809A62400FD69D8 /* Works.m in Sources */,
 				BADD95B2182F4B5400DAB12F /* Conversation.m in Sources */,
 				BAB147201839D41F0078486B /* IdSearchViewController+View.m in Sources */,
 				BADD958E1828F66A00DAB12F /* NotificationSettingsViewController.m in Sources */,
@@ -1420,6 +1414,7 @@
 				INFOPLIST_FILE = "Comad/Comad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1438,6 +1433,7 @@
 				INFOPLIST_FILE = "Comad/Comad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

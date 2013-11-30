@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface NewComadViewController : UITableViewController {
+    CGRect windowSize;
+    float iOSVersion;
 }
 
 @property (nonatomic, retain)NSArray *NewComad;

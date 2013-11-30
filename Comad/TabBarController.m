@@ -140,6 +140,7 @@
     NSLog(@"userModal: %@", userModal.userInfo);
     [sc setMe: NO];
     sc.userInfo = userModal.userInfo;
+    sc.hidesBottomBarWhenPushed = YES;
     [fc.navigationController pushViewController:sc animated:YES];
 }
 
@@ -149,8 +150,7 @@
     [blackMask removeFromSuperview];
     
     CreateComadViewController *cc = [[CreateComadViewController alloc]init];
-    LoginViewController *lc = [[LoginViewController alloc]init];
-    [fc.navigationController.tabBarController.tabBar setHidden:YES];
+    cc.hidesBottomBarWhenPushed = YES;
     [fc.navigationController pushViewController:cc animated:YES];
 }
 
@@ -169,7 +169,8 @@
     MessageViewController *mc = [[MessageViewController alloc]init];
     mc.type = PrivateMessage;
     mc.friendId = friendId;
-    [fc.navigationController pushViewController:mc animated:YES];
+    mc.hidesBottomBarWhenPushed = YES;
     NSLog(@"friendId, %d", friendId);
+    
 }
 @end

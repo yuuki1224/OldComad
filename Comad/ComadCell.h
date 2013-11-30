@@ -10,6 +10,7 @@
 
 @interface ComadCell : UITableViewCell {
     CGRect windowSize;
+    float iOSVersion;
 }
 
 @property (nonatomic, retain)NSDictionary *comadInfo;
