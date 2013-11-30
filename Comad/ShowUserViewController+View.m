@@ -14,14 +14,15 @@
 @implementation ShowUserViewController (View)
 
 - (void)configure {
-    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     scrollView = [[UIScrollView alloc]init];
-    if(iOSVersion == 7.00){
+    if((int)iOSVersion == 7){
         scrollView.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77);
-    }else{
-        scrollView.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height);
+        scrollView.contentSize = CGSizeMake(windowSize.size.width, 640);
+    }else if((int)iOSVersion == 6){
+        scrollView.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height);
+        scrollView.contentSize = CGSizeMake(windowSize.size.width, 710);
     }
-    scrollView.contentSize = CGSizeMake(windowSize.size.width, 610);
     [self.view addSubview: scrollView];
     
     nameLabel = [[BasicLabel alloc]initWithName:ShowUserName];
@@ -54,9 +55,13 @@
 }
 
 -(void)reloadLabel {
+    iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *userInfo = [userDefaults valueForKey:@"user"];
     
+    NSLog(@"ここがUserinfoだあああああ %@", userInfo);
+    
+    //名前, comadId, 職業の設定
     if(self.me){
         nameLabel.text = [userInfo objectForKey:@"name"];
         
@@ -93,19 +98,32 @@
         
     }
     
+    //サムネイル
     UIImage *thumbnailImage = [UIImage imageNamed:[self.userInfo objectForKey:@"image_name"]];
     UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:78 resizeHeight:78];
     UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImageResize];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
-    thumbnail.frame = CGRectMake(windowSize.size.width/2 - 39, 16, 78, 78);
+    
+    //ここの分岐がいるのか
+    if((int)iOSVersion == 7){
+        thumbnail.frame = CGRectMake(windowSize.size.width/2 - 39, 16, 78, 78);
+    }else if((int)iOSVersion == 6){
+        thumbnail.frame = CGRectMake(windowSize.size.width/2 - 39, 16, 78, 78);
+    }
     thumbnail.layer.cornerRadius = 14.0f;
     
     [scrollView addSubview:thumbnail];
     
+    //それぞれのボタンの設定
     if(self.me){
         //マイページ
-        UIButton *editProfileBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *editProfileBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
+        if((int)iOSVersion == 7){
+
+        }else if((int)iOSVersion == 6){
+            [editProfileBtn setTitleEdgeInsets:UIEdgeInsetsMake(7, 0, 0, 0)];
+        }
         [editProfileBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [editProfileBtn setFont:[UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f]];
         [editProfileBtn setTitle:@"プロフィール編集" forState:UIControlStateNormal];
@@ -115,7 +133,6 @@
         [editProfileBtn setClipsToBounds:YES];
         [editProfileBtn addTarget:self action:@selector(editProfileBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
         
-        //[btn setImage:buttonImage forState:UIControlStateNormal];
         [scrollView addSubview:editProfileBtn];
         
         [showUserList setContent:[self.userInfo objectForKey:@"description"]];
@@ -125,8 +142,15 @@
         [question3 setContent:[userInfo objectForKey:@"question3"]];
         [question4 setContent:[userInfo objectForKey:@"question4"]];
     }else{
-        UIButton *inviteComadBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        UIButton *sendMessageBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *inviteComadBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIButton *sendMessageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        if((int)iOSVersion == 7){
+            
+        }else if((int)iOSVersion == 6){
+            [inviteComadBtn setTitleEdgeInsets:UIEdgeInsetsMake(7, 0, 0, 0)];
+            [sendMessageBtn setTitleEdgeInsets:UIEdgeInsetsMake(7, 0, 0, 0)];
+        }
         
         [inviteComadBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [sendMessageBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
