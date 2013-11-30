@@ -31,6 +31,8 @@
 - (void)viewDidLoad
 {
     windowSize = [[UIScreen mainScreen] bounds];
+    iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
@@ -41,7 +43,12 @@
     
     RoundedButton *button = [[RoundedButton alloc]initWithName: HeaderDone];
     [button setTitleInButton:@"完了"];
-    button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
+    if((int)iOSVersion == 7){
+        button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
+    }else if((int)iOSVersion == 6){
+        button.frame = CGRectMake(windowSize.size.width - 60, 10, 48, 28);
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(10, 0, 0, 0)];
+    }
     [button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
@@ -58,7 +65,11 @@
     UIImage *image = [UIImage imageNamed:@"back.png"];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(15, 36, 20, 28);
+    if((int)iOSVersion == 7){
+        btn.frame = CGRectMake(15, 36, 20, 28);
+    }else if ((int)iOSVersion == 6){
+        btn.frame = CGRectMake(15, 11, 20, 28);
+    }
     [btn setImage:imageResize forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
     

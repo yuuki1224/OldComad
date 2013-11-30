@@ -13,6 +13,7 @@
 
 @interface EditProfileFormViewController : UIViewController<UITextFieldDelegate> {
     CGRect windowSize;
+    float iOSVersion;
     UITextField *tv;
 }
 @property (nonatomic, weak) id<EditProfileFormDelegate> delegate;
