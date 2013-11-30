@@ -16,7 +16,16 @@
     AddFriendMenu *menu = [[AddFriendMenu alloc]init];
     menu.delegate = self;
     
-    UIView *createGroup = [[UIView alloc]initWithFrame:CGRectMake(0, 164, windowSize.size.width, 46)];
+    if((int)iOSVersion == 6){
+        menu.frame = CGRectMake(0, 48, windowSize.size.width, 87);
+    }
+    
+    UIView *createGroup = [[UIView alloc] init];
+    if((int)iOSVersion == 7){
+        createGroup.frame = CGRectMake(0, 164, windowSize.size.width, 46);
+    }else if((int)iOSVersion == 6){
+        createGroup.frame = CGRectMake(0, 135, windowSize.size.width, 46);
+    }
     createGroup.backgroundColor = [UIColor colorWithRed:0.796 green:0.816 blue:0.839 alpha:1.0];
     BasicLabel *createGroupLabel = [[BasicLabel alloc]initWithName: AddFriendCreateGroup];
     BasicLabel *createGroupAccessory = [[BasicLabel alloc]initWithName: AddFriendCreateGroup];
@@ -24,9 +33,13 @@
     [createGroupAccessory setText:@">"];
     [createGroupLabel sizeToFit];
     [createGroupAccessory sizeToFit];
-    
-    createGroupLabel.frame = CGRectMake(20, (46 - createGroupLabel.frame.size.height)/2, createGroupLabel.frame.size.width, createGroupLabel.frame.size.height);
-    createGroupAccessory.frame = CGRectMake(windowSize.size.width - 25, (46 - createGroupLabel.frame.size.height)/2, createGroupAccessory.frame.size.width, createGroupAccessory.frame.size.height);
+    if((int)iOSVersion == 7){
+        createGroupLabel.frame = CGRectMake(20, (46 - createGroupLabel.frame.size.height)/2, createGroupLabel.frame.size.width, createGroupLabel.frame.size.height);
+        createGroupAccessory.frame = CGRectMake(windowSize.size.width - 25, (46 - createGroupLabel.frame.size.height)/2, createGroupAccessory.frame.size.width, createGroupAccessory.frame.size.height);
+    }else if ((int)iOSVersion == 6){
+        createGroupLabel.frame = CGRectMake(20, 16, createGroupLabel.frame.size.width, createGroupLabel.frame.size.height);
+        createGroupAccessory.frame = CGRectMake(windowSize.size.width - 25, 15, createGroupAccessory.frame.size.width, createGroupAccessory.frame.size.height);
+    }
     
     [createGroup addSubview: createGroupLabel];
     [createGroup addSubview: createGroupAccessory];
@@ -34,7 +47,12 @@
     UITapGestureRecognizer *createGroupRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createGroupClicked:)];
     [createGroup addGestureRecognizer: createGroupRecognizer];
     
-    UITableView *addFriendsTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, windowSize.size.height)];
+    UITableView *addFriendsTable = [[UITableView alloc]init];
+    if((int)iOSVersion == 7){
+        addFriendsTable.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height);
+    }else if((int)iOSVersion == 6){
+        addFriendsTable.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height);
+    }
     addFriendsTable.delegate = self;
     addFriendsTable.dataSource = self;
     addFriendsTable.contentInset = UIEdgeInsetsMake(133, 0, 0, 0);
@@ -126,7 +144,7 @@
 
 //ヘッダーの高さ
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 30;
+    return 35;
 }
 
 //フッターの高さ
@@ -145,6 +163,7 @@
     }
     [headerLabel sizeToFit];
     headerLabel.frame = CGRectMake(10, 10, headerLabel.frame.size.width, headerLabel.frame.size.height);
+    headerLabel.backgroundColor = [UIColor colorWithRed:0.965 green:0.969 blue:0.973 alpha:1.0];
     [header addSubview:headerLabel];
     return header;
 }

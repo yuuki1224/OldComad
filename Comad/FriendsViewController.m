@@ -94,6 +94,7 @@
 
 - (void)addFriendBtnClicked:(UIButton *)button {
     AddFriendViewController *ac = [[AddFriendViewController alloc]init];
+    ac.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:ac animated:YES];
 }
 

@@ -64,7 +64,6 @@
     [self.view addSubview:friendsTable];
 }
 
-
 //For tableViewDataSource
 //セクションの中のセルの数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

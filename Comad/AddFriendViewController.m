@@ -31,6 +31,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         // Custom initialization
     }
     return self;
@@ -71,7 +72,11 @@
     UIImage *image = [UIImage imageNamed:@"back.png"];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(15, 36, 20, 28);
+    if((int)iOSVersion == 7){
+        btn.frame = CGRectMake(15, 36, 20, 28);
+    }else if ((int)iOSVersion == 6){
+        btn.frame = CGRectMake(15, 11, 20, 28);
+    }
     [btn setImage:imageResize forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
     

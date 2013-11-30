@@ -14,6 +14,7 @@
 
 @interface AddFriendViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, AddFriendMenuDelegate, UserModalDelegate, FriendCellDelegate> {
     CGRect windowSize;
+    float iOSVersion;
     UserModal *userModal;
     BlackMask *blackMask;
     NSArray *facebookFriends;

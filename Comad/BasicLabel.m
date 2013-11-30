@@ -83,6 +83,7 @@
                 self.textColor = [UIColor whiteColor];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
                 self.font = font;
+                self.backgroundColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
                 break;
             }
             case AddFriendCreateGroup:{

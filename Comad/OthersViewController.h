@@ -8,5 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OthersViewController : UITabBarController
+@interface OthersViewController : UITabBarController {
+    CGRect windowSize;
+    float iOSVersion;
+}
 @end

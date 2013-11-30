@@ -30,15 +30,28 @@
     if (self) {
         // Custom initialization
         self.view.backgroundColor = [UIColor colorWithRed:0.855 green:0.886 blue:0.929 alpha:1.0];
-        CGRect windowSize = [[UIScreen mainScreen] bounds];
+        windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         
         Header *header = [[Header alloc]init];
         [header setTitle:@"その他"];
         
+        float statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+        if((int)iOSVersion == 6){
+            header.frame = CGRectMake(0, statusBarHeight, windowSize.size.width, 48);
+        }
+        
         [self.view addSubview: header];
         
         Account *accountView = [[Account alloc]init];
-        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 279, windowSize.size.width, 2)];
+        if((int)iOSVersion == 6){
+            //statusbarの裏を黒に
+            UIView *statusBar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, statusBarHeight)];
+            statusBar.backgroundColor = [UIColor blackColor];
+            [self.view addSubview: statusBar];
+            accountView.frame = CGRectMake(0, 48 + statusBarHeight, windowSize.size.width, accountView.frame.size.height);
+        }
+        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, accountView.frame.origin.y + accountView.frame.size.height, windowSize.size.width, 2)];
         line.backgroundColor = [[UIColor alloc]initWithRed:0.702 green:0.729 blue:0.769 alpha:1.0];
         
         //userDefaultからuserInfoを取りにいってセット
