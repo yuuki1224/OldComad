@@ -37,6 +37,26 @@
 		BA21DFF61847CE8C007F64FE /* comadInHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF31847CE8C007F64FE /* comadInHeader.png */; };
 		BA21DFF71847CE8C007F64FE /* plusForiOS6.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF41847CE8C007F64FE /* plusForiOS6.png */; };
 		BA21DFF81847CE8C007F64FE /* headerForiOS6.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21DFF51847CE8C007F64FE /* headerForiOS6.png */; };
+		BA21DFFB184B2767007F64FE /* AddComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFFA184B2767007F64FE /* AddComadViewController.m */; };
+		BA21DFFE184B286E007F64FE /* AddComadViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFFD184B286E007F64FE /* AddComadViewController+View.m */; };
+		BA21E001184B9C9D007F64FE /* TweetButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21E000184B9C9D007F64FE /* TweetButton.m */; };
+		BA21E007184B9D5C007F64FE /* onBack.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E003184B9D5C007F64FE /* onBack.png */; };
+		BA21E008184B9D5C007F64FE /* onCover.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E004184B9D5C007F64FE /* onCover.png */; };
+		BA21E009184B9D5C007F64FE /* offCover.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E005184B9D5C007F64FE /* offCover.png */; };
+		BA21E00A184B9D5C007F64FE /* offBack.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E006184B9D5C007F64FE /* offBack.png */; };
+		BA21E00D184BAD43007F64FE /* TimeSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21E00C184BAD43007F64FE /* TimeSelectButton.m */; };
+		BA21E011184BAEE5007F64FE /* anytimeOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E00F184BAEE5007F64FE /* anytimeOff.png */; };
+		BA21E012184BAEE5007F64FE /* anytimeOn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E010184BAEE5007F64FE /* anytimeOn.png */; };
+		BA21E015184BAEF9007F64FE /* futureOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E013184BAEF9007F64FE /* futureOff.png */; };
+		BA21E016184BAEF9007F64FE /* futureOn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E014184BAEF9007F64FE /* futureOn.png */; };
+		BA21E01D184BAF0F007F64FE /* nowOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E017184BAF0F007F64FE /* nowOff.png */; };
+		BA21E01E184BAF0F007F64FE /* nowOn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E018184BAF0F007F64FE /* nowOn.png */; };
+		BA21E01F184BAF0F007F64FE /* todayOn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E019184BAF0F007F64FE /* todayOn.png */; };
+		BA21E020184BAF0F007F64FE /* todayOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E01A184BAF0F007F64FE /* todayOff.png */; };
+		BA21E021184BAF0F007F64FE /* tommorowOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E01B184BAF0F007F64FE /* tommorowOff.png */; };
+		BA21E022184BAF0F007F64FE /* tommorowOn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E01C184BAF0F007F64FE /* tommorowOn.png */; };
+		BA21E025184BB8E7007F64FE /* addComadBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E023184BB8E7007F64FE /* addComadBubble.png */; };
+		BA21E026184BB8E7007F64FE /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E024184BB8E7007F64FE /* cell.png */; };
 		BA2A74AD180FBEFB00167837 /* yoshida.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A1180FBEFB00167837 /* yoshida.png */; };
 		BA2A74AE180FBEFB00167837 /* nakagawa.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A2180FBEFB00167837 /* nakagawa.png */; };
 		BA2A74AF180FBEFB00167837 /* sato.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74A3180FBEFB00167837 /* sato.png */; };
@@ -238,6 +258,29 @@
 		BA21DFF31847CE8C007F64FE /* comadInHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comadInHeader.png; sourceTree = "<group>"; };
 		BA21DFF41847CE8C007F64FE /* plusForiOS6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusForiOS6.png; sourceTree = "<group>"; };
 		BA21DFF51847CE8C007F64FE /* headerForiOS6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headerForiOS6.png; sourceTree = "<group>"; };
+		BA21DFF9184B2767007F64FE /* AddComadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddComadViewController.h; sourceTree = "<group>"; };
+		BA21DFFA184B2767007F64FE /* AddComadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddComadViewController.m; sourceTree = "<group>"; };
+		BA21DFFD184B286E007F64FE /* AddComadViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AddComadViewController+View.m"; sourceTree = "<group>"; };
+		BA21DFFF184B9C9D007F64FE /* TweetButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetButton.h; sourceTree = "<group>"; };
+		BA21E000184B9C9D007F64FE /* TweetButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetButton.m; sourceTree = "<group>"; };
+		BA21E003184B9D5C007F64FE /* onBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onBack.png; sourceTree = "<group>"; };
+		BA21E004184B9D5C007F64FE /* onCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onCover.png; sourceTree = "<group>"; };
+		BA21E005184B9D5C007F64FE /* offCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offCover.png; sourceTree = "<group>"; };
+		BA21E006184B9D5C007F64FE /* offBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offBack.png; sourceTree = "<group>"; };
+		BA21E00B184BAD43007F64FE /* TimeSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSelectButton.h; sourceTree = "<group>"; };
+		BA21E00C184BAD43007F64FE /* TimeSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeSelectButton.m; sourceTree = "<group>"; };
+		BA21E00F184BAEE5007F64FE /* anytimeOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anytimeOff.png; sourceTree = "<group>"; };
+		BA21E010184BAEE5007F64FE /* anytimeOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anytimeOn.png; sourceTree = "<group>"; };
+		BA21E013184BAEF9007F64FE /* futureOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = futureOff.png; sourceTree = "<group>"; };
+		BA21E014184BAEF9007F64FE /* futureOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = futureOn.png; sourceTree = "<group>"; };
+		BA21E017184BAF0F007F64FE /* nowOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nowOff.png; sourceTree = "<group>"; };
+		BA21E018184BAF0F007F64FE /* nowOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nowOn.png; sourceTree = "<group>"; };
+		BA21E019184BAF0F007F64FE /* todayOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todayOn.png; sourceTree = "<group>"; };
+		BA21E01A184BAF0F007F64FE /* todayOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todayOff.png; sourceTree = "<group>"; };
+		BA21E01B184BAF0F007F64FE /* tommorowOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tommorowOff.png; sourceTree = "<group>"; };
+		BA21E01C184BAF0F007F64FE /* tommorowOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tommorowOn.png; sourceTree = "<group>"; };
+		BA21E023184BB8E7007F64FE /* addComadBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addComadBubble.png; sourceTree = "<group>"; };
+		BA21E024184BB8E7007F64FE /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
 		BA2A74A1180FBEFB00167837 /* yoshida.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoshida.png; sourceTree = "<group>"; };
 		BA2A74A2180FBEFB00167837 /* nakagawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nakagawa.png; sourceTree = "<group>"; };
 		BA2A74A3180FBEFB00167837 /* sato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sato.png; sourceTree = "<group>"; };
@@ -527,6 +570,34 @@
 			name = Header;
 			sourceTree = "<group>";
 		};
+		BA21E002184B9D40007F64FE /* Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				BA21E003184B9D5C007F64FE /* onBack.png */,
+				BA21E004184B9D5C007F64FE /* onCover.png */,
+				BA21E006184B9D5C007F64FE /* offBack.png */,
+				BA21E005184B9D5C007F64FE /* offCover.png */,
+			);
+			name = Tweet;
+			sourceTree = "<group>";
+		};
+		BA21E00E184BAEB8007F64FE /* SelectTime */ = {
+			isa = PBXGroup;
+			children = (
+				BA21E017184BAF0F007F64FE /* nowOff.png */,
+				BA21E018184BAF0F007F64FE /* nowOn.png */,
+				BA21E019184BAF0F007F64FE /* todayOn.png */,
+				BA21E01A184BAF0F007F64FE /* todayOff.png */,
+				BA21E01B184BAF0F007F64FE /* tommorowOff.png */,
+				BA21E01C184BAF0F007F64FE /* tommorowOn.png */,
+				BA21E013184BAEF9007F64FE /* futureOff.png */,
+				BA21E014184BAEF9007F64FE /* futureOn.png */,
+				BA21E00F184BAEE5007F64FE /* anytimeOff.png */,
+				BA21E010184BAEE5007F64FE /* anytimeOn.png */,
+			);
+			name = SelectTime;
+			sourceTree = "<group>";
+		};
 		BA2A74A0180FB0C800167837 /* profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,6 +747,10 @@
 		BA5151C31809B5AB00FD69D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA21E023184BB8E7007F64FE /* addComadBubble.png */,
+				BA21E024184BB8E7007F64FE /* cell.png */,
+				BA21E00E184BAEB8007F64FE /* SelectTime */,
+				BA21E002184B9D40007F64FE /* Tweet */,
 				BA21DFF21847CE74007F64FE /* Header */,
 				BA21DFD91847AA8C007F64FE /* ComadCell */,
 				BA21DFC818477416007F64FE /* ComadsTab */,
@@ -751,6 +826,9 @@
 				BADD95351825016100DAB12F /* HistoryViewController.m */,
 				BADD9549182561D700DAB12F /* CreateComadViewController.h */,
 				BADD954A182561D700DAB12F /* CreateComadViewController.m */,
+				BA21DFF9184B2767007F64FE /* AddComadViewController.h */,
+				BA21DFFA184B2767007F64FE /* AddComadViewController.m */,
+				BA21DFFD184B286E007F64FE /* AddComadViewController+View.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -854,6 +932,10 @@
 				BA74F936183B7E7400FE4629 /* SpecialMoji.h */,
 				BA74F937183B7E7500FE4629 /* SpecialMoji.m */,
 				BADD95D01832001B00DAB12F /* Basic.h */,
+				BA21DFFF184B9C9D007F64FE /* TweetButton.h */,
+				BA21E000184B9C9D007F64FE /* TweetButton.m */,
+				BA21E00B184BAD43007F64FE /* TimeSelectButton.h */,
+				BA21E00C184BAD43007F64FE /* TimeSelectButton.m */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -1077,7 +1159,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA21E026184BB8E7007F64FE /* cell.png in Resources */,
 				BA21DFF71847CE8C007F64FE /* plusForiOS6.png in Resources */,
+				BA21E007184B9D5C007F64FE /* onBack.png in Resources */,
 				BA74F941183B9D9C00FE4629 /* misawa.png in Resources */,
 				BAD4AF04180F16E40068104B /* asano.png in Resources */,
 				BA21DFF01847AAFD007F64FE /* commentIconBlue.png in Resources */,
@@ -1092,6 +1176,7 @@
 				BA2A74B8180FBEFB00167837 /* asano2.png in Resources */,
 				BA2A74AD180FBEFB00167837 /* yoshida.png in Resources */,
 				BA2A74B1180FBEFB00167837 /* campus.png in Resources */,
+				BA21E01D184BAF0F007F64FE /* nowOff.png in Resources */,
 				BA2A74B7180FBEFB00167837 /* picola.png in Resources */,
 				BA74F93D183B9C6E00FE4629 /* Stamp.plist in Resources */,
 				BA2A74C81814291A00167837 /* adachi.png in Resources */,
@@ -1103,11 +1188,17 @@
 				BA21DFD518479E4B007F64FE /* comadTab1.png in Resources */,
 				BA2A74D91816166C00167837 /* modalInvite.png in Resources */,
 				BADD95A2182901C000DAB12F /* OthersMyPage.png in Resources */,
+				BA21E020184BAF0F007F64FE /* todayOff.png in Resources */,
 				BA51521E180E59C100FD69D8 /* tab1.png in Resources */,
+				BA21E01F184BAF0F007F64FE /* todayOn.png in Resources */,
+				BA21E015184BAEF9007F64FE /* futureOff.png in Resources */,
 				BA2A74AE180FBEFB00167837 /* nakagawa.png in Resources */,
+				BA21E008184B9D5C007F64FE /* onCover.png in Resources */,
 				BA515206180C191F00FD69D8 /* plus.png in Resources */,
 				BA74F935183B6B4C00FE4629 /* addInCreateGroup.png in Resources */,
+				BA21E00A184B9D5C007F64FE /* offBack.png in Resources */,
 				BAE4829E1819888F00BB1456 /* Default-568h@2x.png in Resources */,
+				BA21E021184BAF0F007F64FE /* tommorowOff.png in Resources */,
 				BA21DFE31847AABF007F64FE /* futureRibbon.png in Resources */,
 				BA51521C180E59C100FD69D8 /* tab3.png in Resources */,
 				BA21DFEF1847AAFD007F64FE /* commentIconGreen.png in Resources */,
@@ -1126,10 +1217,14 @@
 				BA21DFE11847AAA8007F64FE /* wheneverRibbon.png in Resources */,
 				BA2A74D1181506BD00167837 /* close.png in Resources */,
 				BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */,
+				BA21E011184BAEE5007F64FE /* anytimeOff.png in Resources */,
 				BAE482B7181D859B00BB1456 /* hayashi.png in Resources */,
 				BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */,
+				BA21E009184B9D5C007F64FE /* offCover.png in Resources */,
 				BA2A74C618118C2200167837 /* kobayashi.png in Resources */,
 				BA2A74B4180FBEFB00167837 /* bosscolle.png in Resources */,
+				BA21E016184BAEF9007F64FE /* futureOn.png in Resources */,
+				BA21E025184BB8E7007F64FE /* addComadBubble.png in Resources */,
 				BA21DFF81847CE8C007F64FE /* headerForiOS6.png in Resources */,
 				BA74F945183B9E2300FE4629 /* nikochan.png in Resources */,
 				BADD959E182901C000DAB12F /* OthersHistory.png in Resources */,
@@ -1138,8 +1233,10 @@
 				BA2A74B5180FBEFB00167837 /* arduino.png in Resources */,
 				BADD95A9182A4FF100DAB12F /* createComad.png in Resources */,
 				BA21DFEE1847AAFD007F64FE /* commentIconOrange.png in Resources */,
+				BA21E022184BAF0F007F64FE /* tommorowOn.png in Resources */,
 				BADD95A0182901C000DAB12F /* OthersMessage.png in Resources */,
 				BA21DFD818479E4B007F64FE /* comadTab4.png in Resources */,
+				BA21E012184BAEE5007F64FE /* anytimeOn.png in Resources */,
 				BA2A74B6180FBEFB00167837 /* kimisaki.png in Resources */,
 				BA2A74D5181613E000167837 /* modalMessage.png in Resources */,
 				BA21DFEC1847AAFD007F64FE /* locationIcon.png in Resources */,
@@ -1153,6 +1250,7 @@
 				BA21DFD618479E4B007F64FE /* comadTab2.png in Resources */,
 				BA515175180900E200FD69D8 /* InfoPlist.strings in Resources */,
 				BADD95A3182901C000DAB12F /* OthersSettings.png in Resources */,
+				BA21E01E184BAF0F007F64FE /* nowOn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1212,6 +1310,7 @@
 				BADD95B2182F4B5400DAB12F /* Conversation.m in Sources */,
 				BAB147201839D41F0078486B /* IdSearchViewController+View.m in Sources */,
 				BADD958E1828F66A00DAB12F /* NotificationSettingsViewController.m in Sources */,
+				BA21E00D184BAD43007F64FE /* TimeSelectButton.m in Sources */,
 				BADD955C18263C6C00DAB12F /* EditLoacationFormViewController.m in Sources */,
 				BADD955F18263CA900DAB12F /* EditLimitFormViewController.m in Sources */,
 				BA74F952183F743F00FE4629 /* Stamp.m in Sources */,
@@ -1272,13 +1371,16 @@
 				BADD956218263CE200DAB12F /* EditGroupOnlyFormViewController.m in Sources */,
 				BA515177180900E200FD69D8 /* main.m in Sources */,
 				BADD95AC182A59AD00DAB12F /* MessagesListViewController+View.m in Sources */,
+				BA21DFFE184B286E007F64FE /* AddComadViewController+View.m in Sources */,
 				BA2A74C118102C7800167837 /* FriendJsonClient.m in Sources */,
 				BADD954E182574AE00DAB12F /* CreateComadFormCell.m in Sources */,
 				BA51520A180C5B1100FD69D8 /* BlackMask.m in Sources */,
 				BA03F62918375D35001E9BBE /* AddFriendViewController+View.m in Sources */,
 				BA2A74BB180FC5A200167837 /* ComadCell.m in Sources */,
+				BA21DFFB184B2767007F64FE /* AddComadViewController.m in Sources */,
 				BADD958A1828EDF300DAB12F /* EditAccountViewController+View.m in Sources */,
 				BAE482BA181E645600BB1456 /* LoginViewController.m in Sources */,
+				BA21E001184B9C9D007F64FE /* TweetButton.m in Sources */,
 				BA5151ED180C11AB00FD69D8 /* ShowGroupViewController.m in Sources */,
 				BADD95CC1830ACC700DAB12F /* RoundedButton.m in Sources */,
 				BADD95361825016100DAB12F /* HistoryViewController.m in Sources */,

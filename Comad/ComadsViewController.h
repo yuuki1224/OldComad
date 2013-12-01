@@ -11,10 +11,13 @@
 #import "DateComadViewController.h"
 #import "PopularComadViewController.h"
 #import "MyComadViewController.h"
+#import "Header.h"
 
 @interface ComadsViewController : UITabBarController {
     CGRect windowSize;
     float iOSVersion;
+    
+    Header *header;
     
     NewComadViewController *newComadTable;
     DateComadViewController *dateComadTable;

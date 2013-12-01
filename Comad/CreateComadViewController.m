@@ -35,19 +35,20 @@
     if (self) {
         // Custom initialization
         windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         self.view.backgroundColor = [UIColor whiteColor];
         Header *header = [[Header alloc]init];
         [header setTitle:@"コマド作成"];
         
         [self.view addSubview:header];
         [self setBackBtnInHeader];
-        
+        /*
         RoundedButton *button = [RoundedButton buttonWithType:UIButtonTypeRoundedRect];
         [button setText:@"作成"];
         button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
         [button addTarget:self action:@selector(createClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
-        
+        */
         // table
         createComadForm = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77) style:UITableViewStylePlain];
         createComadForm.scrollEnabled = false;
@@ -79,7 +80,11 @@
     UIImage *image = [UIImage imageNamed:@"back.png"];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(15, 36, 20, 28);
+    if((int)iOSVersion == 7){
+        btn.frame = CGRectMake(15, 36, 20, 28);
+    }else if ((int)iOSVersion == 6){
+        btn.frame = CGRectMake(15, 11, 20, 28);
+    }
     [btn setImage:imageResize forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
     

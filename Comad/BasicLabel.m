@@ -142,6 +142,20 @@
                 self.font = font;
                 break;
             }
+            case AddComadLabel:{
+                self.textColor = [UIColor blackColor];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
+                self.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
+                self.font = font;
+                break;
+            }
+            case TimeAndLocationLabel:{
+                self.textColor = [UIColor colorWithRed:0.608 green:0.616 blue:0.627 alpha:1.0];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:11.0f];
+                self.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0];
+                self.font = font;
+                break;
+            }
             default:
                 break;
         }

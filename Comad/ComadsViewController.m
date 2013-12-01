@@ -8,6 +8,7 @@
 
 #import "ComadsViewController.h"
 #import "ComadsViewController+View.m"
+#import "AddComadViewController.h"
 #import "Header.h"
 
 @interface ComadsViewController ()
@@ -24,7 +25,7 @@
         iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         
         // Custom initializatio
-        Header *header = [[Header alloc]init];
+        header = [[Header alloc]init];
         if((int)iOSVersion == 7){
             [header setTitle:@"コマド"];
         }else if((int)iOSVersion == 6){
@@ -33,7 +34,7 @@
             header.frame = CGRectMake(0, statusBarHeight, windowSize.size.width, 48);
         }
         [self.view addSubview: header];
-        [self setAddFriendBtnInHeader];
+        [self setAddComadBtnInHeader];
         
         [self.view addSubview: header];
         //タブのデザイン設定
@@ -77,15 +78,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setAddFriendBtnInHeader {
-    UIImage *image = [UIImage imageNamed:@"addFriend.png"];
+- (void)setAddComadBtnInHeader {
+    iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    UIImage *image = [UIImage imageNamed:@"plusForiOS6.png"];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(270, 42, imageResize.size.width, imageResize.size.height);
+    if((int)iOSVersion == 7){
+        btn.frame = CGRectMake(windowSize.size.width - 35, 40, imageResize.size.width, imageResize.size.height);
+    }else if((int)iOSVersion == 6){
+        btn.frame = CGRectMake(windowSize.size.width - 35, 17, imageResize.size.width, imageResize.size.height);
+    }
     [btn setImage:imageResize forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(addFriendBtnClicked:)forControlEvents:UIControlEventTouchDown];
+    [btn addTarget:self action:@selector(addComadBtnClicked:)forControlEvents:UIControlEventTouchDown];
     
-    [self.view addSubview:btn];
+    [header addSubview: btn];
 }
 
 //Tab背景画像をセットする
@@ -125,6 +131,12 @@
 - (void)tabBarController:(UITabBarController *)theTabBarController didSelectViewController:(UIViewController *)viewController
 {
     [self setTabBarImage];
+}
+
+- (void)addComadBtnClicked:(UIButton *)button {
+    AddComadViewController *ac = [[AddComadViewController alloc]init];
+    ac.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:ac animated:YES];
 }
 
 @end

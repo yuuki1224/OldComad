@@ -13,6 +13,7 @@
 #import "EditLimitFormViewController.h"
 
 @interface CreateComadViewController : UIViewController <UITextViewDelegate, UITableViewDataSource, UITableViewDelegate, EditTimeFormDelegate, EditLocationFormDelegate, EditLocationStatusFormDelegate, EditLimitFormDelegate> {
+    float iOSVersion;
     UITextView *textView;
     UITableView *createComadForm;
 }
