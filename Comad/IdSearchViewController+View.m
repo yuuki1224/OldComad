@@ -48,6 +48,7 @@
     [addFriendView addSubview:thumbnail];
     
     BasicLabel *name = [[BasicLabel alloc]initWithName:ShowUserName];
+    name.backgroundColor = [UIColor colorWithRed:0.855 green:0.886 blue:0.929 alpha:1.0];
     name.text = userName;
     [name sizeToFit];
     name.frame = CGRectMake((windowSize.size.width - name.frame.size.width)/2, 100, name.frame.size.width, name.frame.size.height);

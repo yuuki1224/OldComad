@@ -16,6 +16,7 @@
 
 @interface MessageViewController : UIViewController <ConversationTextBoxDelegate, SocketIODelegate, SpecialMojiDelegate> {
     CGRect windowSize;
+    float iOSVersion;
     Conversation *conversation;
     SocketIO *socketIO;
     BlackMask *mask;

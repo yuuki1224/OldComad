@@ -11,6 +11,7 @@
 @protocol ConversationTextBoxDelegate;
 
 @interface ConversationTextBox : UIView <UITextFieldDelegate>{
+    float iOSVersion;
     UITextField *tf;
 }
 @property (nonatomic, weak) id<ConversationTextBoxDelegate> delegate;

@@ -15,7 +15,9 @@ typedef enum : NSInteger{
     Plus
 }RoundedButtonName;
 
-@interface RoundedButton : UIButton
+@interface RoundedButton : UIButton {
+    float iOSVersion;
+}
 @property(nonatomic)RoundedButtonName *name;
 @property(nonatomic, retain)NSString *text;
 

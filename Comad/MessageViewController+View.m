@@ -14,6 +14,9 @@
 
 -(void)configure {
     conversation = [[Conversation alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77)];
+    if((int)iOSVersion == 6){
+        conversation.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48);
+    }
     ConversationTextBox *textBox = [[ConversationTextBox alloc]init];
     textBox.delegate = self;
     

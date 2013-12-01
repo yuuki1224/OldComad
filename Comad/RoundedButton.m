@@ -16,6 +16,7 @@
     //self.name = name;
     self = [super init];
     if (self) {
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         switch (name) {
             case HeaderDone:{
                 [self.layer setBorderColor:[[UIColor whiteColor] CGColor]];
@@ -58,6 +59,9 @@
                 [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:15.0f];
                 [self setFont:font];
+                if((int)iOSVersion == 6){
+                    [self setTitleEdgeInsets:UIEdgeInsetsMake(6, 0, 0, 0)];
+                }
                 [self setTitle:@"+" forState:UIControlStateNormal];
                 break;
             }

@@ -11,6 +11,7 @@
 
 @interface MessagesListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
     CGRect windowSize;
+    float iOSVersion;
     UITableView *messageListView;
     NSMutableArray *friendsArray;
 }

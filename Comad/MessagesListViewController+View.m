@@ -14,6 +14,9 @@
 
 - (void)configure {
     messageListView = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77) style:UITableViewStylePlain];
+    if((int)iOSVersion == 6){
+        messageListView.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48);
+    }
     [self.view addSubview: messageListView];
     messageListView.dataSource = self;
     messageListView.delegate = self;

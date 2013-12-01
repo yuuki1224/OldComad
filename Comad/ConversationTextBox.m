@@ -17,7 +17,13 @@
     if (self) {
         // Initialization code
         CGRect windowSize = [[UIScreen mainScreen] bounds];
-        self.frame = CGRectMake(0, windowSize.size.height - 55, windowSize.size.width, 55);
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+        if((int)iOSVersion == 7){
+            self.frame = CGRectMake(0, windowSize.size.height - 55, windowSize.size.width, 55);
+        }else if ((int)iOSVersion == 6){
+            self.frame = CGRectMake(0, windowSize.size.height - 75, windowSize.size.width, 55);
+        }
+        
         UIView *backView = [[UIView alloc]init];
         backView.backgroundColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
         backView.frame = CGRectMake(0, 0, windowSize.size.width, 55);
@@ -30,6 +36,9 @@
         sendBtn.backgroundColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
         [sendBtn setTintColor:[UIColor whiteColor]];
         [sendBtn setFont:[UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f]];
+        if((int)iOSVersion == 6){
+            [sendBtn setTitleEdgeInsets:UIEdgeInsetsMake(6, 0, 0, 0)];
+        }
         [sendBtn setTitle:@"送信" forState:UIControlStateNormal];
         sendBtn.frame = CGRectMake(windowSize.size.width - 63, 14, 40, 27);
         [sendBtn addTarget:self action:@selector(send:) forControlEvents:UIControlEventTouchUpInside];
@@ -49,8 +58,11 @@
     CGRect windowSize = [[UIScreen mainScreen] bounds];
     [UIView animateWithDuration:0.35f
                      animations:^{
-                         self.frame = CGRectMake(0, windowSize.size.height - 271, self.frame.size.width, self.frame.size.height);
-                     
+                         if((int)iOSVersion == 7){
+                             self.frame = CGRectMake(0, windowSize.size.height - 271, self.frame.size.width, self.frame.size.height);
+                         }else if((int)iOSVersion == 6){
+                             self.frame = CGRectMake(0, windowSize.size.height - 290, self.frame.size.width, self.frame.size.height);
+                         }
                      }];
     return YES;
 }
@@ -59,7 +71,11 @@
     CGRect windowSize = [[UIScreen mainScreen] bounds];
     [UIView animateWithDuration:0.0f
                      animations:^{
-                         self.frame = CGRectMake(0, windowSize.size.height - 55, self.frame.size.width, self.frame.size.height);
+                         if((int)iOSVersion == 7){
+                             self.frame = CGRectMake(0, windowSize.size.height - 55, windowSize.size.width, 55);
+                         }else if ((int)iOSVersion == 6){
+                             self.frame = CGRectMake(0, windowSize.size.height - 75, windowSize.size.width, 55);
+                         }
                      }];
     [tf resignFirstResponder];
     return YES;

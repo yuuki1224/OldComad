@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface IdSearchViewController : UIViewController<UITextFieldDelegate, UIAlertViewDelegate> {
+    float iOSVersion;
     UITextField *tv;
     CGRect windowSize;
     UIView *addFriendView;
