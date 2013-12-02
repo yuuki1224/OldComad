@@ -12,7 +12,7 @@
 #import "BlackMask.h"
 #import "ComadsViewController.h"
 #import "FriendsViewController.h"
-#import "OthersViewController.h"
+#import "OtherViewController.h"
 #import "BlackMask.h"
 
 @interface TabBarController : UITabBarController <FriendViewControllerDelegate, UserModalDelegate, BlackMaskDelegate> {
@@ -21,7 +21,7 @@
     
     ComadsViewController *cc;
     FriendsViewController *fc;
-    OthersViewController *oc;
+    OtherViewController *oc;
 }
 
 -(void)showModalView;

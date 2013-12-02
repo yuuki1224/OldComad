@@ -9,7 +9,7 @@
 #import "TabBarController.h"
 #import "ComadsViewController.h"
 #import "FriendsViewController.h"
-#import "OthersViewController.h"
+#import "OtherViewController.h"
 #import "UserModal.h"
 #import "BlackMask.h"
 #import "ShowUserViewController.h"
@@ -49,7 +49,7 @@
         }
         cc = [[ComadsViewController alloc]init];
         fc = [[FriendsViewController alloc]init];
-        oc = [[OthersViewController alloc]init];
+        oc = [[OtherViewController alloc]init];
         
         UIImage *tab1 = [UIImage imageNamed:@"tab1.png"];
         UIImage *tab2 = [UIImage imageNamed:@"tab2.png"];
