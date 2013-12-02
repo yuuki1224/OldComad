@@ -31,10 +31,10 @@
 		BA1FE359184D09D800E61534 /* mycomadSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE355184D09D800E61534 /* mycomadSelected.png */; };
 		BA1FE35B184D0B5B00E61534 /* addFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE35A184D0B5B00E61534 /* addFriend.png */; };
 		BA1FE35D184D116200E61534 /* editProfileBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE35C184D116200E61534 /* editProfileBtn.png */; };
-		BA1FE363184D119800E61534 /* modal_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE35E184D119800E61534 /* modal_03.png */; };
-		BA1FE364184D119800E61534 /* modal_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE35F184D119800E61534 /* modal_05.png */; };
-		BA1FE365184D119800E61534 /* modal_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE360184D119800E61534 /* modal_09.png */; };
-		BA1FE366184D119800E61534 /* modal_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE361184D119800E61534 /* modal_10.png */; };
+		BA1FE363184D119800E61534 /* modalHome.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE35E184D119800E61534 /* modalHome.png */; };
+		BA1FE364184D119800E61534 /* modalMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE35F184D119800E61534 /* modalMessage.png */; };
+		BA1FE365184D119800E61534 /* modalBlock.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE360184D119800E61534 /* modalBlock.png */; };
+		BA1FE366184D119800E61534 /* modalAddFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE361184D119800E61534 /* modalAddFriend.png */; };
 		BA1FE367184D119800E61534 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE362184D119800E61534 /* close.png */; };
 		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
 		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
@@ -95,9 +95,6 @@
 		BA2A74CD1815059B00167837 /* modal3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74CA1815059B00167837 /* modal3.png */; };
 		BA2A74CE1815059C00167837 /* modal2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74CB1815059B00167837 /* modal2.png */; };
 		BA2A74CF1815059C00167837 /* modal1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74CC1815059B00167837 /* modal1.png */; };
-		BA2A74D5181613E000167837 /* modalMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74D4181613E000167837 /* modalMessage.png */; };
-		BA2A74D71816165D00167837 /* modalHome.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74D61816165D00167837 /* modalHome.png */; };
-		BA2A74D91816166C00167837 /* modalInvite.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74D81816166C00167837 /* modalInvite.png */; };
 		BA51516B180900E200FD69D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA51516A180900E200FD69D8 /* Foundation.framework */; };
 		BA51516D180900E200FD69D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA51516C180900E200FD69D8 /* CoreGraphics.framework */; };
 		BA51516F180900E200FD69D8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA51516E180900E200FD69D8 /* UIKit.framework */; };
@@ -133,8 +130,6 @@
 		BA51521E180E59C100FD69D8 /* tab1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA51521B180E59C100FD69D8 /* tab1.png */; };
 		BA515221180E614E00FD69D8 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = BA515220180E614E00FD69D8 /* Image.m */; };
 		BA74F92F183B5A4F00FE4629 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA74F92E183B5A4F00FE4629 /* icon.png */; };
-		BA74F932183B6AD700FE4629 /* modalAddFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = BA74F930183B6AD700FE4629 /* modalAddFriend.png */; };
-		BA74F933183B6AD700FE4629 /* modalBlock.png in Resources */ = {isa = PBXBuildFile; fileRef = BA74F931183B6AD700FE4629 /* modalBlock.png */; };
 		BA74F935183B6B4C00FE4629 /* addInCreateGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = BA74F934183B6B4C00FE4629 /* addInCreateGroup.png */; };
 		BA74F938183B7E7500FE4629 /* SpecialMoji.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F937183B7E7500FE4629 /* SpecialMoji.m */; };
 		BA74F93B183B9B3500FE4629 /* sally.png in Resources */ = {isa = PBXBuildFile; fileRef = BA74F93A183B9B3500FE4629 /* sally.png */; };
@@ -264,10 +259,10 @@
 		BA1FE355184D09D800E61534 /* mycomadSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mycomadSelected.png; sourceTree = "<group>"; };
 		BA1FE35A184D0B5B00E61534 /* addFriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFriend.png; sourceTree = "<group>"; };
 		BA1FE35C184D116200E61534 /* editProfileBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editProfileBtn.png; sourceTree = "<group>"; };
-		BA1FE35E184D119800E61534 /* modal_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal_03.png; sourceTree = "<group>"; };
-		BA1FE35F184D119800E61534 /* modal_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal_05.png; sourceTree = "<group>"; };
-		BA1FE360184D119800E61534 /* modal_09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal_09.png; sourceTree = "<group>"; };
-		BA1FE361184D119800E61534 /* modal_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal_10.png; sourceTree = "<group>"; };
+		BA1FE35E184D119800E61534 /* modalHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalHome.png; sourceTree = "<group>"; };
+		BA1FE35F184D119800E61534 /* modalMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalMessage.png; sourceTree = "<group>"; };
+		BA1FE360184D119800E61534 /* modalBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalBlock.png; sourceTree = "<group>"; };
+		BA1FE361184D119800E61534 /* modalAddFriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalAddFriend.png; sourceTree = "<group>"; };
 		BA1FE362184D119800E61534 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
 		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
@@ -339,9 +334,6 @@
 		BA2A74CA1815059B00167837 /* modal3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal3.png; sourceTree = "<group>"; };
 		BA2A74CB1815059B00167837 /* modal2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal2.png; sourceTree = "<group>"; };
 		BA2A74CC1815059B00167837 /* modal1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal1.png; sourceTree = "<group>"; };
-		BA2A74D4181613E000167837 /* modalMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalMessage.png; sourceTree = "<group>"; };
-		BA2A74D61816165D00167837 /* modalHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalHome.png; sourceTree = "<group>"; };
-		BA2A74D81816166C00167837 /* modalInvite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalInvite.png; sourceTree = "<group>"; };
 		BA515167180900E200FD69D8 /* Comad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA51516A180900E200FD69D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA51516C180900E200FD69D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -398,8 +390,6 @@
 		BA51521F180E614E00FD69D8 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		BA515220180E614E00FD69D8 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		BA74F92E183B5A4F00FE4629 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		BA74F930183B6AD700FE4629 /* modalAddFriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalAddFriend.png; sourceTree = "<group>"; };
-		BA74F931183B6AD700FE4629 /* modalBlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalBlock.png; sourceTree = "<group>"; };
 		BA74F934183B6B4C00FE4629 /* addInCreateGroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addInCreateGroup.png; sourceTree = "<group>"; };
 		BA74F936183B7E7400FE4629 /* SpecialMoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialMoji.h; sourceTree = "<group>"; };
 		BA74F937183B7E7500FE4629 /* SpecialMoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialMoji.m; sourceTree = "<group>"; };
@@ -676,16 +666,11 @@
 		BA2A74C91815058200167837 /* modal */ = {
 			isa = PBXGroup;
 			children = (
-				BA1FE35E184D119800E61534 /* modal_03.png */,
-				BA1FE35F184D119800E61534 /* modal_05.png */,
-				BA1FE360184D119800E61534 /* modal_09.png */,
-				BA1FE361184D119800E61534 /* modal_10.png */,
+				BA1FE35E184D119800E61534 /* modalHome.png */,
+				BA1FE35F184D119800E61534 /* modalMessage.png */,
+				BA1FE360184D119800E61534 /* modalBlock.png */,
+				BA1FE361184D119800E61534 /* modalAddFriend.png */,
 				BA1FE362184D119800E61534 /* close.png */,
-				BA74F930183B6AD700FE4629 /* modalAddFriend.png */,
-				BA74F931183B6AD700FE4629 /* modalBlock.png */,
-				BA2A74D81816166C00167837 /* modalInvite.png */,
-				BA2A74D61816165D00167837 /* modalHome.png */,
-				BA2A74D4181613E000167837 /* modalMessage.png */,
 				BA2A74CA1815059B00167837 /* modal3.png */,
 				BA2A74CB1815059B00167837 /* modal2.png */,
 				BA2A74CC1815059B00167837 /* modal1.png */,
@@ -1229,9 +1214,8 @@
 				BA74F93F183B9D8400FE4629 /* browny.png in Resources */,
 				BAB1471D1838CDD10078486B /* invite_friend.html in Resources */,
 				BA21DFE01847AAA8007F64FE /* tommorowRibbon.png in Resources */,
-				BA74F932183B6AD700FE4629 /* modalAddFriend.png in Resources */,
-				BA1FE365184D119800E61534 /* modal_09.png in Resources */,
-				BA1FE364184D119800E61534 /* modal_05.png in Resources */,
+				BA1FE365184D119800E61534 /* modalBlock.png in Resources */,
+				BA1FE364184D119800E61534 /* modalMessage.png in Resources */,
 				BA21DFDF1847AAA8007F64FE /* todayRibbon.png in Resources */,
 				BADD95A1182901C000DAB12F /* OthersAddFriend.png in Resources */,
 				BADD95A51829048800DAB12F /* loginTitle.png in Resources */,
@@ -1240,7 +1224,7 @@
 				BA1FE35D184D116200E61534 /* editProfileBtn.png in Resources */,
 				BA1FE357184D09D800E61534 /* dateSelected.png in Resources */,
 				BA2A74B1180FBEFB00167837 /* campus.png in Resources */,
-				BA1FE366184D119800E61534 /* modal_10.png in Resources */,
+				BA1FE366184D119800E61534 /* modalAddFriend.png in Resources */,
 				BA2A74B7180FBEFB00167837 /* picola.png in Resources */,
 				BA74F93D183B9C6E00FE4629 /* Stamp.plist in Resources */,
 				BA1FE34F184CD9E400E61534 /* nochat.png in Resources */,
@@ -1252,7 +1236,6 @@
 				BA1FE33E184CAADF00E61534 /* todayOff.png in Resources */,
 				BA1FE349184CB0E200E61534 /* tweetButton.png in Resources */,
 				BA21DFD518479E4B007F64FE /* comadTab1.png in Resources */,
-				BA2A74D91816166C00167837 /* modalInvite.png in Resources */,
 				BADD95A2182901C000DAB12F /* OthersMyPage.png in Resources */,
 				BA51521E180E59C100FD69D8 /* tab1.png in Resources */,
 				BA1FE35B184D0B5B00E61534 /* addFriend.png in Resources */,
@@ -1262,7 +1245,7 @@
 				BA2A74AE180FBEFB00167837 /* nakagawa.png in Resources */,
 				BA21E008184B9D5C007F64FE /* onCover.png in Resources */,
 				BA515206180C191F00FD69D8 /* plus.png in Resources */,
-				BA1FE363184D119800E61534 /* modal_03.png in Resources */,
+				BA1FE363184D119800E61534 /* modalHome.png in Resources */,
 				BA74F935183B6B4C00FE4629 /* addInCreateGroup.png in Resources */,
 				BA21E00A184B9D5C007F64FE /* offBack.png in Resources */,
 				BAE4829E1819888F00BB1456 /* Default-568h@2x.png in Resources */,
@@ -1276,7 +1259,6 @@
 				BA2A74B0180FBEFB00167837 /* matsumoto.png in Resources */,
 				BA21DFDE1847AAA8007F64FE /* nowRibbon.png in Resources */,
 				BA51521D180E59C100FD69D8 /* tab2.png in Resources */,
-				BA74F933183B6AD700FE4629 /* modalBlock.png in Resources */,
 				BA2A74CE1815059C00167837 /* modal2.png in Resources */,
 				BA74F943183B9DBD00FE4629 /* tomatoman.png in Resources */,
 				BA1FE351184D036300E61534 /* messageButton.png in Resources */,
@@ -1284,7 +1266,6 @@
 				BA1FE356184D09D800E61534 /* newSelected.png in Resources */,
 				BAD4AF00180EFD7F0068104B /* back.png in Resources */,
 				BA2A74B3180FBEFB00167837 /* murata.png in Resources */,
-				BA2A74D71816165D00167837 /* modalHome.png in Resources */,
 				BA21DFED1847AAFD007F64FE /* commentIconPinc.png in Resources */,
 				BA21DFE11847AAA8007F64FE /* wheneverRibbon.png in Resources */,
 				BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */,
@@ -1313,7 +1294,6 @@
 				BA21DFD818479E4B007F64FE /* comadTab4.png in Resources */,
 				BA21E012184BAEE5007F64FE /* anytimeOn.png in Resources */,
 				BA2A74B6180FBEFB00167837 /* kimisaki.png in Resources */,
-				BA2A74D5181613E000167837 /* modalMessage.png in Resources */,
 				BA21DFEC1847AAFD007F64FE /* locationIcon.png in Resources */,
 				BA74F93B183B9B3500FE4629 /* sally.png in Resources */,
 				BA515183180900E200FD69D8 /* Images.xcassets in Resources */,

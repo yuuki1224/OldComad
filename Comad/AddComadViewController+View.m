@@ -91,11 +91,11 @@
     UIImage *timeIcon = [UIImage imageNamed:@"datetimeIcon.png"];
     UIImage *timeIconResize = [Image resizeImage:timeIcon resizePer:0.5];
     UIImageView *timeIconView = [[UIImageView alloc]initWithImage: timeIconResize];
-    timeIconView.frame = CGRectMake(10, 170, timeIconResize.size.width, timeIconResize.size.height);
+    timeIconView.frame = CGRectMake(115, 170, timeIconResize.size.width, timeIconResize.size.height);
     BasicLabel *timeLabel = [[BasicLabel alloc]initWithName:AddComadLabel];
     timeLabel.text = @"時間";
     [timeLabel sizeToFit];
-    timeLabel.frame = CGRectMake(27, timeIconView.frame.origin.y + 1, timeLabel.frame.size.width, timeLabel.frame.size.height);
+    timeLabel.frame = CGRectMake(130, timeIconView.frame.origin.y + 1, timeLabel.frame.size.width, timeLabel.frame.size.height);
     [addComadView addSubview: timeLabel];
     
     UIImage *form = [Image resizeImage:[UIImage imageNamed:@"cell.png"] resizePer:0.5];
@@ -103,7 +103,7 @@
     timeFormView.backgroundColor = [UIColor whiteColor];
     timeFormView.layer.cornerRadius = 5;
     timeFormView.clipsToBounds = true;
-    timeFormView.frame = CGRectMake(60, timeIconView.frame.origin.y - 3, 150, timeIconView.frame.size.height + 6);
+    timeFormView.frame = CGRectMake(160, timeIconView.frame.origin.y - 3, 150, timeIconView.frame.size.height + 6);
     timeFormView.userInteractionEnabled = YES;
     UITapGestureRecognizer *timeFormTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(timeFormTabpped:)];
     [timeFormView addGestureRecognizer: timeFormTapGesture];
@@ -121,20 +121,20 @@
     UIImage *locationIcon = [UIImage imageNamed:@"locationIcon.png"];
     UIImage *locationIconResize = [Image resizeImage:locationIcon resizePer:0.5];
     UIImageView *locationIconView = [[UIImageView alloc]initWithImage: locationIconResize];
-    locationIconView.frame = CGRectMake(12, timeIconView.frame.origin.y + timeIconView.frame.size.height + 15, locationIconResize.size.width, locationIconResize.size.height);
+    locationIconView.frame = CGRectMake(115, timeIconView.frame.origin.y + timeIconView.frame.size.height + 15, locationIconResize.size.width, locationIconResize.size.height);
     [addComadView addSubview: locationIconView];
     
     BasicLabel *locationLabel = [[BasicLabel alloc]initWithName:AddComadLabel];
     locationLabel.text = @"場所";
     [locationLabel sizeToFit];
-    locationLabel.frame = CGRectMake(27, locationIconView.frame.origin.y + 1, locationLabel.frame.size.width, locationLabel.frame.size.height);
+    locationLabel.frame = CGRectMake(130, locationIconView.frame.origin.y + 1, locationLabel.frame.size.width, locationLabel.frame.size.height);
     [addComadView addSubview: locationLabel];
     
     UIImageView *locationFormView = [[UIImageView alloc]initWithImage:form];
     locationFormView.backgroundColor = [UIColor whiteColor];
     locationFormView.layer.cornerRadius = 5;
     locationFormView.clipsToBounds = true;
-    locationFormView.frame = CGRectMake(60, locationIconView.frame.origin.y - 3, 150, locationIconView.frame.size.height + 6);
+    locationFormView.frame = CGRectMake(160, locationIconView.frame.origin.y - 3, 150, locationIconView.frame.size.height + 6);
     locationFormView.userInteractionEnabled = YES;
     UITapGestureRecognizer *locationFormTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(locationFormTabpped:)];
     [locationFormView addGestureRecognizer:locationFormTapGesture];
@@ -149,7 +149,7 @@
     
     //tweet
     TweetButton *tweetButton = [[TweetButton alloc]init];
-    tweetButton.frame = CGRectMake(windowSize.size.width - 90, timeLabel.frame.origin.y - 7, tweetButton.frame.size.width, tweetButton.frame.size.height);
+    tweetButton.frame = CGRectMake(15, timeLabel.frame.origin.y - 7, tweetButton.frame.size.width, tweetButton.frame.size.height);
     [addComadView addSubview: tweetButton];
     tweetButton.tweet = false;
     

@@ -8,6 +8,7 @@
 
 #import "UserModal.h"
 #import "Image.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation UserModal
 @synthesize userInfo;
@@ -17,6 +18,8 @@
     if (self) {
         iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         self.backgroundColor = [UIColor whiteColor];
+        self.layer.cornerRadius = 4;
+        self.clipsToBounds = true;
         if((int)iOSVersion == 7){
             self.frame = CGRectMake(25, 180, 269, 190);
         }else if ((int)iOSVersion == 6){
@@ -32,38 +35,22 @@
         [self addSubview:closeModalBtn];
         switch (name) {
             case Friend:{
-                /*
-                UIButton *showUserBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-                showUserBtn.backgroundColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
-                [showUserBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-                showUserBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-                showUserBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
-                */
-                 
                 UIButton *modalHomeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
                 UIImage *modalHomeImage = [UIImage imageNamed:@"modalHome.png"];
-                UIImage *modalHomeResize = [Image resizeImage:modalHomeImage resizeWidth:89 resizeHeight:65];
+                UIImage *modalHomeResize = [Image resizeImage:modalHomeImage resizeWidth:134 resizeHeight:65];
                 [modalHomeBtn setBackgroundImage:modalHomeResize forState:UIControlStateNormal];
-                modalHomeBtn.frame = CGRectMake(0, self.frame.size.height - 65, 89, 65);
+                modalHomeBtn.frame = CGRectMake(0, self.frame.size.height - 65, 134, 65);
                 [modalHomeBtn addTarget:self action:@selector(showUserBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-                
-                UIButton *modalInviteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-                UIImage *modalInvite = [UIImage imageNamed:@"modalInvite.png"];
-                UIImage *modalInviteResize = [Image resizeImage:modalInvite resizeWidth:89 resizeHeight:65];
-                [modalInviteBtn setBackgroundImage:modalInviteResize forState:UIControlStateNormal];
-                modalInviteBtn.frame = CGRectMake(90, self.frame.size.height - 65, 89, 65);
-                [modalInviteBtn addTarget:self action:@selector(inviteComadBtnClicked) forControlEvents:UIControlEventTouchUpInside];
                 
                 UIButton *sendMessageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
                 UIImage *backMessageImage = [UIImage imageNamed:@"modalMessage.png"];
-                UIImage *backMessageResize = [Image resizeImage:backMessageImage resizeWidth:89 resizeHeight:65];
+                UIImage *backMessageResize = [Image resizeImage:backMessageImage resizeWidth:134 resizeHeight:65];
                 [sendMessageBtn setBackgroundImage:backMessageResize forState:UIControlStateNormal];
-                sendMessageBtn.frame = CGRectMake(180, self.frame.size.height - 65, 89, 65);
+                sendMessageBtn.frame = CGRectMake(135, self.frame.size.height - 65, 134, 65);
                 [sendMessageBtn addTarget:self action:@selector(sendMessageBtnClicked) forControlEvents:UIControlEventTouchUpInside];
                 
                 [self addSubview:closeModalBtn];
                 [self addSubview:modalHomeBtn];
-                [self addSubview:modalInviteBtn];
                 [self addSubview:sendMessageBtn];
                 break;
             }
@@ -136,10 +123,6 @@
 
 - (void)showUserBtnClicked {
     [self.delegate showUserBtnClickedDelegate];
-}
-
-- (void)inviteComadBtnClicked {
-    [self.delegate inviteComadBtnClickedDelegate];
 }
 
 - (void)sendMessageBtnClicked {

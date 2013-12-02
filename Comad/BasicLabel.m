@@ -74,7 +74,7 @@
                 break;
             }
             case ShowUserOccupation:{
-                self.textColor = [UIColor colorWithRed:0.133 green:0.384 blue:0.561 alpha:1.0];
+                self.textColor = [UIColor colorWithRed:0.251 green:0.451 blue:0.780 alpha:1.0];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
                 self.font = font;
                 break;
