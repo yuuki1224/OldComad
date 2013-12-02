@@ -26,7 +26,8 @@
     datePicker.datePickerMode = UIDatePickerModeDateAndTime;
     datePicker.minuteInterval = 30;
     datePicker.frame = CGRectMake(0, windowSize.size.height - datePicker.frame.size.height, windowSize.size.width, datePicker.frame.size.height);
-    timeTable.frame = CGRectMake(0, 127, windowSize.size.width, 80);
+    
+    timeTable.frame = CGRectMake(0, 68, windowSize.size.width, 40);
     [self.view addSubview:timeTable];
     [self.view addSubview:datePicker];
     [datePicker addTarget:self action:@selector(changeDatePicker:) forControlEvents:UIControlEventValueChanged];
@@ -36,7 +37,7 @@
 #pragma UITableDateSource methods
 //Rowの数
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 1;
 }
 
 //セクションの数
@@ -65,15 +66,8 @@
     [format setDateFormat:@"MM/dd HH:mm"];
     if(indexPath.row==0){
         cell.textLabel.text = @"開始時刻";
-        if([format stringFromDate:self.afterEditStartTime]){
-            cell.detailTextLabel.text = [format stringFromDate:self.afterEditStartTime];
-        }else{
-            cell.detailTextLabel.text = @"まだ指定されていません";
-        }
-    }else if(indexPath.row==1){
-        cell.textLabel.text = @"終了時刻";
-        if([format stringFromDate:self.afterEditEndTime]){
-            cell.detailTextLabel.text = [format stringFromDate:self.afterEditEndTime];
+        if([format stringFromDate:self.beforeEditTime]){
+            cell.detailTextLabel.text = [format stringFromDate:self.beforeEditTime];
         }else{
             cell.detailTextLabel.text = @"まだ指定されていません";
         }

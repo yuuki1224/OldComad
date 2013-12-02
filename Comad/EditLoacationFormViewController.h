@@ -12,6 +12,7 @@
 
 @interface EditLoacationFormViewController : UIViewController<UITextFieldDelegate> {
     CGRect windowSize;
+    float iOSVersion;
     UITextField *tf;
 }
 @property (nonatomic, retain)NSString *location;

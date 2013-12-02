@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "BasicLabel.h"
 #import "URBSegmentedControl.h"
+#import "EditTimeFormViewController.h"
+#import "EditLoacationFormViewController.h"
 
-@interface AddComadViewController : UIViewController {
+@interface AddComadViewController : UIViewController <EditTimeFormDelegate, EditLocationFormDelegate> {
     float iOSVersion;
     CGRect windowSize;
     BasicLabel *wordCount;
     UITextView *tv;
+    BasicLabel *datetime;
+    BasicLabel *location;
 }
 
 - (void)configure;

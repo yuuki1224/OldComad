@@ -108,11 +108,11 @@
     UITapGestureRecognizer *timeFormTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(timeFormTabpped:)];
     [timeFormView addGestureRecognizer: timeFormTapGesture];
     
-    BasicLabel *time = [[BasicLabel alloc]initWithName:TimeAndLocationLabel];
-    time.text = @"未定";
-    [time sizeToFit];
-    time.frame = CGRectMake((150-time.frame.size.width)/2, 4, time.frame.size.width, time.frame.size.height);
-    [timeFormView addSubview: time];
+    datetime = [[BasicLabel alloc]initWithName:TimeAndLocationLabel];
+    datetime.text = @"未定";
+    [datetime sizeToFit];
+    datetime.frame = CGRectMake((150-datetime.frame.size.width)/2, 4, datetime.frame.size.width, datetime.frame.size.height);
+    [timeFormView addSubview: datetime];
     
     [addComadView addSubview: timeIconView];
     [addComadView addSubview: timeFormView];
@@ -139,7 +139,7 @@
     UITapGestureRecognizer *locationFormTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(locationFormTabpped:)];
     [locationFormView addGestureRecognizer:locationFormTapGesture];
     
-    BasicLabel *location = [[BasicLabel alloc]initWithName:TimeAndLocationLabel];
+    location = [[BasicLabel alloc]initWithName:TimeAndLocationLabel];
     location.text = @"未定";
     [location sizeToFit];
     location.frame = CGRectMake((150-location.frame.size.width)/2, 4, location.frame.size.width, location.frame.size.height);
@@ -180,11 +180,30 @@
 
 - (void)timeFormTabpped:(UITapGestureRecognizer *)sender {
     EditTimeFormViewController *ec = [[EditTimeFormViewController alloc]init];
+    ec.delegate = self;
     [self.navigationController pushViewController:ec animated:YES];
 }
 
 - (void)locationFormTabpped:(UITapGestureRecognizer *)sender {
     EditLoacationFormViewController *ec = [[EditLoacationFormViewController alloc]init];
+    ec.delegate = self;
     [self.navigationController pushViewController:ec animated:YES];
+}
+
+#pragma EditTimeFormViewController Delegate
+- (void)changeTime:(NSDate *)time {
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString* dateString = [outputFormatter stringFromDate:time];
+    datetime.text = dateString;
+    [datetime sizeToFit];
+    datetime.frame = CGRectMake((150-datetime.frame.size.width)/2, 4, datetime.frame.size.width, datetime.frame.size.height);
+}
+
+#pragma EditLoacationFormViewController Delegate
+- (void)changeLocation:(NSString *)changeLocation {
+    location.text = changeLocation;
+    [location sizeToFit];
+    location.frame = CGRectMake((150-location.frame.size.width)/2, 4, location.frame.size.width, location.frame.size.height);
 }
 @end

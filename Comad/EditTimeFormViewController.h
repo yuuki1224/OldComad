@@ -13,22 +13,19 @@
 
 @interface EditTimeFormViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     CGRect windowSize;
+    float iOSVersion;
     UITableView *timeTable;
     UIDatePicker *datePicker;
 }
 
 @property (nonatomic, weak) id<EditTimeFormDelegate> delegate;
-@property (nonatomic) TimeSelected selected;
-@property (nonatomic, retain) NSDate *beforeEditStartTime;
-@property (nonatomic, retain) NSDate *beforeEditEndTime;
-@property (nonatomic, retain) NSDate *afterEditStartTime;
-@property (nonatomic, retain) NSDate *afterEditEndTime;
+@property (nonatomic, retain) NSDate *beforeEditTime;
 
 -(void)hoge:(UIDatePicker*)dp;
 -(void)configure;
 @end
 
 @protocol EditTimeFormDelegate <NSObject>
-- (void)changeTime:(NSDate *)startTime endTime:(NSDate *)endTime;
+- (void)changeTime:(NSDate *)time;
 @end
 
