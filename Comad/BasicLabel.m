@@ -156,6 +156,13 @@
                 self.font = font;
                 break;
             }
+            case NoConversationText:{
+                self.textColor = [UIColor colorWithRed:0.800 green:0.792 blue:0.776 alpha:1.0];
+                UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
+                self.backgroundColor = [UIColor whiteColor];
+                self.font = font;
+                break;
+            }
             default:
                 break;
         }

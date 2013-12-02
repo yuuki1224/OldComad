@@ -102,6 +102,7 @@
             [newComadTable.tableView reloadData];
             UIImage *tabBackImage = [UIImage imageNamed:@"comadTab1.png"];
             [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:(windowSize.size.width - 10) resizeHeight:50]];
+            [self.tabBar setSelectionIndicatorImage:[UIImage imageNamed:@"hoge.png"]];
             break;
         }
         case 1:{

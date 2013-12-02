@@ -15,4 +15,5 @@
 
 -(void)addConversation:(NSString *)conversationText:(NSString *)userName:(NSString *)imageName;
 -(void)addStamp:(int)stampNum:(NSString *)userName:(NSString *)imageName;
+- (void)setNoConversation;
 @end

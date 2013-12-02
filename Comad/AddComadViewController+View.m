@@ -75,7 +75,7 @@
     wordCount = [[BasicLabel alloc]initWithName:GrayLabel];
     wordCount.text = @"0/30";
     [wordCount sizeToFit];
-    wordCount.frame = CGRectMake(tv.frame.size.width - wordCount.frame.size.width - 15, tv.frame.size.height - wordCount.frame.size.height, wordCount.frame.size.width, wordCount.frame.size.height);
+    wordCount.frame = CGRectMake(tv.frame.size.width - wordCount.frame.size.width - 10, tv.frame.size.height - wordCount.frame.size.height, wordCount.frame.size.width, wordCount.frame.size.height);
     
     [tv addSubview: wordCount];
     [bubble addSubview: tv];

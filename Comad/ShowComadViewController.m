@@ -14,6 +14,7 @@
 #import "ConversationTextBox.h"
 #import "SocketIO.h"
 #import "SocketIOPacket.h"
+#import "RoundedButton.h"
 
 @interface ShowComadViewController ()
 
@@ -27,6 +28,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         self.view.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height);
     
         self.view.backgroundColor = [UIColor whiteColor];
@@ -36,6 +38,23 @@
         
         [header setTitle:@"コマド詳細"];
         [self setBackBtnInHeader];
+        
+        if((int)iOSVersion == 7){
+            RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
+            [button setTitleInButton:@"作成"];
+            button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
+            //[button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addSubview:button];
+        }else if((int)iOSVersion == 6){
+            //UIImageView *button = [[UIImageView alloc]initWithFrame:CGRectMake(windowSize.size.width - 60, 10, 48, 28)];
+            UIImage *buttonImage = [Image resizeImage:[UIImage imageNamed:@"tweetButton.png"] resizePer:0.5];
+            UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
+            createButton.frame = CGRectMake(windowSize.size.width - buttonImage.size.width - 15, 15, buttonImage.size.width, buttonImage.size.height);
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tweetButtonClicked:)];
+            [createButton addGestureRecognizer: tapGesture];
+            createButton.userInteractionEnabled = YES;
+            [self.view addSubview: createButton];
+        }
         
         [self configure];
     }
@@ -64,10 +83,20 @@
 }
 
 - (void)setBackBtnInHeader {
-    UIImage *image = [UIImage imageNamed:@"back.png"];
+    NSString *backImageName = @"";
+    if((int)iOSVersion == 7){
+        backImageName = @"back.png";
+    }else if((int)iOSVersion == 6){
+        backImageName = @"backForiOS6.png";
+    }
+    UIImage *image = [UIImage imageNamed:backImageName];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(15, 36, 20, 28);
+    if((int)iOSVersion == 7){
+        btn.frame = CGRectMake(15, 36, 20, 28);
+    }else if ((int)iOSVersion == 6){
+        btn.frame = CGRectMake(15, 11, 20, 28);
+    }
     [btn setImage:imageResize forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
     
@@ -108,5 +137,8 @@
     }
 }
 
+- (void)tweetButtonClicked:(UITapGestureRecognizer *)sender {
+    NSLog(@"tweet!!");
+}
 
 @end

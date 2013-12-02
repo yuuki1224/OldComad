@@ -15,6 +15,7 @@
 @interface ShowComadViewController : UIViewController <ConversationTextBoxDelegate>{
     ShowComad *showComad;
     CGRect windowSize;
+    float iOSVersion;
     UIScrollView *scrollView;
     Conversation *conversation;
     SocketIO *socketIO;

@@ -29,7 +29,8 @@ typedef enum : NSInteger{
     GrayLabel,
     ComadId,
     AddComadLabel,
-    TimeAndLocationLabel
+    TimeAndLocationLabel,
+    NoConversationText
 }BasicLabelName;
 
 @interface BasicLabel : UILabel

@@ -91,7 +91,13 @@
 }
 
 - (void)setBackBtnInHeader {
-    UIImage *image = [UIImage imageNamed:@"back.png"];
+    NSString *backImageName = @"";
+    if((int)iOSVersion == 7){
+        backImageName = @"back.png";
+    }else if((int)iOSVersion == 6){
+        backImageName = @"backForiOS6.png";
+    }
+    UIImage *image = [UIImage imageNamed:backImageName];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     if((int)iOSVersion == 7){

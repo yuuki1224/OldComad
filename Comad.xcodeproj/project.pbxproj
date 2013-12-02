@@ -12,6 +12,18 @@
 		BA03F6231836390F001E9BBE /* ShowUserViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F6221836390F001E9BBE /* ShowUserViewController+View.m */; };
 		BA03F6261836516F001E9BBE /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F6251836516F001E9BBE /* Date.m */; };
 		BA03F62918375D35001E9BBE /* AddFriendViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F62818375D35001E9BBE /* AddFriendViewController+View.m */; };
+		BA1FE338184CA8AA00E61534 /* backForiOS6.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE337184CA8AA00E61534 /* backForiOS6.png */; };
+		BA1FE33E184CAADF00E61534 /* todayOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE339184CAADF00E61534 /* todayOff.png */; };
+		BA1FE33F184CAADF00E61534 /* nowOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE33A184CAADF00E61534 /* nowOff.png */; };
+		BA1FE340184CAADF00E61534 /* tommorowOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE33B184CAADF00E61534 /* tommorowOff.png */; };
+		BA1FE341184CAADF00E61534 /* anytimeOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE33C184CAADF00E61534 /* anytimeOff.png */; };
+		BA1FE342184CAADF00E61534 /* futureOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE33D184CAADF00E61534 /* futureOff.png */; };
+		BA1FE348184CB0E200E61534 /* addComadButtonForiOS6.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE343184CB0E200E61534 /* addComadButtonForiOS6.png */; };
+		BA1FE349184CB0E200E61534 /* tweetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE344184CB0E200E61534 /* tweetButton.png */; };
+		BA1FE34A184CB0E200E61534 /* submit.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE345184CB0E200E61534 /* submit.png */; };
+		BA1FE34B184CB0E200E61534 /* addStampButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE346184CB0E200E61534 /* addStampButton.png */; };
+		BA1FE34C184CB0E200E61534 /* textField.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE347184CB0E200E61534 /* textField.png */; };
+		BA1FE34F184CD9E400E61534 /* nochat.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE34E184CD9E400E61534 /* nochat.png */; };
 		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
 		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
 		BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFBD18474E7D007F64FE /* NewComadViewController.m */; };
@@ -45,15 +57,10 @@
 		BA21E009184B9D5C007F64FE /* offCover.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E005184B9D5C007F64FE /* offCover.png */; };
 		BA21E00A184B9D5C007F64FE /* offBack.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E006184B9D5C007F64FE /* offBack.png */; };
 		BA21E00D184BAD43007F64FE /* TimeSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21E00C184BAD43007F64FE /* TimeSelectButton.m */; };
-		BA21E011184BAEE5007F64FE /* anytimeOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E00F184BAEE5007F64FE /* anytimeOff.png */; };
 		BA21E012184BAEE5007F64FE /* anytimeOn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E010184BAEE5007F64FE /* anytimeOn.png */; };
-		BA21E015184BAEF9007F64FE /* futureOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E013184BAEF9007F64FE /* futureOff.png */; };
 		BA21E016184BAEF9007F64FE /* futureOn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E014184BAEF9007F64FE /* futureOn.png */; };
-		BA21E01D184BAF0F007F64FE /* nowOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E017184BAF0F007F64FE /* nowOff.png */; };
 		BA21E01E184BAF0F007F64FE /* nowOn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E018184BAF0F007F64FE /* nowOn.png */; };
 		BA21E01F184BAF0F007F64FE /* todayOn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E019184BAF0F007F64FE /* todayOn.png */; };
-		BA21E020184BAF0F007F64FE /* todayOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E01A184BAF0F007F64FE /* todayOff.png */; };
-		BA21E021184BAF0F007F64FE /* tommorowOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E01B184BAF0F007F64FE /* tommorowOff.png */; };
 		BA21E022184BAF0F007F64FE /* tommorowOn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E01C184BAF0F007F64FE /* tommorowOn.png */; };
 		BA21E025184BB8E7007F64FE /* addComadBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E023184BB8E7007F64FE /* addComadBubble.png */; };
 		BA21E026184BB8E7007F64FE /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = BA21E024184BB8E7007F64FE /* cell.png */; };
@@ -228,6 +235,18 @@
 		BA03F6241836516F001E9BBE /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
 		BA03F6251836516F001E9BBE /* Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Date.m; sourceTree = "<group>"; };
 		BA03F62818375D35001E9BBE /* AddFriendViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AddFriendViewController+View.m"; sourceTree = "<group>"; };
+		BA1FE337184CA8AA00E61534 /* backForiOS6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backForiOS6.png; sourceTree = "<group>"; };
+		BA1FE339184CAADF00E61534 /* todayOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todayOff.png; sourceTree = "<group>"; };
+		BA1FE33A184CAADF00E61534 /* nowOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nowOff.png; sourceTree = "<group>"; };
+		BA1FE33B184CAADF00E61534 /* tommorowOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tommorowOff.png; sourceTree = "<group>"; };
+		BA1FE33C184CAADF00E61534 /* anytimeOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anytimeOff.png; sourceTree = "<group>"; };
+		BA1FE33D184CAADF00E61534 /* futureOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = futureOff.png; sourceTree = "<group>"; };
+		BA1FE343184CB0E200E61534 /* addComadButtonForiOS6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addComadButtonForiOS6.png; sourceTree = "<group>"; };
+		BA1FE344184CB0E200E61534 /* tweetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweetButton.png; sourceTree = "<group>"; };
+		BA1FE345184CB0E200E61534 /* submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submit.png; sourceTree = "<group>"; };
+		BA1FE346184CB0E200E61534 /* addStampButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addStampButton.png; sourceTree = "<group>"; };
+		BA1FE347184CB0E200E61534 /* textField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textField.png; sourceTree = "<group>"; };
+		BA1FE34E184CD9E400E61534 /* nochat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nochat.png; sourceTree = "<group>"; };
 		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
 		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
 		BA21DFAE18473251007F64FE /* ComadsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ComadsViewController+View.m"; sourceTree = "<group>"; };
@@ -269,15 +288,10 @@
 		BA21E006184B9D5C007F64FE /* offBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offBack.png; sourceTree = "<group>"; };
 		BA21E00B184BAD43007F64FE /* TimeSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSelectButton.h; sourceTree = "<group>"; };
 		BA21E00C184BAD43007F64FE /* TimeSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeSelectButton.m; sourceTree = "<group>"; };
-		BA21E00F184BAEE5007F64FE /* anytimeOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anytimeOff.png; sourceTree = "<group>"; };
 		BA21E010184BAEE5007F64FE /* anytimeOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anytimeOn.png; sourceTree = "<group>"; };
-		BA21E013184BAEF9007F64FE /* futureOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = futureOff.png; sourceTree = "<group>"; };
 		BA21E014184BAEF9007F64FE /* futureOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = futureOn.png; sourceTree = "<group>"; };
-		BA21E017184BAF0F007F64FE /* nowOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nowOff.png; sourceTree = "<group>"; };
 		BA21E018184BAF0F007F64FE /* nowOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nowOn.png; sourceTree = "<group>"; };
 		BA21E019184BAF0F007F64FE /* todayOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todayOn.png; sourceTree = "<group>"; };
-		BA21E01A184BAF0F007F64FE /* todayOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todayOff.png; sourceTree = "<group>"; };
-		BA21E01B184BAF0F007F64FE /* tommorowOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tommorowOff.png; sourceTree = "<group>"; };
 		BA21E01C184BAF0F007F64FE /* tommorowOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tommorowOn.png; sourceTree = "<group>"; };
 		BA21E023184BB8E7007F64FE /* addComadBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addComadBubble.png; sourceTree = "<group>"; };
 		BA21E024184BB8E7007F64FE /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
@@ -530,6 +544,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA1FE34D184CB49900E61534 /* ConversationBox */ = {
+			isa = PBXGroup;
+			children = (
+				BA1FE345184CB0E200E61534 /* submit.png */,
+				BA1FE346184CB0E200E61534 /* addStampButton.png */,
+				BA1FE347184CB0E200E61534 /* textField.png */,
+			);
+			name = ConversationBox;
+			sourceTree = "<group>";
+		};
 		BA21DFC818477416007F64FE /* ComadsTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +587,10 @@
 		BA21DFF21847CE74007F64FE /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE344184CB0E200E61534 /* tweetButton.png */,
+				BA1FE343184CB0E200E61534 /* addComadButtonForiOS6.png */,
+				BAD4AEFF180EFD7F0068104B /* back.png */,
+				BA1FE337184CA8AA00E61534 /* backForiOS6.png */,
 				BA21DFF31847CE8C007F64FE /* comadInHeader.png */,
 				BA21DFF41847CE8C007F64FE /* plusForiOS6.png */,
 				BA21DFF51847CE8C007F64FE /* headerForiOS6.png */,
@@ -584,16 +612,16 @@
 		BA21E00E184BAEB8007F64FE /* SelectTime */ = {
 			isa = PBXGroup;
 			children = (
-				BA21E017184BAF0F007F64FE /* nowOff.png */,
 				BA21E018184BAF0F007F64FE /* nowOn.png */,
+				BA1FE33A184CAADF00E61534 /* nowOff.png */,
 				BA21E019184BAF0F007F64FE /* todayOn.png */,
-				BA21E01A184BAF0F007F64FE /* todayOff.png */,
-				BA21E01B184BAF0F007F64FE /* tommorowOff.png */,
+				BA1FE339184CAADF00E61534 /* todayOff.png */,
 				BA21E01C184BAF0F007F64FE /* tommorowOn.png */,
-				BA21E013184BAEF9007F64FE /* futureOff.png */,
+				BA1FE33B184CAADF00E61534 /* tommorowOff.png */,
 				BA21E014184BAEF9007F64FE /* futureOn.png */,
-				BA21E00F184BAEE5007F64FE /* anytimeOff.png */,
+				BA1FE33D184CAADF00E61534 /* futureOff.png */,
 				BA21E010184BAEE5007F64FE /* anytimeOn.png */,
+				BA1FE33C184CAADF00E61534 /* anytimeOff.png */,
 			);
 			name = SelectTime;
 			sourceTree = "<group>";
@@ -747,6 +775,8 @@
 		BA5151C31809B5AB00FD69D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE34D184CB49900E61534 /* ConversationBox */,
+				BA1FE34E184CD9E400E61534 /* nochat.png */,
 				BA21E023184BB8E7007F64FE /* addComadBubble.png */,
 				BA21E024184BB8E7007F64FE /* cell.png */,
 				BA21E00E184BAEB8007F64FE /* SelectTime */,
@@ -768,7 +798,6 @@
 				BA2A74C91815058200167837 /* modal */,
 				BA2A74A0180FB0C800167837 /* profile */,
 				BAD4AF01180F128E0068104B /* addFriend.png */,
-				BAD4AEFF180EFD7F0068104B /* back.png */,
 				BA515219180E59C100FD69D8 /* tab3.png */,
 				BA51521A180E59C100FD69D8 /* tab2.png */,
 				BA51521B180E59C100FD69D8 /* tab1.png */,
@@ -1162,6 +1191,7 @@
 				BA21E026184BB8E7007F64FE /* cell.png in Resources */,
 				BA21DFF71847CE8C007F64FE /* plusForiOS6.png in Resources */,
 				BA21E007184B9D5C007F64FE /* onBack.png in Resources */,
+				BA1FE341184CAADF00E61534 /* anytimeOff.png in Resources */,
 				BA74F941183B9D9C00FE4629 /* misawa.png in Resources */,
 				BAD4AF04180F16E40068104B /* asano.png in Resources */,
 				BA21DFF01847AAFD007F64FE /* commentIconBlue.png in Resources */,
@@ -1176,30 +1206,30 @@
 				BA2A74B8180FBEFB00167837 /* asano2.png in Resources */,
 				BA2A74AD180FBEFB00167837 /* yoshida.png in Resources */,
 				BA2A74B1180FBEFB00167837 /* campus.png in Resources */,
-				BA21E01D184BAF0F007F64FE /* nowOff.png in Resources */,
 				BA2A74B7180FBEFB00167837 /* picola.png in Resources */,
 				BA74F93D183B9C6E00FE4629 /* Stamp.plist in Resources */,
+				BA1FE34F184CD9E400E61534 /* nochat.png in Resources */,
 				BA2A74C81814291A00167837 /* adachi.png in Resources */,
 				BA2A74CF1815059C00167837 /* modal1.png in Resources */,
 				BADD95A7182A4D9200DAB12F /* comadPlus.png in Resources */,
 				BA5151DB180ADD5E00FD69D8 /* settings.png in Resources */,
 				BA21DFF11847AAFD007F64FE /* commentIconPurple.png in Resources */,
 				BAD4AF02180F128E0068104B /* addFriend.png in Resources */,
+				BA1FE33E184CAADF00E61534 /* todayOff.png in Resources */,
+				BA1FE349184CB0E200E61534 /* tweetButton.png in Resources */,
 				BA21DFD518479E4B007F64FE /* comadTab1.png in Resources */,
 				BA2A74D91816166C00167837 /* modalInvite.png in Resources */,
 				BADD95A2182901C000DAB12F /* OthersMyPage.png in Resources */,
-				BA21E020184BAF0F007F64FE /* todayOff.png in Resources */,
 				BA51521E180E59C100FD69D8 /* tab1.png in Resources */,
 				BA21E01F184BAF0F007F64FE /* todayOn.png in Resources */,
-				BA21E015184BAEF9007F64FE /* futureOff.png in Resources */,
 				BA2A74AE180FBEFB00167837 /* nakagawa.png in Resources */,
 				BA21E008184B9D5C007F64FE /* onCover.png in Resources */,
 				BA515206180C191F00FD69D8 /* plus.png in Resources */,
 				BA74F935183B6B4C00FE4629 /* addInCreateGroup.png in Resources */,
 				BA21E00A184B9D5C007F64FE /* offBack.png in Resources */,
 				BAE4829E1819888F00BB1456 /* Default-568h@2x.png in Resources */,
-				BA21E021184BAF0F007F64FE /* tommorowOff.png in Resources */,
 				BA21DFE31847AABF007F64FE /* futureRibbon.png in Resources */,
+				BA1FE342184CAADF00E61534 /* futureOff.png in Resources */,
 				BA51521C180E59C100FD69D8 /* tab3.png in Resources */,
 				BA21DFEF1847AAFD007F64FE /* commentIconGreen.png in Resources */,
 				BADD955118260B7700DAB12F /* createComadForm1.png in Resources */,
@@ -1210,6 +1240,7 @@
 				BA74F933183B6AD700FE4629 /* modalBlock.png in Resources */,
 				BA2A74CE1815059C00167837 /* modal2.png in Resources */,
 				BA74F943183B9DBD00FE4629 /* tomatoman.png in Resources */,
+				BA1FE340184CAADF00E61534 /* tommorowOff.png in Resources */,
 				BAD4AF00180EFD7F0068104B /* back.png in Resources */,
 				BA2A74B3180FBEFB00167837 /* murata.png in Resources */,
 				BA2A74D71816165D00167837 /* modalHome.png in Resources */,
@@ -1217,19 +1248,23 @@
 				BA21DFE11847AAA8007F64FE /* wheneverRibbon.png in Resources */,
 				BA2A74D1181506BD00167837 /* close.png in Resources */,
 				BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */,
-				BA21E011184BAEE5007F64FE /* anytimeOff.png in Resources */,
 				BAE482B7181D859B00BB1456 /* hayashi.png in Resources */,
 				BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */,
 				BA21E009184B9D5C007F64FE /* offCover.png in Resources */,
 				BA2A74C618118C2200167837 /* kobayashi.png in Resources */,
+				BA1FE348184CB0E200E61534 /* addComadButtonForiOS6.png in Resources */,
 				BA2A74B4180FBEFB00167837 /* bosscolle.png in Resources */,
 				BA21E016184BAEF9007F64FE /* futureOn.png in Resources */,
+				BA1FE34A184CB0E200E61534 /* submit.png in Resources */,
 				BA21E025184BB8E7007F64FE /* addComadBubble.png in Resources */,
+				BA1FE34B184CB0E200E61534 /* addStampButton.png in Resources */,
 				BA21DFF81847CE8C007F64FE /* headerForiOS6.png in Resources */,
+				BA1FE338184CA8AA00E61534 /* backForiOS6.png in Resources */,
 				BA74F945183B9E2300FE4629 /* nikochan.png in Resources */,
 				BADD959E182901C000DAB12F /* OthersHistory.png in Resources */,
 				BA2A74AF180FBEFB00167837 /* sato.png in Resources */,
 				BA21DFD718479E4B007F64FE /* comadTab3.png in Resources */,
+				BA1FE34C184CB0E200E61534 /* textField.png in Resources */,
 				BA2A74B5180FBEFB00167837 /* arduino.png in Resources */,
 				BADD95A9182A4FF100DAB12F /* createComad.png in Resources */,
 				BA21DFEE1847AAFD007F64FE /* commentIconOrange.png in Resources */,
@@ -1246,6 +1281,7 @@
 				BAB147111837CCB60078486B /* addFriendMenu.png in Resources */,
 				BA2A74CD1815059B00167837 /* modal3.png in Resources */,
 				BA21DFF61847CE8C007F64FE /* comadInHeader.png in Resources */,
+				BA1FE33F184CAADF00E61534 /* nowOff.png in Resources */,
 				BA21DFEB1847AAFD007F64FE /* datetimeIcon.png in Resources */,
 				BA21DFD618479E4B007F64FE /* comadTab2.png in Resources */,
 				BA515175180900E200FD69D8 /* InfoPlist.strings in Resources */,

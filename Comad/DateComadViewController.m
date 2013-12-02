@@ -88,6 +88,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ShowComadViewController *sc = [[ShowComadViewController alloc]init];
+    sc.hidesBottomBarWhenPushed = YES;
     [self.tabBarController.navigationController pushViewController:sc animated:YES];
 }
 

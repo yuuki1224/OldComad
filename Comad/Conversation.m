@@ -10,6 +10,7 @@
 #import "Bubble.h"
 #import "Image.h"
 #import "Stamp.h"
+#import "BasicLabel.h"
 
 @implementation Conversation
 @synthesize conversationHeight;
@@ -25,6 +26,19 @@
 }
 
 - (void)viewDidLoad {
+}
+
+- (void)setNoConversation {
+    BasicLabel *noConversationText = [[BasicLabel alloc]initWithName:NoConversationText];
+    noConversationText.text = @"会話はまだありません。";
+    [noConversationText sizeToFit];
+    noConversationText.frame = CGRectMake((windowSize.size.width - noConversationText.frame.size.width)/2, 125, noConversationText.frame.size.width, noConversationText.frame.size.height);
+    
+    UIImage *noConversationImage = [Image resizeImage:[UIImage imageNamed:@"nochat.png"] resizePer:0.5];
+    UIImageView *noConversation = [[UIImageView alloc]initWithImage:noConversationImage];
+    noConversation.frame = CGRectMake((windowSize.size.width - noConversation.frame.size.width)/2, noConversationText.frame.origin.y + noConversationText.frame.size.height + 5, noConversation.frame.size.width, noConversation.frame.size.height);
+    [self addSubview: noConversationText];
+    [self addSubview: noConversation];
 }
 
 - (void)addConversation:(NSString *)conversationText :(NSString *)userName :(NSString *)imageName{

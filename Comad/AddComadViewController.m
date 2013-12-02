@@ -10,6 +10,9 @@
 #import "AddComadViewController+View.m"
 #import "Header.h"
 #import "Image.h"
+#import "RoundedButton.h"
+#import "ComadJsonClient.h"
+#import "SVProgressHUD.h"
 
 @interface AddComadViewController ()
 
@@ -30,6 +33,23 @@
         
         [self.view addSubview:header];
         [self setBackBtnInHeader];
+        
+        if((int)iOSVersion == 7){
+            RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
+            [button setTitleInButton:@"作成"];
+            button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
+            //[button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addSubview:button];
+        }else if((int)iOSVersion == 6){
+            //UIImageView *button = [[UIImageView alloc]initWithFrame:CGRectMake(windowSize.size.width - 60, 10, 48, 28)];
+            UIImage *buttonImage = [Image resizeImage:[UIImage imageNamed:@"addComadButtonForiOS6.png"] resizePer:0.5];
+            UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
+            createButton.frame = CGRectMake(windowSize.size.width - buttonImage.size.width - 10, 10, buttonImage.size.width, buttonImage.size.height);
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(saveClicked:)];
+            [createButton addGestureRecognizer: tapGesture];
+            createButton.userInteractionEnabled = YES;
+            [self.view addSubview: createButton];
+        }
     }
     return self;
 }
@@ -48,7 +68,13 @@
 }
 
 - (void)setBackBtnInHeader {
-    UIImage *image = [UIImage imageNamed:@"back.png"];
+    NSString *backImageName = @"";
+    if((int)iOSVersion == 7){
+        backImageName = @"back.png";
+    }else if((int)iOSVersion == 6){
+        backImageName = @"backForiOS6.png";
+    }
+    UIImage *image = [UIImage imageNamed:backImageName];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     if((int)iOSVersion == 7){
@@ -78,5 +104,37 @@
         text.text = [text.text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         [text resignFirstResponder];
     }
+}
+
+- (void)saveClicked:(UITapGestureRecognizer *)sender {
+    ComadJsonClient *client = [ComadJsonClient sharedClient];
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
+    
+    NSString *text = tv.text;
+    NSString *selectTime = @"1";
+    BOOL tweet = YES;
+    NSDateFormatter *format = [[NSDateFormatter alloc]init];
+    [format setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+    //NSString *startTime = [format stringFromDate:];
+    NSString *startTimeParam = @"hogehgoe";
+    NSString *locationParam = @"烏丸のスタバ";
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *user = [defaults dictionaryForKey:@"user"];
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            [user objectForKey:@"id"], @"user_id",
+                            startTimeParam, @"start_time",
+                            locationParam, @"location",
+                            text, @"detail", nil];
+    
+    [client createNewComad:(NSDictionary *)params :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
+        NSLog(@"%@", response);
+        [SVProgressHUD dismiss];
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(int statusCode, NSString *errorString) {
+        NSLog(@"%@", errorString);
+        [SVProgressHUD dismiss];
+    }];
 }
 @end
