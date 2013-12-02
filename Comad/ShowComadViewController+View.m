@@ -244,8 +244,7 @@
     ConversationTextBox *textBox = [[ConversationTextBox alloc]init];
     textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
     textBox.delegate = self;
-    [self.view addSubview: textBox];
-    
     [self.view addSubview: baseView];
+    [self.view addSubview: textBox];
 }
 @end

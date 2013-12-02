@@ -8,6 +8,7 @@
 
 #import "ConversationTextBox.h"
 #import "RoundedButton.h"
+#import "Image.h"
 
 @implementation ConversationTextBox
 
@@ -17,6 +18,9 @@
     if (self) {
         // Initialization code
         CGRect windowSize = [[UIScreen mainScreen] bounds];
+        
+        //通知センター登録
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
         iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         if((int)iOSVersion == 7){
             self.frame = CGRectMake(0, windowSize.size.height - 55, windowSize.size.width, 55);
@@ -25,35 +29,64 @@
         }
         
         UIView *backView = [[UIView alloc]init];
-        backView.backgroundColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
-        backView.frame = CGRectMake(0, 0, windowSize.size.width, 55);
-        tf = [[UITextField alloc] initWithFrame:CGRectMake(55, 12, 200, 30)];
-        tf.borderStyle = UITextBorderStyleRoundedRect;
-        tf.delegate = self;
-        [backView addSubview: tf];
-        
-        UIButton *sendBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        sendBtn.backgroundColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
-        [sendBtn setTintColor:[UIColor whiteColor]];
-        [sendBtn setFont:[UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f]];
-        if((int)iOSVersion == 6){
-            [sendBtn setTitleEdgeInsets:UIEdgeInsetsMake(6, 0, 0, 0)];
+        if((int)iOSVersion == 7){
+            backView.backgroundColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
+        }else if((int)iOSVersion == 6){
+            backView.backgroundColor = [UIColor colorWithRed:0.855 green:0.855 blue:0.827 alpha:1.0];
         }
-        [sendBtn setTitle:@"送信" forState:UIControlStateNormal];
-        sendBtn.frame = CGRectMake(windowSize.size.width - 63, 14, 40, 27);
-        [sendBtn addTarget:self action:@selector(send:) forControlEvents:UIControlEventTouchUpInside];
+        backView.frame = CGRectMake(0, 0, windowSize.size.width, 55);
         
-        RoundedButton *plus = [[RoundedButton alloc]initWithName:Plus];
-        plus.frame = CGRectMake(12, 12, 31, 31);
-        [plus addTarget:self action:@selector(plusTapped:) forControlEvents:UIControlEventTouchUpInside];
+        if((int)iOSVersion == 7){
+            tf = [[UITextField alloc] initWithFrame:CGRectMake(55, 12, 200, 30)];
+            tf.borderStyle = UITextBorderStyleRoundedRect;
+            tf.delegate = self;
+            [backView addSubview: tf];
+            
+            UIButton *sendBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            sendBtn.backgroundColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
+            [sendBtn setTintColor:[UIColor whiteColor]];
+            [sendBtn setFont:[UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f]];
+            [sendBtn setTitleEdgeInsets:UIEdgeInsetsMake(6, 0, 0, 0)];
+            [sendBtn setTitle:@"送信" forState:UIControlStateNormal];
+            sendBtn.frame = CGRectMake(windowSize.size.width - 63, 14, 40, 27);
+            [sendBtn addTarget:self action:@selector(send:) forControlEvents:UIControlEventTouchUpInside];
+            [backView addSubview:sendBtn];
+            
+            RoundedButton *plus = [[RoundedButton alloc]initWithName:Plus];
+            plus.frame = CGRectMake(12, 12, 31, 31);
+            [plus addTarget:self action:@selector(plusTapped:) forControlEvents:UIControlEventTouchUpInside];
+            [backView addSubview:plus];
+        }else if((int)iOSVersion == 6){
+            UIImage *textViewBackImage = [Image resizeImage:[UIImage imageNamed:@"textField.png"] resizePer:0.5];
+            UIImageView *textViewBack = [[UIImageView alloc]initWithImage:textViewBackImage];
+            textViewBack.frame = CGRectMake(48, 12, textViewBackImage.size.width, textViewBackImage.size.height);
+            textViewBack.userInteractionEnabled = YES;
+            UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, textViewBack.frame.size.width, textViewBack.frame.size.height)];
+            textView.backgroundColor = [UIColor whiteColor];
+            textView.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
+            textView.delegate = self;
+            textView.layer.cornerRadius = 5;
+            textView.clipsToBounds = true;
+            [textViewBack addSubview: textView];
+            
+            UIImage *sendImage = [Image resizeImage:[UIImage imageNamed:@"submit.png"] resizePer:0.5];
+            UIImageView *sendBtn = [[UIImageView alloc]initWithImage:sendImage];
+            sendBtn.frame = CGRectMake(windowSize.size.width - 60, 12, sendImage.size.width, sendImage.size.height);
+            
+            UIImage *addStampImage = [Image resizeImage:[UIImage imageNamed:@"addStampButton.png"] resizePer:0.5];
+            UIImageView *addStampBtn = [[UIImageView alloc]initWithImage:addStampImage];
+            addStampBtn.frame = CGRectMake(12, 12, addStampImage.size.width, addStampImage.size.height);
+            
+            [backView addSubview: textViewBack];
+            [backView addSubview: sendBtn];
+            [backView addSubview: addStampBtn];
+        }
         
-        [backView addSubview:sendBtn];
-        [backView addSubview:plus];
         [self addSubview: backView];
     }
     return self;
 }
-
+/*
 -(BOOL)textFieldShouldBeginEditing:(UITextField*)textField {
     CGRect windowSize = [[UIScreen mainScreen] bounds];
     [UIView animateWithDuration:0.35f
@@ -79,6 +112,49 @@
                      }];
     [tf resignFirstResponder];
     return YES;
+}
+*/
+#pragma TextView Delegate
+-(BOOL)textViewShouldBeginEditing:(UITextView*)textView {
+    return YES;
+}
+-(BOOL)textViewShouldEndEditing:(UITextView*)textView {
+    CGRect windowSize = [[UIScreen mainScreen] bounds];
+    [UIView animateWithDuration:0.0f
+                     animations:^{
+                         if((int)iOSVersion == 7){
+                             self.frame = CGRectMake(0, windowSize.size.height - 55, windowSize.size.width, 55);
+                         }else if ((int)iOSVersion == 6){
+                             self.frame = CGRectMake(0, 405, windowSize.size.width, 55);
+                         }
+                     }];
+    [tf resignFirstResponder];
+    return YES;
+}
+
+- (void) textViewDidChange: (UITextView*) text {
+    NSRange searchResult = [text.text rangeOfString:@"\n"];
+    if(searchResult.location != NSNotFound){
+        text.text = [text.text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        [text resignFirstResponder];
+    }
+}
+
+//keyboardの大きさ取得
+-(void)keyboardWillShow:(NSNotification*)note {
+    CGRect keyboardFrameEnd = [[note.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    NSLog(@"end: %f, %f", keyboardFrameEnd.size.width, keyboardFrameEnd.size.height);
+    
+    CGRect windowSize = [[UIScreen mainScreen] bounds];
+    [UIView animateWithDuration:0.35f
+                     animations:^{
+                         if((int)iOSVersion == 7){
+                             self.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height, self.frame.size.width, self.frame.size.height);
+                         }else if((int)iOSVersion == 6){
+                             self.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height - 75, self.frame.size.width, self.frame.size.height);
+                         }
+                     }];
 }
 
 -(void)send:(UIButton *)btn {
