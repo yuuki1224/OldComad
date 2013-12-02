@@ -90,9 +90,4 @@
     [self.navigationController pushViewController:mc animated:YES];
 }
 
-- (void)editProfileBtnClicked:(UIButton *)button {
-    EditProfileViewController *ec = [[EditProfileViewController alloc]init];
-    [self.navigationController pushViewController:ec animated:YES];
-}
-
 @end

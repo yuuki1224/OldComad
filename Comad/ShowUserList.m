@@ -16,11 +16,11 @@
     if (self) {
         // Initialization code
         CGRect windowSize = [[UIScreen mainScreen] bounds];
-        content = [[UIView alloc]initWithFrame:CGRectMake(0, 1, windowSize.size.width, 30)];
-        UIView *outerContent = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 32)];
+        content = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 33)];
+        UIView *outerContent = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 35)];
         
-        content.backgroundColor = [UIColor colorWithRed:0.965 green:0.969 blue:0.973 alpha:1.0];
-        outerContent.backgroundColor = [UIColor colorWithRed:0.898 green:0.910 blue:0.937 alpha:1.0];
+        content.backgroundColor = [UIColor colorWithRed:0.902 green:0.898 blue:0.882 alpha:1.0];
+        outerContent.backgroundColor = [UIColor colorWithRed:0.878 green:0.878 blue:0.871 alpha:1.0];
         
         [outerContent addSubview:content];
         [self addSubview: outerContent];
@@ -33,19 +33,15 @@
 
 - (void)setTitle:(NSString *)title {
     UILabel *titleLabel = [[UILabel alloc] init];
-
-    titleLabel.textColor = [UIColor colorWithRed:0.678 green:0.698 blue:0.733 alpha:1.0];
-    UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:10.0f];
+    titleLabel.textColor = [UIColor colorWithRed:0.333 green:0.333 blue:0.333 alpha:1.0];
+    UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:12.0f];
     titleLabel.font = font;
     titleLabel.text = title;
     [titleLabel sizeToFit];
-    float width = titleLabel.frame.size.width;
-    float height = titleLabel.frame.size.height;
-    titleLabel.frame = CGRectMake(10, 11, width, height);
-    titleLabel.backgroundColor = [UIColor colorWithRed:0.965 green:0.969 blue:0.973 alpha:1.0];
+    titleLabel.frame = CGRectMake(10, 10, titleLabel.frame.size.width, titleLabel.frame.size.height);
+    titleLabel.backgroundColor = [UIColor colorWithRed:0.902 green:0.898 blue:0.882 alpha:1.0];
     
     [content addSubview: titleLabel];
-    
 }
 
 - (void)setContent:(NSString *)content {
@@ -54,9 +50,7 @@
     contentLabel.font = font;
     contentLabel.text = content;
     [contentLabel sizeToFit];
-    float width = contentLabel.frame.size.width;
-    float height = contentLabel.frame.size.height;
-    contentLabel.frame = CGRectMake(18, 47, width, height);
+    contentLabel.frame = CGRectMake(18, 47, contentLabel.frame.size.width, contentLabel.frame.size.height);
 }
 
 

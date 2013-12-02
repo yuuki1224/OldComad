@@ -10,6 +10,8 @@
 #import "ShowUserList.h"
 #import "BasicLabel.h"
 #import "Image.h"
+#import "MessageViewController.h"
+#import "EditProfileViewController.h"
 
 @implementation ShowUserViewController (View)
 
@@ -21,7 +23,7 @@
         scrollView.contentSize = CGSizeMake(windowSize.size.width, 640);
     }else if((int)iOSVersion == 6){
         scrollView.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height);
-        scrollView.contentSize = CGSizeMake(windowSize.size.width, 710);
+        scrollView.contentSize = CGSizeMake(windowSize.size.width, 500);
     }
     [self.view addSubview: scrollView];
     
@@ -35,32 +37,19 @@
     
     showUserList = [[ShowUserList alloc]initWithFrame:CGRectMake(0, 236, windowSize.size.width, 82)];
     [scrollView addSubview: showUserList];
-    [showUserList setTitle:@"プロフィール"];
+    [showUserList setTitle:@"ひとこと"];
     
     question1 = [[ShowUserList alloc]initWithFrame:CGRectMake(0, 319, windowSize.size.width, 82)];
-    [question1 setTitle:@"よくノマドする地域は？"];
+    [question1 setTitle:@"所属"];
     [scrollView addSubview:question1];
     
-    question2 = [[ShowUserList alloc]initWithFrame:CGRectMake(0, 401, windowSize.size.width, 82)];
-    [question2 setTitle:@"好きな言語は？"];
-    [scrollView addSubview:question2];
-    
-    question3 = [[ShowUserList alloc]initWithFrame:CGRectMake(0, 483, windowSize.size.width, 82)];
-    [question3 setTitle:@"使えるAdobe製品は？"];
-    [scrollView addSubview:question3];
-    
-    question4 = [[ShowUserList alloc]initWithFrame:CGRectMake(0, 565, windowSize.size.width, 82)];
-    [question4 setTitle:@"使ってるエディターは？"];
-    [scrollView addSubview:question4];
 }
 
 -(void)reloadLabel {
     iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *userInfo = [userDefaults valueForKey:@"user"];
-    
-    NSLog(@"ここがUserinfoだあああああ %@", userInfo);
-    
+ 
     //名前, comadId, 職業の設定
     if(self.me){
         nameLabel.text = [userInfo objectForKey:@"name"];
@@ -117,73 +106,42 @@
     //それぞれのボタンの設定
     if(self.me){
         //マイページ
-        UIButton *editProfileBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *editProfileImage = [Image resizeImage:[UIImage imageNamed:@"editProfileBtn.png"] resizePer:0.5];
+        UIImageView *editProfileBtn = [[UIImageView alloc]initWithImage:editProfileImage];
+        editProfileBtn.frame = CGRectMake((windowSize.size.width - editProfileBtn.frame.size.width)/2, 183, editProfileBtn.frame.size.width, editProfileBtn.frame.size.height);
+        UITapGestureRecognizer *editProfileTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(editProfileBtnClicked:)];
+        [editProfileBtn addGestureRecognizer: editProfileTapGesture];
+        editProfileBtn.userInteractionEnabled = YES;
         
-        if((int)iOSVersion == 7){
-
-        }else if((int)iOSVersion == 6){
-            [editProfileBtn setTitleEdgeInsets:UIEdgeInsetsMake(7, 0, 0, 0)];
-        }
-        [editProfileBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [editProfileBtn setFont:[UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f]];
-        [editProfileBtn setTitle:@"プロフィール編集" forState:UIControlStateNormal];
-        editProfileBtn.frame = CGRectMake(windowSize.size.width/2 - 56, 190, 113, 29);
-        editProfileBtn.backgroundColor = [UIColor colorWithRed:0.49 green:0.686 blue:0.937 alpha:1.0];
-        [[editProfileBtn layer]setCornerRadius:5.0];
-        [editProfileBtn setClipsToBounds:YES];
-        [editProfileBtn addTarget:self action:@selector(editProfileBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
-        
-        [scrollView addSubview:editProfileBtn];
-        
+        [scrollView addSubview: editProfileBtn];
+         
         [showUserList setContent:[self.userInfo objectForKey:@"description"]];
         
         [question1 setContent:[userInfo objectForKey:@"question1"]];
         [question2 setContent:[userInfo objectForKey:@"question2"]];
-        [question3 setContent:[userInfo objectForKey:@"question3"]];
-        [question4 setContent:[userInfo objectForKey:@"question4"]];
     }else{
-        UIButton *inviteComadBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        UIButton *sendMessageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *messageImage = [Image resizeImage:[UIImage imageNamed:@"messageButton.png"] resizePer:0.5];
+        UIImageView *messageBtn = [[UIImageView alloc]initWithImage:messageImage];
+        messageBtn.frame = CGRectMake((windowSize.size.width - messageBtn.frame.size.width)/2, 183, messageBtn.frame.size.width, messageBtn.frame.size.height);
+        UITapGestureRecognizer *messageTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(messageBtnClicked:)];
+        [messageBtn addGestureRecognizer:messageTapGesture];
+        messageBtn.userInteractionEnabled = YES;
         
-        if((int)iOSVersion == 7){
-            
-        }else if((int)iOSVersion == 6){
-            [inviteComadBtn setTitleEdgeInsets:UIEdgeInsetsMake(7, 0, 0, 0)];
-            [sendMessageBtn setTitleEdgeInsets:UIEdgeInsetsMake(7, 0, 0, 0)];
-        }
-        
-        [inviteComadBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [sendMessageBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        [inviteComadBtn setFont:[UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f]];
-        [sendMessageBtn setFont:[UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f]];
-        
-        [inviteComadBtn setTitle:@"コマドに誘う" forState:UIControlStateNormal];
-        [sendMessageBtn setTitle:@"メッセージ" forState:UIControlStateNormal];
-        inviteComadBtn.frame = CGRectMake(36, 190, 113, 29);
-        sendMessageBtn.frame = CGRectMake(172, 190, 113, 29);
-        
-        inviteComadBtn.backgroundColor = [UIColor colorWithRed:0.49 green:0.686 blue:0.937 alpha:1.0];
-        sendMessageBtn.backgroundColor = [UIColor colorWithRed:0.612 green:0.757 blue:0.937 alpha:1.0];
-        
-        [[inviteComadBtn layer]setCornerRadius:5.0];
-        [[sendMessageBtn layer]setCornerRadius:5.0];
-        [inviteComadBtn setClipsToBounds:YES];
-        [sendMessageBtn setClipsToBounds:YES];
-        
-        [inviteComadBtn addTarget:self action:@selector(inviteBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
-        [sendMessageBtn addTarget:self action:@selector(sendMessageBtnClicked:)forControlEvents:UIControlEventTouchUpInside];
-        
-        //[btn setImage:buttonImage forState:UIControlStateNormal];
-        [scrollView addSubview:inviteComadBtn];
-        [scrollView addSubview:sendMessageBtn];
-        
+        [scrollView addSubview: messageBtn];
         [showUserList setContent:[self.userInfo objectForKey:@"description"]];
         
         [question1 setContent:[self.userInfo objectForKey:@"question1"]];
         [question2 setContent:[self.userInfo objectForKey:@"question2"]];
-        [question3 setContent:[self.userInfo objectForKey:@"question3"]];
-        [question4 setContent:[self.userInfo objectForKey:@"question4"]];
     }
+}
+
+- (void)editProfileBtnClicked:(UITapGestureRecognizer *)sender {
+    EditProfileViewController *ec = [[EditProfileViewController alloc]init];
+    [self.navigationController pushViewController:ec animated:YES];
+}
+
+-(void)messageBtnClicked:(UITapGestureRecognizer *)sender {
+    MessageViewController *mc = [[MessageViewController alloc]init];
+    [self.navigationController pushViewController:mc animated:YES];
 }
 @end

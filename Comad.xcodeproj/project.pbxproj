@@ -24,6 +24,18 @@
 		BA1FE34B184CB0E200E61534 /* addStampButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE346184CB0E200E61534 /* addStampButton.png */; };
 		BA1FE34C184CB0E200E61534 /* textField.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE347184CB0E200E61534 /* textField.png */; };
 		BA1FE34F184CD9E400E61534 /* nochat.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE34E184CD9E400E61534 /* nochat.png */; };
+		BA1FE351184D036300E61534 /* messageButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE350184D036300E61534 /* messageButton.png */; };
+		BA1FE356184D09D800E61534 /* newSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE352184D09D800E61534 /* newSelected.png */; };
+		BA1FE357184D09D800E61534 /* dateSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE353184D09D800E61534 /* dateSelected.png */; };
+		BA1FE358184D09D800E61534 /* popularSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE354184D09D800E61534 /* popularSelected.png */; };
+		BA1FE359184D09D800E61534 /* mycomadSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE355184D09D800E61534 /* mycomadSelected.png */; };
+		BA1FE35B184D0B5B00E61534 /* addFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE35A184D0B5B00E61534 /* addFriend.png */; };
+		BA1FE35D184D116200E61534 /* editProfileBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE35C184D116200E61534 /* editProfileBtn.png */; };
+		BA1FE363184D119800E61534 /* modal_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE35E184D119800E61534 /* modal_03.png */; };
+		BA1FE364184D119800E61534 /* modal_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE35F184D119800E61534 /* modal_05.png */; };
+		BA1FE365184D119800E61534 /* modal_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE360184D119800E61534 /* modal_09.png */; };
+		BA1FE366184D119800E61534 /* modal_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE361184D119800E61534 /* modal_10.png */; };
+		BA1FE367184D119800E61534 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE362184D119800E61534 /* close.png */; };
 		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
 		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
 		BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFBD18474E7D007F64FE /* NewComadViewController.m */; };
@@ -83,7 +95,6 @@
 		BA2A74CD1815059B00167837 /* modal3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74CA1815059B00167837 /* modal3.png */; };
 		BA2A74CE1815059C00167837 /* modal2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74CB1815059B00167837 /* modal2.png */; };
 		BA2A74CF1815059C00167837 /* modal1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74CC1815059B00167837 /* modal1.png */; };
-		BA2A74D1181506BD00167837 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74D0181506BD00167837 /* close.png */; };
 		BA2A74D5181613E000167837 /* modalMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74D4181613E000167837 /* modalMessage.png */; };
 		BA2A74D71816165D00167837 /* modalHome.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74D61816165D00167837 /* modalHome.png */; };
 		BA2A74D91816166C00167837 /* modalInvite.png in Resources */ = {isa = PBXBuildFile; fileRef = BA2A74D81816166C00167837 /* modalInvite.png */; };
@@ -148,7 +159,6 @@
 		BAB147201839D41F0078486B /* IdSearchViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */; };
 		BAB147231839D4430078486B /* CreateGroupViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147221839D4430078486B /* CreateGroupViewController+View.m */; };
 		BAD4AF00180EFD7F0068104B /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD4AEFF180EFD7F0068104B /* back.png */; };
-		BAD4AF02180F128E0068104B /* addFriend.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD4AF01180F128E0068104B /* addFriend.png */; };
 		BAD4AF04180F16E40068104B /* asano.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD4AF03180F16E40068104B /* asano.png */; };
 		BADD952A1824EF5C00DAB12F /* OthersButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95291824EF5C00DAB12F /* OthersButton.m */; };
 		BADD95331825014900DAB12F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95321825014900DAB12F /* MapViewController.m */; };
@@ -247,6 +257,18 @@
 		BA1FE346184CB0E200E61534 /* addStampButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addStampButton.png; sourceTree = "<group>"; };
 		BA1FE347184CB0E200E61534 /* textField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textField.png; sourceTree = "<group>"; };
 		BA1FE34E184CD9E400E61534 /* nochat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nochat.png; sourceTree = "<group>"; };
+		BA1FE350184D036300E61534 /* messageButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageButton.png; sourceTree = "<group>"; };
+		BA1FE352184D09D800E61534 /* newSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newSelected.png; sourceTree = "<group>"; };
+		BA1FE353184D09D800E61534 /* dateSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dateSelected.png; sourceTree = "<group>"; };
+		BA1FE354184D09D800E61534 /* popularSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popularSelected.png; sourceTree = "<group>"; };
+		BA1FE355184D09D800E61534 /* mycomadSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mycomadSelected.png; sourceTree = "<group>"; };
+		BA1FE35A184D0B5B00E61534 /* addFriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFriend.png; sourceTree = "<group>"; };
+		BA1FE35C184D116200E61534 /* editProfileBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editProfileBtn.png; sourceTree = "<group>"; };
+		BA1FE35E184D119800E61534 /* modal_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal_03.png; sourceTree = "<group>"; };
+		BA1FE35F184D119800E61534 /* modal_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal_05.png; sourceTree = "<group>"; };
+		BA1FE360184D119800E61534 /* modal_09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal_09.png; sourceTree = "<group>"; };
+		BA1FE361184D119800E61534 /* modal_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal_10.png; sourceTree = "<group>"; };
+		BA1FE362184D119800E61534 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
 		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
 		BA21DFAE18473251007F64FE /* ComadsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ComadsViewController+View.m"; sourceTree = "<group>"; };
@@ -317,7 +339,6 @@
 		BA2A74CA1815059B00167837 /* modal3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal3.png; sourceTree = "<group>"; };
 		BA2A74CB1815059B00167837 /* modal2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal2.png; sourceTree = "<group>"; };
 		BA2A74CC1815059B00167837 /* modal1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modal1.png; sourceTree = "<group>"; };
-		BA2A74D0181506BD00167837 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		BA2A74D4181613E000167837 /* modalMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalMessage.png; sourceTree = "<group>"; };
 		BA2A74D61816165D00167837 /* modalHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalHome.png; sourceTree = "<group>"; };
 		BA2A74D81816166C00167837 /* modalInvite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modalInvite.png; sourceTree = "<group>"; };
@@ -412,7 +433,6 @@
 		BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IdSearchViewController+View.m"; sourceTree = "<group>"; };
 		BAB147221839D4430078486B /* CreateGroupViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreateGroupViewController+View.m"; sourceTree = "<group>"; };
 		BAD4AEFF180EFD7F0068104B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		BAD4AF01180F128E0068104B /* addFriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFriend.png; sourceTree = "<group>"; };
 		BAD4AF03180F16E40068104B /* asano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asano.png; sourceTree = "<group>"; };
 		BADD95281824EF5C00DAB12F /* OthersButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthersButton.h; sourceTree = "<group>"; };
 		BADD95291824EF5C00DAB12F /* OthersButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthersButton.m; sourceTree = "<group>"; };
@@ -557,6 +577,10 @@
 		BA21DFC818477416007F64FE /* ComadsTab */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE352184D09D800E61534 /* newSelected.png */,
+				BA1FE353184D09D800E61534 /* dateSelected.png */,
+				BA1FE354184D09D800E61534 /* popularSelected.png */,
+				BA1FE355184D09D800E61534 /* mycomadSelected.png */,
 				BA21DFD118479E4B007F64FE /* comadTab1.png */,
 				BA21DFD218479E4B007F64FE /* comadTab2.png */,
 				BA21DFD318479E4B007F64FE /* comadTab3.png */,
@@ -587,6 +611,7 @@
 		BA21DFF21847CE74007F64FE /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE35A184D0B5B00E61534 /* addFriend.png */,
 				BA1FE344184CB0E200E61534 /* tweetButton.png */,
 				BA1FE343184CB0E200E61534 /* addComadButtonForiOS6.png */,
 				BAD4AEFF180EFD7F0068104B /* back.png */,
@@ -651,12 +676,16 @@
 		BA2A74C91815058200167837 /* modal */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE35E184D119800E61534 /* modal_03.png */,
+				BA1FE35F184D119800E61534 /* modal_05.png */,
+				BA1FE360184D119800E61534 /* modal_09.png */,
+				BA1FE361184D119800E61534 /* modal_10.png */,
+				BA1FE362184D119800E61534 /* close.png */,
 				BA74F930183B6AD700FE4629 /* modalAddFriend.png */,
 				BA74F931183B6AD700FE4629 /* modalBlock.png */,
 				BA2A74D81816166C00167837 /* modalInvite.png */,
 				BA2A74D61816165D00167837 /* modalHome.png */,
 				BA2A74D4181613E000167837 /* modalMessage.png */,
-				BA2A74D0181506BD00167837 /* close.png */,
 				BA2A74CA1815059B00167837 /* modal3.png */,
 				BA2A74CB1815059B00167837 /* modal2.png */,
 				BA2A74CC1815059B00167837 /* modal1.png */,
@@ -775,6 +804,8 @@
 		BA5151C31809B5AB00FD69D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE35C184D116200E61534 /* editProfileBtn.png */,
+				BA1FE350184D036300E61534 /* messageButton.png */,
 				BA1FE34D184CB49900E61534 /* ConversationBox */,
 				BA1FE34E184CD9E400E61534 /* nochat.png */,
 				BA21E023184BB8E7007F64FE /* addComadBubble.png */,
@@ -797,7 +828,6 @@
 				BADD95181824C9B700DAB12F /* others */,
 				BA2A74C91815058200167837 /* modal */,
 				BA2A74A0180FB0C800167837 /* profile */,
-				BAD4AF01180F128E0068104B /* addFriend.png */,
 				BA515219180E59C100FD69D8 /* tab3.png */,
 				BA51521A180E59C100FD69D8 /* tab2.png */,
 				BA51521B180E59C100FD69D8 /* tab1.png */,
@@ -1200,12 +1230,17 @@
 				BAB1471D1838CDD10078486B /* invite_friend.html in Resources */,
 				BA21DFE01847AAA8007F64FE /* tommorowRibbon.png in Resources */,
 				BA74F932183B6AD700FE4629 /* modalAddFriend.png in Resources */,
+				BA1FE365184D119800E61534 /* modal_09.png in Resources */,
+				BA1FE364184D119800E61534 /* modal_05.png in Resources */,
 				BA21DFDF1847AAA8007F64FE /* todayRibbon.png in Resources */,
 				BADD95A1182901C000DAB12F /* OthersAddFriend.png in Resources */,
 				BADD95A51829048800DAB12F /* loginTitle.png in Resources */,
 				BA2A74B8180FBEFB00167837 /* asano2.png in Resources */,
 				BA2A74AD180FBEFB00167837 /* yoshida.png in Resources */,
+				BA1FE35D184D116200E61534 /* editProfileBtn.png in Resources */,
+				BA1FE357184D09D800E61534 /* dateSelected.png in Resources */,
 				BA2A74B1180FBEFB00167837 /* campus.png in Resources */,
+				BA1FE366184D119800E61534 /* modal_10.png in Resources */,
 				BA2A74B7180FBEFB00167837 /* picola.png in Resources */,
 				BA74F93D183B9C6E00FE4629 /* Stamp.plist in Resources */,
 				BA1FE34F184CD9E400E61534 /* nochat.png in Resources */,
@@ -1214,17 +1249,20 @@
 				BADD95A7182A4D9200DAB12F /* comadPlus.png in Resources */,
 				BA5151DB180ADD5E00FD69D8 /* settings.png in Resources */,
 				BA21DFF11847AAFD007F64FE /* commentIconPurple.png in Resources */,
-				BAD4AF02180F128E0068104B /* addFriend.png in Resources */,
 				BA1FE33E184CAADF00E61534 /* todayOff.png in Resources */,
 				BA1FE349184CB0E200E61534 /* tweetButton.png in Resources */,
 				BA21DFD518479E4B007F64FE /* comadTab1.png in Resources */,
 				BA2A74D91816166C00167837 /* modalInvite.png in Resources */,
 				BADD95A2182901C000DAB12F /* OthersMyPage.png in Resources */,
 				BA51521E180E59C100FD69D8 /* tab1.png in Resources */,
+				BA1FE35B184D0B5B00E61534 /* addFriend.png in Resources */,
+				BA1FE367184D119800E61534 /* close.png in Resources */,
+				BA1FE359184D09D800E61534 /* mycomadSelected.png in Resources */,
 				BA21E01F184BAF0F007F64FE /* todayOn.png in Resources */,
 				BA2A74AE180FBEFB00167837 /* nakagawa.png in Resources */,
 				BA21E008184B9D5C007F64FE /* onCover.png in Resources */,
 				BA515206180C191F00FD69D8 /* plus.png in Resources */,
+				BA1FE363184D119800E61534 /* modal_03.png in Resources */,
 				BA74F935183B6B4C00FE4629 /* addInCreateGroup.png in Resources */,
 				BA21E00A184B9D5C007F64FE /* offBack.png in Resources */,
 				BAE4829E1819888F00BB1456 /* Default-568h@2x.png in Resources */,
@@ -1232,6 +1270,7 @@
 				BA1FE342184CAADF00E61534 /* futureOff.png in Resources */,
 				BA51521C180E59C100FD69D8 /* tab3.png in Resources */,
 				BA21DFEF1847AAFD007F64FE /* commentIconGreen.png in Resources */,
+				BA1FE358184D09D800E61534 /* popularSelected.png in Resources */,
 				BADD955118260B7700DAB12F /* createComadForm1.png in Resources */,
 				BADD955218260B7700DAB12F /* createComadForm2.png in Resources */,
 				BA2A74B0180FBEFB00167837 /* matsumoto.png in Resources */,
@@ -1240,13 +1279,14 @@
 				BA74F933183B6AD700FE4629 /* modalBlock.png in Resources */,
 				BA2A74CE1815059C00167837 /* modal2.png in Resources */,
 				BA74F943183B9DBD00FE4629 /* tomatoman.png in Resources */,
+				BA1FE351184D036300E61534 /* messageButton.png in Resources */,
 				BA1FE340184CAADF00E61534 /* tommorowOff.png in Resources */,
+				BA1FE356184D09D800E61534 /* newSelected.png in Resources */,
 				BAD4AF00180EFD7F0068104B /* back.png in Resources */,
 				BA2A74B3180FBEFB00167837 /* murata.png in Resources */,
 				BA2A74D71816165D00167837 /* modalHome.png in Resources */,
 				BA21DFED1847AAFD007F64FE /* commentIconPinc.png in Resources */,
 				BA21DFE11847AAA8007F64FE /* wheneverRibbon.png in Resources */,
-				BA2A74D1181506BD00167837 /* close.png in Resources */,
 				BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */,
 				BAE482B7181D859B00BB1456 /* hayashi.png in Resources */,
 				BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */,
