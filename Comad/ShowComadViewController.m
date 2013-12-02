@@ -107,11 +107,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)sendClicked:(NSString *)text {
-    //Socket通信
-    [socketIO sendEvent:@"message" withData:@{@"message" : text}];
-}
-
 - (void)intoRoom {
     socketIO = [[SocketIO alloc] initWithDelegate:self];
     socketIO.delegate = self;

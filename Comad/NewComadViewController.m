@@ -33,6 +33,7 @@
         }else if((int)iOSVersion == 6){
             self.tableView.contentInset = UIEdgeInsetsMake(105, 0, 0, 0);
         }
+        sc = [[ShowComadViewController alloc]init];
     }
     return self;
 }
@@ -93,7 +94,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ShowComadViewController *sc = [[ShowComadViewController alloc]init];
     sc.hidesBottomBarWhenPushed = YES;
     [self.tabBarController.navigationController pushViewController:sc animated:YES];
 }

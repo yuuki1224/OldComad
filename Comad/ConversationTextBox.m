@@ -61,7 +61,7 @@
             UIImageView *textViewBack = [[UIImageView alloc]initWithImage:textViewBackImage];
             textViewBack.frame = CGRectMake(48, 12, textViewBackImage.size.width, textViewBackImage.size.height);
             textViewBack.userInteractionEnabled = YES;
-            UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, textViewBack.frame.size.width, textViewBack.frame.size.height)];
+            textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, textViewBack.frame.size.width, textViewBack.frame.size.height)];
             textView.backgroundColor = [UIColor whiteColor];
             textView.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
             textView.delegate = self;
@@ -72,10 +72,16 @@
             UIImage *sendImage = [Image resizeImage:[UIImage imageNamed:@"submit.png"] resizePer:0.5];
             UIImageView *sendBtn = [[UIImageView alloc]initWithImage:sendImage];
             sendBtn.frame = CGRectMake(windowSize.size.width - 60, 12, sendImage.size.width, sendImage.size.height);
+            UITapGestureRecognizer *sendTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(sendClicked:)];
+            [sendBtn addGestureRecognizer: sendTapGesture];
+            sendBtn.userInteractionEnabled = YES;
             
             UIImage *addStampImage = [Image resizeImage:[UIImage imageNamed:@"addStampButton.png"] resizePer:0.5];
             UIImageView *addStampBtn = [[UIImageView alloc]initWithImage:addStampImage];
             addStampBtn.frame = CGRectMake(12, 12, addStampImage.size.width, addStampImage.size.height);
+            UITapGestureRecognizer *addStampTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addStampClicked:)];
+            [addStampBtn addGestureRecognizer:addStampTapGesture];
+            addStampBtn.userInteractionEnabled = YES;
             
             [backView addSubview: textViewBack];
             [backView addSubview: sendBtn];
@@ -85,6 +91,10 @@
         [self addSubview: backView];
     }
     return self;
+}
+
+- (void)viewWillAppear {
+    
 }
 /*
 -(BOOL)textFieldShouldBeginEditing:(UITextField*)textField {
@@ -163,6 +173,15 @@
 }
 
 -(void)plusTapped:(UIButton *)button {
+    [self.delegate plusClicked];
+}
+
+-(void)sendClicked:(UITapGestureRecognizer *)sender {
+    [self.delegate sendClicked:textView.text];
+    textView.text = @"";
+}
+
+-(void)addStampClicked:(UITapGestureRecognizer *)sender {
     [self.delegate plusClicked];
 }
 

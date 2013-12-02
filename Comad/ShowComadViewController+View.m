@@ -247,4 +247,42 @@
     [self.view addSubview: baseView];
     [self.view addSubview: textBox];
 }
+
+#pragma ConversationTextBoxDelegate methods
+//sendButton
+-(void)sendClicked:(NSString *)text {
+    [socketIO sendEvent:@"message" withData:@{@"message" : text}];
+}
+
+//stamp出現
+-(void)plusClicked {
+    mask = [[BlackMask alloc]init];
+    mask.delegate = self;
+    mask.alpha = 0.4;
+    //スタンプのビューをmaskの上に付ける。
+    sm = [[SpecialMoji alloc]init];
+    sm.delegate = self;
+    
+    [self.view addSubview: mask];
+    [self.view addSubview: sm];
+}
+
+- (void)stampClickedDelegate:(int)stampNum {
+    NSLog(@"add stamp");
+    
+    [mask removeFromSuperview];
+    [sm removeFromSuperview];
+    NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
+    NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
+    
+   // [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": @(10), @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
+}
+
+- (void)blackMaskTapped {
+    [mask removeFromSuperview];
+    [sm removeFromSuperview];
+}
+
 @end

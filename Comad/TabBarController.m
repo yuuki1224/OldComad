@@ -118,6 +118,7 @@
     
     blackMask = [[BlackMask alloc]init];
     blackMask.alpha = 0.4f;
+    blackMask.delegate = self;
     [self.view addSubview:blackMask];
     [self.view addSubview:userModal];
     
@@ -172,5 +173,10 @@
     mc.hidesBottomBarWhenPushed = YES;
     NSLog(@"friendId, %d", friendId);
     
+}
+
+- (void)blackMaskTapped {
+    [userModal removeFromSuperview];
+    [blackMask removeFromSuperview];
 }
 @end

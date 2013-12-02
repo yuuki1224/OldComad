@@ -11,14 +11,18 @@
 #import "ConversationTextBox.h"
 #import "Conversation.h"
 #import "SocketIO.h"
+#import "BlackMask.h"
+#import "SpecialMoji.h"
 
-@interface ShowComadViewController : UIViewController <ConversationTextBoxDelegate>{
+@interface ShowComadViewController : UIViewController <ConversationTextBoxDelegate, SpecialMojiDelegate, BlackMaskDelegate>{
     ShowComad *showComad;
     CGRect windowSize;
     float iOSVersion;
     UIScrollView *scrollView;
     Conversation *conversation;
     SocketIO *socketIO;
+    BlackMask *mask;
+    SpecialMoji *sm;
 }
 @property (nonatomic, retain) NSDictionary *comadInfo;
 @property (nonatomic, retain) NSString *name;

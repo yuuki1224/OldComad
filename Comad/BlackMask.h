@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BlackMaskDelegate;
+
 @interface BlackMask : UIView
 
+@property (nonatomic, weak) id<BlackMaskDelegate> delegate;
+@end
+
+@protocol BlackMaskDelegate <NSObject>
+-(void)blackMaskTapped;
 @end

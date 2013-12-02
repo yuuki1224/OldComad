@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShowComadViewController.h"
 
 @interface NewComadViewController : UITableViewController {
     CGRect windowSize;
     float iOSVersion;
+    ShowComadViewController *sc;
 }
 
 @property (nonatomic, retain)NSArray *NewComad;

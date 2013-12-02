@@ -13,8 +13,9 @@
 #import "ComadsViewController.h"
 #import "FriendsViewController.h"
 #import "OthersViewController.h"
+#import "BlackMask.h"
 
-@interface TabBarController : UITabBarController <FriendViewControllerDelegate, UserModalDelegate> {
+@interface TabBarController : UITabBarController <FriendViewControllerDelegate, UserModalDelegate, BlackMaskDelegate> {
     UserModal *userModal;
     BlackMask *blackMask;
     

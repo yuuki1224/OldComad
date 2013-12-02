@@ -18,17 +18,15 @@
         CGRect windowSize = [[UIScreen mainScreen] bounds];
         self.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height);
         self.backgroundColor = [UIColor blackColor];
+        UITapGestureRecognizer *blackMaskTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(blackMaskTapped:)];
+        [self addGestureRecognizer:blackMaskTapGesture];
+        self.userInteractionEnabled = YES;
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+-(void)blackMaskTapped:(UITapGestureRecognizer *)sender {
+    [self.delegate blackMaskTapped];
 }
-*/
 
 @end

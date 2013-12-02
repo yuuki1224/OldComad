@@ -13,6 +13,7 @@
 @interface ConversationTextBox : UIView <UITextFieldDelegate>{
     float iOSVersion;
     UITextField *tf;
+    UITextView *textView;
 }
 @property (nonatomic, weak) id<ConversationTextBoxDelegate> delegate;
 @end
