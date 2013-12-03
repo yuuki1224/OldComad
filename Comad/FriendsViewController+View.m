@@ -27,6 +27,18 @@
         _friends = [responseObject objectForKey:@"friends"];
         _groups = [responseObject objectForKey:@"groups"];
         
+        NSLog(@"me: %@", me);
+        
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  [me objectForKey:@"id"], @"id",
+                                  [me objectForKey:@"name"], @"name",
+                                  [me objectForKey:@"comad_id"], @"comadId",
+                                  [me objectForKey:@"occupation"], @"occupation",
+                                  [me objectForKey:@"description"], @"detail",
+                                  [me objectForKey:@"image_name"], @"imageName",
+                                  [me objectForKey:@"question1"], @"question1", nil];
+        
+        
         NSMutableArray *friendsMutableArray = [NSMutableArray array];
         for (int i = 0; [_friends count] > i; i++) {
             [friendsMutableArray addObject:[_friends objectAtIndex:i]];
@@ -35,6 +47,7 @@
         //userDefaultのfriendsにしまう。
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSData *friendsData = [NSKeyedArchiver archivedDataWithRootObject: friendsMutableArray];
+        [userDefaults setObject: userInfo forKey:@"user"];
         [userDefaults setObject: friendsData forKey:@"friends"];
         [userDefaults synchronize];
         
