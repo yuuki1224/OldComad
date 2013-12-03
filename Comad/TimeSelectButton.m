@@ -11,22 +11,24 @@
 
 @implementation TimeSelectButton
 
+@synthesize select;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.select = @"なう";
         // Initialization code
         self.frame = CGRectMake(5, 0, 305, 31);
-        onNowImage = [Image resizeImage:[UIImage imageNamed:@"nowOn.png"] resizeWidth:61 resizeHeight:32];
-        offNowImage = [Image resizeImage:[UIImage imageNamed:@"nowOff.png"] resizeWidth:61 resizeHeight:32];
-        onTodayImage = [Image resizeImage:[UIImage imageNamed:@"todayOn.png"] resizeWidth:61 resizeHeight:32];
-        offTodayImage = [Image resizeImage:[UIImage imageNamed:@"todayOff.png"] resizeWidth:61 resizeHeight:32];
-        onTommorowImage = [Image resizeImage:[UIImage imageNamed:@"tommorowOn.png"] resizeWidth:61 resizeHeight:32];
-        offTommorowImage = [Image resizeImage:[UIImage imageNamed:@"tommorowOff.png"] resizeWidth:61 resizeHeight:32];
-        onFutureImage = [Image resizeImage:[UIImage imageNamed:@"futureOn.png"] resizeWidth:61 resizeHeight:32];
-        offFutureImage = [Image resizeImage:[UIImage imageNamed:@"futureOff.png"] resizeWidth:61 resizeHeight:32];
-        onAnytimeImage = [Image resizeImage:[UIImage imageNamed:@"anytimeOn.png"] resizeWidth:61 resizeHeight:32];
-        offAnytimeImage = [Image resizeImage:[UIImage imageNamed:@"anytimeOff.png"] resizeWidth:61 resizeHeight:32];
+        onNowImage = [UIImage imageNamed:@"nowOn.png"];
+        offNowImage = [UIImage imageNamed:@"nowOff.png"];
+        onTodayImage = [UIImage imageNamed:@"todayOn.png"];
+        offTodayImage = [UIImage imageNamed:@"todayOff.png"];
+        onTommorowImage = [UIImage imageNamed:@"tommorowOn.png"];
+        offTommorowImage = [UIImage imageNamed:@"tommorowOff.png"];
+        onFutureImage = [UIImage imageNamed:@"futureOn.png"];
+        offFutureImage = [UIImage imageNamed:@"futureOff.png"];
+        onAnytimeImage = [UIImage imageNamed:@"anytimeOn.png"];
+        offAnytimeImage = [UIImage imageNamed:@"anytimeOff.png"];
         
         nowImageView = [[UIImageView alloc]initWithImage:onNowImage];
         todayImageView = [[UIImageView alloc]initWithImage:offTodayImage];
@@ -69,6 +71,7 @@
 }
 
 - (void)nowTabpped:(UITapGestureRecognizer *)sender {
+    self.select = @"なう";
     nowImageView.image = onNowImage;
     todayImageView.image = offTodayImage;
     tommorowImageView.image = offTommorowImage;
@@ -77,6 +80,7 @@
 }
 
 - (void)todayTabpped:(UITapGestureRecognizer *)sender {
+    self.select = @"今日";
     nowImageView.image = offNowImage;
     todayImageView.image = onTodayImage;
     tommorowImageView.image = offTommorowImage;
@@ -85,6 +89,7 @@
 }
 
 - (void)tommorowTabpped:(UITapGestureRecognizer *)sender {
+    self.select = @"明日";
     nowImageView.image = offNowImage;
     todayImageView.image = offTodayImage;
     tommorowImageView.image = onTommorowImage;
@@ -93,6 +98,7 @@
 }
 
 - (void)futureTabpped:(UITapGestureRecognizer *)sender {
+    self.select = @"明日以降";
     nowImageView.image = offNowImage;
     todayImageView.image = offTodayImage;
     tommorowImageView.image = offTommorowImage;
@@ -101,6 +107,7 @@
 }
 
 - (void)anytimeTabpped:(UITapGestureRecognizer *)sender {
+    self.select = @"いつでも";
     nowImageView.image = offNowImage;
     todayImageView.image = offTodayImage;
     tommorowImageView.image = offTommorowImage;

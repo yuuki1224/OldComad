@@ -50,6 +50,8 @@
 		BA1FE380184E3D1D00E61534 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE37B184E3D1D00E61534 /* 5.png */; };
 		BA1FE382184E7E8400E61534 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE381184E7E8400E61534 /* Default@2x.png */; };
 		BA1FE385184E801400E61534 /* tab3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE384184E801400E61534 /* tab3.png */; };
+		BA1FE388184E991100E61534 /* addFriendTab1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE386184E991100E61534 /* addFriendTab1.png */; };
+		BA1FE389184E991100E61534 /* addFriendTab2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE387184E991100E61534 /* addFriendTab2.png */; };
 		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
 		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
 		BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFBD18474E7D007F64FE /* NewComadViewController.m */; };
@@ -156,9 +158,6 @@
 		BA74F952183F743F00FE4629 /* Stamp.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F951183F743F00FE4629 /* Stamp.m */; };
 		BA74F9551843E14300FE4629 /* FriendsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F9541843E14300FE4629 /* FriendsViewController+View.m */; };
 		BAB1470B1837C8770078486B /* AddFriendMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1470A1837C8770078486B /* AddFriendMenu.m */; };
-		BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB1470C1837CC960078486B /* idSearchMenu.png */; };
-		BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB1470D1837CC960078486B /* qrCodeMenu.png */; };
-		BAB147111837CCB60078486B /* addFriendMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB147101837CCB60078486B /* addFriendMenu.png */; };
 		BAB147151837DAFD0078486B /* IdSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147141837DAFD0078486B /* IdSearchViewController.m */; };
 		BAB147181837DB0E0078486B /* QrCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147171837DB0E0078486B /* QrCodeViewController.m */; };
 		BAB1471B1838B0770078486B /* InviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1471A1838B0770078486B /* InviteFriendViewController.m */; };
@@ -285,6 +284,8 @@
 		BA1FE37B184E3D1D00E61534 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		BA1FE381184E7E8400E61534 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BA1FE384184E801400E61534 /* tab3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab3.png; sourceTree = "<group>"; };
+		BA1FE386184E991100E61534 /* addFriendTab1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFriendTab1.png; sourceTree = "<group>"; };
+		BA1FE387184E991100E61534 /* addFriendTab2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFriendTab2.png; sourceTree = "<group>"; };
 		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
 		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
 		BA21DFAE18473251007F64FE /* ComadsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ComadsViewController+View.m"; sourceTree = "<group>"; };
@@ -428,9 +429,6 @@
 		BA74F9541843E14300FE4629 /* FriendsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FriendsViewController+View.m"; sourceTree = "<group>"; };
 		BAB147091837C8770078486B /* AddFriendMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendMenu.h; sourceTree = "<group>"; };
 		BAB1470A1837C8770078486B /* AddFriendMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendMenu.m; sourceTree = "<group>"; };
-		BAB1470C1837CC960078486B /* idSearchMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idSearchMenu.png; sourceTree = "<group>"; };
-		BAB1470D1837CC960078486B /* qrCodeMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrCodeMenu.png; sourceTree = "<group>"; };
-		BAB147101837CCB60078486B /* addFriendMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFriendMenu.png; sourceTree = "<group>"; };
 		BAB147131837DAFD0078486B /* IdSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdSearchViewController.h; sourceTree = "<group>"; };
 		BAB147141837DAFD0078486B /* IdSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdSearchViewController.m; sourceTree = "<group>"; };
 		BAB147161837DB0E0078486B /* QrCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QrCodeViewController.h; sourceTree = "<group>"; };
@@ -803,6 +801,8 @@
 		BA5151C31809B5AB00FD69D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE386184E991100E61534 /* addFriendTab1.png */,
+				BA1FE387184E991100E61534 /* addFriendTab2.png */,
 				BA1FE375184DCF2B00E61534 /* addButton.png */,
 				BA1FE35C184D116200E61534 /* editProfileBtn.png */,
 				BA1FE350184D036300E61534 /* messageButton.png */,
@@ -817,9 +817,6 @@
 				BA21DFC818477416007F64FE /* ComadsTab */,
 				BA74F939183B9AE600FE4629 /* stamps */,
 				BA74F934183B6B4C00FE4629 /* addInCreateGroup.png */,
-				BAB147101837CCB60078486B /* addFriendMenu.png */,
-				BAB1470C1837CC960078486B /* idSearchMenu.png */,
-				BAB1470D1837CC960078486B /* qrCodeMenu.png */,
 				BADD95A8182A4FF100DAB12F /* createComad.png */,
 				BADD95A6182A4D9200DAB12F /* comadPlus.png */,
 				BADD95A41829048800DAB12F /* loginTitle.png */,
@@ -1260,6 +1257,7 @@
 				BA1FE359184D09D800E61534 /* mycomadSelected.png in Resources */,
 				BA1FE37F184E3D1D00E61534 /* 4.png in Resources */,
 				BA21E01F184BAF0F007F64FE /* todayOn.png in Resources */,
+				BA1FE388184E991100E61534 /* addFriendTab1.png in Resources */,
 				BA2A74AE180FBEFB00167837 /* nakagawa.png in Resources */,
 				BA1FE36F184D1CA800E61534 /* otherAddFriend.png in Resources */,
 				BA21E008184B9D5C007F64FE /* onCover.png in Resources */,
@@ -1288,9 +1286,7 @@
 				BA2A74B3180FBEFB00167837 /* murata.png in Resources */,
 				BA21DFED1847AAFD007F64FE /* commentIconPinc.png in Resources */,
 				BA21DFE11847AAA8007F64FE /* wheneverRibbon.png in Resources */,
-				BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */,
 				BAE482B7181D859B00BB1456 /* hayashi.png in Resources */,
-				BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */,
 				BA1FE37E184E3D1D00E61534 /* 3.png in Resources */,
 				BA1FE37D184E3D1D00E61534 /* 2.png in Resources */,
 				BA21E009184B9D5C007F64FE /* offCover.png in Resources */,
@@ -1321,8 +1317,8 @@
 				BA1FE382184E7E8400E61534 /* Default@2x.png in Resources */,
 				BA1FE371184D1CA800E61534 /* otherMessage.png in Resources */,
 				BA74F93B183B9B3500FE4629 /* sally.png in Resources */,
+				BA1FE389184E991100E61534 /* addFriendTab2.png in Resources */,
 				BA515183180900E200FD69D8 /* Images.xcassets in Resources */,
-				BAB147111837CCB60078486B /* addFriendMenu.png in Resources */,
 				BA2A74CD1815059B00167837 /* modal3.png in Resources */,
 				BA21DFF61847CE8C007F64FE /* comadInHeader.png in Resources */,
 				BA1FE33F184CAADF00E61534 /* nowOff.png in Resources */,

@@ -39,7 +39,7 @@
     
     [self.view addSubview:wv];
 
-    NSURL *url = [NSURL URLWithString:@"http://localhost:3000"];
+    NSURL *url = [NSURL URLWithString:@"http://54.199.53.137:3000"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [wv loadRequest:req];
     

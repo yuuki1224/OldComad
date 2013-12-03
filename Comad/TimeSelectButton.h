@@ -26,5 +26,5 @@
     UIImageView *futureImageView;
     UIImageView *anytimeImageView;
 }
-
+@property (nonatomic, retain)NSString *select;
 @end

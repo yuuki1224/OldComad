@@ -32,8 +32,7 @@
     
     //サムネイル、名前、ComadId
     UIImage *thumbnailImage = [UIImage imageNamed:[userInfo objectForKey:@"imageName"]];
-    UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:37 resizeHeight:37];
-    UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImageResize];
+    UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     thumbnail.frame = CGRectMake(10, 5, 37, 37);
     thumbnail.layer.cornerRadius = 14.0f;
@@ -58,10 +57,9 @@
     [addComadView addSubview: comadId];
     
     //吹き出しのところ
-    UIImage *bubbleImage = [Image resizeImage:[UIImage imageNamed:@"addComadBubble.png"] resizePer:0.5];
+    UIImage *bubbleImage = [UIImage imageNamed:@"addComadBubble.png"];
     UIImageView *bubble = [[UIImageView alloc]initWithImage:bubbleImage];
-    bubble.frame = CGRectMake(5, 42, bubble.frame.size.width, bubble.frame.size.height);
-    NSLog(@"bubble %f %f", bubble.frame.size.width, bubble.frame.size.height);
+    bubble.frame = CGRectMake(5, 42, 308.5, 69.5);
     bubble.userInteractionEnabled = YES;
     
     tv = [[UITextView alloc]init];
@@ -83,22 +81,21 @@
     [addComadView addSubview: bubble];
     
     //なうとか
-    TimeSelectButton *timeSelect = [[TimeSelectButton alloc]init];
+    timeSelect = [[TimeSelectButton alloc]init];
     timeSelect.frame = CGRectMake(7, 119, 305, 31);
     [addComadView addSubview: timeSelect];
     
     //時間
     UIImage *timeIcon = [UIImage imageNamed:@"datetimeIcon.png"];
-    UIImage *timeIconResize = [Image resizeImage:timeIcon resizePer:0.5];
-    UIImageView *timeIconView = [[UIImageView alloc]initWithImage: timeIconResize];
-    timeIconView.frame = CGRectMake(115, 170, timeIconResize.size.width, timeIconResize.size.height);
+    UIImageView *timeIconView = [[UIImageView alloc]initWithImage: timeIcon];
+    timeIconView.frame = CGRectMake(115, 170, 17.5, 17.5);
     BasicLabel *timeLabel = [[BasicLabel alloc]initWithName:AddComadLabel];
     timeLabel.text = @"時間";
     [timeLabel sizeToFit];
     timeLabel.frame = CGRectMake(130, timeIconView.frame.origin.y + 1, timeLabel.frame.size.width, timeLabel.frame.size.height);
     [addComadView addSubview: timeLabel];
     
-    UIImage *form = [Image resizeImage:[UIImage imageNamed:@"cell.png"] resizePer:0.5];
+    UIImage *form = [UIImage imageNamed:@"cell.png"];
     UIImageView *timeFormView = [[UIImageView alloc]initWithImage:form];
     timeFormView.backgroundColor = [UIColor whiteColor];
     timeFormView.layer.cornerRadius = 5;
@@ -119,9 +116,8 @@
     
     //場所
     UIImage *locationIcon = [UIImage imageNamed:@"locationIcon.png"];
-    UIImage *locationIconResize = [Image resizeImage:locationIcon resizePer:0.5];
-    UIImageView *locationIconView = [[UIImageView alloc]initWithImage: locationIconResize];
-    locationIconView.frame = CGRectMake(115, timeIconView.frame.origin.y + timeIconView.frame.size.height + 15, locationIconResize.size.width, locationIconResize.size.height);
+    UIImageView *locationIconView = [[UIImageView alloc]initWithImage: locationIcon];
+    locationIconView.frame = CGRectMake(115, timeIconView.frame.origin.y + timeIconView.frame.size.height + 15, 14.5, 19);
     [addComadView addSubview: locationIconView];
     
     BasicLabel *locationLabel = [[BasicLabel alloc]initWithName:AddComadLabel];
@@ -148,7 +144,7 @@
     [addComadView addSubview: locationFormView];
     
     //tweet
-    TweetButton *tweetButton = [[TweetButton alloc]init];
+    tweetButton = [[TweetButton alloc]init];
     tweetButton.frame = CGRectMake(15, timeLabel.frame.origin.y - 7, tweetButton.frame.size.width, tweetButton.frame.size.height);
     [addComadView addSubview: tweetButton];
     tweetButton.tweet = false;

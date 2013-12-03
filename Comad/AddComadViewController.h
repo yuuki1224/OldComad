@@ -11,6 +11,8 @@
 #import "URBSegmentedControl.h"
 #import "EditTimeFormViewController.h"
 #import "EditLoacationFormViewController.h"
+#import "TimeSelectButton.h"
+#import "TweetButton.h"
 
 @interface AddComadViewController : UIViewController <EditTimeFormDelegate, EditLocationFormDelegate> {
     float iOSVersion;
@@ -19,6 +21,8 @@
     UITextView *tv;
     BasicLabel *datetime;
     BasicLabel *location;
+    TimeSelectButton *timeSelect;
+    TweetButton *tweetButton;
 }
 
 - (void)configure;

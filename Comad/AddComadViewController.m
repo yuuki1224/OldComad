@@ -41,10 +41,9 @@
             //[button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:button];
         }else if((int)iOSVersion == 6){
-            //UIImageView *button = [[UIImageView alloc]initWithFrame:CGRectMake(windowSize.size.width - 60, 10, 48, 28)];
-            UIImage *buttonImage = [Image resizeImage:[UIImage imageNamed:@"addComadButtonForiOS6.png"] resizePer:0.5];
+            UIImage *buttonImage = [UIImage imageNamed:@"addComadButtonForiOS6.png"];
             UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
-            createButton.frame = CGRectMake(windowSize.size.width - buttonImage.size.width - 10, 10, buttonImage.size.width, buttonImage.size.height);
+            createButton.frame = CGRectMake(windowSize.size.width - 52.5, 10, 42.5, 28.5);
             UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(saveClicked:)];
             [createButton addGestureRecognizer: tapGesture];
             createButton.userInteractionEnabled = YES;
@@ -108,11 +107,11 @@
 
 - (void)saveClicked:(UITapGestureRecognizer *)sender {
     ComadJsonClient *client = [ComadJsonClient sharedClient];
-    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
+    //[SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     
     NSString *text = tv.text;
     NSString *selectTime = @"1";
-    BOOL tweet = YES;
+    BOOL tweet = tweetButton.tweet;
     NSDateFormatter *format = [[NSDateFormatter alloc]init];
     [format setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
     //NSString *startTime = [format stringFromDate:];
@@ -126,8 +125,11 @@
                             [user objectForKey:@"id"], @"user_id",
                             startTimeParam, @"start_time",
                             locationParam, @"location",
-                            text, @"detail", nil];
-    
+                            text, @"detail",
+                            timeSelect.select, @"timeSelect",
+                            tweet, @"tweetBool",nil];
+    NSLog(@"params: %@", params);
+    /*
     [client createNewComad:(NSDictionary *)params :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
         NSLog(@"%@", response);
         [SVProgressHUD dismiss];
@@ -136,5 +138,6 @@
         NSLog(@"%@", errorString);
         [SVProgressHUD dismiss];
     }];
+     */
 }
 @end
