@@ -23,6 +23,7 @@
     if (self) {
         // Custom initialization
         windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         Header *header = [[Header alloc]init];
         [header setTitle:@"メール設定"];
         
@@ -48,10 +49,20 @@
 }
 
 - (void)setBackBtnInHeader {
-    UIImage *image = [UIImage imageNamed:@"back.png"];
+    NSString *backImageName = @"";
+    if((int)iOSVersion == 7){
+        backImageName = @"back.png";
+    }else if((int)iOSVersion == 6){
+        backImageName = @"backForiOS6.png";
+    }
+    UIImage *image = [UIImage imageNamed:backImageName];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(15, 36, 20, 28);
+    if((int)iOSVersion == 7){
+        btn.frame = CGRectMake(15, 36, 20, 28);
+    }else if ((int)iOSVersion == 6){
+        btn.frame = CGRectMake(15, 11, 20, 28);
+    }
     [btn setImage:imageResize forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
     

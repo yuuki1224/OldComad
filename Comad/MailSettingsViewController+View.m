@@ -11,11 +11,10 @@
 @implementation MailSettingsViewController (View)
 
 -(void)configure {
-    mailSettingsTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77) style:UITableViewStyleGrouped];
+    mailSettingsTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48) style:UITableViewStyleGrouped];
     
     mailSettingsTable.delegate = self;
     mailSettingsTable.dataSource = self;
-    mailSettingsTable.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77);
     
     [self.view addSubview: mailSettingsTable];
 }
@@ -78,9 +77,11 @@
 }
 
 //ヘッダーのタイトル
+/*
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"";
 }
+ */
 
 #pragma UITableViewDelegate methods
 //セルの高さ

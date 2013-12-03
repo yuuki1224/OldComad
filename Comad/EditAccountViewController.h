@@ -11,6 +11,8 @@
 @interface EditAccountViewController : UIViewController<UITableViewDelegate, UITableViewDataSource> {
     UITableView *editAccountTable;
     CGRect windowSize;
+    float iOSVersion;
 }
 
+- (void)configure;
 @end

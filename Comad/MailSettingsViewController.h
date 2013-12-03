@@ -10,7 +10,9 @@
 
 @interface MailSettingsViewController : UIViewController {
     CGRect windowSize;
+    float iOSVersion;
     UITableView *mailSettingsTable;
 }
 
+- (void)configure;
 @end

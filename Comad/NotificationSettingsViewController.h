@@ -10,6 +10,7 @@
 
 @interface NotificationSettingsViewController : UIViewController<UITableViewDataSource, UITabBarDelegate> {
     CGRect windowSize;
+    float iOSVersion;
     UITableView *notificationSettingsTable;
 }
 

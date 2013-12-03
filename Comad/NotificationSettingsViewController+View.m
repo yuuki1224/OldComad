@@ -11,10 +11,9 @@
 @implementation NotificationSettingsViewController (View)
 
 -(void)configure {
-    notificationSettingsTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77) style:UITableViewStyleGrouped];
+    notificationSettingsTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48) style:UITableViewStyleGrouped];
     notificationSettingsTable.delegate = self;
     notificationSettingsTable.dataSource = self;
-    notificationSettingsTable.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77);
     
     [self.view addSubview:notificationSettingsTable];
 }
@@ -65,23 +64,11 @@
 
 //ヘッダーの高さ
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return 100;
-            break;
-        case 1:
-            return 70;
-            break;
-        case 2:
-            return 70;
-            break;
-        default:
-            break;
-    }
-    return 0;
+    return 50;
 }
 
 //ヘッダーの内容
+/*
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *header = [[UIView alloc]init];
     switch (section) {
@@ -105,6 +92,7 @@
     }
     return header;
 }
+ */
 
 //セルの内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

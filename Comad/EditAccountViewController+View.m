@@ -14,10 +14,9 @@
 
 -(void)configure {
     //editAccountTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77) style:UITableViewStyleGrouped];
-    editAccountTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77) style:UITableViewStyleGrouped];
+    editAccountTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48) style:UITableViewStyleGrouped];
     editAccountTable.delegate = self;
     editAccountTable.dataSource = self;
-    editAccountTable.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77);
     
     [self.view addSubview:editAccountTable];
 }
@@ -43,13 +42,11 @@
 }
 
 //ヘッダーの内容
+/*
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *header = [[UIView alloc]init];
-    header.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
-    header.frame = CGRectMake(0, 0, windowSize.size.width, 100);
-    return header;
-}
 
+}
+*/
 //セルの内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"a"];
