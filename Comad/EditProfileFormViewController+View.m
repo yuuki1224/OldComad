@@ -13,6 +13,7 @@
 -(void)configure {
     tv = [[UITextField alloc]init];
     tv.text = self.editText;
+    [tv setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
     tv.frame = CGRectMake((windowSize.size.width - 250)/2, 100, 250, 40);
     tv.clearButtonMode = UITextFieldViewModeWhileEditing;
     tv.borderStyle = UITextBorderStyleRoundedRect;

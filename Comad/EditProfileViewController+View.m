@@ -19,7 +19,7 @@
     if((int)iOSVersion == 7){
         editProfileTable.frame = CGRectMake(0, 77, windowSize.size.width, 495);
     }else if((int)iOSVersion == 6){
-        editProfileTable.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48);
+        editProfileTable.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 65);
         editProfileTable.contentSize = CGSizeMake(windowSize.size.width, 1000);
     }
     [self.view addSubview: editProfileTable];
@@ -52,7 +52,11 @@
 
 //フッターの高さ
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0;
+    if(section == 2){
+        return 40;
+    }else {
+        return 0;
+    }
 }
 
 //Rowの数
@@ -152,6 +156,12 @@
             break;
     }
     return header;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 50)];
+    footerView.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
+    return footerView;
 }
  
 //セルの内容

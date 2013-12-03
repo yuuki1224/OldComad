@@ -39,7 +39,6 @@
         }else if((int)iOSVersion == 6){
             self.view.frame = CGRectMake(0, 0, windowSize.size.width, 800);
         }
-        self.view.backgroundColor = [UIColor whiteColor];
         
         if((int)iOSVersion == 7){
             RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
@@ -49,9 +48,9 @@
             [self.view addSubview:button];
         }else if((int)iOSVersion == 6){
             //UIImageView *button = [[UIImageView alloc]initWithFrame:CGRectMake(windowSize.size.width - 60, 10, 48, 28)];
-            UIImage *buttonImage = [Image resizeImage:[UIImage imageNamed:@"done.png"] resizePer:0.5];
+            UIImage *buttonImage = [UIImage imageNamed:@"done.png"];
             UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
-            createButton.frame = CGRectMake(windowSize.size.width - buttonImage.size.width - 10, 10, buttonImage.size.width, buttonImage.size.height);
+            createButton.frame = CGRectMake(windowSize.size.width - 52.5, 10, 42.5, 28.5);
             UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(saveClicked:)];
             [createButton addGestureRecognizer: tapGesture];
             createButton.userInteractionEnabled = YES;
