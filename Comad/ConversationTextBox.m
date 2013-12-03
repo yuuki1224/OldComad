@@ -57,9 +57,9 @@
             [plus addTarget:self action:@selector(plusTapped:) forControlEvents:UIControlEventTouchUpInside];
             [backView addSubview:plus];
         }else if((int)iOSVersion == 6){
-            UIImage *textViewBackImage = [Image resizeImage:[UIImage imageNamed:@"textField.png"] resizePer:0.5];
+            UIImage *textViewBackImage = [UIImage imageNamed:@"textField.png"];
             UIImageView *textViewBack = [[UIImageView alloc]initWithImage:textViewBackImage];
-            textViewBack.frame = CGRectMake(48, 12, textViewBackImage.size.width, textViewBackImage.size.height);
+            textViewBack.frame = CGRectMake(48, 12, 207.5, 32.5);
             textViewBack.userInteractionEnabled = YES;
             textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, textViewBack.frame.size.width, textViewBack.frame.size.height)];
             textView.backgroundColor = [UIColor whiteColor];
@@ -69,16 +69,16 @@
             textView.clipsToBounds = true;
             [textViewBack addSubview: textView];
             
-            UIImage *sendImage = [Image resizeImage:[UIImage imageNamed:@"submit.png"] resizePer:0.5];
+            UIImage *sendImage = [UIImage imageNamed:@"submit.png"];
             UIImageView *sendBtn = [[UIImageView alloc]initWithImage:sendImage];
-            sendBtn.frame = CGRectMake(windowSize.size.width - 60, 12, sendImage.size.width, sendImage.size.height);
+            sendBtn.frame = CGRectMake(windowSize.size.width - 60, 12, 52.5, 31.5);
             UITapGestureRecognizer *sendTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(sendClicked:)];
             [sendBtn addGestureRecognizer: sendTapGesture];
             sendBtn.userInteractionEnabled = YES;
             
-            UIImage *addStampImage = [Image resizeImage:[UIImage imageNamed:@"addStampButton.png"] resizePer:0.5];
+            UIImage *addStampImage = [UIImage imageNamed:@"addStampButton.png"];
             UIImageView *addStampBtn = [[UIImageView alloc]initWithImage:addStampImage];
-            addStampBtn.frame = CGRectMake(12, 12, addStampImage.size.width, addStampImage.size.height);
+            addStampBtn.frame = CGRectMake(12, 12, 32, 33);
             UITapGestureRecognizer *addStampTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addStampClicked:)];
             [addStampBtn addGestureRecognizer:addStampTapGesture];
             addStampBtn.userInteractionEnabled = YES;

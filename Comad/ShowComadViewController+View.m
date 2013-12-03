@@ -25,8 +25,7 @@
     cellView.clipsToBounds = true;
     
     UIImage *thumbnailImage = [UIImage imageNamed:@"adachi.png"];
-    UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:62 resizeHeight:62];
-    UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImageResize];
+    UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     thumbnail.frame = CGRectMake(4.5, 4.5, 62, 62);
     thumbnail.layer.cornerRadius = 14.0f;
@@ -48,9 +47,8 @@
     
     //時間
     UIImage *datetimeIcon = [UIImage imageNamed:@"datetimeIcon.png"];
-    UIImage *datetimeIconResize = [Image resizeImage: datetimeIcon resizePer:0.5];
-    UIImageView *datetimeIconView = [[UIImageView alloc]initWithImage: datetimeIconResize];
-    datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, datetimeIconResize.size.width, datetimeIconResize.size.height);
+    UIImageView *datetimeIconView = [[UIImageView alloc]initWithImage: datetimeIcon];
+    datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, 17.5, 17.5);
     BasicLabel *dateTime = [[BasicLabel alloc]initWithName:ShowUserComadId];
     /*
     if([[comadInfo objectForKey:@"dateTime"] isEqualToString:@""]){
@@ -65,9 +63,8 @@
     
     //場所
     UIImage *locationIcon = [UIImage imageNamed:@"locationIcon.png"];
-    UIImage *locationIconResize = [Image resizeImage:locationIcon resizePer:0.5];
-    UIImageView *locationIconView = [[UIImageView alloc]initWithImage: locationIconResize];
-    locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height + 3, locationIconResize.size.width, locationIconResize.size.height);
+    UIImageView *locationIconView = [[UIImageView alloc]initWithImage: locationIcon];
+    locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height + 3, 14.5, 19);
     BasicLabel *location = [[BasicLabel alloc]initWithName:ShowUserComadId];
     location.text = @"未定";
     [location sizeToFit];
@@ -106,75 +103,13 @@
     [time sizeToFit];
     time.frame = CGRectMake(cellView.frame.size.width - time.frame.size.width - 5, 11, time.frame.size.width, time.frame.size.height);
     
-    //会話人数
-    BasicLabel *conversationNum = [[BasicLabel alloc]initWithName:ComadId];
-    conversationNum.text = [NSString stringWithFormat:@"%d人が会話中",3];
-    
-    //ピンク
-    /*
-    if([[comadInfo objectForKey:@"tense"] isEqualToString:@"なう"]){
-        conversationNum.textColor = [UIColor colorWithRed:0.937 green:0.322 blue:0.510 alpha:1.0];
-        //黄色
-    }else if ([[comadInfo objectForKey:@"tense"] isEqualToString:@"今日"]){
-        conversationNum.textColor = [UIColor colorWithRed:1.000 green:0.729 blue:0.302 alpha:1.0];
-        //緑
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日"]){
-        conversationNum.textColor = [UIColor colorWithRed:0.329 green:0.773 blue:0.706 alpha:1.0];
-        //青
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日以降"]){
-        conversationNum.textColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
-        //紫
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"いつでも"]){
-        conversationNum.textColor = [UIColor colorWithRed:0.471 green:0.349 blue:0.690 alpha:1.0];
-    }
-     */
-    conversationNum.textColor = [UIColor colorWithRed:0.937 green:0.322 blue:0.510 alpha:1.0];
-    
-    [conversationNum sizeToFit];
-    conversationNum.frame = CGRectMake(cellView.frame.size.width - conversationNum.frame.size.width - 5, title.frame.origin.y + title.frame.size.height + 5, conversationNum.frame.size.width, conversationNum.frame.size.height);
-    
-    //コメント数
-    BasicLabel *commentNum = [[BasicLabel alloc]initWithName:ShowUserComadId];
-    //commentNum.text = [NSString stringWithFormat:@"%d件",[[comadInfo objectForKey:@"comments"] intValue]];
-    commentNum.text = @"3件";
-    [commentNum sizeToFit];
-    commentNum.frame = CGRectMake(cellView.frame.size.width - commentNum.frame.size.width - 5, dateTime.frame.origin.y + dateTime.frame.size.height + 5, commentNum.frame.size.width, commentNum.frame.size.height);
-    
-    NSString *commentIconImageName = @"";
-    //ピンク
-    /*
-    if([[comadInfo objectForKey:@"tense"] isEqualToString:@"なう"]){
-        commentIconImageName = @"commentIconPinc.png";
-        //黄色
-    }else if ([[comadInfo objectForKey:@"tense"] isEqualToString:@"今日"]){
-        commentIconImageName = @"commentIconOrange.png";
-        //緑
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日"]){
-        commentIconImageName = @"commentIconGreen.png";
-        //青
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日以降"]){
-        commentIconImageName = @"commentIconBlue.png";
-        //紫
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"いつでも"]){
-        commentIconImageName = @"commentIconPurple.png";
-    }
-     */
-    commentIconImageName = @"commentIconPinc.png";
-    UIImage *commentIcon = [UIImage imageNamed: commentIconImageName];
-    UIImage *commentIconResize = [Image resizeImage:commentIcon resizePer:0.5];
-    UIImageView *commentIconView = [[UIImageView alloc]initWithImage: commentIconResize];
-    commentIconView.frame = CGRectMake(commentNum.frame.origin.x - 15, dateTime.frame.origin.y + dateTime.frame.size.height + 5, commentIconResize.size.width, commentIconResize.size.height);
-    
     //iOS6対応
     if((int)iOSVersion == 6){
         title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height - 2, title.frame.size.width, title.frame.size.height);
-        datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 1, datetimeIconResize.size.width, datetimeIconResize.size.height);
+        datetimeIconView.frame = CGRectMake(75, title.frame.origin.y + title.frame.size.height + 1, 17.5, 17.5);
         dateTime.frame = CGRectMake(93, title.frame.origin.y + title.frame.size.height + 3, dateTime.frame.size.width, dateTime.frame.size.height);
-        locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height - 4, locationIconResize.size.width, locationIconResize.size.height);
+        locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height - 4, 14.5, 19);
         location.frame = CGRectMake(93, dateTime.frame.origin.y + dateTime.frame.size.height - 2, location.frame.size.width, location.frame.size.height);
-        conversationNum.frame = CGRectMake(cellView.frame.size.width - conversationNum.frame.size.width - 5, title.frame.origin.y + title.frame.size.height + 3, conversationNum.frame.size.width, conversationNum.frame.size.height);
-        commentNum.frame = CGRectMake(cellView.frame.size.width - commentNum.frame.size.width - 2, conversationNum.frame.origin.y + conversationNum.frame.size.height + 2, commentNum.frame.size.width, commentNum.frame.size.height);
-        commentIconView.frame = CGRectMake(commentNum.frame.origin.x - 15, commentNum.frame.origin.y, commentIconResize.size.width, commentIconResize.size.height);
     }
     
     [cellView addSubview: name];
@@ -185,9 +120,6 @@
     [cellView addSubview: location];
     [cellView addSubview: locationIconView];
     [cellView addSubview: time];
-    [cellView addSubview: conversationNum];
-    [cellView addSubview: commentNum];
-    [cellView addSubview: commentIconView];
     
     [baseView addSubview: cellView];
     
@@ -210,9 +142,8 @@
     */
     ribbonImageName = @"nowRibbon.png";
     UIImage *ribbon = [UIImage imageNamed: ribbonImageName];
-    UIImage *ribbonResize = [Image resizeImage:ribbon resizePer:0.5];
-    UIImageView *ribbonView = [[UIImageView alloc]initWithImage:ribbonResize];
-    ribbonView.frame = CGRectMake(8, 12, ribbonResize.size.width, ribbonResize.size.height);
+    UIImageView *ribbonView = [[UIImageView alloc]initWithImage:ribbon];
+    ribbonView.frame = CGRectMake(8, 12, 70.5, 41);
     [baseView addSubview: ribbonView];
     /*
     scrollView = [[UIScrollView alloc]init];

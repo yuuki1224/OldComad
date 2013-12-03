@@ -46,10 +46,9 @@
             //[button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:button];
         }else if((int)iOSVersion == 6){
-            //UIImageView *button = [[UIImageView alloc]initWithFrame:CGRectMake(windowSize.size.width - 60, 10, 48, 28)];
-            UIImage *buttonImage = [Image resizeImage:[UIImage imageNamed:@"tweetButton.png"] resizePer:0.5];
+            UIImage *buttonImage = [UIImage imageNamed:@"tweetButton.png"];
             UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
-            createButton.frame = CGRectMake(windowSize.size.width - buttonImage.size.width - 15, 15, buttonImage.size.width, buttonImage.size.height);
+            createButton.frame = CGRectMake(windowSize.size.width - 33.5, 15, 18.5, 20);
             UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tweetButtonClicked:)];
             [createButton addGestureRecognizer: tapGesture];
             createButton.userInteractionEnabled = YES;

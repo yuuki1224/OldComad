@@ -34,9 +34,9 @@
     [noConversationText sizeToFit];
     noConversationText.frame = CGRectMake((windowSize.size.width - noConversationText.frame.size.width)/2, 125, noConversationText.frame.size.width, noConversationText.frame.size.height);
     
-    UIImage *noConversationImage = [Image resizeImage:[UIImage imageNamed:@"nochat.png"] resizePer:0.5];
+    UIImage *noConversationImage = [UIImage imageNamed:@"nochat.png"];
     UIImageView *noConversation = [[UIImageView alloc]initWithImage:noConversationImage];
-    noConversation.frame = CGRectMake((windowSize.size.width - noConversation.frame.size.width)/2, noConversationText.frame.origin.y + noConversationText.frame.size.height + 5, noConversation.frame.size.width, noConversation.frame.size.height);
+    noConversation.frame = CGRectMake((windowSize.size.width - 97)/2, noConversationText.frame.origin.y + noConversationText.frame.size.height + 5, 97, 20.5);
     [self addSubview: noConversationText];
     [self addSubview: noConversation];
 }
