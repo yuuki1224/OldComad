@@ -107,10 +107,13 @@
             
             socketIO = [[SocketIO alloc] initWithDelegate:self];
             socketIO.delegate = self;
-            
-            [socketIO connectToHost:@"localhost"
+            /*
+            [socketIO connectToHost:@"54.199.53.137"
                              onPort:9000
-                         withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]
+                         withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]*/
+             [socketIO connectToHost:@"localhost"
+                              onPort:9000
+                          withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]
              ];
             [socketIO sendEvent:@"init" withData:@{@"userId":@(userId), @"friendId":@(friendId), @"type":@"private", @"room":@"test", @"name":@"asano"}];
             break;

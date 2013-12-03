@@ -39,7 +39,8 @@ static FriendJsonClient* _sharedClient;
 - (void)getIndexWhenSuccess:(void (^)(AFHTTPRequestOperation *, NSHTTPURLResponse *, id))success failure:(void (^)(int, NSString *))failure {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *user = [defaults dictionaryForKey:@"user"];
-    NSString *urlString = [NSString stringWithFormat:@"http://localhost:3000/api/friends/get_friends_list?user_id=%@", [user objectForKey:@"id"]];
+    //NSString *urlString = [NSString stringWithFormat:@"http://54.199.53.137:3000/api/friends/get_friends_list?user_id=%@", [user objectForKey:@"id"]];
+    NSString *urlString = [NSString stringWithFormat:@"http://54.199.53.137:3000/api/friends/get_friends_list?user_id=1"];
     NSURL *url = [NSURL URLWithString: urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success: ^(NSURLRequest *req, NSHTTPURLResponse *response, id JSON) {
@@ -54,7 +55,7 @@ static FriendJsonClient* _sharedClient;
 }
 
 - (void)addFriend:(int)comadId friendId:(int)friendId success:(void (^)(AFHTTPRequestOperation *, NSHTTPURLResponse *, id))success failure:(void (^)(int, NSString *))failure {
-    NSString *urlString = [NSString stringWithFormat:@"http://localhost:3000/api/friends/add_friend?user_id=%i&friend_id=%i", comadId, friendId];
+    NSString *urlString = [NSString stringWithFormat:@"http://54.199.53.137:3000/api/friends/add_friend?user_id=%i&friend_id=%i", comadId, friendId];
     NSURL *url = [NSURL URLWithString: urlString];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

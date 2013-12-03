@@ -69,7 +69,8 @@
             return 3;
             break;
         case 1:
-            return [facebookFriends count];
+            //return [facebookFriends count];
+            return 5;
             break;
         default:
             break;
@@ -115,9 +116,11 @@
             break;
         }
         case 1:{
+            /*
             userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
                         [[facebookFriends objectAtIndex:indexPath.row] objectForKey:@"name"], @"name",
                         @"asano.png", @"image_name",nil];
+             */
             break;
         }
         default:
@@ -128,10 +131,12 @@
         [cell setFriendCell:NO];
     }else if(indexPath.section == 1){
         //招待ボタン付ける
+        /*
         cell.userInfo = userInfo;
         [cell setFriendCellWithURL];
         [cell setInviteButton];
         cell.delegate = self;
+         */
     }
     return cell;
 }

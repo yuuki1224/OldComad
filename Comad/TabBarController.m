@@ -173,6 +173,10 @@
     mc.hidesBottomBarWhenPushed = YES;
     NSLog(@"friendId, %d", friendId);
     
+    //[friendsArray objectAtIndex:indexPath.row];
+    //mc.friendId = [[[friendsArray objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];
+    [fc.navigationController pushViewController:mc animated:YES];
+    
 }
 
 - (void)blackMaskTapped {

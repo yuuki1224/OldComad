@@ -67,7 +67,7 @@
 
 //セクションの数
 -(NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
-    return 6;
+    return 3;
 }
 
 //ヘッダーの内容
@@ -102,7 +102,7 @@
             header.frame = CGRectMake(0, 0, windowSize.size.width, 70);
             header.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
             BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
-            headerLabel.text = @"プロフィール文";
+            headerLabel.text = @"ひとこと";
             [headerLabel sizeToFit];
             headerLabel.frame = CGRectMake(10, header.frame.size.height - 20, headerLabel.frame.size.width, headerLabel.frame.size.height);
             [header addSubview:headerLabel];
@@ -112,7 +112,7 @@
             header.frame = CGRectMake(0, 0, windowSize.size.width, 70);
             header.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
             BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
-            headerLabel.text = @"よくノマドする地域は?";
+            headerLabel.text = @"所属";
             [headerLabel sizeToFit];
             headerLabel.frame = CGRectMake(10, header.frame.size.height - 20, headerLabel.frame.size.width, headerLabel.frame.size.height);
             [header addSubview:headerLabel];
@@ -252,6 +252,7 @@
             //カメラ起動
             if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
             {
+                /*
                 UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
                 // カメラかライブラリからの読込指定。カメラを指定。
                 [imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
@@ -262,6 +263,7 @@
                 
                 // アニメーションをしてカメラUIを起動
                 [self presentViewController:imagePickerController animated:YES completion:nil];
+                 */
             }
             else
             {
@@ -273,6 +275,7 @@
             //アルバムから選択
             if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
             {
+                /*
                 UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
                 [imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
                 [imagePickerController setAllowsEditing:YES];
@@ -282,6 +285,7 @@
                 // iPadの場合はUIPopoverControllerを使う
                 popover = [[UIPopoverController alloc]initWithContentViewController:imagePickerController];
                 //[popover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                 */
             }
             else
             {

@@ -45,8 +45,7 @@
     cellView.clipsToBounds = true;
     
     UIImage *thumbnailImage = [UIImage imageNamed:[comadInfo objectForKey:@"imageName"]];
-    UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:62 resizeHeight:62];
-    UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImageResize];
+    UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     thumbnail.frame = CGRectMake(4.5, 4.5, 62, 62);
     thumbnail.layer.cornerRadius = 14.0f;
@@ -68,9 +67,8 @@
     
     //時間
     UIImage *datetimeIcon = [UIImage imageNamed:@"datetimeIcon.png"];
-    UIImage *datetimeIconResize = [Image resizeImage: datetimeIcon resizePer:0.5];
-    UIImageView *datetimeIconView = [[UIImageView alloc]initWithImage: datetimeIconResize];
-    datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, datetimeIconResize.size.width, datetimeIconResize.size.height);
+    UIImageView *datetimeIconView = [[UIImageView alloc]initWithImage: datetimeIcon];
+    datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, 17.5, 17.5);
     BasicLabel *dateTime = [[BasicLabel alloc]initWithName:ShowUserComadId];
     if([[comadInfo objectForKey:@"dateTime"] isEqualToString:@""]){
         dateTime.text = @"未定";
@@ -82,9 +80,8 @@
     
     //場所
     UIImage *locationIcon = [UIImage imageNamed:@"locationIcon.png"];
-    UIImage *locationIconResize = [Image resizeImage:locationIcon resizePer:0.5];
-    UIImageView *locationIconView = [[UIImageView alloc]initWithImage: locationIconResize];
-    locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height + 3, locationIconResize.size.width, locationIconResize.size.height);
+    UIImageView *locationIconView = [[UIImageView alloc]initWithImage: locationIcon];
+    locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height + 3, 14.5, 19);
     BasicLabel *location = [[BasicLabel alloc]initWithName:ShowUserComadId];
     location.text = [comadInfo objectForKey:@"location"];
     [location sizeToFit];
@@ -171,20 +168,19 @@
         commentIconImageName = @"commentIconPurple.png";
     }
     UIImage *commentIcon = [UIImage imageNamed: commentIconImageName];
-    UIImage *commentIconResize = [Image resizeImage:commentIcon resizePer:0.5];
-    UIImageView *commentIconView = [[UIImageView alloc]initWithImage: commentIconResize];
-    commentIconView.frame = CGRectMake(commentNum.frame.origin.x - 15, dateTime.frame.origin.y + dateTime.frame.size.height + 5, commentIconResize.size.width, commentIconResize.size.height);
+    UIImageView *commentIconView = [[UIImageView alloc]initWithImage: commentIcon];
+    commentIconView.frame = CGRectMake(commentNum.frame.origin.x - 15, dateTime.frame.origin.y + dateTime.frame.size.height + 5, 13.5, 11.5);
 
     //iOS6対応
     if((int)iOSVersion == 6){
         title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height - 2, title.frame.size.width, title.frame.size.height);
-        datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 1, datetimeIconResize.size.width, datetimeIconResize.size.height);
+        datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 1, 17.5, 17.5);
         dateTime.frame = CGRectMake(93, title.frame.origin.y + title.frame.size.height + 3, dateTime.frame.size.width, dateTime.frame.size.height);
-        locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height - 4, locationIconResize.size.width, locationIconResize.size.height);
+        locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height - 4, 14.5, 19);
         location.frame = CGRectMake(93, dateTime.frame.origin.y + dateTime.frame.size.height - 2, location.frame.size.width, location.frame.size.height);
         conversationNum.frame = CGRectMake(cellView.frame.size.width - conversationNum.frame.size.width - 5, title.frame.origin.y + title.frame.size.height + 3, conversationNum.frame.size.width, conversationNum.frame.size.height);
         commentNum.frame = CGRectMake(cellView.frame.size.width - commentNum.frame.size.width - 2, conversationNum.frame.origin.y + conversationNum.frame.size.height + 2, commentNum.frame.size.width, commentNum.frame.size.height);
-        commentIconView.frame = CGRectMake(commentNum.frame.origin.x - 15, commentNum.frame.origin.y, commentIconResize.size.width, commentIconResize.size.height);
+        commentIconView.frame = CGRectMake(commentNum.frame.origin.x - 15, commentNum.frame.origin.y, 13.5, 11.5);
     }
     
     [cellView addSubview: name];
@@ -217,9 +213,8 @@
         ribbonImageName = @"futureRibbon.png";
     }
     UIImage *ribbon = [UIImage imageNamed: ribbonImageName];
-    UIImage *ribbonResize = [Image resizeImage:ribbon resizePer:0.5];
-    UIImageView *ribbonView = [[UIImageView alloc]initWithImage:ribbonResize];
-    ribbonView.frame = CGRectMake(8, 2, ribbonResize.size.width, ribbonResize.size.height);
+    UIImageView *ribbonView = [[UIImageView alloc]initWithImage:ribbon];
+    ribbonView.frame = CGRectMake(8, 2, 70.5, 41);
     [self addSubview: ribbonView];
 }
 

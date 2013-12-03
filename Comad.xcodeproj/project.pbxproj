@@ -43,6 +43,11 @@
 		BA1FE372184D1CA800E61534 /* otherSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE36E184D1CA800E61534 /* otherSetting.png */; };
 		BA1FE374184DCF0800E61534 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE373184DCF0800E61534 /* done.png */; };
 		BA1FE376184DCF2B00E61534 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE375184DCF2B00E61534 /* addButton.png */; };
+		BA1FE37C184E3D1D00E61534 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE377184E3D1D00E61534 /* 1.png */; };
+		BA1FE37D184E3D1D00E61534 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE378184E3D1D00E61534 /* 2.png */; };
+		BA1FE37E184E3D1D00E61534 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE379184E3D1D00E61534 /* 3.png */; };
+		BA1FE37F184E3D1D00E61534 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE37A184E3D1D00E61534 /* 4.png */; };
+		BA1FE380184E3D1D00E61534 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE37B184E3D1D00E61534 /* 5.png */; };
 		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
 		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
 		BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFBD18474E7D007F64FE /* NewComadViewController.m */; };
@@ -272,6 +277,11 @@
 		BA1FE36E184D1CA800E61534 /* otherSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = otherSetting.png; sourceTree = "<group>"; };
 		BA1FE373184DCF0800E61534 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
 		BA1FE375184DCF2B00E61534 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
+		BA1FE377184E3D1D00E61534 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		BA1FE378184E3D1D00E61534 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		BA1FE379184E3D1D00E61534 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		BA1FE37A184E3D1D00E61534 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		BA1FE37B184E3D1D00E61534 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
 		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
 		BA21DFAE18473251007F64FE /* ComadsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ComadsViewController+View.m"; sourceTree = "<group>"; };
@@ -989,6 +999,11 @@
 		BA74F939183B9AE600FE4629 /* stamps */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE377184E3D1D00E61534 /* 1.png */,
+				BA1FE378184E3D1D00E61534 /* 2.png */,
+				BA1FE379184E3D1D00E61534 /* 3.png */,
+				BA1FE37A184E3D1D00E61534 /* 4.png */,
+				BA1FE37B184E3D1D00E61534 /* 5.png */,
 				BA74F944183B9E2300FE4629 /* nikochan.png */,
 				BA74F942183B9DBD00FE4629 /* tomatoman.png */,
 				BA74F940183B9D9C00FE4629 /* misawa.png */,
@@ -1211,6 +1226,7 @@
 				BAD4AF04180F16E40068104B /* asano.png in Resources */,
 				BA21DFF01847AAFD007F64FE /* commentIconBlue.png in Resources */,
 				BA74F92F183B5A4F00FE4629 /* icon.png in Resources */,
+				BA1FE380184E3D1D00E61534 /* 5.png in Resources */,
 				BA74F93F183B9D8400FE4629 /* browny.png in Resources */,
 				BAB1471D1838CDD10078486B /* invite_friend.html in Resources */,
 				BA21DFE01847AAA8007F64FE /* tommorowRibbon.png in Resources */,
@@ -1239,6 +1255,7 @@
 				BA1FE35B184D0B5B00E61534 /* addFriend.png in Resources */,
 				BA1FE367184D119800E61534 /* close.png in Resources */,
 				BA1FE359184D09D800E61534 /* mycomadSelected.png in Resources */,
+				BA1FE37F184E3D1D00E61534 /* 4.png in Resources */,
 				BA21E01F184BAF0F007F64FE /* todayOn.png in Resources */,
 				BA2A74AE180FBEFB00167837 /* nakagawa.png in Resources */,
 				BA1FE36F184D1CA800E61534 /* otherAddFriend.png in Resources */,
@@ -1271,7 +1288,10 @@
 				BAB1470E1837CC960078486B /* idSearchMenu.png in Resources */,
 				BAE482B7181D859B00BB1456 /* hayashi.png in Resources */,
 				BAB1470F1837CC960078486B /* qrCodeMenu.png in Resources */,
+				BA1FE37E184E3D1D00E61534 /* 3.png in Resources */,
+				BA1FE37D184E3D1D00E61534 /* 2.png in Resources */,
 				BA21E009184B9D5C007F64FE /* offCover.png in Resources */,
+				BA1FE37C184E3D1D00E61534 /* 1.png in Resources */,
 				BA2A74C618118C2200167837 /* kobayashi.png in Resources */,
 				BA1FE348184CB0E200E61534 /* addComadButtonForiOS6.png in Resources */,
 				BA1FE370184D1CA800E61534 /* otherMypage.png in Resources */,
@@ -1572,7 +1592,7 @@
 				INFOPLIST_FILE = "Comad/Comad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1A919640-AEC8-463A-BF6E-491FAFCD651E";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1591,7 +1611,7 @@
 				INFOPLIST_FILE = "Comad/Comad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1A919640-AEC8-463A-BF6E-491FAFCD651E";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

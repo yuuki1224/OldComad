@@ -120,27 +120,6 @@
     return  cell;
 }
 
-//タイトル
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case 1:
-            return @"プロフィール";
-            break;
-        case 2:
-            return @"新しいコマとも";
-            break;
-        case 3:
-            return @"グループ";
-            break;
-        case 4:
-            return @"コマとも";
-            break;
-        default:
-            return @"その他";
-            break;
-    }
-}
-
 //For UITableViewDelegate
 //ヘッダーの高さ
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -149,13 +128,13 @@
             return 60.0;
             break;
         case 1:
-            return 30.0;
+            return 35.0;
             break;
         case 2:{
             if([_newFriends count] == 0){
                 return 0;
             }else{
-                return 30.0;
+                return 35.0;
             }
             break;
         }
@@ -163,7 +142,7 @@
             if([_groups count] == 0){
                 return 0;
             }else{
-                return 30.0;
+                return 35.0;
             }
             break;
         }
@@ -171,7 +150,7 @@
             if([_friends count] == 0){
                 return 0;
             }else{
-                return 30.0;
+                return 35.0;
             }
             break;
         }
@@ -210,11 +189,18 @@
 
 // HeaderのView
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    CGRect windowSize = [[UIScreen mainScreen] bounds];
-    UIView *headerView = [[UIView alloc]init];
-    headerView.frame = CGRectMake(0, 0, windowSize.size.width, 60);
+    windowSize = [[UIScreen mainScreen] bounds];
+    
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 35)];
+    UIView *content = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 33)];
+    
+    content.backgroundColor = [UIColor colorWithRed:0.902 green:0.898 blue:0.882 alpha:1.0];
+    headerView.backgroundColor = [UIColor colorWithRed:0.878 green:0.878 blue:0.871 alpha:1.0];
+    
+    [headerView addSubview:content];
     
     if(section == 0){
+        headerView.frame = CGRectMake(0, 0, windowSize.size.width, 60);
         search = [[UISearchBar alloc]init];
         search.delegate = self;
         search.placeholder = @"Search";
@@ -224,28 +210,32 @@
         [headerView addSubview:search];
         headerView.backgroundColor = [UIColor colorWithRed:0.796 green:0.816 blue:0.839 alpha:1.0];
     }else{
-        BasicLabel *headerLabel = [[BasicLabel alloc]initWithName: TableHeader];
+        UILabel *titleLabel = [[UILabel alloc] init];
         switch (section) {
             case 1:
-                headerLabel.text = @"プロフィール";
+                titleLabel.text = @"プロフィール";
                 break;
             case 2:
-                headerLabel.text = @"新しいコマとも";
+                titleLabel.text = @"新しいコマとも";
                 break;
             case 3:
-                headerLabel.text = @"グループ";
+                titleLabel.text = @"グループ";
                 break;
             case 4:
-                headerLabel.text = @"コマとも";
+                titleLabel.text = @"コマとも";
                 break;
             default:
                 break;
         }
         
-        CGSize headerLabelSize = [headerLabel sizeThatFits:CGSizeZero];
-        headerLabel.frame = CGRectMake( 10, 10, headerLabelSize.width, headerLabelSize.height);
-        [headerView addSubview: headerLabel];
-        headerView.backgroundColor = [UIColor colorWithRed:0.965 green:0.969 blue:0.973 alpha:1.0];
+        titleLabel.textColor = [UIColor colorWithRed:0.333 green:0.333 blue:0.333 alpha:1.0];
+        UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:12.0f];
+        titleLabel.font = font;
+        [titleLabel sizeToFit];
+        titleLabel.frame = CGRectMake(10, 10, titleLabel.frame.size.width, titleLabel.frame.size.height);
+        titleLabel.backgroundColor = [UIColor colorWithRed:0.902 green:0.898 blue:0.882 alpha:1.0];
+        
+        [content addSubview: titleLabel];
     }
     return headerView;
 }

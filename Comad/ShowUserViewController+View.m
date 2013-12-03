@@ -106,9 +106,10 @@
     //それぞれのボタンの設定
     if(self.me){
         //マイページ
-        UIImage *editProfileImage = [Image resizeImage:[UIImage imageNamed:@"editProfileBtn.png"] resizePer:0.5];
+        UIImage *editProfileImage = [UIImage imageNamed:@"editProfileBtn.png"];
         UIImageView *editProfileBtn = [[UIImageView alloc]initWithImage:editProfileImage];
-        editProfileBtn.frame = CGRectMake((windowSize.size.width - editProfileBtn.frame.size.width)/2, 183, editProfileBtn.frame.size.width, editProfileBtn.frame.size.height);
+
+        editProfileBtn.frame = CGRectMake((windowSize.size.width - 126)/2, 183, 126, 32.5);
         UITapGestureRecognizer *editProfileTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(editProfileBtnClicked:)];
         [editProfileBtn addGestureRecognizer: editProfileTapGesture];
         editProfileBtn.userInteractionEnabled = YES;
@@ -120,9 +121,9 @@
         [question1 setContent:[userInfo objectForKey:@"question1"]];
         [question2 setContent:[userInfo objectForKey:@"question2"]];
     }else{
-        UIImage *messageImage = [Image resizeImage:[UIImage imageNamed:@"messageButton.png"] resizePer:0.5];
+        UIImage *messageImage = [UIImage imageNamed:@"messageButton.png"];
         UIImageView *messageBtn = [[UIImageView alloc]initWithImage:messageImage];
-        messageBtn.frame = CGRectMake((windowSize.size.width - messageBtn.frame.size.width)/2, 183, messageBtn.frame.size.width, messageBtn.frame.size.height);
+        messageBtn.frame = CGRectMake((windowSize.size.width - 116)/2, 183, 116, 32.5);
         UITapGestureRecognizer *messageTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(messageBtnClicked:)];
         [messageBtn addGestureRecognizer:messageTapGesture];
         messageBtn.userInteractionEnabled = YES;

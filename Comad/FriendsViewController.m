@@ -83,10 +83,9 @@
 
 - (void)setAddFriendBtnInHeader {
     UIImage *image = [UIImage imageNamed:@"addFriend.png"];
-    UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(270, 36, imageResize.size.width, imageResize.size.height);
-    [btn setImage:imageResize forState:UIControlStateNormal];
+    btn.frame = CGRectMake(270, 36, 25.5, 20);
+    [btn setImage:image forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(addFriendBtnClicked:)forControlEvents:UIControlEventTouchDown];
     
     [self.view addSubview:btn];

@@ -27,9 +27,9 @@
         }
         UIButton *closeModalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         closeModalBtn.backgroundColor = [UIColor whiteColor];
-        UIImage *closeImage = [Image resizeImage:[UIImage imageNamed:@"close.png"] resizeWidth:10 resizeHeight:10];
+        UIImage *closeImage = [UIImage imageNamed:@"close.png"];
         [closeModalBtn setImage:closeImage forState:UIControlStateNormal];
-        closeModalBtn.frame = CGRectMake(self.frame.size.width - 20, 10, closeImage.size.width, closeImage.size.height);
+        closeModalBtn.frame = CGRectMake(self.frame.size.width - 23, 8, 13.5, 14);
         [closeModalBtn addTarget:self action:@selector(closeModalBtnClicked) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:closeModalBtn];

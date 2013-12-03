@@ -39,6 +39,7 @@
 
 - (void)viewDidLoad
 {
+    /*
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     [[UserJsonClient sharedClient] getAddFriendInfo:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
         facebookFriends = responseObject;
@@ -49,6 +50,8 @@
         NSLog(@"error");
         [SVProgressHUD dismiss];
     }];
+     */
+    [self configure];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];

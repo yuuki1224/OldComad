@@ -34,8 +34,7 @@
             self.frame = CGRectMake(0, 0, windowSize.size.width, 48);
             self.backgroundColor = [UIColor blackColor];
             UIImage *headerImage = [UIImage imageNamed:@"headerForiOS6.png"];
-            UIImage *headerImageResize = [Image resizeImage:headerImage resizeWidth:windowSize.size.width resizeHeight: 48];
-            UIImageView *headerImageView = [[UIImageView alloc]initWithImage: headerImageResize];
+            UIImageView *headerImageView = [[UIImageView alloc]initWithImage: headerImage];
             headerImageView.frame = CGRectMake(0, 0, windowSize.size.width, 48);
             [self addSubview: headerImageView];
         }
@@ -62,9 +61,8 @@
 
 - (void)setComadTitle {
     UIImage *comadLogo = [UIImage imageNamed:@"comadInHeader.png"];
-    UIImage *comadLogoResize = [Image resizeImage:comadLogo resizeWidth:97 resizeHeight:20];
     UIImageView *comadLogoImageView = [[UIImageView alloc]initWithImage: comadLogo];
-    comadLogoImageView.frame = CGRectMake((windowSize.size.width - comadLogoResize.size.width)/2, 16, comadLogoResize.size.width, comadLogoResize.size.height);
+    comadLogoImageView.frame = CGRectMake((windowSize.size.width - 97)/2, 16, 97, 20);
     [self addSubview: comadLogoImageView];
 }
 
