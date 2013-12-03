@@ -130,19 +130,29 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *header = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 60)];
-    header.backgroundColor = [UIColor colorWithRed:0.965 green:0.969 blue:0.973 alpha:1.0];
-    BasicLabel *headerLabel = [[BasicLabel alloc]initWithName: FriendCellName];
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 35)];
+    UIView *content = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 33)];
+    
+    content.backgroundColor = [UIColor colorWithRed:0.902 green:0.898 blue:0.882 alpha:1.0];
+    headerView.backgroundColor = [UIColor colorWithRed:0.878 green:0.878 blue:0.871 alpha:1.0];
+    
+    [headerView addSubview:content];
+    UILabel *titleLabel = [[UILabel alloc] init];
     if(section == 0){
-        [headerLabel setText:@"知り合いかも"];
+        [titleLabel setText:@"知り合いかも"];
     }else if (section == 1){
-        [headerLabel setText:@"友達をコマドに招待しよう!"];
+        [titleLabel setText:@"友達をコマドに招待しよう!"];
     }
-    [headerLabel sizeToFit];
-    headerLabel.frame = CGRectMake(10, 10, headerLabel.frame.size.width, headerLabel.frame.size.height);
-    headerLabel.backgroundColor = [UIColor colorWithRed:0.965 green:0.969 blue:0.973 alpha:1.0];
-    [header addSubview:headerLabel];
-    return header;
+    titleLabel.textColor = [UIColor colorWithRed:0.333 green:0.333 blue:0.333 alpha:1.0];
+    UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:12.0f];
+    titleLabel.font = font;
+    [titleLabel sizeToFit];
+    titleLabel.frame = CGRectMake(10, 10, titleLabel.frame.size.width, titleLabel.frame.size.height);
+    titleLabel.backgroundColor = [UIColor colorWithRed:0.902 green:0.898 blue:0.882 alpha:1.0];
+    
+    [content addSubview: titleLabel];
+
+    return headerView;
 }
 
 @end
