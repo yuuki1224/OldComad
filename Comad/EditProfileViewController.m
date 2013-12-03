@@ -41,16 +41,22 @@
         }
         self.view.backgroundColor = [UIColor whiteColor];
         
-        RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
-        [button setTitleInButton:@"完了"];
         if((int)iOSVersion == 7){
+            RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
+            [button setTitleInButton:@"作成"];
             button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
+            //[button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addSubview:button];
         }else if((int)iOSVersion == 6){
-            button.frame = CGRectMake(windowSize.size.width - 60, 10, 48, 28);
-            [button setTitleEdgeInsets:UIEdgeInsetsMake(10, 0, 0, 0)];
+            //UIImageView *button = [[UIImageView alloc]initWithFrame:CGRectMake(windowSize.size.width - 60, 10, 48, 28)];
+            UIImage *buttonImage = [Image resizeImage:[UIImage imageNamed:@"done.png"] resizePer:0.5];
+            UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
+            createButton.frame = CGRectMake(windowSize.size.width - buttonImage.size.width - 10, 10, buttonImage.size.width, buttonImage.size.height);
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(saveClicked:)];
+            [createButton addGestureRecognizer: tapGesture];
+            createButton.userInteractionEnabled = YES;
+            [self.view addSubview: createButton];
         }
-        [button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
         
         [self configure];
     }
@@ -167,7 +173,7 @@
     [self.navigationController pushViewController:ec animated:YES];
 }
 
-- (void)saveClicked:(UIButton *)button {
+- (void)saveClicked:(UITapGestureRecognizer *)sender {
     //保存する。NSuserdefaultに保存して、サーバーに上げる
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *nowUserInfo = [userDefaults valueForKey:@"user"];

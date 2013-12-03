@@ -53,13 +53,14 @@
     [name sizeToFit];
     name.frame = CGRectMake((windowSize.size.width - name.frame.size.width)/2, 100, name.frame.size.width, name.frame.size.height);
     [addFriendView addSubview:name];
-    
-    RoundedButton *addButton = [[RoundedButton alloc]initWithName:AddFriendInvite];
-    addButton.frame = CGRectMake((windowSize.size.width - 150)/2, 135, 150, 30);
-    [addButton setTitleInButton:@"追加する"];
-    [addButton addTarget:self action:@selector(addButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [addFriendView addSubview:addButton];
+
+    UIImage *addButtonImage = [Image resizeImage:[UIImage imageNamed:@"addButton.png"] resizePer:0.5];
+    UIImageView *addButton = [[UIImageView alloc]initWithImage: addButtonImage];
+    addButton.frame = CGRectMake((windowSize.size.width - addButtonImage.size.width)/2, 133, addButtonImage.size.width, addButtonImage.size.height);
+    UITapGestureRecognizer *addButtonTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addButtonTapped:)];
+    [addButton addGestureRecognizer: addButtonTapGesture];
+    addButton.userInteractionEnabled = YES;
+    [addFriendView addSubview: addButton];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField{
@@ -78,7 +79,7 @@
     return YES;
 }
 
--(void)addButtonClicked:(UIButton *)button {
+-(void)addButtonTapped:(UITapGestureRecognizer *)sender {
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     [[FriendJsonClient sharedClient]addFriend:10 friendId:self.addFriendID success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
         [SVProgressHUD dismiss];

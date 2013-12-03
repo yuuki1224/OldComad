@@ -11,7 +11,7 @@
 @implementation EditTimeFormViewController (View)
 
 -(void)configure {
-    [self.view setBackgroundColor:[UIColor colorWithRed:0.855 green:0.886 blue:0.929 alpha:1.0]];
+    self.view.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
     timeTable = [[UITableView alloc]init];
     timeTable.dataSource = self;
     timeTable.delegate = self;

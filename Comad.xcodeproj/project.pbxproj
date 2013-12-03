@@ -41,6 +41,8 @@
 		BA1FE370184D1CA800E61534 /* otherMypage.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE36C184D1CA800E61534 /* otherMypage.png */; };
 		BA1FE371184D1CA800E61534 /* otherMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE36D184D1CA800E61534 /* otherMessage.png */; };
 		BA1FE372184D1CA800E61534 /* otherSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE36E184D1CA800E61534 /* otherSetting.png */; };
+		BA1FE374184DCF0800E61534 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE373184DCF0800E61534 /* done.png */; };
+		BA1FE376184DCF2B00E61534 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE375184DCF2B00E61534 /* addButton.png */; };
 		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
 		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
 		BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFBD18474E7D007F64FE /* NewComadViewController.m */; };
@@ -268,6 +270,8 @@
 		BA1FE36C184D1CA800E61534 /* otherMypage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = otherMypage.png; sourceTree = "<group>"; };
 		BA1FE36D184D1CA800E61534 /* otherMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = otherMessage.png; sourceTree = "<group>"; };
 		BA1FE36E184D1CA800E61534 /* otherSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = otherSetting.png; sourceTree = "<group>"; };
+		BA1FE373184DCF0800E61534 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
+		BA1FE375184DCF2B00E61534 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
 		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
 		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
 		BA21DFAE18473251007F64FE /* ComadsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ComadsViewController+View.m"; sourceTree = "<group>"; };
@@ -597,6 +601,7 @@
 		BA21DFF21847CE74007F64FE /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE373184DCF0800E61534 /* done.png */,
 				BA1FE35A184D0B5B00E61534 /* addFriend.png */,
 				BA1FE344184CB0E200E61534 /* tweetButton.png */,
 				BA1FE343184CB0E200E61534 /* addComadButtonForiOS6.png */,
@@ -785,6 +790,7 @@
 		BA5151C31809B5AB00FD69D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE375184DCF2B00E61534 /* addButton.png */,
 				BA1FE35C184D116200E61534 /* editProfileBtn.png */,
 				BA1FE350184D036300E61534 /* messageButton.png */,
 				BA1FE34D184CB49900E61534 /* ConversationBox */,
@@ -1255,6 +1261,7 @@
 				BA2A74CE1815059C00167837 /* modal2.png in Resources */,
 				BA74F943183B9DBD00FE4629 /* tomatoman.png in Resources */,
 				BA1FE351184D036300E61534 /* messageButton.png in Resources */,
+				BA1FE376184DCF2B00E61534 /* addButton.png in Resources */,
 				BA1FE340184CAADF00E61534 /* tommorowOff.png in Resources */,
 				BA1FE356184D09D800E61534 /* newSelected.png in Resources */,
 				BAD4AF00180EFD7F0068104B /* back.png in Resources */,
@@ -1296,6 +1303,7 @@
 				BA21DFF61847CE8C007F64FE /* comadInHeader.png in Resources */,
 				BA1FE33F184CAADF00E61534 /* nowOff.png in Resources */,
 				BA21DFEB1847AAFD007F64FE /* datetimeIcon.png in Resources */,
+				BA1FE374184DCF0800E61534 /* done.png in Resources */,
 				BA21DFD618479E4B007F64FE /* comadTab2.png in Resources */,
 				BA515175180900E200FD69D8 /* InfoPlist.strings in Resources */,
 				BA21E01E184BAF0F007F64FE /* nowOn.png in Resources */,

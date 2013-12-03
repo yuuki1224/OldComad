@@ -32,17 +32,22 @@
         
         [self.view addSubview:header];
         [self setBackBtnInHeader];
-        RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
-        [button setTitleInButton:@"完了"];
         if((int)iOSVersion == 7){
+            RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
+            [button setTitleInButton:@"作成"];
             button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
+            //[button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addSubview:button];
         }else if((int)iOSVersion == 6){
-            button.frame = CGRectMake(windowSize.size.width - 60, 10, 48, 28);
-            [button setTitleEdgeInsets:UIEdgeInsetsMake(10, 0, 0, 0)];
+            //UIImageView *button = [[UIImageView alloc]initWithFrame:CGRectMake(windowSize.size.width - 60, 10, 48, 28)];
+            UIImage *buttonImage = [Image resizeImage:[UIImage imageNamed:@"done.png"] resizePer:0.5];
+            UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
+            createButton.frame = CGRectMake(windowSize.size.width - buttonImage.size.width - 10, 10, buttonImage.size.width, buttonImage.size.height);
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doneClicked:)];
+            [createButton addGestureRecognizer: tapGesture];
+            createButton.userInteractionEnabled = YES;
+            [self.view addSubview: createButton];
         }
-        [button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
-        
         [self configure];
 
     }
@@ -68,7 +73,13 @@
 
 
 - (void)setBackBtnInHeader {
-    UIImage *image = [UIImage imageNamed:@"back.png"];
+    NSString *backImageName = @"";
+    if((int)iOSVersion == 7){
+        backImageName = @"back.png";
+    }else if((int)iOSVersion == 6){
+        backImageName = @"backForiOS6.png";
+    }
+    UIImage *image = [UIImage imageNamed:backImageName];
     UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     if((int)iOSVersion == 7){
@@ -98,7 +109,7 @@
     [timeTable selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
--(void)saveClicked:(UIButton *)btn {
+-(void)doneClicked:(UITapGestureRecognizer *)sender {
     //前の画面のプロパティに渡したい delegate?
     [self.delegate changeTime:self.beforeEditTime];
     [self.navigationController popViewControllerAnimated:YES];
