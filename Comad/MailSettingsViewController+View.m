@@ -26,12 +26,6 @@
         case 0:
             return 2;
             break;
-        case 1:
-            return 2;
-            break;
-        case 2:
-            return 1;
-            break;
         default:
             break;
     }
@@ -49,9 +43,9 @@
     switch (indexPath.section) {
         case 0:
             if(indexPath.row == 0){
-                [cell setText:@"bar"];
+                [cell setText:@"通知メールを受け取る"];
             }else if(indexPath.row == 1){
-                [cell setText:@"foo"];
+                [cell setText:@"アプリ更新メールを受け取る"];
             }
             break;
         case 1:
@@ -73,7 +67,7 @@
 
 //セクションの数
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 1;
 }
 
 //ヘッダーのタイトル

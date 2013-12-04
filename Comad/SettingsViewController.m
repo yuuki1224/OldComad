@@ -27,15 +27,16 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        CGRect windowSize = [[UIScreen mainScreen] bounds];
+        windowSize = [[UIScreen mainScreen] bounds];
         iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         Header *header = [[Header alloc]init];
         [header setTitle:@"設定"];
         [self.view addSubview:header];
         [self setBackBtnInHeader];
         
+        self.view.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
         //tableView設置
-        UITableView *settingsView = [[UITableView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48) style:UITableViewStyleGrouped];
+        UITableView *settingsView = [[UITableView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height) style:UITableViewStyleGrouped];
         [self.view addSubview:settingsView];
         settingsView.dataSource = self;
         settingsView.delegate = self;
@@ -52,7 +53,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController.tabBarController.tabBar setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,14 +70,13 @@
         backImageName = @"backForiOS6.png";
     }
     UIImage *image = [UIImage imageNamed:backImageName];
-    UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     if((int)iOSVersion == 7){
         btn.frame = CGRectMake(15, 36, 20, 28);
     }else if ((int)iOSVersion == 6){
         btn.frame = CGRectMake(15, 11, 20, 28);
     }
-    [btn setImage:imageResize forState:UIControlStateNormal];
+    [btn setImage:image forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
     
     [self.view addSubview:btn];
@@ -144,9 +143,6 @@
 }
 
 //ヘッダーのタイトル
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"";
-}
 
 #pragma UITableViewDelegate methods
 //セルの高さ
@@ -157,6 +153,15 @@
 //ヘッダーの高さ
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 30;
+}
+
+//フッターの高さ
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section {
+    if(section == 2){
+        return 200;
+    }else{
+        return 0;
+    }
 }
 
 //クリックされたら

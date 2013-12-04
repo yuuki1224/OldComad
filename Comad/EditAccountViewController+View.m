@@ -56,7 +56,7 @@
     cell.detailTextLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
     
     cell.textLabel.text = @"メールアドレス";
-    cell.detailTextLabel.text = @"yuuki.1224.softtennis@gmail.com";
+    cell.detailTextLabel.text = @"sample@comad.co.jp";
     
     return cell;
 }
