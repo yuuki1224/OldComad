@@ -55,18 +55,14 @@
         UIImage *tab2 = [UIImage imageNamed:@"tab2.png"];
         UIImage *tab3 = [UIImage imageNamed:@"tab3.png"];
         
-        UIImage *tab1Resize = [Image resizeImage:tab1 resizePer:0.5];
-        UIImage *tab2Resize = [Image resizeImage:tab2 resizePer:0.5];
-        UIImage *tab3Resize = [Image resizeImage:tab3 resizePer:0.5];
-        
         UINavigationController *comadTabNav = [[UINavigationController alloc]initWithRootViewController:cc];
         UINavigationController *friendTabNav = [[UINavigationController alloc]initWithRootViewController:fc];
         UINavigationController *accountTabNav = [[UINavigationController alloc]initWithRootViewController:oc];
         
         
-        friendTabNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"コマとも" image:tab1Resize tag:0];
-        comadTabNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"コマド" image:tab2Resize tag:0];
-        accountTabNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"その他" image:tab3Resize tag:0];
+        friendTabNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"コマとも" image:tab1 tag:0];
+        comadTabNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"コマド" image:tab2 tag:0];
+        accountTabNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"その他" image:tab3 tag:0];
         
         UIOffset offset1 = UIOffsetMake(friendTabNav.tabBarItem.titlePositionAdjustment.horizontal, -4.0);
         UIOffset offset2 = UIOffsetMake(comadTabNav.tabBarItem.titlePositionAdjustment.horizontal, -4.0);
