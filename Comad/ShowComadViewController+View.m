@@ -14,6 +14,7 @@
 
 @implementation ShowComadViewController (View)
 - (void)configure {
+    NSLog(@"comadInfooooooooooo: %@", self.comadInfo);
     //UIView *baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48)];
     UIScrollView *baseView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 123)];
     baseView.contentSize = CGSizeMake(windowSize.size.width, windowSize.size.height);
@@ -24,7 +25,7 @@
     cellView.layer.cornerRadius = 5;
     cellView.clipsToBounds = true;
     
-    UIImage *thumbnailImage = [UIImage imageNamed:@"adachi.png"];
+    UIImage *thumbnailImage = [UIImage imageNamed:[self.comadInfo objectForKey:@"imageName"]];
     UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     thumbnail.frame = CGRectMake(4.5, 4.5, 62, 62);
@@ -33,15 +34,15 @@
     [cellView addSubview:thumbnail];
     
     BasicLabel *name = [[BasicLabel alloc]initWithName:BlueTitle];
-    name.text = @"足立壮大";
+    name.text = [self.comadInfo objectForKey:@"name"];
     [name sizeToFit];
     name.frame = CGRectMake(77, 11, name.frame.size.width, name.frame.size.height);
     BasicLabel *comadId = [[BasicLabel alloc]initWithName:ComadId];
-    comadId.text = @"tkhr";
+    comadId.text = [self.comadInfo objectForKey:@"comadId"];
     [comadId sizeToFit];
     comadId.frame = CGRectMake(name.frame.origin.x + name.frame.size.width + 5, name.frame.origin.y + 1, comadId.frame.size.width, comadId.frame.size.height);
     BasicLabel *title = [[BasicLabel alloc]initWithName:ComadCellTitle];
-    title.text = @"熱海でノマドしませんかあああ？";
+    title.text = [self.comadInfo objectForKey:@"title"];
     [title sizeToFit];
     title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height + 3, title.frame.size.width, title.frame.size.height);
     
@@ -50,14 +51,13 @@
     UIImageView *datetimeIconView = [[UIImageView alloc]initWithImage: datetimeIcon];
     datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, 17.5, 17.5);
     BasicLabel *dateTime = [[BasicLabel alloc]initWithName:ShowUserComadId];
-    /*
-    if([[comadInfo objectForKey:@"dateTime"] isEqualToString:@""]){
+    
+    if([[self.comadInfo objectForKey:@"dateTime"] isEqualToString:@""]){
         dateTime.text = @"未定";
     }else{
-        dateTime.text = [comadInfo objectForKey:@"dateTime"];
+        dateTime.text = [self.comadInfo objectForKey:@"dateTime"];
     }
-     */
-    dateTime.text = @"未定";
+    //dateTime.text = @"未定";
     [dateTime sizeToFit];
     dateTime.frame = CGRectMake(93, title.frame.origin.y + title.frame.size.height + 5, dateTime.frame.size.width, dateTime.frame.size.height);
     
@@ -66,12 +66,16 @@
     UIImageView *locationIconView = [[UIImageView alloc]initWithImage: locationIcon];
     locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height + 3, 14.5, 19);
     BasicLabel *location = [[BasicLabel alloc]initWithName:ShowUserComadId];
-    location.text = @"未定";
+    if([[self.comadInfo objectForKey:@"location"] isEqualToString:@""]){
+        location.text = @"未定";
+    }else{
+        location.text = [self.comadInfo objectForKey:@"location"];
+    }
     [location sizeToFit];
     location.frame = CGRectMake(93, dateTime.frame.origin.y + dateTime.frame.size.height + 5, location.frame.size.width, location.frame.size.height);
     
     //右上の時間
-    NSString *createdTime = @"2012-11-22 12:00";
+    NSString *createdTime = [self.comadInfo objectForKey:@"created_at"];
     NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
     [inputFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSDate *createdAt = [inputFormatter dateFromString:createdTime];
@@ -106,7 +110,7 @@
     //iOS6対応
     if((int)iOSVersion == 6){
         title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height - 2, title.frame.size.width, title.frame.size.height);
-        datetimeIconView.frame = CGRectMake(75, title.frame.origin.y + title.frame.size.height + 1, 17.5, 17.5);
+        datetimeIconView.frame = CGRectMake(76, title.frame.origin.y + title.frame.size.height + 1, 17.5, 17.5);
         dateTime.frame = CGRectMake(93, title.frame.origin.y + title.frame.size.height + 3, dateTime.frame.size.width, dateTime.frame.size.height);
         locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height - 4, 14.5, 19);
         location.frame = CGRectMake(93, dateTime.frame.origin.y + dateTime.frame.size.height - 2, location.frame.size.width, location.frame.size.height);
@@ -125,22 +129,19 @@
     
     //リボン
     NSString *ribbonImageName = @"";
-    /*
-    if([[comadInfo objectForKey:@"tense"] isEqualToString:@"なう"]){
+    if([[self.comadInfo objectForKey:@"tense"] isEqualToString:@"なう"]){
         ribbonImageName = @"nowRibbon.png";
-    }else if ([[comadInfo objectForKey:@"tense"] isEqualToString:@"今日"]){
+    }else if ([[self.comadInfo objectForKey:@"tense"] isEqualToString:@"今日"]){
         ribbonImageName = @"todayRibbon.png";
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"うぃる"]){
+    }else if([[self.comadInfo objectForKey:@"tense"] isEqualToString:@"うぃる"]){
         ribbonImageName = @"tommorowRibbon.png";
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日以降"]){
+    }else if([[self.comadInfo objectForKey:@"tense"] isEqualToString:@"明日以降"]){
         ribbonImageName = @"futureRibbon.png";
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"いつでも"]){
+    }else if([[self.comadInfo objectForKey:@"tense"] isEqualToString:@"いつでも"]){
         ribbonImageName = @"wheneverRibbon.png";
     }else {
         ribbonImageName = @"futureRibbon.png";
     }
-    */
-    ribbonImageName = @"nowRibbon.png";
     UIImage *ribbon = [UIImage imageNamed: ribbonImageName];
     UIImageView *ribbonView = [[UIImageView alloc]initWithImage:ribbon];
     ribbonView.frame = CGRectMake(8, 12, 70.5, 41);
@@ -172,7 +173,7 @@
     conversation.backgroundColor = [UIColor whiteColor];
     [baseView addSubview:conversation];
     
-    ConversationTextBox *textBox = [[ConversationTextBox alloc]init];
+    textBox = [[ConversationTextBox alloc]init];
     textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
     textBox.delegate = self;
     [self.view addSubview: baseView];

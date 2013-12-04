@@ -55,7 +55,6 @@
             [self.view addSubview: createButton];
         }
         
-        [self configure];
     }
     return self;
 }
@@ -67,6 +66,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self configure];
+    textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
     [self intoRoom];
     showComad = [[ShowComad alloc]init];
     showComad.comadInfo = self.comadInfo;

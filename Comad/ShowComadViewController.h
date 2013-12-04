@@ -23,6 +23,7 @@
     SocketIO *socketIO;
     BlackMask *mask;
     SpecialMoji *sm;
+    ConversationTextBox *textBox;
 }
 @property (nonatomic, retain) NSDictionary *comadInfo;
 @property (nonatomic, retain) NSString *name;
