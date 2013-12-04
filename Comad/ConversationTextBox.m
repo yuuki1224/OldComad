@@ -40,6 +40,7 @@
             tf = [[UITextField alloc] initWithFrame:CGRectMake(55, 12, 200, 30)];
             tf.borderStyle = UITextBorderStyleRoundedRect;
             tf.delegate = self;
+            tf.keyboardType = UIKeyboardTypeDefault;
             [backView addSubview: tf];
             
             UIButton *sendBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];

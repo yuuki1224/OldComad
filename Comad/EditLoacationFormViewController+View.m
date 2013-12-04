@@ -12,7 +12,8 @@
 @implementation EditLoacationFormViewController (View)
 - (void)configure {
     //textFieldを設置する。
-    tf = [[UITextField alloc]initWithFrame:CGRectMake((windowSize.size.width - 300)/2, 130, 300, 30)];
+    tf = [[UITextField alloc]initWithFrame:CGRectMake((windowSize.size.width - 300)/2, 100, 300, 30)];
+    [tf setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
     tf.borderStyle = UITextBorderStyleRoundedRect;
     tf.placeholder = @"場所は?";
     if(self.location){
@@ -20,6 +21,9 @@
     }
     tf.clearButtonMode = UITextFieldViewModeAlways;
     tf.delegate = self;
+    tf.keyboardType = UIKeyboardTypeDefault;
+    [tf becomeFirstResponder];
+    
     // 編集終了後フォーカスが外れた時にhogeメソッドを呼び出す
     //[tf addTarget:self action:@selector(hoge:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [self.view addSubview:tf];

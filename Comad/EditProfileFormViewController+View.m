@@ -18,6 +18,7 @@
     tv.clearButtonMode = UITextFieldViewModeWhileEditing;
     tv.borderStyle = UITextBorderStyleRoundedRect;
     tv.delegate = self;
+    tv.keyboardType = UIKeyboardTypeDefault;
     [tv becomeFirstResponder];
     
     [self.view addSubview:tv];

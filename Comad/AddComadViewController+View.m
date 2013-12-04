@@ -68,6 +68,7 @@
     tv.frame = CGRectMake(6, 10, bubble.frame.size.width - 13, bubble.frame.size.height - 13);
     tv.delegate = self;
     tv.layer.cornerRadius = 5;
+    tv.keyboardType = UIKeyboardTypeDefault;
     tv.clipsToBounds = true;
     
     wordCount = [[BasicLabel alloc]initWithName:GrayLabel];
