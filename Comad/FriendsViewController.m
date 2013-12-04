@@ -61,7 +61,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    friendsTable.contentInset = UIEdgeInsetsMake(-60.0, 0, 0, 0);
+    //friendsTable.contentInset = UIEdgeInsetsMake(-60.0, 0, 0, 0);
     [self.navigationController.tabBarController.tabBar setHidden:NO];
 }
 
@@ -98,6 +98,7 @@
 }
 
 //スクロールしてる時に実行される
+/*
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.state == HeaderViewStateStopping) {
         return;
@@ -105,8 +106,9 @@
     
     if(0 >= scrollView.contentOffset.y){
         friendsTable.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    }}
-
+    }
+}
+*/
 
 //stateを確認して変える
 - (void)setState:(HeaderViewState)state
@@ -143,7 +145,7 @@
     state = state;
      */
 }
-
+/*
 - (void)_setHeaderViewHidden:(BOOL)hidden animated:(BOOL)animated
 {
     CGFloat topOffset = 0.0;
@@ -164,5 +166,6 @@
     [search resignFirstResponder];
     //searchする。
 }
+ */
 
 @end

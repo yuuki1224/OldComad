@@ -75,14 +75,13 @@
         backImageName = @"backForiOS6.png";
     }
     UIImage *image = [UIImage imageNamed:backImageName];
-    UIImage *imageResize = [Image resizeImage:image resizePer:0.5];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     if((int)iOSVersion == 7){
         btn.frame = CGRectMake(15, 36, 20, 28);
     }else if ((int)iOSVersion == 6){
         btn.frame = CGRectMake(15, 11, 20, 28);
     }
-    [btn setImage:imageResize forState:UIControlStateNormal];
+    [btn setImage:image forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
     
     [self.view addSubview:btn];

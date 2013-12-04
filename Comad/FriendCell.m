@@ -39,8 +39,8 @@
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     UIImage *thumbnailImage = [UIImage imageNamed: [userInfo objectForKey:@"image_name"]];
-    UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:64 resizeHeight:64];
-    UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImageResize];
+    UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImage];
+    thumbnail.frame = CGRectMake(0, 0, 64, 64);
     
     [self addSubview:thumbnail];
     
