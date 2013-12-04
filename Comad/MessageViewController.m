@@ -118,8 +118,6 @@
             [socketIO sendEvent:@"init" withData:@{@"userId":@(userId), @"friendId":@(friendId), @"type":@"private", @"room":@"test", @"name":@"asano"}];
             break;
         }
-        case GroupMessage:
-            break;
         default:
             break;
     }

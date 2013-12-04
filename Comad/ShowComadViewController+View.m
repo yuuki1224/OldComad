@@ -182,8 +182,13 @@
 
 #pragma ConversationTextBoxDelegate methods
 //sendButton
--(void)sendClicked:(NSString *)text {
-    [socketIO sendEvent:@"message" withData:@{@"message" : text}];
+- (void)sendClicked:(NSString *)text {
+    //userDefaultからとってくる
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
+    NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
+    
+    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": [[defaults objectForKey:@"user"] objectForKey:@"id"], @"type": @"comad",  @"imageName": imageName, @"userName": userName, @"comadId": [self.comadInfo objectForKey:@"id"]}];
 }
 
 //stamp出現
@@ -204,12 +209,15 @@
     
     [mask removeFromSuperview];
     [sm removeFromSuperview];
-    NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *userInfo = [defaults objectForKey:@"user"];
+    int userId = [[userInfo objectForKey:@"id"] intValue];
+    
+    NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
     NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
     NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
     
-   // [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": @(10), @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
+    [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": [[defaults objectForKey:@"user"] objectForKey:@"id"], @"type": @"comad",  @"imageName": imageName, @"userName": userName, @"comadId": [self.comadInfo objectForKey:@"id"]}];
 }
 
 - (void)blackMaskTapped {

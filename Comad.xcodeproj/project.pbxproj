@@ -48,11 +48,11 @@
 		BA1FE37E184E3D1D00E61534 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE379184E3D1D00E61534 /* 3.png */; };
 		BA1FE37F184E3D1D00E61534 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE37A184E3D1D00E61534 /* 4.png */; };
 		BA1FE380184E3D1D00E61534 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE37B184E3D1D00E61534 /* 5.png */; };
-		BA1FE382184E7E8400E61534 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE381184E7E8400E61534 /* Default@2x.png */; };
 		BA1FE385184E801400E61534 /* tab3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE384184E801400E61534 /* tab3.png */; };
 		BA1FE388184E991100E61534 /* addFriendTab1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE386184E991100E61534 /* addFriendTab1.png */; };
 		BA1FE389184E991100E61534 /* addFriendTab2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE387184E991100E61534 /* addFriendTab2.png */; };
 		BA1FE38B184F20F600E61534 /* inviteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE38A184F20F600E61534 /* inviteButton.png */; };
+		BA1FE38D184F51BD00E61534 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE38C184F51BD00E61534 /* Default@2x.png */; };
 		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
 		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
 		BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFBD18474E7D007F64FE /* NewComadViewController.m */; };
@@ -283,11 +283,11 @@
 		BA1FE379184E3D1D00E61534 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		BA1FE37A184E3D1D00E61534 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		BA1FE37B184E3D1D00E61534 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
-		BA1FE381184E7E8400E61534 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BA1FE384184E801400E61534 /* tab3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab3.png; sourceTree = "<group>"; };
 		BA1FE386184E991100E61534 /* addFriendTab1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFriendTab1.png; sourceTree = "<group>"; };
 		BA1FE387184E991100E61534 /* addFriendTab2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFriendTab2.png; sourceTree = "<group>"; };
 		BA1FE38A184F20F600E61534 /* inviteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inviteButton.png; sourceTree = "<group>"; };
+		BA1FE38C184F51BD00E61534 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
 		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
 		BA21DFAE18473251007F64FE /* ComadsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ComadsViewController+View.m"; sourceTree = "<group>"; };
@@ -753,9 +753,9 @@
 		BA515171180900E200FD69D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE38C184F51BD00E61534 /* Default@2x.png */,
 				BA74F92E183B5A4F00FE4629 /* icon.png */,
 				BAE4829D1819888F00BB1456 /* Default-568h@2x.png */,
-				BA1FE381184E7E8400E61534 /* Default@2x.png */,
 				BA515172180900E200FD69D8 /* Comad-Info.plist */,
 				BA515173180900E200FD69D8 /* InfoPlist.strings */,
 				BA515176180900E200FD69D8 /* main.m */,
@@ -1303,6 +1303,7 @@
 				BA21E025184BB8E7007F64FE /* addComadBubble.png in Resources */,
 				BA1FE34B184CB0E200E61534 /* addStampButton.png in Resources */,
 				BA21DFF81847CE8C007F64FE /* headerForiOS6.png in Resources */,
+				BA1FE38D184F51BD00E61534 /* Default@2x.png in Resources */,
 				BA1FE372184D1CA800E61534 /* otherSetting.png in Resources */,
 				BA1FE338184CA8AA00E61534 /* backForiOS6.png in Resources */,
 				BA74F945183B9E2300FE4629 /* nikochan.png in Resources */,
@@ -1318,7 +1319,6 @@
 				BA21E012184BAEE5007F64FE /* anytimeOn.png in Resources */,
 				BA2A74B6180FBEFB00167837 /* kimisaki.png in Resources */,
 				BA21DFEC1847AAFD007F64FE /* locationIcon.png in Resources */,
-				BA1FE382184E7E8400E61534 /* Default@2x.png in Resources */,
 				BA1FE371184D1CA800E61534 /* otherMessage.png in Resources */,
 				BA74F93B183B9B3500FE4629 /* sally.png in Resources */,
 				BA1FE389184E991100E61534 /* addFriendTab2.png in Resources */,
@@ -1596,7 +1596,7 @@
 				INFOPLIST_FILE = "Comad/Comad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1A919640-AEC8-463A-BF6E-491FAFCD651E";
+				PROVISIONING_PROFILE = "6E744FB8-DC66-4E17-AA1E-E61AD2EF77EB";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1615,7 +1615,7 @@
 				INFOPLIST_FILE = "Comad/Comad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1A919640-AEC8-463A-BF6E-491FAFCD651E";
+				PROVISIONING_PROFILE = "6E744FB8-DC66-4E17-AA1E-E61AD2EF77EB";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

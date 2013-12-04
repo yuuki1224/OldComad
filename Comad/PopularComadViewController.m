@@ -88,8 +88,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ComadCell *cell = [tableView cellForRowAtIndexPath: indexPath];
     ShowComadViewController *sc = [[ShowComadViewController alloc]init];
     sc.hidesBottomBarWhenPushed = YES;
+    sc.comadInfo = cell.comadInfo;
     [self.tabBarController.navigationController pushViewController:sc animated:YES];
 }
 @end

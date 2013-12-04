@@ -37,15 +37,13 @@
             case Friend:{
                 UIButton *modalHomeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
                 UIImage *modalHomeImage = [UIImage imageNamed:@"modalHome.png"];
-                UIImage *modalHomeResize = [Image resizeImage:modalHomeImage resizeWidth:134 resizeHeight:65];
-                [modalHomeBtn setBackgroundImage:modalHomeResize forState:UIControlStateNormal];
+                [modalHomeBtn setBackgroundImage:modalHomeImage forState:UIControlStateNormal];
                 modalHomeBtn.frame = CGRectMake(0, self.frame.size.height - 65, 134, 65);
                 [modalHomeBtn addTarget:self action:@selector(showUserBtnClicked) forControlEvents:UIControlEventTouchUpInside];
                 
                 UIButton *sendMessageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
                 UIImage *backMessageImage = [UIImage imageNamed:@"modalMessage.png"];
-                UIImage *backMessageResize = [Image resizeImage:backMessageImage resizeWidth:134 resizeHeight:65];
-                [sendMessageBtn setBackgroundImage:backMessageResize forState:UIControlStateNormal];
+                [sendMessageBtn setBackgroundImage:backMessageImage forState:UIControlStateNormal];
                 sendMessageBtn.frame = CGRectMake(135, self.frame.size.height - 65, 134, 65);
                 [sendMessageBtn addTarget:self action:@selector(sendMessageBtnClicked) forControlEvents:UIControlEventTouchUpInside];
                 
@@ -57,15 +55,13 @@
             case InAddFriend:{
                 UIButton *AddFriendBtn = [UIButton buttonWithType:UIButtonTypeCustom];
                 UIImage *addFriend = [UIImage imageNamed:@"modalAddFriend.png"];
-                UIImage *addFriendResize = [Image resizeImage:addFriend resizeWidth:134 resizeHeight:65];
-                [AddFriendBtn setBackgroundImage:addFriendResize forState:UIControlStateNormal];
+                [AddFriendBtn setBackgroundImage:addFriend forState:UIControlStateNormal];
                 AddFriendBtn.frame = CGRectMake(135, self.frame.size.height - 65, 134, 65);
                 [AddFriendBtn addTarget:self action:@selector(addFriendBtnClicked) forControlEvents:UIControlEventTouchUpInside];
                 
                 UIButton *BlockBtn = [UIButton buttonWithType:UIButtonTypeCustom];
                 UIImage *block = [UIImage imageNamed:@"modalBlock.png"];
-                UIImage *blockResize = [Image resizeImage:block resizeWidth:134 resizeHeight:65];
-                [BlockBtn setBackgroundImage:blockResize forState:UIControlStateNormal];
+                [BlockBtn setBackgroundImage:block forState:UIControlStateNormal];
                 BlockBtn.frame = CGRectMake(0, self.frame.size.height - 65, 134, 65);
                 [BlockBtn addTarget:self action:@selector(blockBtnClicked) forControlEvents:UIControlEventTouchUpInside];
                 
