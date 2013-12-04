@@ -109,13 +109,11 @@
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     
     NSString *text = tv.text;
-    NSString *selectTime = @"1";
-    BOOL tweet = tweetButton.tweet;
     NSDateFormatter *format = [[NSDateFormatter alloc]init];
     [format setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
     //NSString *startTime = [format stringFromDate:];
     NSString *startTimeParam = datetime.text;
-    NSString *locationParam = @"烏丸のスタバ";
+    NSString *locationParam = location.text;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *user = [defaults dictionaryForKey:@"user"];
@@ -125,16 +123,14 @@
                             startTimeParam, @"start_time",
                             locationParam, @"location",
                             text, @"detail",
-                            timeSelect.select, @"timeSelect",
-                            tweet, @"tweetBool",nil];
-    NSLog(@"params: %@", params);
+                            timeSelect.select, @"timeSelect",nil];
+    
     [client createNewComad:(NSDictionary *)params :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
         NSLog(@"%@", response);
         [SVProgressHUD dismiss];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(int statusCode, NSString *errorString) {
         NSLog(@"%@", errorString);
-        
         // 生成と同時に各種設定も完了させる例
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"お知らせ" message:@"コマドを作成しました" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [SVProgressHUD dismiss];
@@ -143,7 +139,42 @@
 }
 
 -(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [self.delegate created];
-    [self.navigationController popViewControllerAnimated:YES];
+    BOOL tweet = tweetButton.tweet;
+    NSString *title = tv.text;
+    
+    //tweetがtrueのとき
+    if(tweet){
+        SLComposeViewController *twitterPostVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        void (^completion) (SLComposeViewControllerResult result) = ^(SLComposeViewControllerResult result) {
+                //[composeViewController dismissViewControllerAnimated:YES completion:nil];
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"cancel");
+                    [self.delegate created];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                    [self.navigationController popViewControllerAnimated:YES];
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"tweetDone");
+                    [self.delegate created];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                    [self.navigationController popViewControllerAnimated:YES];
+                    break;
+                default:
+                    break;
+                }
+        };
+        [twitterPostVC setCompletionHandler:completion];
+        if([title isEqualToString:@""]){
+            title = @"タイトルなし";
+        }
+        NSString *tweetStatement = [NSString stringWithFormat:@"%@ http://54.199.53.137:3000/comad/%d COMAD（コマド）#Comad", title, 100];
+        [twitterPostVC setInitialText:tweetStatement];
+        [self presentViewController:twitterPostVC animated:YES completion:nil];
+    //tweetがfalseの時
+    }else {
+        [self.delegate created];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 @end

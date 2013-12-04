@@ -45,8 +45,8 @@
 
 - (void)backTabpped:(UITapGestureRecognizer *)sender {
     //ONの時にタップされたら
-    if(tweet){
-        tweet = false;
+    if(!tweet){
+        tweet = true;
         backView.image = onBackResize;
         [UIView animateWithDuration:0.2f
                          animations:^{
@@ -55,7 +55,7 @@
                          }];
     //OFFの時にタップされたら
     }else{
-        tweet = true;
+        tweet = false;
         backView.image = offBackResize;
         [UIView animateWithDuration:0.2f
                          animations:^{

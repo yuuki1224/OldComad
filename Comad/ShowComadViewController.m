@@ -63,9 +63,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [conversation setContentOffset:CGPointMake(0, 100)];
+    [scrollView setContentOffset:CGPointMake(0, 100)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"へいと: %d", conversation.conversationHeight);
     [self configure];
     textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
     [self intoRoom];
@@ -202,6 +205,21 @@
 
 - (void)tweetButtonClicked:(UITapGestureRecognizer *)sender {
     SLComposeViewController *twitterPostVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    void (^completion) (SLComposeViewControllerResult result) = ^(SLComposeViewControllerResult result) {
+        //[composeViewController dismissViewControllerAnimated:YES completion:nil];
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                NSLog(@"cancel");
+                break;
+            case SLComposeViewControllerResultDone:
+                NSLog(@"tweetDone");
+                break;
+            default:
+                break;
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+    [twitterPostVC setCompletionHandler:completion];
     NSString *title = @"";
     int comadId = [[self.comadInfo objectForKey:@"id"] intValue];
     

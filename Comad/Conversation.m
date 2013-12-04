@@ -89,6 +89,9 @@
         self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
         conversationHeight += bubble.frame.size.height;
     }
+    if(conversationHeight > 400){
+        [self setContentOffset:CGPointMake(0, conversationHeight - 215)];
+    }
 }
 
 - (void)addStamp:(int)stampNum :(NSString *)userName :(NSString *)imageName {
@@ -119,6 +122,9 @@
         
         self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
         conversationHeight += stamp.frame.size.height;
+    }
+    if(conversationHeight > 400){
+        [self setContentOffset:CGPointMake(0, conversationHeight - 215)];
     }
 }
 
