@@ -17,7 +17,7 @@
     if (self) {
         windowSize = [[UIScreen mainScreen] bounds];
         self.backgroundColor = [UIColor whiteColor];
-        self.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - 140);
+        self.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - 230);
         [self setView];
     }
     return self;
@@ -39,7 +39,7 @@
     layout.minimumLineSpacing = 1.0f;
     
     //UICollectionView
-    UICollectionView *stamps = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - 140) collectionViewLayout:layout];
+    UICollectionView *stamps = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - 230) collectionViewLayout:layout];
     stamps.backgroundColor = [UIColor whiteColor];
     stamps.delegate = self;
     stamps.dataSource = self;
@@ -63,9 +63,8 @@
     NSString *imageName = [dic objectForKey:[NSString stringWithFormat:@"%i",indexPath.row]];
 
     UIImage *thumbnailImage = [UIImage imageNamed: imageName];
-    
-    UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:80 resizeHeight:80];
-    UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImageResize];
+    UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImage];
+    thumbnail.frame = CGRectMake(0, 0, 80, 80);
     [cell.contentView addSubview: thumbnail];
     return cell;
 }
