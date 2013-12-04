@@ -17,7 +17,7 @@
     if (self) {
         windowSize = [[UIScreen mainScreen] bounds];
         self.backgroundColor = [UIColor whiteColor];
-        self.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - 100);
+        self.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - 140);
         [self setView];
     }
     return self;
@@ -25,11 +25,12 @@
 
 - (void)setView {
     //scrollView設置
+    /*
     UIScrollView *stampMenu = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 15, windowSize.size.width, 50)];
     stampMenu.backgroundColor = [UIColor yellowColor];
     stampMenu.contentSize = CGSizeMake(windowSize.size.width * 2, 50);
     [self addSubview: stampMenu];
-    
+    */
     //collectionView設置
     //layout定義
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
@@ -38,7 +39,7 @@
     layout.minimumLineSpacing = 1.0f;
     
     //UICollectionView
-    UICollectionView *stamps = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 65, windowSize.size.width, windowSize.size.height - 165) collectionViewLayout:layout];
+    UICollectionView *stamps = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - 140) collectionViewLayout:layout];
     stamps.backgroundColor = [UIColor whiteColor];
     stamps.delegate = self;
     stamps.dataSource = self;
