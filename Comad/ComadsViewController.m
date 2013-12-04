@@ -45,11 +45,11 @@
         if((int)iOSVersion == 7.00){
             self.tabBar.frame = CGRectMake(5, 82, windowSize.size.width - 10, 50);
         }else if((int)iOSVersion == 6){
-            self.tabBar.frame = CGRectMake(5, 120, windowSize.size.width - 10, 50);
+            self.tabBar.frame = CGRectMake(3, 120, 315.5, 48);
         }
         
         UIImage *tabBackImage = [UIImage imageNamed:@"comadTab1.png"];
-        [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:windowSize.size.width resizeHeight:50]];
+        [self.tabBar setBackgroundImage:tabBackImage];
         
         self.selectedIndex = 0;
         //Tab背景画像のセット
@@ -105,29 +105,29 @@
         case 0:{
             [newComadTable.tableView reloadData];
             UIImage *tabBackImage = [UIImage imageNamed:@"comadTab1.png"];
-            [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:(windowSize.size.width - 10) resizeHeight:50]];
-            [self.tabBar setSelectionIndicatorImage:[Image resizeImage:[UIImage imageNamed:@"newSelected.png"] resizePer:0.5]];
+            [self.tabBar setBackgroundImage: tabBackImage];
+            [self.tabBar setSelectionIndicatorImage:[UIImage imageNamed:@"newSelected.png"]];
             break;
         }
         case 1:{
             [dateComadTable.tableView reloadData];
             UIImage *tabBackImage = [UIImage imageNamed:@"comadTab2.png"];
-            [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:(windowSize.size.width - 10) resizeHeight:50]];
-            [self.tabBar setSelectionIndicatorImage:[Image resizeImage:[UIImage imageNamed:@"dateSelected.png"] resizePer:0.5]];
+            [self.tabBar setBackgroundImage:tabBackImage];
+            [self.tabBar setSelectionIndicatorImage:[UIImage imageNamed:@"dateSelected.png"]];
             break;
         }
         case 2:{
             [popularComadTable.tableView reloadData];
             UIImage *tabBackImage = [UIImage imageNamed:@"comadTab3.png"];
-            [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:(windowSize.size.width - 10) resizeHeight:50]];
-            [self.tabBar setSelectionIndicatorImage:[Image resizeImage:[UIImage imageNamed:@"popularSelected.png"] resizePer:0.5]];
+            [self.tabBar setBackgroundImage: tabBackImage];
+            [self.tabBar setSelectionIndicatorImage:[UIImage imageNamed:@"popularSelected.png"]];
             break;
         }
         case 3:{
             [myComadTable.tableView reloadData];
             UIImage *tabBackImage = [UIImage imageNamed:@"comadTab4.png"];
-            [self.tabBar setBackgroundImage:[Image resizeImage:tabBackImage resizeWidth:(windowSize.size.width - 10) resizeHeight:50]];
-            [self.tabBar setSelectionIndicatorImage:[Image resizeImage:[UIImage imageNamed:@"mycomadSelected.png"] resizePer:0.5]];
+            [self.tabBar setBackgroundImage: tabBackImage];
+            [self.tabBar setSelectionIndicatorImage: [UIImage imageNamed:@"mycomadSelected.png"]];
             break;
         }
         default:
