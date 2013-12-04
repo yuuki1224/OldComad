@@ -147,11 +147,9 @@
                 if (range.location != NSNotFound) {
                     //stampがあった場合 左側の描画
                     NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
-                    [conversation removeNoConversation];
                     [conversation addStamp:[stampNum intValue] :userName :imageName];
                 } else {
                     //stampがない場合
-                    [conversation removeNoConversation];
                     [conversation addConversation:content :userName :imageName];
                 }
                 //相手のIDのとき
@@ -166,11 +164,9 @@
                 if (range.location != NSNotFound) {
                     //stampがあった場合 左側の描画
                     NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
-                    [conversation removeNoConversation];
                     [conversation addStamp:[stampNum intValue] :userName :imageName];
                 } else {
                     //stampがない場合
-                    [conversation removeNoConversation];
                     [conversation addConversation:content :userName :imageName];
                 }
             }

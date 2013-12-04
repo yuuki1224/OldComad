@@ -129,7 +129,9 @@
     NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
     NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
     
-    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": @10, @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
+    NSLog(@"userInfo %@", [defaults objectForKey:@"user"]);
+    
+    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": [[defaults objectForKey:@"user"]objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
 }
 
 - (void)plusClicked {
@@ -194,6 +196,9 @@
         
         NSLog(@"imageName: %@, userName: %@", imageName, userName);
         //自分のIDのとき
+        NSLog(@"userId %d, friendId %d", userId, friendId);
+        NSLog(@"args %@", packet.args);
+        
         if ([packet.args[1] isEqual: @(userId)]) {
             NSRange range = [statement rangeOfString:@"(stamp_"];
             if (range.location != NSNotFound) {
@@ -231,7 +236,7 @@
     NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
     NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
     
-    [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": @(10), @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
+    [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": [[defaults objectForKey:@"user"] objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
 }
 
 @end
