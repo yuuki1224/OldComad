@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSDictionary *userInfo;
 @property (nonatomic, retain) NSDictionary *groupInfo;
 
-- (void)setFriendCell:(BOOL *)isNew;
+- (void)setFriendCell:(BOOL)isNew;
 - (void)setFriendCellWithURL;
 - (void)setGroupCell;
 - (void)setInviteButton;

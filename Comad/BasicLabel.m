@@ -103,6 +103,7 @@
             case FriendCellName:{
                 self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0];
                 UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:15.0f];
+                self.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0];
                 self.font = font;
                 break;
             }

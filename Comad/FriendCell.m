@@ -32,25 +32,44 @@
     // Configure the view for the selected state
 }
 
-- (void)setFriendCell:(BOOL *)isNew {
+- (void)setFriendCell:(BOOL)isNew {
     if(isNew){
-        self.backgroundColor = [UIColor colorWithRed:0.973 green:0.925 blue:0.859 alpha:1.0];
+        UIView *baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 64)];
+        baseView.backgroundColor = [UIColor colorWithRed:1.000 green:0.961 blue:0.898 alpha:1.0];
+        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        UIImage *thumbnailImage = [UIImage imageNamed: [userInfo objectForKey:@"image_name"]];
+        UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImage];
+        thumbnail.frame = CGRectMake(0, 0, 64, 64);
+        
+        [baseView addSubview:thumbnail];
+        
+        BasicLabel *nameText = [[BasicLabel alloc]initWithName:FriendCellName];
+        nameText.text = [userInfo objectForKey:@"name"];
+        [nameText sizeToFit];
+        float width = nameText.frame.size.width;
+        float height = nameText.frame.size.height;
+        nameText.frame = CGRectMake(75, 32 - height/2, width, height);
+        [baseView addSubview: nameText];
+        [self addSubview: baseView];
+    }else {
+        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        UIImage *thumbnailImage = [UIImage imageNamed: [userInfo objectForKey:@"image_name"]];
+        UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImage];
+        thumbnail.frame = CGRectMake(0, 0, 64, 64);
+        
+        [self addSubview:thumbnail];
+        
+        BasicLabel *nameText = [[BasicLabel alloc]initWithName:FriendCellName];
+        nameText.text = [userInfo objectForKey:@"name"];
+        [nameText sizeToFit];
+        float width = nameText.frame.size.width;
+        float height = nameText.frame.size.height;
+        nameText.frame = CGRectMake(75, 32 - height/2, width, height);
+        [self addSubview: nameText];
     }
-    
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
-    UIImage *thumbnailImage = [UIImage imageNamed: [userInfo objectForKey:@"image_name"]];
-    UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImage];
-    thumbnail.frame = CGRectMake(0, 0, 64, 64);
-    
-    [self addSubview:thumbnail];
-    
-    BasicLabel *nameText = [[BasicLabel alloc]initWithName:FriendCellName];
-    nameText.text = [userInfo objectForKey:@"name"];
-    [nameText sizeToFit];
-    float width = nameText.frame.size.width;
-    float height = nameText.frame.size.height;
-    nameText.frame = CGRectMake(75, 32 - height/2, width, height);
-    [self addSubview: nameText];
+
 }
 
 //あとで統合する
