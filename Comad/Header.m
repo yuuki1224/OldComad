@@ -47,7 +47,7 @@
     title.shadowColor = [UIColor colorWithRed:0.251 green:0.451 blue:0.780 alpha:1.0];
     title.shadowOffset = CGSizeMake(0, -1);
     title.textColor = [UIColor whiteColor];
-    UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:17.0f];
+    UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W6" size:18.0f];
     title.font = font;
     title.text = titleString;
     title.backgroundColor = [UIColor colorWithRed:0.298 green:0.541 blue:0.925 alpha:1.0];

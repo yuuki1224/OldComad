@@ -42,7 +42,11 @@
     [comadId sizeToFit];
     comadId.frame = CGRectMake(name.frame.origin.x + name.frame.size.width + 5, name.frame.origin.y + 1, comadId.frame.size.width, comadId.frame.size.height);
     BasicLabel *title = [[BasicLabel alloc]initWithName:ComadCellTitle];
-    title.text = [self.comadInfo objectForKey:@"title"];
+    if([[self.comadInfo objectForKey:@"title"] isEqualToString:@""]){
+        title.text = @"タイトルなし";
+    }else{
+        title.text = [self.comadInfo objectForKey:@"title"];
+    }
     [title sizeToFit];
     title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height + 3, title.frame.size.width, title.frame.size.height);
     
@@ -110,10 +114,10 @@
     //iOS6対応
     if((int)iOSVersion == 6){
         title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height - 2, title.frame.size.width, title.frame.size.height);
-        datetimeIconView.frame = CGRectMake(76, title.frame.origin.y + title.frame.size.height + 1, 17.5, 17.5);
-        dateTime.frame = CGRectMake(93, title.frame.origin.y + title.frame.size.height + 3, dateTime.frame.size.width, dateTime.frame.size.height);
-        locationIconView.frame = CGRectMake(77, dateTime.frame.origin.y + dateTime.frame.size.height - 4, 14.5, 19);
-        location.frame = CGRectMake(93, dateTime.frame.origin.y + dateTime.frame.size.height - 2, location.frame.size.width, location.frame.size.height);
+        datetimeIconView.frame = CGRectMake(75, 48, 17.5, 17.5);
+        dateTime.frame = CGRectMake(93, 50, dateTime.frame.size.width, dateTime.frame.size.height);
+        locationIconView.frame = CGRectMake(76, 66, 14.5, 19);
+        location.frame = CGRectMake(93, 68, location.frame.size.width, location.frame.size.height);
     }
     
     [cellView addSubview: name];

@@ -80,7 +80,7 @@
     switch (section) {
         case 0:{
             header.frame = CGRectMake(0, 0, windowSize.size.width, 100);
-            header.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
+            header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
             UIImage *thumbnailImage = [UIImage imageNamed:@"asano.png"];
             UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:80 resizeHeight:80];
             UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImageResize];
@@ -104,7 +104,7 @@
         }
         case 1:{
             header.frame = CGRectMake(0, 0, windowSize.size.width, 70);
-            header.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
+            header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
             BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
             headerLabel.text = @"ひとこと";
             [headerLabel sizeToFit];
@@ -114,7 +114,7 @@
         }
         case 2:{
             header.frame = CGRectMake(0, 0, windowSize.size.width, 70);
-            header.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
+            header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
             BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
             headerLabel.text = @"所属";
             [headerLabel sizeToFit];
@@ -124,7 +124,7 @@
         }
         case 3:{
             header.frame = CGRectMake(0, 0, windowSize.size.width, 70);
-            header.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
+            header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
             BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
             headerLabel.text = @"好きな言語は?";
             [headerLabel sizeToFit];
@@ -134,7 +134,7 @@
         }
         case 4:{
             header.frame = CGRectMake(0, 0, windowSize.size.width, 70);
-            header.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
+            header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
             BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
             headerLabel.text = @"使えるAdobe製品は?";
             [headerLabel sizeToFit];
@@ -144,7 +144,7 @@
         }
         case 5:{
             header.frame = CGRectMake(0, 0, windowSize.size.width, 70);
-            header.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
+            header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
             BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
             headerLabel.text = @"好きなエディターは?";
             [headerLabel sizeToFit];
@@ -160,7 +160,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, 50)];
-    footerView.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
+    footerView.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
     return footerView;
 }
  

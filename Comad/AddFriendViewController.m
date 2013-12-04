@@ -107,7 +107,8 @@
 }
 
 - (void)addFriendDelegate {
-    NSLog(@"push");
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"コマドを紹介" message:@"SNSでシェアしますか？" delegate:self cancelButtonTitle:@"キャンセル" otherButtonTitles:@"OK", nil];
+    [alert show];
 }
 
 - (void)createGroupClicked:(UIGestureRecognizer *)recognizer {

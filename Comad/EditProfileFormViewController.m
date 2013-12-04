@@ -35,7 +35,7 @@
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithRed:0.894 green:0.902 blue:0.906 alpha:1.0];
+    self.view.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
     Header *header = [[Header alloc]init];
     [self.view addSubview: header];
     [header setTitle:@"編集"];
