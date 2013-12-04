@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
 #import "ShowComad.h"
 #import "ConversationTextBox.h"
 #import "Conversation.h"

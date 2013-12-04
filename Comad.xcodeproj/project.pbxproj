@@ -58,6 +58,7 @@
 		BA1FE39F184FA12B00E61534 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE395184FA12B00E61534 /* 8.png */; };
 		BA1FE3A0184FA12B00E61534 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE396184FA12B00E61534 /* 9.png */; };
 		BA1FE3A1184FA12B00E61534 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE397184FA12B00E61534 /* 10.png */; };
+		BA1FE3A3184FAAB600E61534 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FE3A2184FAAB600E61534 /* Social.framework */; };
 		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
 		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
 		BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFBD18474E7D007F64FE /* NewComadViewController.m */; };
@@ -293,6 +294,7 @@
 		BA1FE395184FA12B00E61534 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		BA1FE396184FA12B00E61534 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		BA1FE397184FA12B00E61534 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
+		BA1FE3A2184FAAB600E61534 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
 		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
 		BA21DFAE18473251007F64FE /* ComadsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ComadsViewController+View.m"; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1FE3A3184FAAB600E61534 /* Social.framework in Frameworks */,
 				BADD95C9182FE18000DAB12F /* SystemConfiguration.framework in Frameworks */,
 				BADD95C7182FE17200DAB12F /* OpenGLES.framework in Frameworks */,
 				BADD95C5182FE16700DAB12F /* libstdc++.dylib in Frameworks */,
@@ -714,6 +717,7 @@
 		BA515169180900E200FD69D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE3A2184FAAB600E61534 /* Social.framework */,
 				BADD95C8182FE18000DAB12F /* SystemConfiguration.framework */,
 				BADD95C6182FE17200DAB12F /* OpenGLES.framework */,
 				BADD95C4182FE16700DAB12F /* libstdc++.dylib */,

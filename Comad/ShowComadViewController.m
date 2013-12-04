@@ -201,7 +201,18 @@
 }
 
 - (void)tweetButtonClicked:(UITapGestureRecognizer *)sender {
-    NSLog(@"tweet!!");
+    SLComposeViewController *twitterPostVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    NSString *title = @"";
+    int comadId = [[self.comadInfo objectForKey:@"id"] intValue];
+    
+    if([[self.comadInfo objectForKey:@"title"] isEqualToString:@""]){
+        title = @"タイトルなし";
+    }else{
+        title = [self.comadInfo objectForKey:@"title"];
+    }
+    NSString *tweetStatement = [NSString stringWithFormat:@"%@ http://54.199.53.137:3000/comad/%d COMAD（コマド）#Comad", title, comadId];
+    [twitterPostVC setInitialText:tweetStatement];
+    [self presentViewController:twitterPostVC animated:YES completion:nil];
 }
 
 @end
