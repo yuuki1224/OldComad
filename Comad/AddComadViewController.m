@@ -107,7 +107,7 @@
 
 - (void)saveClicked:(UITapGestureRecognizer *)sender {
     ComadJsonClient *client = [ComadJsonClient sharedClient];
-    //[SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     
     NSString *text = tv.text;
     NSString *selectTime = @"1";
@@ -115,7 +115,7 @@
     NSDateFormatter *format = [[NSDateFormatter alloc]init];
     [format setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
     //NSString *startTime = [format stringFromDate:];
-    NSString *startTimeParam = @"hogehgoe";
+    NSString *startTimeParam = datetime.text;
     NSString *locationParam = @"烏丸のスタバ";
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -129,15 +129,22 @@
                             timeSelect.select, @"timeSelect",
                             tweet, @"tweetBool",nil];
     NSLog(@"params: %@", params);
-    /*
     [client createNewComad:(NSDictionary *)params :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
         NSLog(@"%@", response);
         [SVProgressHUD dismiss];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(int statusCode, NSString *errorString) {
         NSLog(@"%@", errorString);
+        
+        // 生成と同時に各種設定も完了させる例
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"お知らせ" message:@"コマドを作成しました" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [SVProgressHUD dismiss];
+        [alert show];
     }];
-     */
+}
+
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self.delegate created];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

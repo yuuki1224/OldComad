@@ -103,17 +103,16 @@
 }
 
 - (void)setInviteButton {
-    RoundedButton *inviteButton = [[RoundedButton alloc]initWithName:AddFriendInvite];
-    inviteButton.frame = CGRectMake(windowSize.size.width - 70, 20, 60, 25);
-    [inviteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:11.0f];
-    [inviteButton setFont:font];
-    [inviteButton setTitle:@"招待する" forState:UIControlStateNormal];
-    [inviteButton addTarget:self action:@selector(inviteClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:inviteButton];
+    UIImage *inviteImage = [UIImage imageNamed:@"inviteButton.png"];
+    UIImageView *inviteButtonView = [[UIImageView alloc]initWithImage:inviteImage];
+    inviteButtonView.frame = CGRectMake(windowSize.size.width - 70, 20, 60, 25);
+    UITapGestureRecognizer *inviteButtonTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(inviteButtonTabpped:)];
+    [inviteButtonView addGestureRecognizer: inviteButtonTapGesture];
+    inviteButtonView.userInteractionEnabled = YES;
+    [self addSubview: inviteButtonView];
 }
 
-- (void)inviteClicked:(UIButton *)button {
-    [self.delegate inviteButtonClicked];
+- (void)inviteButtonTabpped:(UITapGestureRecognizer *)sender {
+    //[self.delegate inviteButtonClicked];
 }
 @end

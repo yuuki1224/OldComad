@@ -14,7 +14,9 @@
 #import "TimeSelectButton.h"
 #import "TweetButton.h"
 
-@interface AddComadViewController : UIViewController <EditTimeFormDelegate, EditLocationFormDelegate> {
+@protocol AddComadViewDelegate;
+
+@interface AddComadViewController : UIViewController <EditTimeFormDelegate, EditLocationFormDelegate, UIAlertViewDelegate> {
     float iOSVersion;
     CGRect windowSize;
     BasicLabel *wordCount;
@@ -24,6 +26,11 @@
     TimeSelectButton *timeSelect;
     TweetButton *tweetButton;
 }
-
+@property (nonatomic, weak) id<AddComadViewDelegate> delegate;
 - (void)configure;
 @end
+
+@protocol AddComadViewDelegate <NSObject>
+- (void)created;
+@end
+

@@ -29,6 +29,7 @@
         popularComadTable.PopularComad = popularComad;
         myComadTable.myComad = myComad;
         
+        [SVProgressHUD dismiss];
         /*
          date_comad
          new_comad

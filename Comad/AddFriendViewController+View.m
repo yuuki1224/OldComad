@@ -93,6 +93,26 @@
                         [[facebookFriends objectAtIndex:indexPath.row] objectForKey:@"name"], @"name",
                         @"asano.png", @"image_name",nil];
              */
+            switch (indexPath.row) {
+                case 0:
+                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"8", @"id",
+                                @"中川峰志", @"name",
+                                @"nakagawa.png", @"image_name",nil];
+                    break;
+                case 1:
+                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"8", @"id",
+                                @"佐藤大輔", @"name",
+                                @"sato.png", @"image_name",nil];
+                    break;
+                default:
+                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"8", @"id",
+                                @"小林大志", @"name",
+                                @"kobayashi.png", @"image_name",nil];
+                    break;
+            }
             break;
         }
         default:
@@ -103,12 +123,11 @@
         [cell setFriendCell:NO];
     }else if(indexPath.section == 1){
         //招待ボタン付ける
-        /*
         cell.userInfo = userInfo;
-        [cell setFriendCellWithURL];
+        //[cell setFriendCellWithURL];
+        [cell setFriendCell:NO];
         [cell setInviteButton];
         cell.delegate = self;
-         */
     }
     return cell;
 }

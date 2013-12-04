@@ -12,8 +12,9 @@
 #import "PopularComadViewController.h"
 #import "MyComadViewController.h"
 #import "Header.h"
+#import "AddComadViewController.h"
 
-@interface ComadsViewController : UITabBarController {
+@interface ComadsViewController : UITabBarController<AddComadViewDelegate> {
     CGRect windowSize;
     float iOSVersion;
     

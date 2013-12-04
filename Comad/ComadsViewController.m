@@ -72,6 +72,10 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    //[self setInfo];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -139,8 +143,13 @@
 
 - (void)addComadBtnClicked:(UIButton *)button {
     AddComadViewController *ac = [[AddComadViewController alloc]init];
+    ac.delegate = self;
     ac.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:ac animated:YES];
+}
+
+- (void)created {
+    [self setInfo];
 }
 
 @end

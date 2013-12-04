@@ -52,6 +52,7 @@
 		BA1FE385184E801400E61534 /* tab3.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE384184E801400E61534 /* tab3.png */; };
 		BA1FE388184E991100E61534 /* addFriendTab1.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE386184E991100E61534 /* addFriendTab1.png */; };
 		BA1FE389184E991100E61534 /* addFriendTab2.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE387184E991100E61534 /* addFriendTab2.png */; };
+		BA1FE38B184F20F600E61534 /* inviteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE38A184F20F600E61534 /* inviteButton.png */; };
 		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
 		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
 		BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFBD18474E7D007F64FE /* NewComadViewController.m */; };
@@ -286,6 +287,7 @@
 		BA1FE384184E801400E61534 /* tab3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab3.png; sourceTree = "<group>"; };
 		BA1FE386184E991100E61534 /* addFriendTab1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFriendTab1.png; sourceTree = "<group>"; };
 		BA1FE387184E991100E61534 /* addFriendTab2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFriendTab2.png; sourceTree = "<group>"; };
+		BA1FE38A184F20F600E61534 /* inviteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inviteButton.png; sourceTree = "<group>"; };
 		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
 		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
 		BA21DFAE18473251007F64FE /* ComadsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ComadsViewController+View.m"; sourceTree = "<group>"; };
@@ -801,6 +803,7 @@
 		BA5151C31809B5AB00FD69D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FE38A184F20F600E61534 /* inviteButton.png */,
 				BA1FE386184E991100E61534 /* addFriendTab1.png */,
 				BA1FE387184E991100E61534 /* addFriendTab2.png */,
 				BA1FE375184DCF2B00E61534 /* addButton.png */,
@@ -1303,6 +1306,7 @@
 				BA1FE372184D1CA800E61534 /* otherSetting.png in Resources */,
 				BA1FE338184CA8AA00E61534 /* backForiOS6.png in Resources */,
 				BA74F945183B9E2300FE4629 /* nikochan.png in Resources */,
+				BA1FE38B184F20F600E61534 /* inviteButton.png in Resources */,
 				BA2A74AF180FBEFB00167837 /* sato.png in Resources */,
 				BA21DFD718479E4B007F64FE /* comadTab3.png in Resources */,
 				BA1FE34C184CB0E200E61534 /* textField.png in Resources */,

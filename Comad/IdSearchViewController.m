@@ -24,7 +24,7 @@
     if (self) {
         // Custom initialization
         iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-        self.view.backgroundColor = [UIColor whiteColor];
+        self.view.backgroundColor = [UIColor colorWithRed:0.855 green:0.886 blue:0.929 alpha:1.0];
         Header *header = [[Header alloc]init];
         [header setTitle:@"ID検索"];
         
