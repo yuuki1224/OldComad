@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController <UIWebViewDelegate> {
+@interface LoginViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
     CGRect windowSize;
 }
 

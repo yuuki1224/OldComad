@@ -57,6 +57,13 @@
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
 }
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [SVProgressHUD dismiss];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"サーバーにアクセスできません。" message:@"ネットワークに繋がっていないか、サーバーが止まってます。" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     [SVProgressHUD dismiss];
  
@@ -86,6 +93,15 @@
             [self presentViewController:tc animated:YES completion:nil];
         }
     }
+}
+
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
+    TabBarController *tc = [[TabBarController alloc]init];
+    UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+    rootViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+    rootViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:tc animated:YES completion:nil];
 }
 
 @end

@@ -42,8 +42,10 @@
         [self reloadData];
          */
     } failure:^(int statusCode, NSString *errorString) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:errorString message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        /*
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"サーバーにアクセスできません。" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
+         */
         [SVProgressHUD dismiss];
     }];
 }
