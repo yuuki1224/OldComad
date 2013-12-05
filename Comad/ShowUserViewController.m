@@ -39,7 +39,6 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *userInfo = [defaults objectForKey:@"user"];
-    NSLog(@"userInfo: %@",userInfo);
     
     [self configure];
     [super viewDidLoad];
@@ -86,6 +85,14 @@
 }
 
 - (void)sendMessageBtnClicked:(UIButton *)button {
+    int userId = [[userInfo objectForKey:@"id"] intValue];
+    MessageViewController *mc = [[MessageViewController alloc]init];
+    mc.type = PrivateMessage;
+    mc.friendId = userId;
+    [self.navigationController pushViewController:mc animated:YES];
+}
+
+-(void)messageBtnClicked:(UITapGestureRecognizer *)sender {
     int userId = [[userInfo objectForKey:@"id"] intValue];
     MessageViewController *mc = [[MessageViewController alloc]init];
     mc.type = PrivateMessage;

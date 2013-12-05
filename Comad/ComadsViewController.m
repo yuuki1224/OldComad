@@ -45,7 +45,7 @@
         if((int)iOSVersion == 7.00){
             self.tabBar.frame = CGRectMake(5, 82, windowSize.size.width - 10, 50);
         }else if((int)iOSVersion == 6){
-            self.tabBar.frame = CGRectMake(3, 120, 315.5, 48);
+            self.tabBar.frame = CGRectMake(3, 124, 315.5, 48);
         }
         
         UIImage *tabBackImage = [UIImage imageNamed:@"comadTab1.png"];

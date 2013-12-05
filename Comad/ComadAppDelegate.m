@@ -29,11 +29,11 @@ static ComadAppDelegate* _sharedInstance = nil;
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];  //statusbar白くなる
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    tc = [[TabBarController alloc]init];
-    //lc = [[LoginViewController alloc]init];
+    //tc = [[TabBarController alloc]init];
+    lc = [[LoginViewController alloc]init];
     
-    [self.window addSubview:tc.view];
-    //[self.window addSubview:lc.view];
+    //[self.window addSubview:tc.view];
+    [self.window addSubview:lc.view];
     [self.window makeKeyAndVisible];  //これがないと画面表示されない
     
 }

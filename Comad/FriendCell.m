@@ -132,6 +132,6 @@
 }
 
 - (void)inviteButtonTabpped:(UITapGestureRecognizer *)sender {
-    //[self.delegate inviteButtonClicked];
+    [self.delegate inviteButtonClicked];
 }
 @end

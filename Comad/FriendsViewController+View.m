@@ -13,7 +13,6 @@
 #import "SVProgressHUD.h"
 #import "FriendJsonClient.h"
 #import "ShowUserViewController.h"
-#import "ShowGroupViewController.h"
 
 @implementation FriendsViewController (View)
 - (void)setInfo {
@@ -271,8 +270,6 @@
         [self.delegate showModalView: userInfo];
     }else if (indexPath.section == 3){
         //グループ表示
-        ShowGroupViewController *sc =[[ShowGroupViewController alloc]init];
-        [self.navigationController pushViewController:sc animated:YES];
     }else if (indexPath.section == 4){
         [self.delegate showModalView: userInfo];
     }

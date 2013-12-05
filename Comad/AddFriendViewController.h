@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
 #import "AddFriendMenu.h"
 #import "UserModal.h"
 #import "BlackMask.h"

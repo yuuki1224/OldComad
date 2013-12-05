@@ -141,8 +141,4 @@
     [self.navigationController pushViewController:ec animated:YES];
 }
 
--(void)messageBtnClicked:(UITapGestureRecognizer *)sender {
-    MessageViewController *mc = [[MessageViewController alloc]init];
-    [self.navigationController pushViewController:mc animated:YES];
-}
 @end

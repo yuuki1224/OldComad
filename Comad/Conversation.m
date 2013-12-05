@@ -29,16 +29,17 @@
 }
 
 - (void)setNoConversation {
-    BasicLabel *noConversationText = [[BasicLabel alloc]initWithName:NoConversationText];
+    noConversationText = [[BasicLabel alloc]initWithName:NoConversationText];
     noConversationText.text = @"会話はまだありません。";
     [noConversationText sizeToFit];
     noConversationText.frame = CGRectMake((windowSize.size.width - noConversationText.frame.size.width)/2, 125, noConversationText.frame.size.width, noConversationText.frame.size.height);
     
     UIImage *noConversationImage = [Image resizeImage:[UIImage imageNamed:@"nochat.png"] resizePer:0.5];
-    UIImageView *noConversation = [[UIImageView alloc]initWithImage:noConversationImage];
+    noConversation = [[UIImageView alloc]initWithImage:noConversationImage];
     noConversation.frame = CGRectMake((windowSize.size.width - noConversation.frame.size.width)/2, noConversationText.frame.origin.y + noConversationText.frame.size.height + 5, noConversation.frame.size.width, noConversation.frame.size.height);
     [self addSubview: noConversationText];
     [self addSubview: noConversation];
+    
 }
 
 - (void)removeNoConversation {
@@ -124,7 +125,7 @@
         conversationHeight += stamp.frame.size.height;
     }
     if(conversationHeight > 400){
-        [self setContentOffset:CGPointMake(0, conversationHeight - 215)];
+        [self setContentOffset:CGPointMake(0, conversationHeight - 300)];
     }
 }
 

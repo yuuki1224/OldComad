@@ -68,7 +68,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSLog(@"へいと: %d", conversation.conversationHeight);
     [self configure];
     textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
     [self intoRoom];
@@ -116,20 +115,19 @@
     NSDictionary *userInfo = [defaults objectForKey:@"user"];
     int userId = [[userInfo objectForKey:@"id"] intValue];
     int comadId = [[self.comadInfo objectForKey:@"id"] intValue];
-    /*
+    
     [socketIO connectToHost:@"54.199.53.137"
                      onPort:9000
-                 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]]; */
+                 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]];
+    /*
     [socketIO connectToHost:@"localhost"
                      onPort:9000
-                 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]];
+                 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]];*/
     [socketIO sendEvent:@"init" withData:@{@"userId":@(userId), @"type":@"comad", @"comadId":@(comadId)}];
 }
 
 #pragma SocketIO Delegate
 - (void)socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet {
-    NSLog(@"イベント受け取った");
-    NSLog(@"%@", packet.args);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *userInfo = [defaults objectForKey:@"user"];
     int userId = [[userInfo objectForKey:@"id"] intValue];
@@ -149,9 +147,11 @@
                 if (range.location != NSNotFound) {
                     //stampがあった場合 左側の描画
                     NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
+                    [conversation removeNoConversation];
                     [conversation addStamp:[stampNum intValue] :userName :imageName];
                 } else {
                     //stampがない場合
+                    [conversation removeNoConversation];
                     [conversation addConversation:content :userName :imageName];
                 }
                 //相手のIDのとき
@@ -161,14 +161,14 @@
                 NSString *imageName = [messages[i] objectForKey:@"image_name"];
                 NSString *userName = [messages[i] objectForKey:@"user_name"];
                 
-                NSLog(@"imageName: %@, userName: %@", imageName, userName);
-                
                 if (range.location != NSNotFound) {
                     //stampがあった場合 左側の描画
                     NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
+                    [conversation removeNoConversation];
                     [conversation addStamp:[stampNum intValue] :userName :imageName];
                 } else {
                     //stampがない場合
+                    [conversation removeNoConversation];
                     [conversation addConversation:content :userName :imageName];
                 }
             }
@@ -183,9 +183,11 @@
             if (range.location != NSNotFound) {
                 //stampがあった場合 左側の描画
                 NSString *stampNum = [statement substringWithRange: NSMakeRange(7, statement.length - 8)];
+                [conversation removeNoConversation];
                 [conversation addStamp:[stampNum intValue] :userName :imageName];
             } else {
                 //stampがない場合
+                [conversation removeNoConversation];
                 [conversation addConversation:statement :userName :imageName];
             }
             //自分じゃないのIDのとき
@@ -194,9 +196,11 @@
             if (range.location != NSNotFound) {
                 //stampがあった場合 右側の描画
                 NSString *stampNum = [statement substringWithRange:NSMakeRange(7, statement.length - 8)];
+                [conversation removeNoConversation];
                 [conversation addStamp:[stampNum intValue] :userName :imageName];
             } else {
                 //stampがない場合
+                [conversation removeNoConversation];
                 [conversation addConversation:statement :userName :imageName];
             }
         }
@@ -206,18 +210,20 @@
 - (void)tweetButtonClicked:(UITapGestureRecognizer *)sender {
     SLComposeViewController *twitterPostVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     void (^completion) (SLComposeViewControllerResult result) = ^(SLComposeViewControllerResult result) {
-        //[composeViewController dismissViewControllerAnimated:YES completion:nil];
+        textBox.frame = CGRectMake(0, windowSize.size.height - 75, windowSize.size.width, 55);
         switch (result) {
             case SLComposeViewControllerResultCancelled:
-                NSLog(@"cancel");
+                //textbox下げる
+                textBox.frame = CGRectMake(0, windowSize.size.height - 75, windowSize.size.width, 55);
+                [self dismissViewControllerAnimated:YES completion:nil];
                 break;
             case SLComposeViewControllerResultDone:
-                NSLog(@"tweetDone");
+                //textbox下げる
+                [self dismissViewControllerAnimated:YES completion:nil];
                 break;
             default:
                 break;
         }
-        [self dismissViewControllerAnimated:YES completion:nil];
     };
     [twitterPostVC setCompletionHandler:completion];
     NSString *title = @"";

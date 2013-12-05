@@ -14,7 +14,6 @@
 
 @implementation ShowComadViewController (View)
 - (void)configure {
-    NSLog(@"comadInfooooooooooo: %@", self.comadInfo);
     //UIView *baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48)];
     UIScrollView *baseView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 123)];
     baseView.contentSize = CGSizeMake(windowSize.size.width, windowSize.size.height);
@@ -93,7 +92,6 @@
     float ss = tmp -(float)(hh*3600+mm*60);
     
     BasicLabel *time = [[BasicLabel alloc]initWithName:GrayLabel];
-    NSLog(@"%02d:%02d:%05.2f",hh,mm,ss);
     // 1日を超えてる場合
     if(hh >= 24){
         int days = hh/24;
@@ -209,8 +207,6 @@
 }
 
 - (void)stampClickedDelegate:(int)stampNum {
-    NSLog(@"add stamp");
-    
     [mask removeFromSuperview];
     [sm removeFromSuperview];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

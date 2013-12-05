@@ -3,7 +3,7 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "splash_21.png",
+      "filename" : "icon.png",
       "scale" : "2x"
     },
     {
@@ -15,7 +15,7 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icon.png",
+      "filename" : "icon-2.png",
       "scale" : "2x"
     }
   ],

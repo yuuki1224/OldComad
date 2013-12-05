@@ -135,11 +135,11 @@
     }else if ([[comadInfo objectForKey:@"tense"] isEqualToString:@"今日"]){
         conversationNum.textColor = [UIColor colorWithRed:1.000 green:0.729 blue:0.302 alpha:1.0];
     //緑
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日"]){
+    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"うぃる"]){
         conversationNum.textColor = [UIColor colorWithRed:0.329 green:0.773 blue:0.706 alpha:1.0];
     //青
     }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日以降"]){
-        conversationNum.textColor = [UIColor colorWithRed:0.282 green:0.549 blue:0.898 alpha:1.0];
+        conversationNum.textColor = [UIColor colorWithRed:0.329 green:0.773 blue:0.706 alpha:1.0];
     //紫
     }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"いつでも"]){
         conversationNum.textColor = [UIColor colorWithRed:0.471 green:0.349 blue:0.690 alpha:1.0];
@@ -162,7 +162,7 @@
     }else if ([[comadInfo objectForKey:@"tense"] isEqualToString:@"今日"]){
         commentIconImageName = @"commentIconOrange.png";
         //緑
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日"]){
+    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"うぃる"]){
         commentIconImageName = @"commentIconGreen.png";
         //青
     }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日以降"]){

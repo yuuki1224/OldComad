@@ -61,10 +61,13 @@
     [SVProgressHUD dismiss];
  
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    NSString *json = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('user').getAttribute('data-user');"];
-    NSString *status = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('status').getAttribute('data-status');"];
     
-    if([status isEqualToString:@"200"]){
+    //[webView stringByEvaluatingJavaScriptFromString:@"alert(1);"];
+    //NSString *json = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('user').getAttribute('data-user');"];
+    NSString *status = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('status').getAttribute('data-status');"];
+    NSString *location = [webView stringByEvaluatingJavaScriptFromString:@"document.location.origin"];
+    if(![location isEqualToString:@"http://54.199.53.137:3000"] || [status isEqualToString:@"200"]){
+        /*
         NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] forKey:@"user"];
         NSDictionary *userInfo = [dict objectForKey:@"user"];
@@ -73,9 +76,8 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:userInfo forKey:@"user"];
         BOOL successful = [defaults synchronize];
-        if (successful) {
-            NSLog(@"%@", @"データの保存に成功しました。");
-
+         */
+        if (true) {
             [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
             TabBarController *tc = [[TabBarController alloc]init];
             UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;

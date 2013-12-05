@@ -107,8 +107,10 @@
 }
 
 - (void)addFriendDelegate {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"コマドを紹介" message:@"SNSでシェアしますか？" delegate:self cancelButtonTitle:@"キャンセル" otherButtonTitles:@"OK", nil];
-    [alert show];
+    SLComposeViewController *twitterPostVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    NSString *tweetStatement = [NSString stringWithFormat:@"COMAD（コマド）http:// #Comad"];
+    [twitterPostVC setInitialText:tweetStatement];
+    [self presentViewController:twitterPostVC animated:YES completion:nil];
 }
 
 - (void)createGroupClicked:(UIGestureRecognizer *)recognizer {
@@ -170,14 +172,22 @@
 }
 
 - (void)blockBtnClickedDelegate {
-    NSLog(@"ブロックする処理");
     [userModal removeFromSuperview];
     [blackMask removeFromSuperview];
+    UIAlertView *alert = [[UIAlertView alloc]init];
+    alert.title = @"お知らせ";
+    alert.message = @"ブロックしました";
+    [alert addButtonWithTitle:@"閉じる"];
+    [alert show];
 }
 
 - (void)inviteButtonClicked {
-    InviteFriendViewController *ic = [[InviteFriendViewController alloc]init];
-    [self.navigationController pushViewController:ic animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc]init];
+    alert.title = @"お知らせ";
+    alert.message = @"招待しますか?";
+    [alert addButtonWithTitle:@"キャンセル"];
+    [alert addButtonWithTitle:@"OK"];
+    [alert show];
 }
 
 @end

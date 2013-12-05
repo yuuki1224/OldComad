@@ -12,7 +12,6 @@
 #import "UserModal.h"
 #import "AddFriendViewController.h"
 #import "CreateGroupViewController.h"
-#import "ShowGroupViewController.h"
 #import "Image.h"
 #import "AddFriendViewController.h"
 #import "ShowUserViewController.h"

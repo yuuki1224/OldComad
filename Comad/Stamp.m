@@ -29,8 +29,7 @@
         self.frame = CGRectMake(0, conversationHeight, windowSize.size.width, 120);
         
         UIImage *stampImage = [UIImage imageNamed: stampName];
-        UIImage *stampResize = [Image resizeImage:stampImage resizeWidth:120 resizeHeight:120];
-        UIImageView *stampView = [[UIImageView alloc]initWithImage: stampResize];
+        UIImageView *stampView = [[UIImageView alloc]initWithImage: stampImage];
         stampView.frame = CGRectMake(windowSize.size.width - 135, 0, 120, 120);
         [self addSubview: stampView];
         
@@ -45,8 +44,7 @@
         self.frame = CGRectMake(0, conversationHeight, windowSize.size.width, 120);
         
         UIImage *stampImage = [UIImage imageNamed: stampName];
-        UIImage *stampResize = [Image resizeImage:stampImage resizeWidth:120 resizeHeight:120];
-        UIImageView *stampView = [[UIImageView alloc]initWithImage: stampResize];
+        UIImageView *stampView = [[UIImageView alloc]initWithImage: stampImage];
         stampView.frame = CGRectMake(77, 0, 120, 120);
         [self addSubview: stampView];
         
@@ -65,8 +63,7 @@
         NSLog(@"userName: %@", self.userName);
         
         UIImage *thumbnailImage = [UIImage imageNamed: imageName];
-        UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:40 resizeHeight:40];
-        UIImageView *thumbnail = [[UIImageView alloc]initWithImage: thumbnailImageResize];
+        UIImageView *thumbnail = [[UIImageView alloc]initWithImage: thumbnailImage];
         thumbnail.frame = CGRectMake(18, 65, 40, 40);
         [self addSubview:thumbnail];
     }
