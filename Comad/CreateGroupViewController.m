@@ -77,11 +77,9 @@
                             @"東京都", @"address",nil];
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     [[UserJsonClient sharedClient]createGroup:params success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSLog(@"成功!");
         [SVProgressHUD dismiss];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(int statusCode, NSString *errorString) {
-        NSLog(@"失敗");
         [SVProgressHUD dismiss];
     }];
 }

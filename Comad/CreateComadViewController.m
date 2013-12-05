@@ -66,7 +66,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"detailAppear: %@",self.detail);
     [createComadForm reloadData];
 }
 
@@ -97,7 +96,6 @@
 
 #pragma UITableViewDataSource methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"section: %d",section);
     switch (section) {
         case 0:
             return 3;
@@ -186,7 +184,6 @@
                 }
             }else if(indexPath.row == 3){
                 cell.textLabel.text = @"人数制限";
-                NSLog(@"人数制限: %d",self.limit);
                 if(self.limit){
                     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d人", self.limit];
                 }else {
@@ -330,18 +327,15 @@
 }
 
 - (void) textViewDidChange: (UITextView*) text {
-    NSLog(@"%@",text.text);
     NSRange searchResult = [text.text rangeOfString:@"\n"];
     if(searchResult.location != NSNotFound){
         text.text = [text.text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         self.detail = text.text;
         [text resignFirstResponder];
-        NSLog(@"detail: %@",self.detail);
     }
 }
 
 - (void) textViewDidEndEditing:(UITextView *)textView {
-    NSLog(@"%@",textView.text);
 }
 
 - (void)createClicked:(UIButton *)btn {
@@ -368,11 +362,9 @@
                          limitString, @"limit", nil];
     
     [client createNewComad:(NSDictionary *)params :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSLog(@"%@", response);
         [SVProgressHUD dismiss];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(int statusCode, NSString *errorString) {
-        NSLog(@"%@", errorString);
         [SVProgressHUD dismiss];
     }];
 }

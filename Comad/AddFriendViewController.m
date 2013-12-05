@@ -130,6 +130,7 @@
         
         blackMask = [[BlackMask alloc]init];
         blackMask.alpha = 0.4f;
+        blackMask.delegate = self;
         [self.view addSubview:blackMask];
         [self.view addSubview:userModal];
         
@@ -188,6 +189,11 @@
     [alert addButtonWithTitle:@"キャンセル"];
     [alert addButtonWithTitle:@"OK"];
     [alert show];
+}
+
+- (void)blackMaskTapped {
+    [blackMask removeFromSuperview];
+    [userModal removeFromSuperview];
 }
 
 @end

@@ -55,7 +55,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@",[[facebookFriends objectAtIndex:indexPath.row] objectForKey:@"name"]);
     FriendCell *cell = [[FriendCell alloc]init];
     NSDictionary *userInfo;
     switch (indexPath.section) {

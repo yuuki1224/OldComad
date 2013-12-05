@@ -155,8 +155,6 @@
 -(void)keyboardWillShow:(NSNotification*)note {
     CGRect keyboardFrameEnd = [[note.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
-    NSLog(@"end: %f, %f", keyboardFrameEnd.size.width, keyboardFrameEnd.size.height);
-    
     CGRect windowSize = [[UIScreen mainScreen] bounds];
     [UIView animateWithDuration:0.35f
                      animations:^{

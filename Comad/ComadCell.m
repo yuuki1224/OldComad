@@ -106,7 +106,6 @@
     float ss = tmp -(float)(hh*3600+mm*60);
     
     BasicLabel *time = [[BasicLabel alloc]initWithName:GrayLabel];
-    NSLog(@"%02d:%02d:%05.2f",hh,mm,ss);
     // 1日を超えてる場合
     if(hh >= 24){
         int days = hh/24;
@@ -177,7 +176,6 @@
 
     //iOS6対応
     if((int)iOSVersion == 6){
-        NSLog(@"hogeeeeeeeeee %f", title.frame.origin.y + title.frame.size.height + 1);
         title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height - 2, title.frame.size.width, title.frame.size.height);
         datetimeIconView.frame = CGRectMake(75, 48, 17.5, 17.5);
         dateTime.frame = CGRectMake(93, 50, dateTime.frame.size.width, dateTime.frame.size.height);

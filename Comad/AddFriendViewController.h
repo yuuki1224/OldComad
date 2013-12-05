@@ -13,7 +13,7 @@
 #import "BlackMask.h"
 #import "FriendCell.h"
 
-@interface AddFriendViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, AddFriendMenuDelegate, UserModalDelegate, FriendCellDelegate> {
+@interface AddFriendViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, AddFriendMenuDelegate, UserModalDelegate, FriendCellDelegate, BlackMaskDelegate> {
     CGRect windowSize;
     float iOSVersion;
     UserModal *userModal;

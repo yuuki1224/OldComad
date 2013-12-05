@@ -92,7 +92,6 @@
 }
 
 - (void) textViewDidChange: (UITextView*) text {
-    NSLog(@"%d",text.text.length);
     int wordLength = text.text.length;
     wordCount.text = [NSString stringWithFormat:@"%d/30", 30 - wordLength];
     [wordCount sizeToFit];
@@ -126,11 +125,9 @@
                             timeSelect.select, @"timeSelect",nil];
     
     [client createNewComad:(NSDictionary *)params :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSLog(@"%@", response);
         [SVProgressHUD dismiss];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(int statusCode, NSString *errorString) {
-        NSLog(@"%@", errorString);
         // 生成と同時に各種設定も完了させる例
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"お知らせ" message:@"コマドを作成しました" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [SVProgressHUD dismiss];
@@ -149,13 +146,11 @@
                 //[composeViewController dismissViewControllerAnimated:YES completion:nil];
             switch (result) {
                 case SLComposeViewControllerResultCancelled:
-                    NSLog(@"cancel");
                     [self.delegate created];
                     [self dismissViewControllerAnimated:YES completion:nil];
                     [self.navigationController popViewControllerAnimated:YES];
                     break;
                 case SLComposeViewControllerResultDone:
-                    NSLog(@"tweetDone");
                     [self.delegate created];
                     [self dismissViewControllerAnimated:YES completion:nil];
                     [self.navigationController popViewControllerAnimated:YES];

@@ -59,8 +59,6 @@
         timeLabel.frame = CGRectMake(180, stampView.frame.size.height - timeLabel.frame.size.height, timeLabel.frame.size.width, timeLabel.frame.size.height);
         [self addSubview:nameLabel];
         [self addSubview:timeLabel];
-
-        NSLog(@"userName: %@", self.userName);
         
         UIImage *thumbnailImage = [UIImage imageNamed: imageName];
         UIImageView *thumbnail = [[UIImageView alloc]initWithImage: thumbnailImage];

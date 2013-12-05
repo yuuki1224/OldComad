@@ -62,8 +62,6 @@
             break;
     }
     
-    NSLog(@"ここでselfの値を読む %d, %d", type, friendId);
-    NSLog(@"contetHeight: %d", conversation.conversationHeight);
     conversation.scrollsToTop = conversation.conversationHeight - 100;
     [self.navigationController.tabBarController.tabBar setHidden:YES];
 }
@@ -102,9 +100,6 @@
 - (void)intoRoom {
     switch (type) {
         case PrivateMessage:{
-            
-            NSLog(@"privatemessageはじまるよ！userId: %d, friend: %d", userId, friendId);
-            
             socketIO = [[SocketIO alloc] initWithDelegate:self];
             socketIO.delegate = self;
             
@@ -130,14 +125,13 @@
     NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
     NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
     
-    NSLog(@"userInfo %@", [defaults objectForKey:@"user"]);
-    
     [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": [[defaults objectForKey:@"user"]objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
 }
 
 - (void)plusClicked {
     mask = [[BlackMask alloc]init];
     mask.alpha = 0.4;
+    mask.delegate = self;
     //スタンプのビューをmaskの上に付ける。
     sm = [[SpecialMoji alloc]init];
     sm.delegate = self;
@@ -148,8 +142,6 @@
 
 # pragma SocketIODelegate
 - (void)socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet {
-    NSLog(@"イベント受け取った");
-    
     //表示するとき
     if([packet.args[0] isEqual: @"endInit"]){
         roomName = packet.args[1];
@@ -178,8 +170,6 @@
                 NSString *imageName = [messages[i] objectForKey:@"image_name"];
                 NSString *userName = [messages[i] objectForKey:@"user_name"];
                 
-                NSLog(@"imageName: %@, userName: %@", imageName, userName);
-                
                 if (range.location != NSNotFound) {
                     //stampがあった場合 左側の描画
                     NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
@@ -194,11 +184,6 @@
         NSString *statement = packet.args[2];
         NSString *imageName = packet.args[3];
         NSString *userName = packet.args[4];
-        
-        NSLog(@"imageName: %@, userName: %@", imageName, userName);
-        //自分のIDのとき
-        NSLog(@"userId %d, friendId %d", userId, friendId);
-        NSLog(@"args %@", packet.args);
         
         if ([packet.args[1] isEqual: @(userId)]) {
             NSRange range = [statement rangeOfString:@"(stamp_"];
@@ -228,8 +213,6 @@
 # pragma SpecialMojiDelegate
 
 - (void)stampClickedDelegate:(int)stampNum {
-    NSLog(@"add stamp");
-    
     [mask removeFromSuperview];
     [sm removeFromSuperview];
     NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
@@ -240,4 +223,8 @@
     [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": [[defaults objectForKey:@"user"] objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
 }
 
+- (void)blackMaskTapped {
+    [sm removeFromSuperview];
+    [mask removeFromSuperview];
+}
 @end

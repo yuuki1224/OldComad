@@ -33,9 +33,6 @@
 
 - (void)viewDidLoad
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *user = [defaults dictionaryForKey:@"user"];
-    NSLog(@"%@", user);
     [super viewDidLoad];
 }
 

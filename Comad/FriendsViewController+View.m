@@ -26,8 +26,6 @@
         _friends = [responseObject objectForKey:@"friends"];
         _groups = [responseObject objectForKey:@"groups"];
         
-        NSLog(@"me: %@", me);
-        
         NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
                                   [me objectForKey:@"id"], @"id",
                                   [me objectForKey:@"name"], @"name",
@@ -81,7 +79,6 @@
 //For tableViewDataSource
 //セクションの中のセルの数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"count数: %d, %d, %d", [_newFriends count], [_groups count], [_friends count]);
     
     switch (section) {
         case 0:
@@ -256,7 +253,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"touch! %d", indexPath.row);
     //indexPathよりCellの情報取りたい
     FriendCell *cell = [friendsTable cellForRowAtIndexPath: indexPath];
     

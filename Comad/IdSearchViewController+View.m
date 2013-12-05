@@ -68,11 +68,9 @@
     [addFriendView removeFromSuperview];
     
     [[UserJsonClient sharedClient]findUserWithComadId:textField.text success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSLog(@"comad user: %@", responseObject);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         [self findUser:responseObject];
     } failure:^(int statusCode, NSString *errorString) {
-        NSLog(@"failed");
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     }];
     
@@ -91,7 +89,6 @@
         [alert addButtonWithTitle:@"閉じる"];
         [alert show];
     } failure:^(int statusCode, NSString *errorString) {
-        NSLog(@"失敗!");
         [SVProgressHUD dismiss];
         UIAlertView *alert = [[UIAlertView alloc]init];
         alert.title = @"お知らせ";

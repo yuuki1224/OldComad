@@ -100,7 +100,6 @@
 
 //Tab背景画像をセットする
 - (void)setTabBarImage {
-    NSLog(@"setTabBarImage");
     switch (self.selectedIndex) {
         case 0:{
             [newComadTable.tableView reloadData];

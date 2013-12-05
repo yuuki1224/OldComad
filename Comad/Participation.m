@@ -57,10 +57,7 @@
 }
 
 - (void)attend:(UIButton *)button {
-    NSLog(@"ここおおおおおおおおおお");
-    NSLog(@"%@",self.comadInfo);
     [[ComadJsonClient sharedClient] attendComad:@"1" :[comadInfo objectForKey:@"id"] :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSLog(@"%@", responseObject);
         UIImage *attendPersonImage = [UIImage imageNamed:@"asano.png"];
         UIImage *attendPersonImageResize = [Image resizeImage:attendPersonImage resizeWidth:50 resizeHeight:50];
         UIImage *cornerAttendPersonImage = [Image makeCornerRoundImage:attendPersonImageResize];
@@ -75,7 +72,6 @@
                              attendPerson.alpha = 1.0f;
                          }];
     } failure:^(int statusCode, NSString *errorString) {
-        NSLog(@"error");
     }];
 }
 

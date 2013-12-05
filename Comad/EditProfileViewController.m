@@ -84,7 +84,6 @@
     //NSUserDefaultから取ってきてセット
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *dict = [userDefaults valueForKey:@"user"];
-    NSLog(@"%@", dict);
 
     [editProfileTable reloadData];
 }
@@ -121,7 +120,6 @@
 
 //セルクリックするとき
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"clicked");
     EditProfileFormViewController *ec = [[EditProfileFormViewController alloc]init];
     ec.delegate = self;
     
@@ -175,10 +173,8 @@
     //保存する。NSuserdefaultに保存して、サーバーに上げる
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *nowUserInfo = [userDefaults valueForKey:@"user"];
-    NSLog(@"nowUserInfo: %@", nowUserInfo);
     NSString *userId = [nowUserInfo objectForKey:@"id"];
     NSString *imageName = [nowUserInfo objectForKey:@"imageName"];
-    NSLog(@"%@, %@", userId, imageName);
     NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
                          userId, @"id",
                          self.userName, @"name",
@@ -193,11 +189,9 @@
     [userDefaults setValue:userInfo forKey: @"user"];
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     [[UserJsonClient sharedClient]updateUserProfile:userInfo :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSLog(@"アップデート成功");
         [SVProgressHUD dismiss];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(int statusCode, NSString *errorString) {
-        NSLog(@"アップデート失敗しました。");
         [SVProgressHUD dismiss];
         [self.navigationController popViewControllerAnimated:YES];
     }];

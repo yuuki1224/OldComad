@@ -30,7 +30,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-        NSLog(@"iosVersion: %f", iOSVersion);
         // Custom initialization
         //CGRect windowSize = [[UIScreen mainScreen] bounds];
         //self.view.frame = CGRectMake(0, 10, windowSize.size.width, windowSize.size.height);
@@ -102,14 +101,12 @@
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    NSLog(@"clicked!");
 }
 
 - (void)showModalView:(NSDictionary *)userInfo {
     userModal = [[UserModal alloc]initWithName:Friend];
     userModal.delegate = self;
     userModal.userInfo = userInfo;
-    NSLog(@"userInfo: %@", userInfo);
     [userModal loadView];
     
     blackMask = [[BlackMask alloc]init];
@@ -134,7 +131,6 @@
     [userModal removeFromSuperview];
     [blackMask removeFromSuperview];
     ShowUserViewController *sc = [[ShowUserViewController alloc]init];
-    NSLog(@"userModal: %@", userModal.userInfo);
     [sc setMe: NO];
     sc.userInfo = userModal.userInfo;
     sc.hidesBottomBarWhenPushed = YES;
@@ -155,11 +151,6 @@
 - (void)sendMessageBtnClickedDelegate:(int)friendId {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *dict = [defaults dictionaryForKey:@"user"];
-    if (dict) {
-        NSLog(@"%@",[dict objectForKey:@"user"]);
-    } else {
-        NSLog(@"%@", @"データが存在しません。");
-    }
     
     [userModal removeFromSuperview];
     [blackMask removeFromSuperview];
@@ -167,7 +158,6 @@
     mc.type = PrivateMessage;
     mc.friendId = friendId;
     mc.hidesBottomBarWhenPushed = YES;
-    NSLog(@"friendId, %d", friendId);
     
     //[friendsArray objectAtIndex:indexPath.row];
     //mc.friendId = [[[friendsArray objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];

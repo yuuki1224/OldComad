@@ -54,7 +54,6 @@
     
     //自分のだったら右に付け足す
     if([meImageName isEqual:imageName]){
-        NSLog(@"右につける");
         bubble = [[Bubble alloc]initWithName:Right];
         bubble.mail = conversationText;
         bubble.userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
@@ -73,7 +72,6 @@
     
     //自分の以外だったら左に付け足す
     }else{
-        NSLog(@"左につける");
         bubble = [[Bubble alloc]initWithName:Left];
         bubble.mail = conversationText;
         bubble.userName = userName;

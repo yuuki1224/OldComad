@@ -144,8 +144,6 @@
         default:
             break;
     }
-    NSLog(@"power:%d",self.powerSource);
-    NSLog(@"wifi:%d",self.wifi);
     [locationStatusTable reloadData];
 }
 

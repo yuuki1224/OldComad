@@ -60,8 +60,6 @@
 #pragma Delegate
 // セルのView
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"中身 %@", [NewComad objectAtIndex:indexPath.row]);
-    
     ComadCell *cell = [[ComadCell alloc]initWithFrame:CGRectMake(0, 0, 380, 95)];
     cell.comadInfo = [NewComad objectAtIndex:indexPath.row];
     [cell setComadCell];
@@ -95,7 +93,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ComadCell *cell = [tableView cellForRowAtIndexPath: indexPath];
-    //NSLog(@"comadInfo: %@", cell.comadInfo);
     sc.hidesBottomBarWhenPushed = YES;
     sc.comadInfo = cell.comadInfo;
     [self.tabBarController.navigationController pushViewController:sc animated:YES];

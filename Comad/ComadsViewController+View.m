@@ -17,7 +17,6 @@
     
     //ネットワーク通信してる
     [[ComadJsonClient sharedClient] getIndexWhenSuccess:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSLog(@"とってきた情報: %@", responseObject);
         NSArray *dateComad = [responseObject objectForKey:@"date_comad"];
         NSArray *newComad = [responseObject objectForKey:@"new_comad"];
         NSArray *popularComad = [responseObject objectForKey:@"popular_comad"];
@@ -36,8 +35,6 @@
         _willComads = [responseObject objectForKey:@"will"];
         _groupComad = [responseObject objectForKey:@"group"];
         _comads = [responseObject objectForKey:@"comad"];
-        NSLog(@"%@",_comads);
-        NSLog(@"success");
         [SVProgressHUD dismiss];
         [self reloadData];
          */
@@ -52,16 +49,11 @@
 
 - (void)configure {
     float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-    NSLog(@"iosVersion: %f", iOSVersion);
 
     newComadTable = [[NewComadViewController alloc]init];
     dateComadTable = [[DateComadViewController alloc]init];
     popularComadTable = [[PopularComadViewController alloc]init];
     myComadTable = [[MyComadViewController alloc]init];
-
-    NSLog(@"tabbar Height: %f", self.tabBar.frame.size.height);
-    NSLog(@"newComad: %f", newComadTable.view.frame.size.height);
-    
    
     NSArray *tabs = [NSArray arrayWithObjects: newComadTable, dateComadTable, popularComadTable, myComadTable,nil];
     [self setViewControllers:tabs animated:NO];

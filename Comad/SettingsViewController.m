@@ -204,10 +204,8 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
-            NSLog(@"キャンセルしました");
             break;
         case 1: {
-            NSLog(@"ログアウト処理!!");
             [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
             LoginViewController *lc = [[LoginViewController alloc]init];
             UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;

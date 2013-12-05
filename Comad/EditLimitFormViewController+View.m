@@ -11,7 +11,6 @@
 @implementation EditLimitFormViewController (View)
 
 -(void)configure {
-    NSLog(@"limit");
     limitTable = [[UITableView alloc]init];
     limitTable.frame = CGRectMake(0, 117, windowSize.size.width, 40);
     limitTable.dataSource = self;

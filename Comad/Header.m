@@ -103,7 +103,6 @@
 }
 
 - (void)backBtnClicked:(UIButton *)button {
-    NSLog(@"backBtnclicked!!");
     //[self.delegate backBtnClickedDelegate];
 }
 

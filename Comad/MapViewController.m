@@ -61,8 +61,6 @@
     [self.mapView startRendering];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *dict = [userDefaults valueForKey:@"user"];
-    NSLog(@"%@", dict);
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

@@ -14,7 +14,7 @@
 #import "BlackMask.h"
 #import "Basic.h"
 
-@interface MessageViewController : UIViewController <ConversationTextBoxDelegate, SocketIODelegate, SpecialMojiDelegate> {
+@interface MessageViewController : UIViewController <ConversationTextBoxDelegate, SocketIODelegate, SpecialMojiDelegate, BlackMaskDelegate> {
     CGRect windowSize;
     float iOSVersion;
     Conversation *conversation;

@@ -11,7 +11,6 @@
 @implementation EditLocationStatusFormViewController (View)
 
 -(void)configure {
-    NSLog(@"wififiiiii");
     locationStatusTable = [[UITableView alloc]init];
     locationStatusTable.frame = CGRectMake(0, 127, windowSize.size.width, 80);
     locationStatusTable.dataSource = self;

@@ -56,8 +56,6 @@
 //セルの内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"friendsList: %@", friendsArray);
-    
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"a"];
     UIImage *thumbnailImage = [UIImage imageNamed: [[friendsArray objectAtIndex:indexPath.row] objectForKey:@"image_name"]];
     UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:60 resizeHeight:60];

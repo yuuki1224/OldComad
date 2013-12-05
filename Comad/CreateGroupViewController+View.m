@@ -83,7 +83,6 @@
 }
 
 - (void)tapped:(UITapGestureRecognizer *)sender {
-    NSLog(@"tapped");
 }
 
 - (void)addFriendTapped:(UITapGestureRecognizer *)sender {
@@ -93,15 +92,12 @@
     selectPeopleView.delegate = self;
     [self.view addSubview: selectPeopleView];
     
-    NSLog(@"add");
-    
     RoundedButton *name = [[RoundedButton alloc]initWithName: AddFriendInCreateGroup];
     NSString *nameString = @"村田温美";
     CGSize bounds = CGSizeMake(500, 500);
     UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3"size:11];
     UILineBreakMode mode = UILineBreakModeWordWrap;
     CGSize size = [nameString sizeWithFont:font forWidth:bounds.width lineBreakMode:mode];
-    NSLog(@"size width: %f", size.width);
 
     [name setName:@"村田温美"];
     name.frame = CGRectMake(memberLabelWidth, memberLabelHeight, size.width + 16, 20);

@@ -82,7 +82,6 @@
 
 // タップされたら
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"count数: %d",[[self indexPathsForSelectedRows] count]);
     SelectPeopleTableCell *cell = [self indexPathForCell: indexPath];
 }
 

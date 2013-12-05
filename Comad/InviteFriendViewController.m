@@ -46,11 +46,9 @@
     //NSURL *url = [NSURL URLWithString:@"http://localhost:3000/index/invite_friend"];
     //NSURLRequest *req = [NSURLRequest requestWithURL:url];
     //[wv loadRequest:req];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"invite_friend" ofType:@"html"];
-    NSLog(@"path: %@", path);
-    NSString *htmlStr = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"invite_friend" ofType:@"html"]];
-    NSLog(@"%@",htmlStr);
-    [wv loadHTMLString:htmlStr baseURL: nil];
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"invite_friend" ofType:@"html"];
+    //NSString *htmlStr = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"invite_friend" ofType:@"html"]];
+    //[wv loadHTMLString:htmlStr baseURL: nil];
     
     [super viewDidLoad];
     [super viewDidLoad];
