@@ -89,8 +89,7 @@
     
     //サムネイル
     UIImage *thumbnailImage = [UIImage imageNamed:[self.userInfo objectForKey:@"image_name"]];
-    UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:78 resizeHeight:78];
-    UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImageResize];
+    UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     
     //ここの分岐がいるのか

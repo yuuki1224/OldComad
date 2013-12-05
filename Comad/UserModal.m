@@ -78,8 +78,7 @@
 
 - (void)loadView {
     UIImage *thumbnailImage = [UIImage imageNamed:[userInfo objectForKey:@"image_name"]];
-    UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:80 resizeHeight:80];
-    UIImage *cornerThumbnailImage = [Image makeCornerRoundImage:thumbnailImageResize];
+    UIImage *cornerThumbnailImage = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnailImage];
     thumbnail.frame = CGRectMake(9, 20, 80, 80);
     [self addSubview:thumbnail];
