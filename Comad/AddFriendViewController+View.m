@@ -24,7 +24,7 @@
     if((int)iOSVersion == 7){
         addFriendsTable.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height);
     }else if((int)iOSVersion == 6){
-        addFriendsTable.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height);
+        addFriendsTable.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height -16);
     }
     addFriendsTable.delegate = self;
     addFriendsTable.dataSource = self;
@@ -42,7 +42,7 @@
             break;
         case 1:
             //return [facebookFriends count];
-            return 5;
+            return 4;
             break;
         default:
             break;
@@ -63,23 +63,29 @@
             switch (indexPath.row) {
                 case 0:{
                     userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"7", @"id",
-                                @"村田温美", @"name",
-                                @"murata.png", @"image_name",nil];
+                                @"10", @"id",
+                                @"石丸翔也", @"name",
+                                @"ishimaru.png", @"image_name",
+                                @"mrk1869", @"comad_id",
+                                @"エンジニア", @"occupation",nil];
                     break;
                 }
                 case 1:{
                     userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"2", @"id",
-                                @"足立壮大", @"name",
-                                @"adachi.png", @"image_name",nil];
+                                @"11", @"id",
+                                @"原美雪", @"name",
+                                @"hara.png", @"image_name",
+                                @"miyuk1", @"comad_id",
+                                @"デザイナー", @"occupation",nil];
                     break;
                 }
                 case 2:{
                     userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"8", @"id",
-                                @"小林大志", @"name",
-                                @"kobayashi.png", @"image_name",nil];
+                                @"12", @"id",
+                                @"安武沙也加", @"name",
+                                @"yasutake.png", @"image_name",
+                                @"sachan", @"comad_id",
+                                @"デザイナー", @"occupation",nil];
                     break;
                 }
                 default:
@@ -88,30 +94,35 @@
             break;
         }
         case 1:{
-            /*
-            userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                        [[facebookFriends objectAtIndex:indexPath.row] objectForKey:@"name"], @"name",
-                        @"asano.png", @"image_name",nil];
-             */
             switch (indexPath.row) {
-                case 0:
+                case 0:{
                     userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"8", @"id",
-                                @"中川峰志", @"name",
-                                @"nakagawa.png", @"image_name",nil];
+                                @"13", @"id",
+                                @"小澤佳祐", @"name",
+                                @"ozawa.png", @"image_name",nil];
                     break;
-                case 1:
+                }
+                case 1:{
                     userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"8", @"id",
-                                @"佐藤大輔", @"name",
-                                @"sato.png", @"image_name",nil];
+                                @"14", @"id",
+                                @"山本翔大", @"name",
+                                @"yamamoto.png", @"image_name",nil];
                     break;
-                default:
+                }
+                case 2:{
                     userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"8", @"id",
-                                @"小林大志", @"name",
-                                @"kobayashi.png", @"image_name",nil];
+                                @"16", @"id",
+                                @"繁谷悠", @"name",
+                                @"shigetani.png", @"image_name",nil];
                     break;
+                }
+                case 3:{
+                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"17", @"id",
+                                @"高松直也", @"name",
+                                @"takamatsu.png", @"image_name",nil];
+                    break;
+                }
             }
             break;
         }

@@ -65,7 +65,6 @@
 		BA1FE3B818507C0800E61534 /* hayashi.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3A718507C0800E61534 /* hayashi.png */; };
 		BA1FE3B918507C0800E61534 /* ishimaru.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3A818507C0800E61534 /* ishimaru.png */; };
 		BA1FE3BA18507C0800E61534 /* kobayashi.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3A918507C0800E61534 /* kobayashi.png */; };
-		BA1FE3BB18507C0800E61534 /* kunishige.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3AA18507C0800E61534 /* kunishige.png */; };
 		BA1FE3BC18507C0800E61534 /* matsumoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3AB18507C0800E61534 /* matsumoto.png */; };
 		BA1FE3BD18507C0800E61534 /* murata.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3AC18507C0800E61534 /* murata.png */; };
 		BA1FE3BE18507C0800E61534 /* nakagawa.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3AD18507C0800E61534 /* nakagawa.png */; };
@@ -301,7 +300,6 @@
 		BA1FE3A718507C0800E61534 /* hayashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hayashi.png; sourceTree = "<group>"; };
 		BA1FE3A818507C0800E61534 /* ishimaru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ishimaru.png; sourceTree = "<group>"; };
 		BA1FE3A918507C0800E61534 /* kobayashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kobayashi.png; sourceTree = "<group>"; };
-		BA1FE3AA18507C0800E61534 /* kunishige.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kunishige.png; sourceTree = "<group>"; };
 		BA1FE3AB18507C0800E61534 /* matsumoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matsumoto.png; sourceTree = "<group>"; };
 		BA1FE3AC18507C0800E61534 /* murata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = murata.png; sourceTree = "<group>"; };
 		BA1FE3AD18507C0800E61534 /* nakagawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nakagawa.png; sourceTree = "<group>"; };
@@ -665,7 +663,6 @@
 				BA1FE3A718507C0800E61534 /* hayashi.png */,
 				BA1FE3A818507C0800E61534 /* ishimaru.png */,
 				BA1FE3A918507C0800E61534 /* kobayashi.png */,
-				BA1FE3AA18507C0800E61534 /* kunishige.png */,
 				BA1FE3AB18507C0800E61534 /* matsumoto.png */,
 				BA1FE3AC18507C0800E61534 /* murata.png */,
 				BA1FE3AD18507C0800E61534 /* nakagawa.png */,
@@ -1299,7 +1296,6 @@
 				BA1FE3BD18507C0800E61534 /* murata.png in Resources */,
 				BA21DFF81847CE8C007F64FE /* headerForiOS6.png in Resources */,
 				BA1FE38D184F51BD00E61534 /* Default@2x.png in Resources */,
-				BA1FE3BB18507C0800E61534 /* kunishige.png in Resources */,
 				BA1FE3A1184FA12B00E61534 /* 10.png in Resources */,
 				BA1FE372184D1CA800E61534 /* otherSetting.png in Resources */,
 				BA1FE3C518507C0800E61534 /* yoshida.png in Resources */,

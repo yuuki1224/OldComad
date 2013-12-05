@@ -19,6 +19,7 @@
     tv = [[UITextField alloc]init];
     tv.text = @"";
     tv.placeholder = @"友達のIDを入力してください。";
+    [tv setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
     tv.frame = CGRectMake((windowSize.size.width - 280)/2, 100, 280, 40);
     tv.clearButtonMode = UITextFieldViewModeWhileEditing;
     tv.borderStyle = UITextBorderStyleRoundedRect;

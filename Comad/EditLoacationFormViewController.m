@@ -93,6 +93,7 @@
 
 -(void)doneClicked:(UITapGestureRecognizer *)sender{
     //前の画面のプロパティに渡したい delegate?
+    self.location = tf.text;
     [self.delegate changeLocation:self.location];
     [self.navigationController popViewControllerAnimated:YES];
 }

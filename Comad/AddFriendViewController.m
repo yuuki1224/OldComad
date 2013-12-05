@@ -108,7 +108,7 @@
 
 - (void)addFriendDelegate {
     SLComposeViewController *twitterPostVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    NSString *tweetStatement = [NSString stringWithFormat:@"COMAD（コマド）http:// #Comad"];
+    NSString *tweetStatement = [NSString stringWithFormat:@"COMAD（コマド）http://54.199.53.137:3000/ #Comad"];
     [twitterPostVC setInitialText:tweetStatement];
     [self presentViewController:twitterPostVC animated:YES completion:nil];
 }
