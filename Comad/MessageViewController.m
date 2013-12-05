@@ -95,6 +95,7 @@
 }
 
 - (void)backBtnClicked:(UIButton *)button {
+    [socketIO disconnect];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
