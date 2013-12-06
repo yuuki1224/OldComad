@@ -18,7 +18,7 @@
 
 @protocol AddComadViewDelegate;
 
-@interface AddComadViewController : UIViewController <EditTimeFormDelegate, EditLocationFormDelegate, UIAlertViewDelegate, HeaderDelegate> {
+@interface AddComadViewController : UIViewController <EditTimeFormDelegate, EditLocationFormDelegate, UIAlertViewDelegate, HeaderDelegate, UITextViewDelegate> {
     float iOSVersion;
     CGRect windowSize;
     BasicLabel *wordCount;

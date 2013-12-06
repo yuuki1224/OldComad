@@ -59,8 +59,6 @@
 
     
     [self.mapView startRendering];
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

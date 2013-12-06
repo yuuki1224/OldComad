@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol HeaderDelegate;
+@protocol HeaderDelegate <NSObject>
+- (void)backBtnClickedDelegate;
+@end
 
 @interface Header : UIView {
     CGRect windowSize;
@@ -21,8 +23,4 @@
 - (void)setComadTitle;
 - (void)setButton:(NSString *)btnImageName;
 - (void)setBackBtn;
-@end
-
-@protocol HeaderDelegate <NSObject>
-- (void)backBtnClickedDelegate;
 @end

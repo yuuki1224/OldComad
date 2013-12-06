@@ -8,7 +8,6 @@
 
 #import "Account.h"
 #import "Image.h"
-#import "OthersButton.h"
 
 @implementation Account
 @synthesize userInfo;

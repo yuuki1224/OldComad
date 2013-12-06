@@ -76,7 +76,6 @@
 - (void)setFriendCellWithURL {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSString *facebookId = [userInfo objectForKey:@"image_name"];
     //NSString *url = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture", facebookId];
     NSString *url = @"http://profile.ak.fbcdn.net/hprofile-ak-ash1/186933_100002490823408_835990804_q.jpg";
     

@@ -150,8 +150,25 @@
 }
 
 #pragma HeaderDelagete methods
-
 - (void)backBtnClickedDelegate {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+#pragma EditTimeFormViewController Delegate
+- (void)changeTime:(NSDate *)time {
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString* dateString = [outputFormatter stringFromDate:time];
+    datetime.text = dateString;
+    [datetime sizeToFit];
+    datetime.frame = CGRectMake((150-datetime.frame.size.width)/2, 4, datetime.frame.size.width, datetime.frame.size.height);
+}
+
+#pragma EditLoacationFormViewController Delegate
+- (void)changeLocation:(NSString *)changeLocation {
+    location.text = changeLocation;
+    [location sizeToFit];
+    location.frame = CGRectMake((150-location.frame.size.width)/2, 4, location.frame.size.width, location.frame.size.height);
 }
 @end

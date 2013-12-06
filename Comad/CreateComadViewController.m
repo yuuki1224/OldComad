@@ -230,66 +230,6 @@
 
 //クリックされたら
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    /*
-    switch (indexPath.section) {
-        case 0:
-            if(indexPath.row == 0){
-                EditTimeFormViewController *ec = [[EditTimeFormViewController alloc]init];
-                ec.delegate = self;
-                ec.selected = StartTimeSelected;
-                ec.afterEditStartTime = self.fromTime;
-                ec.afterEditEndTime = self.untilTime;
-                [self.navigationController pushViewController:ec animated:YES];
-            }else if(indexPath.row == 1){
-                EditTimeFormViewController *ec = [[EditTimeFormViewController alloc]init];
-                ec.delegate = self;
-                ec.selected = EndTimeSelected;
-                ec.afterEditStartTime = self.fromTime;
-                ec.afterEditEndTime = self.untilTime;
-                [self.navigationController pushViewController:ec animated:YES];
-            }else if(indexPath.row == 2){
-                EditLoacationFormViewController *ec = [[EditLoacationFormViewController alloc]init];
-                ec.delegate = self;
-                ec.location = self.location;
-                [self.navigationController pushViewController:ec animated:YES];
-            }
-            break;
-        case 1:
-            if(indexPath.row == 0){
-            }else if (indexPath.row == 1){
-                //電源
-                EditLocationStatusFormViewController *ec = [[EditLocationStatusFormViewController alloc]init];
-                ec.delegate = self;
-                ec.selected = PowerSourceSelected;
-                ec.powerSource = self.powerSource;
-                ec.wifi = self.wifi;
-                [self.navigationController pushViewController:ec animated:YES];
-            }else if(indexPath.row == 2){
-                //wifi
-                EditLocationStatusFormViewController *ec = [[EditLocationStatusFormViewController alloc]init];
-                ec.delegate = self;
-                ec.powerSource = self.powerSource;
-                ec.wifi = self.wifi;
-                ec.selected = WifiSelected;
-                [self.navigationController pushViewController:ec animated:YES];
-            }else if(indexPath.row == 3){
-                //limit
-                EditLimitFormViewController *ec = [[EditLimitFormViewController alloc]init];
-                ec.delegate = self;
-                ec.limit = self.limit;
-                [self.navigationController pushViewController:ec animated:YES];
-            }else if(indexPath.row == 4){
-                //group
-                EditGroupOnlyFormViewController *ec = [[EditGroupOnlyFormViewController alloc]init];
-                [self.navigationController pushViewController:ec animated:YES];
-            }
-            break;
-        case 2:
-            break;
-        default:
-            break;
-    }
-     */
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -368,6 +308,7 @@
         [SVProgressHUD dismiss];
     }];
 }
+
 
 # pragma EditTimeFormDelegate
 - (void)changeTime:(NSDate *)startTime endTime:(NSDate *)endTime {

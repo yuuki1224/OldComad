@@ -89,7 +89,6 @@
     float tmp = [now timeIntervalSinceDate: createdAt];
     int hh = (int)(tmp / 3600);
     int mm = (int)((tmp-hh) / 60);
-    float ss = tmp -(float)(hh*3600+mm*60);
     
     BasicLabel *time = [[BasicLabel alloc]initWithName:GrayLabel];
     // 1日を超えてる場合
@@ -210,8 +209,6 @@
     [mask removeFromSuperview];
     [sm removeFromSuperview];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *userInfo = [defaults objectForKey:@"user"];
-    int userId = [[userInfo objectForKey:@"id"] intValue];
     
     NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
     NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];

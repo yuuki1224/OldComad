@@ -137,7 +137,6 @@
 		BA5151B6180964CD00FD69D8 /* ComadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151B5180964CD00FD69D8 /* ComadAppDelegate.m */; };
 		BA5151C01809B1C200FD69D8 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151BF1809B1C200FD69D8 /* FriendCell.m */; };
 		BA5151CC180A5C9400FD69D8 /* UserModal.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151CB180A5C9400FD69D8 /* UserModal.m */; };
-		BA5151DB180ADD5E00FD69D8 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BA5151DA180ADD5E00FD69D8 /* settings.png */; };
 		BA5151E4180C116F00FD69D8 /* ShowComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151E3180C116F00FD69D8 /* ShowComadViewController.m */; };
 		BA5151E7180C118800FD69D8 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151E6180C118800FD69D8 /* AddFriendViewController.m */; };
 		BA5151EA180C119A00FD69D8 /* CreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151E9180C119A00FD69D8 /* CreateGroupViewController.m */; };
@@ -145,7 +144,6 @@
 		BA5151F3180C11DD00FD69D8 /* MessagesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151F2180C11DD00FD69D8 /* MessagesListViewController.m */; };
 		BA5151F6180C11E900FD69D8 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151F5180C11E900FD69D8 /* MessageViewController.m */; };
 		BA5151F9180C120200FD69D8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151F8180C120200FD69D8 /* SettingsViewController.m */; };
-		BA515206180C191F00FD69D8 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = BA515205180C191F00FD69D8 /* plus.png */; };
 		BA51520A180C5B1100FD69D8 /* BlackMask.m in Sources */ = {isa = PBXBuildFile; fileRef = BA515209180C5B1100FD69D8 /* BlackMask.m */; };
 		BA515212180D9D0200FD69D8 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = BA515211180D9D0200FD69D8 /* Account.m */; };
 		BA515218180DA07D00FD69D8 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = BA515217180DA07D00FD69D8 /* Header.m */; };
@@ -153,7 +151,6 @@
 		BA51521E180E59C100FD69D8 /* tab1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA51521B180E59C100FD69D8 /* tab1@2x.png */; };
 		BA515221180E614E00FD69D8 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = BA515220180E614E00FD69D8 /* Image.m */; };
 		BA74F92F183B5A4F00FE4629 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA74F92E183B5A4F00FE4629 /* icon.png */; };
-		BA74F935183B6B4C00FE4629 /* addInCreateGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = BA74F934183B6B4C00FE4629 /* addInCreateGroup.png */; };
 		BA74F938183B7E7500FE4629 /* SpecialMoji.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F937183B7E7500FE4629 /* SpecialMoji.m */; };
 		BA74F93D183B9C6E00FE4629 /* Stamp.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA74F93C183B9C6E00FE4629 /* Stamp.plist */; };
 		BA74F949183D15A900FE4629 /* SelectPeopleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F948183D15A900FE4629 /* SelectPeopleView.m */; };
@@ -163,22 +160,16 @@
 		BA74F9551843E14300FE4629 /* FriendsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F9541843E14300FE4629 /* FriendsViewController+View.m */; };
 		BAB1470B1837C8770078486B /* AddFriendMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1470A1837C8770078486B /* AddFriendMenu.m */; };
 		BAB147151837DAFD0078486B /* IdSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147141837DAFD0078486B /* IdSearchViewController.m */; };
-		BAB147181837DB0E0078486B /* QrCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147171837DB0E0078486B /* QrCodeViewController.m */; };
-		BAB1471B1838B0770078486B /* InviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1471A1838B0770078486B /* InviteFriendViewController.m */; };
 		BAB1471D1838CDD10078486B /* invite_friend.html in Resources */ = {isa = PBXBuildFile; fileRef = BAB1471C1838CDD10078486B /* invite_friend.html */; };
 		BAB147201839D41F0078486B /* IdSearchViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */; };
 		BAB147231839D4430078486B /* CreateGroupViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147221839D4430078486B /* CreateGroupViewController+View.m */; };
 		BAD4AF00180EFD7F0068104B /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD4AEFF180EFD7F0068104B /* back.png */; };
-		BADD952A1824EF5C00DAB12F /* OthersButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95291824EF5C00DAB12F /* OthersButton.m */; };
 		BADD95331825014900DAB12F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95321825014900DAB12F /* MapViewController.m */; };
 		BADD95361825016100DAB12F /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95351825016100DAB12F /* HistoryViewController.m */; };
 		BADD953918252C6D00DAB12F /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD953818252C6D00DAB12F /* EditProfileViewController.m */; };
 		BADD953C18252C7E00DAB12F /* EditAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD953B18252C7E00DAB12F /* EditAccountViewController.m */; };
-		BADD95421825406B00DAB12F /* OthersLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95411825406B00DAB12F /* OthersLabel.m */; };
 		BADD954B182561D700DAB12F /* CreateComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD954A182561D700DAB12F /* CreateComadViewController.m */; };
 		BADD954E182574AE00DAB12F /* CreateComadFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD954D182574AE00DAB12F /* CreateComadFormCell.m */; };
-		BADD955118260B7700DAB12F /* createComadForm1.png in Resources */ = {isa = PBXBuildFile; fileRef = BADD954F18260B7700DAB12F /* createComadForm1.png */; };
-		BADD955218260B7700DAB12F /* createComadForm2.png in Resources */ = {isa = PBXBuildFile; fileRef = BADD955018260B7700DAB12F /* createComadForm2.png */; };
 		BADD955518262F4600DAB12F /* BasicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD955418262F4600DAB12F /* BasicLabel.m */; };
 		BADD955918263C5800DAB12F /* EditTimeFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD955818263C5800DAB12F /* EditTimeFormViewController.m */; };
 		BADD955C18263C6C00DAB12F /* EditLoacationFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD955B18263C6C00DAB12F /* EditLoacationFormViewController.m */; };
@@ -198,7 +189,6 @@
 		BADD95911828F67B00DAB12F /* NotificationSettingsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95901828F67B00DAB12F /* NotificationSettingsViewController+View.m */; };
 		BADD95941828F8E000DAB12F /* MailSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95931828F8E000DAB12F /* MailSettingsViewController.m */; };
 		BADD95971828F8EF00DAB12F /* MailSettingsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95961828F8EF00DAB12F /* MailSettingsViewController+View.m */; };
-		BADD95A51829048800DAB12F /* loginTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = BADD95A41829048800DAB12F /* loginTitle.png */; };
 		BADD95A7182A4D9200DAB12F /* comadPlus.png in Resources */ = {isa = PBXBuildFile; fileRef = BADD95A6182A4D9200DAB12F /* comadPlus.png */; };
 		BADD95A9182A4FF100DAB12F /* createComad.png in Resources */ = {isa = PBXBuildFile; fileRef = BADD95A8182A4FF100DAB12F /* createComad.png */; };
 		BADD95AC182A59AD00DAB12F /* MessagesListViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95AB182A59AD00DAB12F /* MessagesListViewController+View.m */; };
@@ -391,7 +381,6 @@
 		BA5151BF1809B1C200FD69D8 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
 		BA5151CA180A5C9400FD69D8 /* UserModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModal.h; sourceTree = "<group>"; };
 		BA5151CB180A5C9400FD69D8 /* UserModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModal.m; sourceTree = "<group>"; };
-		BA5151DA180ADD5E00FD69D8 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		BA5151E2180C116F00FD69D8 /* ShowComadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowComadViewController.h; sourceTree = "<group>"; };
 		BA5151E3180C116F00FD69D8 /* ShowComadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowComadViewController.m; sourceTree = "<group>"; };
 		BA5151E5180C118800FD69D8 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
@@ -406,7 +395,6 @@
 		BA5151F5180C11E900FD69D8 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		BA5151F7180C120200FD69D8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		BA5151F8180C120200FD69D8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		BA515205180C191F00FD69D8 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		BA515208180C5B1100FD69D8 /* BlackMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackMask.h; sourceTree = "<group>"; };
 		BA515209180C5B1100FD69D8 /* BlackMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackMask.m; sourceTree = "<group>"; };
 		BA515210180D9D0200FD69D8 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -418,7 +406,6 @@
 		BA51521F180E614E00FD69D8 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		BA515220180E614E00FD69D8 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		BA74F92E183B5A4F00FE4629 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		BA74F934183B6B4C00FE4629 /* addInCreateGroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addInCreateGroup.png; sourceTree = "<group>"; };
 		BA74F936183B7E7400FE4629 /* SpecialMoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialMoji.h; sourceTree = "<group>"; };
 		BA74F937183B7E7500FE4629 /* SpecialMoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialMoji.m; sourceTree = "<group>"; };
 		BA74F93C183B9C6E00FE4629 /* Stamp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Stamp.plist; sourceTree = "<group>"; };
@@ -435,16 +422,10 @@
 		BAB1470A1837C8770078486B /* AddFriendMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendMenu.m; sourceTree = "<group>"; };
 		BAB147131837DAFD0078486B /* IdSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdSearchViewController.h; sourceTree = "<group>"; };
 		BAB147141837DAFD0078486B /* IdSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdSearchViewController.m; sourceTree = "<group>"; };
-		BAB147161837DB0E0078486B /* QrCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QrCodeViewController.h; sourceTree = "<group>"; };
-		BAB147171837DB0E0078486B /* QrCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QrCodeViewController.m; sourceTree = "<group>"; };
-		BAB147191838B0770078486B /* InviteFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendViewController.h; sourceTree = "<group>"; };
-		BAB1471A1838B0770078486B /* InviteFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendViewController.m; sourceTree = "<group>"; };
 		BAB1471C1838CDD10078486B /* invite_friend.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invite_friend.html; sourceTree = "<group>"; };
 		BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IdSearchViewController+View.m"; sourceTree = "<group>"; };
 		BAB147221839D4430078486B /* CreateGroupViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreateGroupViewController+View.m"; sourceTree = "<group>"; };
 		BAD4AEFF180EFD7F0068104B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		BADD95281824EF5C00DAB12F /* OthersButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthersButton.h; sourceTree = "<group>"; };
-		BADD95291824EF5C00DAB12F /* OthersButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthersButton.m; sourceTree = "<group>"; };
 		BADD95311825014900DAB12F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		BADD95321825014900DAB12F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		BADD95341825016100DAB12F /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -453,14 +434,10 @@
 		BADD953818252C6D00DAB12F /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		BADD953A18252C7E00DAB12F /* EditAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAccountViewController.h; sourceTree = "<group>"; };
 		BADD953B18252C7E00DAB12F /* EditAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAccountViewController.m; sourceTree = "<group>"; };
-		BADD95401825406B00DAB12F /* OthersLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthersLabel.h; sourceTree = "<group>"; };
-		BADD95411825406B00DAB12F /* OthersLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthersLabel.m; sourceTree = "<group>"; };
 		BADD9549182561D700DAB12F /* CreateComadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateComadViewController.h; sourceTree = "<group>"; };
 		BADD954A182561D700DAB12F /* CreateComadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateComadViewController.m; sourceTree = "<group>"; };
 		BADD954C182574AE00DAB12F /* CreateComadFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateComadFormCell.h; sourceTree = "<group>"; };
 		BADD954D182574AE00DAB12F /* CreateComadFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateComadFormCell.m; sourceTree = "<group>"; };
-		BADD954F18260B7700DAB12F /* createComadForm1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createComadForm1.png; sourceTree = "<group>"; };
-		BADD955018260B7700DAB12F /* createComadForm2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createComadForm2.png; sourceTree = "<group>"; };
 		BADD955318262F4600DAB12F /* BasicLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicLabel.h; sourceTree = "<group>"; };
 		BADD955418262F4600DAB12F /* BasicLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicLabel.m; sourceTree = "<group>"; };
 		BADD955718263C5800DAB12F /* EditTimeFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTimeFormViewController.h; sourceTree = "<group>"; };
@@ -490,7 +467,6 @@
 		BADD95921828F8E000DAB12F /* MailSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailSettingsViewController.h; sourceTree = "<group>"; };
 		BADD95931828F8E000DAB12F /* MailSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailSettingsViewController.m; sourceTree = "<group>"; };
 		BADD95961828F8EF00DAB12F /* MailSettingsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MailSettingsViewController+View.m"; sourceTree = "<group>"; };
-		BADD95A41829048800DAB12F /* loginTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginTitle.png; sourceTree = "<group>"; };
 		BADD95A6182A4D9200DAB12F /* comadPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comadPlus.png; sourceTree = "<group>"; };
 		BADD95A8182A4FF100DAB12F /* createComad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createComad.png; sourceTree = "<group>"; };
 		BADD95AB182A59AD00DAB12F /* MessagesListViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MessagesListViewController+View.m"; sourceTree = "<group>"; };
@@ -576,6 +552,53 @@
 			name = ConversationBox;
 			sourceTree = "<group>";
 		};
+		BA1FE3C61851C5FE00E61534 /* AddFriend */ = {
+			isa = PBXGroup;
+			children = (
+				BA1FE375184DCF2B00E61534 /* addButton.png */,
+				BA1FE38A184F20F600E61534 /* inviteButton.png */,
+				BA1FE386184E991100E61534 /* addFriendTab1.png */,
+				BA1FE387184E991100E61534 /* addFriendTab2.png */,
+			);
+			name = AddFriend;
+			sourceTree = "<group>";
+		};
+		BA1FE3C71851C72800E61534 /* ShowUser */ = {
+			isa = PBXGroup;
+			children = (
+				BA1FE35C184D116200E61534 /* editProfileBtn.png */,
+				BA1FE350184D036300E61534 /* messageButton.png */,
+			);
+			name = ShowUser;
+			sourceTree = "<group>";
+		};
+		BA1FE3C81851C76000E61534 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				BA51521B180E59C100FD69D8 /* tab1@2x.png */,
+				BA51521A180E59C100FD69D8 /* tab2@2x.png */,
+				BA1FE384184E801400E61534 /* tab3@2x.png */,
+			);
+			name = Tab;
+			sourceTree = "<group>";
+		};
+		BA1FE3C91851C79000E61534 /* AddComad */ = {
+			isa = PBXGroup;
+			children = (
+				BA21E023184BB8E7007F64FE /* addComadBubble.png */,
+				BA21E024184BB8E7007F64FE /* cell.png */,
+			);
+			name = AddComad;
+			sourceTree = "<group>";
+		};
+		BA1FE3CA1851CFED00E61534 /* ShowComad */ = {
+			isa = PBXGroup;
+			children = (
+				BA1FE34E184CD9E400E61534 /* nochat.png */,
+			);
+			name = ShowComad;
+			sourceTree = "<group>";
+		};
 		BA21DFC818477416007F64FE /* ComadsTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +636,8 @@
 		BA21DFF21847CE74007F64FE /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				BADD95A6182A4D9200DAB12F /* comadPlus.png */,
+				BADD95A8182A4FF100DAB12F /* createComad.png */,
 				BA1FE373184DCF0800E61534 /* done.png */,
 				BA1FE35A184D0B5B00E61534 /* addFriend.png */,
 				BA1FE344184CB0E200E61534 /* tweetButton.png */,
@@ -805,36 +830,21 @@
 		BA5151C31809B5AB00FD69D8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				BA1FE38A184F20F600E61534 /* inviteButton.png */,
-				BA1FE386184E991100E61534 /* addFriendTab1.png */,
-				BA1FE387184E991100E61534 /* addFriendTab2.png */,
-				BA1FE375184DCF2B00E61534 /* addButton.png */,
-				BA1FE35C184D116200E61534 /* editProfileBtn.png */,
-				BA1FE350184D036300E61534 /* messageButton.png */,
+				BA1FE3CA1851CFED00E61534 /* ShowComad */,
+				BA1FE3C91851C79000E61534 /* AddComad */,
+				BA1FE3C81851C76000E61534 /* Tab */,
+				BA1FE3C71851C72800E61534 /* ShowUser */,
+				BA1FE3C61851C5FE00E61534 /* AddFriend */,
 				BA1FE34D184CB49900E61534 /* ConversationBox */,
-				BA1FE34E184CD9E400E61534 /* nochat.png */,
-				BA21E023184BB8E7007F64FE /* addComadBubble.png */,
-				BA21E024184BB8E7007F64FE /* cell.png */,
 				BA21E00E184BAEB8007F64FE /* SelectTime */,
 				BA21E002184B9D40007F64FE /* Tweet */,
 				BA21DFF21847CE74007F64FE /* Header */,
 				BA21DFD91847AA8C007F64FE /* ComadCell */,
 				BA21DFC818477416007F64FE /* ComadsTab */,
 				BA74F939183B9AE600FE4629 /* stamps */,
-				BA74F934183B6B4C00FE4629 /* addInCreateGroup.png */,
-				BADD95A8182A4FF100DAB12F /* createComad.png */,
-				BADD95A6182A4D9200DAB12F /* comadPlus.png */,
-				BADD95A41829048800DAB12F /* loginTitle.png */,
-				BADD954F18260B7700DAB12F /* createComadForm1.png */,
-				BADD955018260B7700DAB12F /* createComadForm2.png */,
 				BADD95181824C9B700DAB12F /* others */,
 				BA2A74C91815058200167837 /* modal */,
 				BA2A74A0180FB0C800167837 /* profile */,
-				BA51521B180E59C100FD69D8 /* tab1@2x.png */,
-				BA51521A180E59C100FD69D8 /* tab2@2x.png */,
-				BA1FE384184E801400E61534 /* tab3@2x.png */,
-				BA515205180C191F00FD69D8 /* plus.png */,
-				BA5151DA180ADD5E00FD69D8 /* settings.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -941,10 +951,6 @@
 			children = (
 				BA515210180D9D0200FD69D8 /* Account.h */,
 				BA515211180D9D0200FD69D8 /* Account.m */,
-				BADD95281824EF5C00DAB12F /* OthersButton.h */,
-				BADD95291824EF5C00DAB12F /* OthersButton.m */,
-				BADD95401825406B00DAB12F /* OthersLabel.h */,
-				BADD95411825406B00DAB12F /* OthersLabel.m */,
 			);
 			name = Accounts;
 			sourceTree = "<group>";
@@ -1034,10 +1040,6 @@
 				BAB147131837DAFD0078486B /* IdSearchViewController.h */,
 				BAB147141837DAFD0078486B /* IdSearchViewController.m */,
 				BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */,
-				BAB147161837DB0E0078486B /* QrCodeViewController.h */,
-				BAB147171837DB0E0078486B /* QrCodeViewController.m */,
-				BAB147191838B0770078486B /* InviteFriendViewController.h */,
-				BAB1471A1838B0770078486B /* InviteFriendViewController.m */,
 			);
 			name = AddFriend;
 			sourceTree = "<group>";
@@ -1231,7 +1233,6 @@
 				BA1FE365184D119800E61534 /* modalBlock.png in Resources */,
 				BA1FE364184D119800E61534 /* modalMessage.png in Resources */,
 				BA21DFDF1847AAA8007F64FE /* todayRibbon.png in Resources */,
-				BADD95A51829048800DAB12F /* loginTitle.png in Resources */,
 				BA1FE35D184D116200E61534 /* editProfileBtn.png in Resources */,
 				BA1FE357184D09D800E61534 /* dateSelected@2x.png in Resources */,
 				BA1FE366184D119800E61534 /* modalAddFriend.png in Resources */,
@@ -1240,7 +1241,6 @@
 				BA2A74CF1815059C00167837 /* modal1.png in Resources */,
 				BA1FE39F184FA12B00E61534 /* 8.png in Resources */,
 				BADD95A7182A4D9200DAB12F /* comadPlus.png in Resources */,
-				BA5151DB180ADD5E00FD69D8 /* settings.png in Resources */,
 				BA21DFF11847AAFD007F64FE /* commentIconPurple.png in Resources */,
 				BA1FE33E184CAADF00E61534 /* todayOff.png in Resources */,
 				BA1FE3B718507C0800E61534 /* hara.png in Resources */,
@@ -1259,9 +1259,7 @@
 				BA1FE399184FA12B00E61534 /* 2.png in Resources */,
 				BA1FE36F184D1CA800E61534 /* otherAddFriend.png in Resources */,
 				BA21E008184B9D5C007F64FE /* onCover.png in Resources */,
-				BA515206180C191F00FD69D8 /* plus.png in Resources */,
 				BA1FE363184D119800E61534 /* modalHome.png in Resources */,
-				BA74F935183B6B4C00FE4629 /* addInCreateGroup.png in Resources */,
 				BA21E00A184B9D5C007F64FE /* offBack.png in Resources */,
 				BAE4829E1819888F00BB1456 /* Default-568h@2x.png in Resources */,
 				BA21DFE31847AABF007F64FE /* futureRibbon.png in Resources */,
@@ -1269,8 +1267,6 @@
 				BA21DFEF1847AAFD007F64FE /* commentIconGreen.png in Resources */,
 				BA1FE358184D09D800E61534 /* popularSelected@2x.png in Resources */,
 				BA1FE3BE18507C0800E61534 /* nakagawa.png in Resources */,
-				BADD955118260B7700DAB12F /* createComadForm1.png in Resources */,
-				BADD955218260B7700DAB12F /* createComadForm2.png in Resources */,
 				BA21DFDE1847AAA8007F64FE /* nowRibbon.png in Resources */,
 				BA1FE3C118507C0800E61534 /* shigetani.png in Resources */,
 				BA51521D180E59C100FD69D8 /* tab2@2x.png in Resources */,
@@ -1421,7 +1417,6 @@
 				BA74F94C183D15CE00FE4629 /* SelectPeopleTable.m in Sources */,
 				BADD95AF182F3E0900DAB12F /* MessageViewController+View.m in Sources */,
 				BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */,
-				BAB1471B1838B0770078486B /* InviteFriendViewController.m in Sources */,
 				BA21DFC418474EA1007F64FE /* PopularComadViewController.m in Sources */,
 				BA5151AA18095FBB00FD69D8 /* TabBarController.m in Sources */,
 				BA5151E4180C116F00FD69D8 /* ShowComadViewController.m in Sources */,
@@ -1444,7 +1439,6 @@
 				BADD95941828F8E000DAB12F /* MailSettingsViewController.m in Sources */,
 				BAE482981819384A00BB1456 /* ShowComad.m in Sources */,
 				BAB147231839D4430078486B /* CreateGroupViewController+View.m in Sources */,
-				BADD952A1824EF5C00DAB12F /* OthersButton.m in Sources */,
 				BADD95B5182F5AFA00DAB12F /* Bubble.m in Sources */,
 				BADD957518279B7600DAB12F /* EditProfileFormViewController.m in Sources */,
 				BADD956218263CE200DAB12F /* EditGroupOnlyFormViewController.m in Sources */,
@@ -1464,8 +1458,6 @@
 				BADD95361825016100DAB12F /* HistoryViewController.m in Sources */,
 				BA74F9551843E14300FE4629 /* FriendsViewController+View.m in Sources */,
 				BA5151B6180964CD00FD69D8 /* ComadAppDelegate.m in Sources */,
-				BAB147181837DB0E0078486B /* QrCodeViewController.m in Sources */,
-				BADD95421825406B00DAB12F /* OthersLabel.m in Sources */,
 				BA74F938183B7E7500FE4629 /* SpecialMoji.m in Sources */,
 				BADD956B1827671800DAB12F /* EditProfileViewController+View.m in Sources */,
 				BA5151F3180C11DD00FD69D8 /* MessagesListViewController.m in Sources */,

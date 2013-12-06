@@ -10,7 +10,7 @@
 
 @protocol EditLocationFormDelegate;
 
-@interface EditLoacationFormViewController : UIViewController<UITextFieldDelegate> {
+@interface EditLoacationFormViewController : UIViewController<UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource> {
     CGRect windowSize;
     float iOSVersion;
     UITextField *tf;

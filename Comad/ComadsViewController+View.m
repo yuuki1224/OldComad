@@ -48,7 +48,6 @@
 }
 
 - (void)configure {
-    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
 
     newComadTable = [[NewComadViewController alloc]init];
     dateComadTable = [[DateComadViewController alloc]init];

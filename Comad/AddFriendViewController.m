@@ -10,8 +10,6 @@
 #import "AddFriendViewController+View.m"
 #import "CreateGroupViewController.h"
 #import "IdSearchViewController.h"
-#import "QrCodeViewController.h"
-#import "InviteFriendViewController.h"
 #import "Header.h"
 #import "Image.h"
 #import "UserJsonClient.h"
@@ -76,11 +74,6 @@
 - (void)idSearchDelegate {
     IdSearchViewController *ic = [[IdSearchViewController alloc]init];
     [self.navigationController pushViewController:ic animated:YES];
-}
-
-- (void)qrCodeDelegate {
-    QrCodeViewController *qc = [[QrCodeViewController alloc]init];
-    [self.navigationController pushViewController:qc animated:YES];
 }
 
 - (void)addFriendDelegate {

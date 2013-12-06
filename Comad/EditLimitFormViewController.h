@@ -10,7 +10,7 @@
 
 @protocol EditLimitFormDelegate;
 
-@interface EditLimitFormViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UITableViewDataSource, UIPickerViewDelegate> {
+@interface EditLimitFormViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource> {
     CGRect windowSize;
     UIPickerView *picker;
     UITableView *limitTable;
