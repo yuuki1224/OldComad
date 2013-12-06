@@ -13,8 +13,9 @@
 #import "SpecialMoji.h"
 #import "BlackMask.h"
 #import "Basic.h"
+#import "Header.h"
 
-@interface MessageViewController : UIViewController <ConversationTextBoxDelegate, SocketIODelegate, SpecialMojiDelegate, BlackMaskDelegate> {
+@interface MessageViewController : UIViewController <ConversationTextBoxDelegate, SocketIODelegate, SpecialMojiDelegate, BlackMaskDelegate, HeaderDelegate> {
     CGRect windowSize;
     float iOSVersion;
     Conversation *conversation;

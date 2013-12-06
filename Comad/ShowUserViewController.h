@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "BasicLabel.h"
 #import "ShowUserList.h"
+#import "Header.h"
 
-@interface ShowUserViewController : UIViewController {
+@interface ShowUserViewController : UIViewController<HeaderDelegate> {
     NSString *_name;
     CGRect windowSize;
     float iOSVersion;

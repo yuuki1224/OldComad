@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Basic.h"
 #import "EditProfileFormViewController.h"
+#import "Header.h"
 
-@interface EditProfileViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, EditProfileFormDelegate> {
+@interface EditProfileViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, EditProfileFormDelegate, HeaderDelegate> {
     CGRect windowSize;
     float iOSVersion;
     UITableView *editProfileTable;

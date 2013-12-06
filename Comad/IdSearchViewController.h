@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Header.h"
 
-@interface IdSearchViewController : UIViewController<UITextFieldDelegate, UIAlertViewDelegate> {
+@interface IdSearchViewController : UIViewController<UITextFieldDelegate, UIAlertViewDelegate, HeaderDelegate> {
     float iOSVersion;
     UITextField *tv;
     CGRect windowSize;

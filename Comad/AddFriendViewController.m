@@ -58,7 +58,8 @@
     Header *header = [[Header alloc]init];
     [self.view addSubview: header];
     [header setTitle:@"友達追加"];
-    [self setBackBtnInHeader];
+    [header setBackBtn];
+    header.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,30 +70,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)setBackBtnInHeader {
-    NSString *backImageName = @"";
-    if((int)iOSVersion == 7){
-        backImageName = @"back.png";
-    }else if((int)iOSVersion == 6){
-        backImageName = @"backForiOS6.png";
-    }
-    UIImage *image = [UIImage imageNamed:backImageName];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    if((int)iOSVersion == 7){
-        btn.frame = CGRectMake(15, 36, 20, 28);
-    }else if ((int)iOSVersion == 6){
-        btn.frame = CGRectMake(15, 11, 20, 28);
-    }
-    [btn setImage:image forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
-    
-    [self.view addSubview:btn];
-}
-
-- (void)backBtnClicked:(UIButton *)button {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma AddFriendMenuDelegate methods
@@ -196,4 +173,9 @@
     [userModal removeFromSuperview];
 }
 
+#pragma HeaderDelagete methods
+
+- (void)backBtnClickedDelegate {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

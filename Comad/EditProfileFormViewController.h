@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Basic.h"
+#import "Header.h"
 
 @protocol EditProfileFormDelegate;
 
-@interface EditProfileFormViewController : UIViewController<UITextFieldDelegate> {
+@interface EditProfileFormViewController : UIViewController<UITextFieldDelegate, HeaderDelegate> {
     CGRect windowSize;
     float iOSVersion;
     UITextField *tv;

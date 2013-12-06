@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Header.h"
 
-@interface MailSettingsViewController : UIViewController {
+@interface MailSettingsViewController : UIViewController<HeaderDelegate> {
     CGRect windowSize;
     float iOSVersion;
     UITableView *mailSettingsTable;

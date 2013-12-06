@@ -14,4 +14,5 @@
     UITableView *notificationSettingsTable;
 }
 
+- (void)configre;
 @end

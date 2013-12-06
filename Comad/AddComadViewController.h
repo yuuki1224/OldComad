@@ -14,10 +14,11 @@
 #import "EditLoacationFormViewController.h"
 #import "TimeSelectButton.h"
 #import "TweetButton.h"
+#import "Header.h"
 
 @protocol AddComadViewDelegate;
 
-@interface AddComadViewController : UIViewController <EditTimeFormDelegate, EditLocationFormDelegate, UIAlertViewDelegate> {
+@interface AddComadViewController : UIViewController <EditTimeFormDelegate, EditLocationFormDelegate, UIAlertViewDelegate, HeaderDelegate> {
     float iOSVersion;
     CGRect windowSize;
     BasicLabel *wordCount;

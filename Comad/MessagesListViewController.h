@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Basic.h"
+#import "Header.h"
 
-@interface MessagesListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
+@interface MessagesListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, HeaderDelegate> {
     CGRect windowSize;
     float iOSVersion;
     UITableView *messageListView;

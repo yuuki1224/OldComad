@@ -37,7 +37,8 @@
         [self.view addSubview: header];
         
         [header setTitle:@"コマド詳細"];
-        [self setBackBtnInHeader];
+        [header setBackBtn];
+        header.delegate = self;
         
         if((int)iOSVersion == 7){
             RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
@@ -82,26 +83,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)setBackBtnInHeader {
-    NSString *backImageName = @"";
-    if((int)iOSVersion == 7){
-        backImageName = @"back.png";
-    }else if((int)iOSVersion == 6){
-        backImageName = @"backForiOS6.png";
-    }
-    UIImage *image = [UIImage imageNamed:backImageName];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    if((int)iOSVersion == 7){
-        btn.frame = CGRectMake(15, 36, 20, 28);
-    }else if ((int)iOSVersion == 6){
-        btn.frame = CGRectMake(15, 11, 20, 28);
-    }
-    [btn setImage:image forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
-    
-    [self.view addSubview:btn];
 }
 
 - (void)backBtnClicked:(UIButton *)button {
@@ -238,6 +219,13 @@
     NSString *tweetStatement = [NSString stringWithFormat:@"%@ http://54.199.53.137:3000/comad/%d COMAD（コマド）#Comad", title, comadId];
     [twitterPostVC setInitialText:tweetStatement];
     [self presentViewController:twitterPostVC animated:YES completion:nil];
+}
+
+#pragma HeaderDelagete methods
+
+- (void)backBtnClickedDelegate {
+    [socketIO disconnect];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

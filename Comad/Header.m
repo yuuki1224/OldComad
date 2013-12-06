@@ -83,27 +83,28 @@
 }
 
 - (void)setBackBtn {
-    /*
-    UIImage *image = [UIImage imageNamed:@"back.png"];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btn.frame = CGRectMake(10, 120, 50, 50);
-    [btn setImage:image forState:UIControlStateNormal];
-    //[btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
+    NSString *backImageName = @"";
+    if((int)iOSVersion == 7){
+        backImageName = @"back.png";
+    }else if((int)iOSVersion == 6){
+        backImageName = @"backForiOS6.png";
+    }
+    UIImage *buttonImage = [UIImage imageNamed:backImageName];
+    UIImageView *buttonImageView = [[UIImageView alloc]initWithImage: buttonImage];
+    if((int)iOSVersion == 7){
+        buttonImageView.frame = CGRectMake(15, 36, 20, 28);
+    }else if ((int)iOSVersion == 6){
+        buttonImageView.frame = CGRectMake(15, 18, 10, 17.5);
+    }
+    buttonImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *backButtonTappedGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(backButtonTapped:)];
+    [buttonImageView addGestureRecognizer: backButtonTappedGesture];
     
-    [self addSubview:btn];
-    
-    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    btn2.frame = CGRectMake(10, 110, 100, 30);
-    [btn2 setTitle:@"押してね" forState:UIControlStateNormal];
-    [btn2 setTitle:@"ぽち" forState:UIControlStateHighlighted];
-    [btn2 setTitle:@"押せません" forState:UIControlStateDisabled];
-    // ボタンがタッチダウンされた時にhogeメソッドを呼び出す
-    [self addSubview:btn2];
-    */
+    [self addSubview: buttonImageView];
 }
 
-- (void)backBtnClicked:(UIButton *)button {
-    //[self.delegate backBtnClickedDelegate];
+- (void)backButtonTapped:(UITapGestureRecognizer *)sender {
+    [self.delegate backBtnClickedDelegate];
 }
 
 @end

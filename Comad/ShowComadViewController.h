@@ -14,8 +14,9 @@
 #import "SocketIO.h"
 #import "BlackMask.h"
 #import "SpecialMoji.h"
+#import "Header.h"
 
-@interface ShowComadViewController : UIViewController <ConversationTextBoxDelegate, SpecialMojiDelegate, BlackMaskDelegate>{
+@interface ShowComadViewController : UIViewController <ConversationTextBoxDelegate, SpecialMojiDelegate, BlackMaskDelegate, HeaderDelegate>{
     ShowComad *showComad;
     CGRect windowSize;
     float iOSVersion;

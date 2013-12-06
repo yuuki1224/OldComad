@@ -28,21 +28,18 @@
         self.view.backgroundColor = [UIColor whiteColor];
         Header *header = [[Header alloc]init];
         [header setTitle:@"ユーザー詳細"];
+        [header setBackBtn];
+        header.delegate = self;
         
         [self.view addSubview:header];
-        [self setBackBtnInHeader];
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *userInfo = [defaults objectForKey:@"user"];
-    
     [self configure];
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -53,30 +50,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)setBackBtnInHeader {
-    NSString *backImageName = @"";
-    if((int)iOSVersion == 7){
-        backImageName = @"back.png";
-    }else if((int)iOSVersion == 6){
-        backImageName = @"backForiOS6.png";
-    }
-    UIImage *image = [UIImage imageNamed:backImageName];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    if((int)iOSVersion == 7){
-        btn.frame = CGRectMake(15, 36, 20, 28);
-    }else if ((int)iOSVersion == 6){
-        btn.frame = CGRectMake(15, 11, 20, 28);
-    }
-    [btn setImage:image forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
-    
-    [self.view addSubview:btn];
-}
-
-- (void)backBtnClicked:(UIButton *)button {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)inviteBtnClicked:(UIButton *)button {
@@ -98,6 +71,12 @@
     mc.type = PrivateMessage;
     mc.friendId = userId;
     [self.navigationController pushViewController:mc animated:YES];
+}
+
+#pragma HeaderDelagete methods
+
+- (void)backBtnClickedDelegate {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
