@@ -11,6 +11,7 @@
 #import "Conversation.h"
 #import "BasicLabel.h"
 #import "Image.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ShowComadViewController (View)
 - (void)configure {
@@ -18,6 +19,9 @@
     UIScrollView *baseView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 123)];
     baseView.contentSize = CGSizeMake(windowSize.size.width, windowSize.size.height);
     baseView.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
+    baseView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(scrollViewTapped:)];
+    [baseView addGestureRecognizer: tapGesture];
     
     UIView *cellView = [[UIView alloc]initWithFrame:CGRectMake(10, 15, windowSize.size.width - 20, 93)];
     cellView.backgroundColor = [UIColor whiteColor];
@@ -220,6 +224,10 @@
 - (void)blackMaskTapped {
     [mask removeFromSuperview];
     [sm removeFromSuperview];
+}
+
+- (void)scrollViewTapped:(id)sender {
+    [textBox removeKeyBoard];
 }
 
 @end

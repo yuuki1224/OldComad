@@ -27,7 +27,7 @@ static ComadAppDelegate* _sharedInstance = nil;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];  //statusbar白くなる
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];  //statusbar白くなる
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     //tc = [[TabBarController alloc]init];
     lc = [[LoginViewController alloc]init];

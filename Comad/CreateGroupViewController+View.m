@@ -13,6 +13,7 @@
 #import "RoundedButton.h"
 #import "Image.h"
 #import "SelectPeopleView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation CreateGroupViewController (View)
 

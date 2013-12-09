@@ -12,6 +12,7 @@
 #import "Image.h"
 #import "MessageViewController.h"
 #import "EditProfileViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ShowUserViewController (View)
 

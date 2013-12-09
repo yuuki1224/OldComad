@@ -11,6 +11,7 @@
 #import "Participation.h"
 #import "Conversation.h"
 #import "Date.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ShowComad
 @synthesize comadInfo;

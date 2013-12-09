@@ -9,8 +9,10 @@
 #import "ConversationTextBox.h"
 #import "RoundedButton.h"
 #import "Image.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ConversationTextBox
+@synthesize textView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -96,6 +98,19 @@
 
 - (void)viewWillAppear {
     
+}
+
+- (void)removeKeyBoard {
+    CGRect windowSize = [[UIScreen mainScreen] bounds];
+    [UIView animateWithDuration:0.0f
+                     animations:^{
+                         if((int)iOSVersion == 7){
+                             self.frame = CGRectMake(0, windowSize.size.height - 55, windowSize.size.width, 55);
+                         }else if ((int)iOSVersion == 6){
+                             self.frame = CGRectMake(0, 405, windowSize.size.width, 55);
+                         }
+                     }];
+    [self endEditing: YES];
 }
 /*
 -(BOOL)textFieldShouldBeginEditing:(UITextField*)textField {

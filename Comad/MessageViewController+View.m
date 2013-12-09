@@ -17,11 +17,19 @@
     if((int)iOSVersion == 6){
         conversation.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48);
     }
-    ConversationTextBox *textBox = [[ConversationTextBox alloc]init];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(conversationTapped:)];
+    [conversation addGestureRecognizer: tapGesture];
+    conversation.userInteractionEnabled = YES;
+    
+    textBox = [[ConversationTextBox alloc]init];
     textBox.delegate = self;
     
     [self.view addSubview:conversation];
     [self.view addSubview:textBox];
+}
+
+- (void)conversationTapped:(id)sender {
+    [textBox removeKeyBoard];
 }
 
 @end

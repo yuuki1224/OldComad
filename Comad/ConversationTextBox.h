@@ -13,9 +13,11 @@
 @interface ConversationTextBox : UIView <UITextFieldDelegate>{
     float iOSVersion;
     UITextField *tf;
-    UITextView *textView;
 }
 @property (nonatomic, weak) id<ConversationTextBoxDelegate> delegate;
+@property (nonatomic, retain) UITextView *textView;
+
+- (void)removeKeyBoard;
 @end
 
 @protocol ConversationTextBoxDelegate <NSObject>

@@ -23,6 +23,7 @@
     BlackMask *mask;
     SpecialMoji *sm;
     NSString *roomName;
+    ConversationTextBox *textBox;
 }
 
 @property (nonatomic)MessageType type;

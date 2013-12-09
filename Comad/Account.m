@@ -8,6 +8,7 @@
 
 #import "Account.h"
 #import "Image.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation Account
 @synthesize userInfo;

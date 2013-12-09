@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		59DE2471B3104F31A9867561 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BDFF7C15D44E2E961D566D /* libPods.a */; };
+		59DE2471B3104F31A9867561 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BDFF7C15D44E2E961D566D /* libPods.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BA03F62018362164001E9BBE /* UserJsonClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F61F18362164001E9BBE /* UserJsonClient.m */; };
 		BA03F6231836390F001E9BBE /* ShowUserViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F6221836390F001E9BBE /* ShowUserViewController+View.m */; };
 		BA03F6261836516F001E9BBE /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F6251836516F001E9BBE /* Date.m */; };
@@ -1506,7 +1506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1545,7 +1545,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1558,7 +1558,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yuki Asano (U6E36XD7YE)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1569,6 +1569,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E5D4F7C-9F1B-4B37-B722-422103C1DDD9";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1578,7 +1579,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 11C33F236FE44F6F92D82F1B /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1597,7 +1598,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 11C33F236FE44F6F92D82F1B /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
