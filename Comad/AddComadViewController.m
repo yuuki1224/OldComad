@@ -101,8 +101,9 @@
                             timeSelect.select, @"timeSelect",nil];
     
     [client createNewComad:(NSDictionary *)params :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"お知らせ" message:@"コマドを作成しました" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [SVProgressHUD dismiss];
-        [self.navigationController popViewControllerAnimated:YES];
+        [alert show];
     } failure:^(int statusCode, NSString *errorString) {
         // 生成と同時に各種設定も完了させる例
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"お知らせ" message:@"コマドを作成しました" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
@@ -137,8 +138,8 @@
         };
         [twitterPostVC setCompletionHandler:completion];
         if([title isEqualToString:@""]){
-            title = @"タイトルなし";
         }
+        title = @"タイトルなし";
         NSString *tweetStatement = [NSString stringWithFormat:@"%@ http://54.199.53.137:3000/comad/%d COMAD（コマド）#Comad", title, 100];
         [twitterPostVC setInitialText:tweetStatement];
         [self presentViewController:twitterPostVC animated:YES completion:nil];

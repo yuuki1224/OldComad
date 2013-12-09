@@ -56,7 +56,7 @@
     [editGroup addSubview: groupName];
     [editGroup addSubview: thumbnail];
     [self.view addSubview: editGroup];
-    
+        
     editGroup.layer.borderColor = [UIColor whiteColor].CGColor;
     editGroup.layer.borderWidth = 1.0f;
 
