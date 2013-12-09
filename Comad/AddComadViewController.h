@@ -27,6 +27,7 @@
     BasicLabel *location;
     TimeSelectButton *timeSelect;
     TweetButton *tweetButton;
+    BasicLabel *placeholder;
 }
 @property (nonatomic, weak) id<AddComadViewDelegate> delegate;
 - (void)configure;

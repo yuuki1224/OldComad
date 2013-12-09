@@ -72,11 +72,24 @@
     wordCount.text = [NSString stringWithFormat:@"%d/30", 30 - wordLength];
     [wordCount sizeToFit];
     wordCount.frame = CGRectMake(tv.frame.size.width - wordCount.frame.size.width - 15, tv.frame.size.height - wordCount.frame.size.height, wordCount.frame.size.width, wordCount.frame.size.height);
+    if(wordLength == 0){
+        placeholder.text = @"ひとこと";
+    }else {
+        placeholder.text = @"";
+    }
     NSRange searchResult = [text.text rangeOfString:@"\n"];
     if(searchResult.location != NSNotFound){
         text.text = [text.text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         [text resignFirstResponder];
+        if(wordLength == 1){
+            placeholder.text = @"ひとこと";
+            wordCount.text = [NSString stringWithFormat:@"30/30"];
+        }
     }
+}
+
+-(BOOL)textViewShouldBeginEditing:(UITextView*)textView {
+    placeholder.text = @"";
 }
 
 - (void)saveClicked:(UITapGestureRecognizer *)sender {

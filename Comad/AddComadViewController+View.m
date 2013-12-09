@@ -71,6 +71,12 @@
     tv.keyboardType = UIKeyboardTypeDefault;
     tv.clipsToBounds = true;
     
+    placeholder = [[BasicLabel alloc]initWithName: PlaceHolder];
+    placeholder.text = @"ひとこと";
+    [placeholder sizeToFit];
+    placeholder.frame = CGRectMake(5, 9, placeholder.frame.size.width, placeholder.frame.size.height);
+    [tv addSubview: placeholder];
+    
     wordCount = [[BasicLabel alloc]initWithName:GrayLabel];
     wordCount.text = @"0/30";
     [wordCount sizeToFit];

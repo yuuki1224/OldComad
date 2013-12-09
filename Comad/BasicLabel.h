@@ -31,7 +31,8 @@ typedef enum : NSInteger{
     AddComadLabel,
     TimeAndLocationLabel,
     NoConversationText,
-    OtherLabel
+    OtherLabel,
+    PlaceHolder
 }BasicLabelName;
 
 @interface BasicLabel : UILabel
