@@ -81,7 +81,6 @@
         
         //タブのテキストカラー設定
         //[[wc tabBarItem] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,nil] forState:UIControlStateNormal];
-        
         [self setViewControllers:tabs animated:NO];
         
     }
@@ -90,6 +89,7 @@
 
 - (void)viewDidLoad
 {
+    self.selectedIndex = 2;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

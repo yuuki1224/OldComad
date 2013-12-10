@@ -90,6 +90,7 @@
 
 -(BOOL)textViewShouldBeginEditing:(UITextView*)textView {
     placeholder.text = @"";
+    return YES;
 }
 
 - (void)saveClicked:(UITapGestureRecognizer *)sender {

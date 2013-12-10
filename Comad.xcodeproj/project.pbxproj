@@ -163,6 +163,7 @@
 		BAB1471D1838CDD10078486B /* invite_friend.html in Resources */ = {isa = PBXBuildFile; fileRef = BAB1471C1838CDD10078486B /* invite_friend.html */; };
 		BAB147201839D41F0078486B /* IdSearchViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */; };
 		BAB147231839D4430078486B /* CreateGroupViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147221839D4430078486B /* CreateGroupViewController+View.m */; };
+		BAB6AB4B1856367400253C33 /* icon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB6AB4A1856367400253C33 /* icon_2.png */; };
 		BAD4AF00180EFD7F0068104B /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD4AEFF180EFD7F0068104B /* back.png */; };
 		BADD95331825014900DAB12F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95321825014900DAB12F /* MapViewController.m */; };
 		BADD95361825016100DAB12F /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95351825016100DAB12F /* HistoryViewController.m */; };
@@ -425,6 +426,7 @@
 		BAB1471C1838CDD10078486B /* invite_friend.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invite_friend.html; sourceTree = "<group>"; };
 		BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IdSearchViewController+View.m"; sourceTree = "<group>"; };
 		BAB147221839D4430078486B /* CreateGroupViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreateGroupViewController+View.m"; sourceTree = "<group>"; };
+		BAB6AB4A1856367400253C33 /* icon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_2.png; sourceTree = "<group>"; };
 		BAD4AEFF180EFD7F0068104B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		BADD95311825014900DAB12F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		BADD95321825014900DAB12F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -720,6 +722,7 @@
 		BA51515E180900E200FD69D8 = {
 			isa = PBXGroup;
 			children = (
+				BAB6AB4A1856367400253C33 /* icon_2.png */,
 				BA515170180900E200FD69D8 /* Comad */,
 				BA51518F180900E200FD69D8 /* ComadTests */,
 				BA515169180900E200FD69D8 /* Frameworks */,
@@ -1327,6 +1330,7 @@
 				BA1FE3C018507C0800E61534 /* sato.png in Resources */,
 				BA515175180900E200FD69D8 /* InfoPlist.strings in Resources */,
 				BA21E01E184BAF0F007F64FE /* nowOn.png in Resources */,
+				BAB6AB4B1856367400253C33 /* icon_2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1519,7 +1523,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yuki Asano (U6E36XD7YE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yuki Asano (U6E36XD7YE)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1537,6 +1542,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "1E5D4F7C-9F1B-4B37-B722-422103C1DDD9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E5D4F7C-9F1B-4B37-B722-422103C1DDD9";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1558,6 +1565,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yuki Asano (U6E36XD7YE)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yuki Asano (U6E36XD7YE)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1569,6 +1577,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PROVISIONING_PROFILE = "1E5D4F7C-9F1B-4B37-B722-422103C1DDD9";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E5D4F7C-9F1B-4B37-B722-422103C1DDD9";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1581,13 +1590,15 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yuki Asano (U6E36XD7YE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yuki Asano (U6E36XD7YE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Comad/Comad-Prefix.pch";
 				INFOPLIST_FILE = "Comad/Comad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1E5D4F7C-9F1B-4B37-B722-422103C1DDD9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1E5D4F7C-9F1B-4B37-B722-422103C1DDD9";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1600,7 +1611,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yuki Asano (U6E36XD7YE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Comad/Comad-Prefix.pch";
 				INFOPLIST_FILE = "Comad/Comad-Info.plist";
