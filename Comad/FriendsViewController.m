@@ -55,6 +55,9 @@
 
 - (void)viewDidLoad
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"user: %@", [defaults dictionaryForKey:@"user"]);
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

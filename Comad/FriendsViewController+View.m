@@ -15,26 +15,15 @@
 #import "ShowUserViewController.h"
 
 @implementation FriendsViewController (View)
+
+// 通信
 - (void)setInfo {
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     
     [[FriendJsonClient sharedClient] getIndexWhenSuccess:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSDictionary *me = [responseObject objectForKey:@"me"];
-        
-        self.me = me;
         _newFriends = [responseObject objectForKey:@"new"];
         _friends = [responseObject objectForKey:@"friends"];
         _groups = [responseObject objectForKey:@"groups"];
-        
-        NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  [me objectForKey:@"id"], @"id",
-                                  [me objectForKey:@"name"], @"name",
-                                  [me objectForKey:@"comad_id"], @"comadId",
-                                  [me objectForKey:@"occupation"], @"occupation",
-                                  [me objectForKey:@"description"], @"detail",
-                                  [me objectForKey:@"image_name"], @"imageName",
-                                  [me objectForKey:@"question1"], @"question1", nil];
-        
         
         NSMutableArray *friendsMutableArray = [NSMutableArray array];
         for (int i = 0; [_friends count] > i; i++) {
@@ -44,7 +33,6 @@
         //userDefaultのfriendsにしまう。
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSData *friendsData = [NSKeyedArchiver archivedDataWithRootObject: friendsMutableArray];
-        [userDefaults setObject: userInfo forKey:@"user"];
         [userDefaults setObject: friendsData forKey:@"friends"];
         [userDefaults synchronize];
         
@@ -59,6 +47,7 @@
     }];
 }
 
+// Viewのセット
 - (void)configure {
     friendsTable = [[UITableView alloc] init];
     friendsTable.dataSource = self;
@@ -79,7 +68,6 @@
 //For tableViewDataSource
 //セクションの中のセルの数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     switch (section) {
         case 0:
             return 0;
@@ -112,7 +100,8 @@
     FriendCell *cell = [[FriendCell alloc]init];
     //プロフィール
     if(indexPath.section == 1){
-        cell.userInfo = self.me;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        cell.userInfo = [defaults dictionaryForKey:@"user"];
         [cell setFriendCell:NO];
         //新しいコマとも
     }else if(indexPath.section == 2){

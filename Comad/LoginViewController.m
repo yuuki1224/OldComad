@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "BasicLabel.h"
-#import "Image.h"
+#import "Basic.h"
 #import "SVProgressHUD.h"
 #import "TabBarController.h"
 
@@ -36,10 +36,9 @@
     wv.backgroundColor = [UIColor whiteColor];
     wv.scrollView.scrollEnabled = NO;
     wv.delegate = self;
-    
     [self.view addSubview:wv];
-
-    NSURL *url = [NSURL URLWithString:@"http://54.199.53.137:3000"];
+    
+    NSURL *url = [NSURL URLWithString: HOST_URL];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [wv loadRequest:req];
     
@@ -51,12 +50,13 @@
     [super didReceiveMemoryWarning];
 }
 
-
+// 読み込みが開始された時
 -(void)webViewDidStartLoad:(UIWebView*)webView {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
 }
 
+// 読み込みに失敗した時
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [SVProgressHUD dismiss];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -64,17 +64,16 @@
     [alert show];
 }
 
+// 読み込みに成功した時
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     [SVProgressHUD dismiss];
  
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
-    //[webView stringByEvaluatingJavaScriptFromString:@"alert(1);"];
-    //NSString *json = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('user').getAttribute('data-user');"];
+    NSString *json = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('user').getAttribute('data-user');"];
     NSString *status = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('status').getAttribute('data-status');"];
-    NSString *location = [webView stringByEvaluatingJavaScriptFromString:@"document.location.origin"];
-    if(![location isEqualToString:@"http://54.199.53.137:3000"] || [status isEqualToString:@"200"]){
-        /*
+    
+    if([status isEqualToString:@"200"]){
         NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] forKey:@"user"];
         NSDictionary *userInfo = [dict objectForKey:@"user"];
@@ -83,7 +82,8 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:userInfo forKey:@"user"];
         BOOL successful = [defaults synchronize];
-         */
+        
+        // 成功したら次の画面
         if (true) {
             [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
             TabBarController *tc = [[TabBarController alloc]init];
@@ -95,6 +95,7 @@
     }
 }
 
+// あとで消す
 -(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     TabBarController *tc = [[TabBarController alloc]init];

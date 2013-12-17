@@ -97,14 +97,14 @@
     NSDictionary *userInfo = [defaults objectForKey:@"user"];
     int userId = [[userInfo objectForKey:@"id"] intValue];
     int comadId = [[self.comadInfo objectForKey:@"id"] intValue];
-    
+    /*
     [socketIO connectToHost:@"54.199.53.137"
                      onPort:9000
                  withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]];
-    /*
+     */
     [socketIO connectToHost:@"localhost"
                      onPort:9000
-                 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]];*/
+                 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]];
     [socketIO sendEvent:@"init" withData:@{@"userId":@(userId), @"type":@"comad", @"comadId":@(comadId)}];
 }
 
@@ -216,7 +216,9 @@
     }else{
         title = [self.comadInfo objectForKey:@"title"];
     }
-    NSString *tweetStatement = [NSString stringWithFormat:@"%@ http://54.199.53.137:3000/comad/%d COMAD（コマド）#Comad", title, comadId];
+    
+    //NSString *tweetStatement = [NSString stringWithFormat:@"%@ http://54.199.53.137:3000/comad/%d COMAD（コマド）#Comad", title, comadId];
+    NSString *tweetStatement = [NSString stringWithFormat:@"%@ http://localhost:3000/comad/%d COMAD（コマド）#Comad", title, comadId];
     [twitterPostVC setInitialText:tweetStatement];
     [self presentViewController:twitterPostVC animated:YES completion:nil];
 }

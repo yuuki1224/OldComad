@@ -6,6 +6,8 @@
 //  Copyright (c) 2013年 Yuki Asano. All rights reserved.
 //
 
+#define HOST_URL @"http://localhost:3000"
+
 #ifndef Comad_Basic_h
 #define Comad_Basic_h
 
