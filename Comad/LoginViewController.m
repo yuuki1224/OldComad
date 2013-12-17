@@ -41,8 +41,6 @@
     NSURL *url = [NSURL URLWithString: HOST_URL];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [wv loadRequest:req];
-    
-    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning
