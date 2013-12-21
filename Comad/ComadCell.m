@@ -11,6 +11,7 @@
 #import "Image.h"
 #import "Date.h"
 #import "BasicLabel.h"
+#import "Basic.h"
 
 @implementation ComadCell
 
@@ -44,7 +45,8 @@
     cellView.layer.cornerRadius = 5;
     cellView.clipsToBounds = true;
     
-    UIImage *thumbnailImage = [UIImage imageNamed:[comadInfo objectForKey:@"image_name"]];
+    NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, [comadInfo objectForKey:@"image_name"]];
+    UIImage *thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
     UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     thumbnail.frame = CGRectMake(4.5, 4.5, 62, 62);

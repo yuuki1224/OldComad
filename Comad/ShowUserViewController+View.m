@@ -60,7 +60,11 @@
         }else{
             userIdLabel.text = [userInfo objectForKey:@"comadId"];
         }
-        occupationLabel.text = [userInfo objectForKey:@"occupation"];
+        if(![[self.userInfo allKeys]containsObject:@"occupation"] || [[self.userInfo objectForKey:@"occupation"]isEqualToString:@""]){
+            occupationLabel.text = @"職業";
+        }else{
+            occupationLabel.text = [userInfo objectForKey:@"occupation"];
+        }
     
         [nameLabel sizeToFit];
         [userIdLabel sizeToFit];
@@ -89,7 +93,8 @@
     }
     
     //サムネイル
-    UIImage *thumbnailImage = [UIImage imageNamed:[self.userInfo objectForKey:@"image_name"]];
+    NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, [self.userInfo objectForKey:@"image_name"]];
+    UIImage *thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
     UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     
@@ -115,11 +120,17 @@
         editProfileBtn.userInteractionEnabled = YES;
         
         [scrollView addSubview: editProfileBtn];
-         
-        [showUserList setContent:[self.userInfo objectForKey:@"description"]];
         
-        [question1 setContent:[userInfo objectForKey:@"question1"]];
-        [question2 setContent:[userInfo objectForKey:@"question2"]];
+        if(![[self.userInfo allKeys] containsObject:@"description"]){
+            [showUserList setContent:@"まだ入力されていません。"];
+        }else {
+            [showUserList setContent:[self.userInfo objectForKey:@"description"]];
+        }
+        if(![[self.userInfo allKeys]containsObject:@"organization"]){
+            [question1 setContent:@"まだ入力されていません。"];
+        }else {
+            [question1 setContent:[self.userInfo objectForKey:@"organization"]];
+        }
     }else{
         UIImage *messageImage = [UIImage imageNamed:@"messageButton.png"];
         UIImageView *messageBtn = [[UIImageView alloc]initWithImage:messageImage];
@@ -129,10 +140,17 @@
         messageBtn.userInteractionEnabled = YES;
         
         [scrollView addSubview: messageBtn];
-        [showUserList setContent:[self.userInfo objectForKey:@"description"]];
         
-        [question1 setContent:[self.userInfo objectForKey:@"question1"]];
-        [question2 setContent:[self.userInfo objectForKey:@"question2"]];
+        if(![[self.userInfo allKeys] containsObject:@"description"]){
+            [showUserList setContent:@"なし"];
+        }else {
+            [showUserList setContent:[self.userInfo objectForKey:@"description"]];
+        }
+        if(![[self.userInfo allKeys]containsObject:@"organization"]){
+            [question1 setContent:@"なし"];
+        }else {
+            [question1 setContent:[self.userInfo objectForKey:@"organization"]];
+        }
     }
 }
 

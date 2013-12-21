@@ -60,22 +60,6 @@
 		BA1FE3A0184FA12B00E61534 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE396184FA12B00E61534 /* 9.png */; };
 		BA1FE3A1184FA12B00E61534 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE397184FA12B00E61534 /* 10.png */; };
 		BA1FE3A3184FAAB600E61534 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FE3A2184FAAB600E61534 /* Social.framework */; };
-		BA1FE3B518507C0800E61534 /* adachi.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3A418507C0800E61534 /* adachi.png */; };
-		BA1FE3B618507C0800E61534 /* asano.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3A518507C0800E61534 /* asano.png */; };
-		BA1FE3B718507C0800E61534 /* hara.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3A618507C0800E61534 /* hara.png */; };
-		BA1FE3B818507C0800E61534 /* hayashi.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3A718507C0800E61534 /* hayashi.png */; };
-		BA1FE3B918507C0800E61534 /* ishimaru.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3A818507C0800E61534 /* ishimaru.png */; };
-		BA1FE3BA18507C0800E61534 /* kobayashi.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3A918507C0800E61534 /* kobayashi.png */; };
-		BA1FE3BC18507C0800E61534 /* matsumoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3AB18507C0800E61534 /* matsumoto.png */; };
-		BA1FE3BD18507C0800E61534 /* murata.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3AC18507C0800E61534 /* murata.png */; };
-		BA1FE3BE18507C0800E61534 /* nakagawa.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3AD18507C0800E61534 /* nakagawa.png */; };
-		BA1FE3BF18507C0800E61534 /* ozawa.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3AE18507C0800E61534 /* ozawa.png */; };
-		BA1FE3C018507C0800E61534 /* sato.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3AF18507C0800E61534 /* sato.png */; };
-		BA1FE3C118507C0800E61534 /* shigetani.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3B018507C0800E61534 /* shigetani.png */; };
-		BA1FE3C218507C0800E61534 /* takamatsu.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3B118507C0800E61534 /* takamatsu.png */; };
-		BA1FE3C318507C0800E61534 /* yamamoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3B218507C0800E61534 /* yamamoto.png */; };
-		BA1FE3C418507C0800E61534 /* yasutake.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3B318507C0800E61534 /* yasutake.png */; };
-		BA1FE3C518507C0800E61534 /* yoshida.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE3B418507C0800E61534 /* yoshida.png */; };
 		BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAB1847323F007F64FE /* ComadsViewController.m */; };
 		BA21DFAF18473251007F64FE /* ComadsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFAE18473251007F64FE /* ComadsViewController+View.m */; };
 		BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21DFBD18474E7D007F64FE /* NewComadViewController.m */; };
@@ -161,7 +145,6 @@
 		BA74F9551843E14300FE4629 /* FriendsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA74F9541843E14300FE4629 /* FriendsViewController+View.m */; };
 		BAB1470B1837C8770078486B /* AddFriendMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1470A1837C8770078486B /* AddFriendMenu.m */; };
 		BAB147151837DAFD0078486B /* IdSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147141837DAFD0078486B /* IdSearchViewController.m */; };
-		BAB1471D1838CDD10078486B /* invite_friend.html in Resources */ = {isa = PBXBuildFile; fileRef = BAB1471C1838CDD10078486B /* invite_friend.html */; };
 		BAB147201839D41F0078486B /* IdSearchViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */; };
 		BAB147231839D4430078486B /* CreateGroupViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147221839D4430078486B /* CreateGroupViewController+View.m */; };
 		BAB6AB4B1856367400253C33 /* icon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB6AB4A1856367400253C33 /* icon_2.png */; };
@@ -287,22 +270,6 @@
 		BA1FE396184FA12B00E61534 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		BA1FE397184FA12B00E61534 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		BA1FE3A2184FAAB600E61534 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		BA1FE3A418507C0800E61534 /* adachi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adachi.png; sourceTree = "<group>"; };
-		BA1FE3A518507C0800E61534 /* asano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asano.png; sourceTree = "<group>"; };
-		BA1FE3A618507C0800E61534 /* hara.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hara.png; sourceTree = "<group>"; };
-		BA1FE3A718507C0800E61534 /* hayashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hayashi.png; sourceTree = "<group>"; };
-		BA1FE3A818507C0800E61534 /* ishimaru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ishimaru.png; sourceTree = "<group>"; };
-		BA1FE3A918507C0800E61534 /* kobayashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kobayashi.png; sourceTree = "<group>"; };
-		BA1FE3AB18507C0800E61534 /* matsumoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matsumoto.png; sourceTree = "<group>"; };
-		BA1FE3AC18507C0800E61534 /* murata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = murata.png; sourceTree = "<group>"; };
-		BA1FE3AD18507C0800E61534 /* nakagawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nakagawa.png; sourceTree = "<group>"; };
-		BA1FE3AE18507C0800E61534 /* ozawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ozawa.png; sourceTree = "<group>"; };
-		BA1FE3AF18507C0800E61534 /* sato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sato.png; sourceTree = "<group>"; };
-		BA1FE3B018507C0800E61534 /* shigetani.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shigetani.png; sourceTree = "<group>"; };
-		BA1FE3B118507C0800E61534 /* takamatsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takamatsu.png; sourceTree = "<group>"; };
-		BA1FE3B218507C0800E61534 /* yamamoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yamamoto.png; sourceTree = "<group>"; };
-		BA1FE3B318507C0800E61534 /* yasutake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yasutake.png; sourceTree = "<group>"; };
-		BA1FE3B418507C0800E61534 /* yoshida.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoshida.png; sourceTree = "<group>"; };
 		BA21DFAA1847323F007F64FE /* ComadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComadsViewController.h; sourceTree = "<group>"; };
 		BA21DFAB1847323F007F64FE /* ComadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComadsViewController.m; sourceTree = "<group>"; };
 		BA21DFAE18473251007F64FE /* ComadsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ComadsViewController+View.m"; sourceTree = "<group>"; };
@@ -425,7 +392,6 @@
 		BAB1470A1837C8770078486B /* AddFriendMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendMenu.m; sourceTree = "<group>"; };
 		BAB147131837DAFD0078486B /* IdSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdSearchViewController.h; sourceTree = "<group>"; };
 		BAB147141837DAFD0078486B /* IdSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdSearchViewController.m; sourceTree = "<group>"; };
-		BAB1471C1838CDD10078486B /* invite_friend.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invite_friend.html; sourceTree = "<group>"; };
 		BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IdSearchViewController+View.m"; sourceTree = "<group>"; };
 		BAB147221839D4430078486B /* CreateGroupViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreateGroupViewController+View.m"; sourceTree = "<group>"; };
 		BAB6AB4A1856367400253C33 /* icon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_2.png; sourceTree = "<group>"; };
@@ -681,29 +647,6 @@
 			name = SelectTime;
 			sourceTree = "<group>";
 		};
-		BA2A74A0180FB0C800167837 /* profile */ = {
-			isa = PBXGroup;
-			children = (
-				BA1FE3A418507C0800E61534 /* adachi.png */,
-				BA1FE3A518507C0800E61534 /* asano.png */,
-				BA1FE3A618507C0800E61534 /* hara.png */,
-				BA1FE3A718507C0800E61534 /* hayashi.png */,
-				BA1FE3A818507C0800E61534 /* ishimaru.png */,
-				BA1FE3A918507C0800E61534 /* kobayashi.png */,
-				BA1FE3AB18507C0800E61534 /* matsumoto.png */,
-				BA1FE3AC18507C0800E61534 /* murata.png */,
-				BA1FE3AD18507C0800E61534 /* nakagawa.png */,
-				BA1FE3AE18507C0800E61534 /* ozawa.png */,
-				BA1FE3AF18507C0800E61534 /* sato.png */,
-				BA1FE3B018507C0800E61534 /* shigetani.png */,
-				BA1FE3B118507C0800E61534 /* takamatsu.png */,
-				BA1FE3B218507C0800E61534 /* yamamoto.png */,
-				BA1FE3B318507C0800E61534 /* yasutake.png */,
-				BA1FE3B418507C0800E61534 /* yoshida.png */,
-			);
-			name = profile;
-			sourceTree = "<group>";
-		};
 		BA2A74C91815058200167837 /* modal */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,7 +718,6 @@
 				BA5151C61809B82800FD69D8 /* Controller */,
 				BA515182180900E200FD69D8 /* Images.xcassets */,
 				BA515171180900E200FD69D8 /* Supporting Files */,
-				BAB1471C1838CDD10078486B /* invite_friend.html */,
 			);
 			path = Comad;
 			sourceTree = "<group>";
@@ -847,7 +789,6 @@
 				BA74F939183B9AE600FE4629 /* stamps */,
 				BADD95181824C9B700DAB12F /* others */,
 				BA2A74C91815058200167837 /* modal */,
-				BA2A74A0180FB0C800167837 /* profile */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -1231,7 +1172,6 @@
 				BA1FE341184CAADF00E61534 /* anytimeOff.png in Resources */,
 				BA21DFF01847AAFD007F64FE /* commentIconBlue.png in Resources */,
 				BA74F92F183B5A4F00FE4629 /* icon.png in Resources */,
-				BAB1471D1838CDD10078486B /* invite_friend.html in Resources */,
 				BA21DFE01847AAA8007F64FE /* tommorowRibbon.png in Resources */,
 				BA1FE365184D119800E61534 /* modalBlock.png in Resources */,
 				BA1FE364184D119800E61534 /* modalMessage.png in Resources */,
@@ -1246,8 +1186,6 @@
 				BADD95A7182A4D9200DAB12F /* comadPlus.png in Resources */,
 				BA21DFF11847AAFD007F64FE /* commentIconPurple.png in Resources */,
 				BA1FE33E184CAADF00E61534 /* todayOff.png in Resources */,
-				BA1FE3B718507C0800E61534 /* hara.png in Resources */,
-				BA1FE3B518507C0800E61534 /* adachi.png in Resources */,
 				BA1FE349184CB0E200E61534 /* tweetButton.png in Resources */,
 				BA21DFD518479E4B007F64FE /* comadTab1@2x.png in Resources */,
 				BA51521E180E59C100FD69D8 /* tab1@2x.png in Resources */,
@@ -1258,7 +1196,6 @@
 				BA21E01F184BAF0F007F64FE /* todayOn.png in Resources */,
 				BA1FE388184E991100E61534 /* addFriendTab1.png in Resources */,
 				BA1FE3A0184FA12B00E61534 /* 9.png in Resources */,
-				BA1FE3B618507C0800E61534 /* asano.png in Resources */,
 				BA1FE399184FA12B00E61534 /* 2.png in Resources */,
 				BA1FE36F184D1CA800E61534 /* otherAddFriend.png in Resources */,
 				BA21E008184B9D5C007F64FE /* onCover.png in Resources */,
@@ -1269,9 +1206,7 @@
 				BA1FE342184CAADF00E61534 /* futureOff.png in Resources */,
 				BA21DFEF1847AAFD007F64FE /* commentIconGreen.png in Resources */,
 				BA1FE358184D09D800E61534 /* popularSelected@2x.png in Resources */,
-				BA1FE3BE18507C0800E61534 /* nakagawa.png in Resources */,
 				BA21DFDE1847AAA8007F64FE /* nowRibbon.png in Resources */,
-				BA1FE3C118507C0800E61534 /* shigetani.png in Resources */,
 				BA51521D180E59C100FD69D8 /* tab2@2x.png in Resources */,
 				BA2A74CE1815059C00167837 /* modal2.png in Resources */,
 				BA1FE351184D036300E61534 /* messageButton.png in Resources */,
@@ -1283,21 +1218,17 @@
 				BA21DFED1847AAFD007F64FE /* commentIconPinc.png in Resources */,
 				BA21DFE11847AAA8007F64FE /* wheneverRibbon.png in Resources */,
 				BA21E009184B9D5C007F64FE /* offCover.png in Resources */,
-				BA1FE3B818507C0800E61534 /* hayashi.png in Resources */,
 				BA1FE348184CB0E200E61534 /* addComadButtonForiOS6.png in Resources */,
 				BA1FE39B184FA12B00E61534 /* 4.png in Resources */,
-				BA1FE3B918507C0800E61534 /* ishimaru.png in Resources */,
 				BA1FE370184D1CA800E61534 /* otherMypage.png in Resources */,
 				BA21E016184BAEF9007F64FE /* futureOn.png in Resources */,
 				BA1FE34A184CB0E200E61534 /* submit.png in Resources */,
 				BA21E025184BB8E7007F64FE /* addComadBubble.png in Resources */,
 				BA1FE34B184CB0E200E61534 /* addStampButton.png in Resources */,
-				BA1FE3BD18507C0800E61534 /* murata.png in Resources */,
 				BA21DFF81847CE8C007F64FE /* headerForiOS6.png in Resources */,
 				BA1FE38D184F51BD00E61534 /* Default@2x.png in Resources */,
 				BA1FE3A1184FA12B00E61534 /* 10.png in Resources */,
 				BA1FE372184D1CA800E61534 /* otherSetting.png in Resources */,
-				BA1FE3C518507C0800E61534 /* yoshida.png in Resources */,
 				BA1FE338184CA8AA00E61534 /* backForiOS6@2x.png in Resources */,
 				BA1FE38B184F20F600E61534 /* inviteButton.png in Resources */,
 				BA1FE39C184FA12B00E61534 /* 5.png in Resources */,
@@ -1305,12 +1236,10 @@
 				BA1FE34C184CB0E200E61534 /* textField.png in Resources */,
 				BADD95A9182A4FF100DAB12F /* createComad.png in Resources */,
 				BA21DFEE1847AAFD007F64FE /* commentIconOrange.png in Resources */,
-				BA1FE3C318507C0800E61534 /* yamamoto.png in Resources */,
 				BA21E022184BAF0F007F64FE /* tommorowOn.png in Resources */,
 				BA21DFD818479E4B007F64FE /* comadTab4@2x.png in Resources */,
 				BA21E012184BAEE5007F64FE /* anytimeOn.png in Resources */,
 				BA21DFEC1847AAFD007F64FE /* locationIcon.png in Resources */,
-				BA1FE3BA18507C0800E61534 /* kobayashi.png in Resources */,
 				BA1FE398184FA12B00E61534 /* 1.png in Resources */,
 				BA1FE371184D1CA800E61534 /* otherMessage.png in Resources */,
 				BA1FE389184E991100E61534 /* addFriendTab2.png in Resources */,
@@ -1320,14 +1249,9 @@
 				BA21DFF61847CE8C007F64FE /* comadInHeader.png in Resources */,
 				BA1FE33F184CAADF00E61534 /* nowOff.png in Resources */,
 				BA21DFEB1847AAFD007F64FE /* datetimeIcon.png in Resources */,
-				BA1FE3C418507C0800E61534 /* yasutake.png in Resources */,
-				BA1FE3BC18507C0800E61534 /* matsumoto.png in Resources */,
-				BA1FE3C218507C0800E61534 /* takamatsu.png in Resources */,
-				BA1FE3BF18507C0800E61534 /* ozawa.png in Resources */,
 				BA1FE374184DCF0800E61534 /* done.png in Resources */,
 				BA21DFD618479E4B007F64FE /* comadTab2@2x.png in Resources */,
 				BA1FE39A184FA12B00E61534 /* 3.png in Resources */,
-				BA1FE3C018507C0800E61534 /* sato.png in Resources */,
 				BA515175180900E200FD69D8 /* InfoPlist.strings in Resources */,
 				BA21E01E184BAF0F007F64FE /* nowOn.png in Resources */,
 				BAB6AB4B1856367400253C33 /* icon_2.png in Resources */,
