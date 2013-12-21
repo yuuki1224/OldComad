@@ -58,12 +58,13 @@
     UIImageView *datetimeIconView = [[UIImageView alloc]initWithImage: datetimeIcon];
     datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, 17.5, 17.5);
     BasicLabel *dateTime = [[BasicLabel alloc]initWithName:ShowUserComadId];
-    
-    if([[self.comadInfo objectForKey:@"dateTime"] isEqualToString:@""]){
+    if([[self.comadInfo objectForKey:@"date_time"] isEqualToString:@""]){
         dateTime.text = @"未定";
     }else{
-        dateTime.text = [self.comadInfo objectForKey:@"dateTime"];
+        NSString *dateTimeString = [[self.comadInfo objectForKey:@"date_time"] stringByReplacingOccurrencesOfString:@"T" withString:@" "];
+        dateTime.text = [dateTimeString substringToIndex:([dateTimeString length] - 8)];
     }
+    
     //dateTime.text = @"未定";
     [dateTime sizeToFit];
     dateTime.frame = CGRectMake(93, title.frame.origin.y + title.frame.size.height + 5, dateTime.frame.size.width, dateTime.frame.size.height);
@@ -83,9 +84,10 @@
     
     //右上の時間
     NSString *createdTime = [self.comadInfo objectForKey:@"created_at"];
+    NSString *createdTimeReplace = [createdTime substringToIndex:([createdTime length] - 8)];
     NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
-    [inputFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSDate *createdAt = [inputFormatter dateFromString:createdTime];
+    [inputFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm"];
+    NSDate *createdAt = [inputFormatter dateFromString:createdTimeReplace];
     
     //現在時間
     NSDate* now = [NSDate date];
