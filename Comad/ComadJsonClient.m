@@ -8,6 +8,7 @@
 
 #import "ComadJsonClient.h"
 #import "AFHTTPClient.h"
+#import "Basic.h"
 
 @implementation ComadJsonClient
 
@@ -32,8 +33,11 @@ static ComadJsonClient* _sharedClient;
 }
 
 - (void)getIndexWhenSuccess:(void (^)(AFHTTPRequestOperation *, NSHTTPURLResponse *, id))success failure:(void (^)(int, NSString *))failure {
-    //NSURL *url = [NSURL URLWithString:@"http://54.199.53.137:3000/api/comads/get_comads_list?user_id=1"];
-    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/api/comads/get_comads_list?user_id=1"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *user = [defaults dictionaryForKey:@"user"];
+    NSLog(@"userInfo: %@", user);
+    NSString *apiURL = [NSString stringWithFormat:@"%@/api/comads/get_comads_list?user_id=%i", HOST_URL, [[user objectForKey:@"id"] intValue]];
+    NSURL *url = [NSURL URLWithString: apiURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success: ^(NSURLRequest *req, NSHTTPURLResponse *response, id JSON) {

@@ -15,7 +15,6 @@
 #import "ShowUserViewController.h"
 #import "MessageViewController.h"
 #import "LoginViewController.h"
-#import "CreateComadViewController.h"
 
 #import "Image.h"
 
@@ -141,10 +140,6 @@
 - (void)inviteComadBtnClickedDelegate {
     [userModal removeFromSuperview];
     [blackMask removeFromSuperview];
-    
-    CreateComadViewController *cc = [[CreateComadViewController alloc]init];
-    cc.hidesBottomBarWhenPushed = YES;
-    [fc.navigationController pushViewController:cc animated:YES];
 }
 
 //MessageViewControllerへ

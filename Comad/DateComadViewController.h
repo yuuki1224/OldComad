@@ -13,5 +13,5 @@
 }
 
 
-@property (nonatomic, retain)NSArray *DateComad;
+@property (nonatomic, retain)NSDictionary *DateComad;
 @end

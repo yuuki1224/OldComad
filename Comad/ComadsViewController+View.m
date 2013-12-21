@@ -17,10 +17,12 @@
     
     //ネットワーク通信してる
     [[ComadJsonClient sharedClient] getIndexWhenSuccess:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSArray *dateComad = [responseObject objectForKey:@"date_comad"];
-        NSArray *newComad = [responseObject objectForKey:@"new_comad"];
-        NSArray *popularComad = [responseObject objectForKey:@"popular_comad"];
-        NSArray *myComad = [responseObject objectForKey:@"my_comad"];
+        NSLog(@"Get comads info: %@", responseObject);
+        
+        NSDictionary *dateComad = [responseObject objectForKey:@"date_comads"];
+        NSArray *newComad = [responseObject objectForKey:@"new_comads"];
+        NSArray *popularComad = [responseObject objectForKey:@"popular_comads"];
+        NSArray *myComad = [responseObject objectForKey:@"my_comads"];
         
         newComadTable.NewComad = newComad;
         [newComadTable.tableView reloadData];
@@ -39,10 +41,6 @@
         [self reloadData];
          */
     } failure:^(int statusCode, NSString *errorString) {
-        /*
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"サーバーにアクセスできません。" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-         */
         [SVProgressHUD dismiss];
     }];
 }

@@ -118,44 +118,52 @@
         //roomName = packet.args[1];
         NSArray *messages = packet.args[2];
         
-        for (int i = 0; [messages count]>i; i++) {
-            //自分のIDのとき
-            if([[messages[i] objectForKey:@"user_id"] isEqual:@(userId)]){
-                NSString *content = [messages[i] objectForKey:@"content"];
-                NSRange range = [content rangeOfString:@"(stamp_"];
-                NSString *imageName = [messages[i] objectForKey:@"image_name"];
-                NSString *userName = [messages[i] objectForKey:@"user_name"];
-                
-                if (range.location != NSNotFound) {
-                    //stampがあった場合 左側の描画
-                    NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
-                    [conversation removeNoConversation];
-                    [conversation addStamp:[stampNum intValue] :userName :imageName];
-                } else {
-                    //stampがない場合
-                    [conversation removeNoConversation];
-                    [conversation addConversation:content :userName :imageName];
-                }
-                //相手のIDのとき
-            }else{
-                NSString *content = [messages[i] objectForKey:@"content"];
-                NSRange range = [content rangeOfString:@"(stamp_"];
-                NSString *imageName = [messages[i] objectForKey:@"image_name"];
-                NSString *userName = [messages[i] objectForKey:@"user_name"];
-                
-                if (range.location != NSNotFound) {
-                    //stampがあった場合 左側の描画
-                    NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
-                    [conversation removeNoConversation];
-                    [conversation addStamp:[stampNum intValue] :userName :imageName];
-                } else {
-                    //stampがない場合
-                    [conversation removeNoConversation];
-                    [conversation addConversation:content :userName :imageName];
+        NSLog(@"recieved : %@", packet.args[1]);
+        NSString *count = [NSString stringWithFormat:@"%lu", (unsigned long)[packet.args[2] count]];
+        if([count isEqualToString:@"0"]){
+            NSLog(@"aaa");
+        }else{
+            NSLog(@"bbb");
+            for (int i = 0; [count intValue]>i; i++) {
+                //自分のIDのとき
+                if([[messages[i] objectForKey:@"user_id"] isEqual:@(userId)]){
+                    NSString *content = [messages[i] objectForKey:@"content"];
+                    NSRange range = [content rangeOfString:@"(stamp_"];
+                    NSString *imageName = [messages[i] objectForKey:@"image_name"];
+                    NSString *userName = [messages[i] objectForKey:@"user_name"];
+                    
+                    if (range.location != NSNotFound) {
+                        //stampがあった場合 左側の描画
+                        NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
+                        [conversation removeNoConversation];
+                        [conversation addStamp:[stampNum intValue] :userName :imageName];
+                    } else {
+                        //stampがない場合
+                        [conversation removeNoConversation];
+                        [conversation addConversation:content :userName :imageName];
+                    }
+                    //相手のIDのとき
+                }else{
+                    NSString *content = [messages[i] objectForKey:@"content"];
+                    NSRange range = [content rangeOfString:@"(stamp_"];
+                    NSString *imageName = [messages[i] objectForKey:@"image_name"];
+                    NSString *userName = [messages[i] objectForKey:@"user_name"];
+                    
+                    if (range.location != NSNotFound) {
+                        //stampがあった場合 左側の描画
+                        NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
+                        [conversation removeNoConversation];
+                        [conversation addStamp:[stampNum intValue] :userName :imageName];
+                    } else {
+                        //stampがない場合
+                        [conversation removeNoConversation];
+                        [conversation addConversation:content :userName :imageName];
+                    }
                 }
             }
         }
     }else if([packet.args[0] isEqual: @"comadMessage"]){
+        /*
         NSString *statement = packet.args[2];
         NSString *imageName = packet.args[3];
         NSString *userName = packet.args[4];
@@ -186,6 +194,8 @@
                 [conversation addConversation:statement :userName :imageName];
             }
         }
+         */
+        NSLog(@"ここはいけてるよ");
     }
 }
 

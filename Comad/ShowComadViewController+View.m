@@ -28,7 +28,7 @@
     cellView.layer.cornerRadius = 5;
     cellView.clipsToBounds = true;
     
-    UIImage *thumbnailImage = [UIImage imageNamed:[self.comadInfo objectForKey:@"imageName"]];
+    UIImage *thumbnailImage = [UIImage imageNamed:[self.comadInfo objectForKey:@"image_name"]];
     UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     thumbnail.frame = CGRectMake(4.5, 4.5, 62, 62);
@@ -138,7 +138,7 @@
         ribbonImageName = @"nowRibbon.png";
     }else if ([[self.comadInfo objectForKey:@"tense"] isEqualToString:@"今日"]){
         ribbonImageName = @"todayRibbon.png";
-    }else if([[self.comadInfo objectForKey:@"tense"] isEqualToString:@"うぃる"]){
+    }else if([[self.comadInfo objectForKey:@"tense"] isEqualToString:@"明日"]){
         ribbonImageName = @"tommorowRibbon.png";
     }else if([[self.comadInfo objectForKey:@"tense"] isEqualToString:@"明日以降"]){
         ribbonImageName = @"futureRibbon.png";
@@ -190,7 +190,7 @@
 - (void)sendClicked:(NSString *)text {
     //userDefaultからとってくる
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
+    NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"image_name"];
     NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
     
     [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": [[defaults objectForKey:@"user"] objectForKey:@"id"], @"type": @"comad",  @"imageName": imageName, @"userName": userName, @"comadId": [self.comadInfo objectForKey:@"id"]}];

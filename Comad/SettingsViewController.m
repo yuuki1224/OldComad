@@ -184,11 +184,16 @@
             break;
         case 1: {
             [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
-            LoginViewController *lc = [[LoginViewController alloc]init];
-            UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
-            rootViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-            rootViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-            [self presentViewController:lc animated:YES completion:nil];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults removeObjectForKey:@"user"];
+            BOOL successful = [defaults synchronize];
+            if(successful){
+                LoginViewController *lc = [[LoginViewController alloc]init];
+                UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+                rootViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+                rootViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+                [self presentViewController:lc animated:YES completion:nil];
+            }
             break;
         }
         default:

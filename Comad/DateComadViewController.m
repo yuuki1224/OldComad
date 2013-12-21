@@ -56,19 +56,67 @@
 // セルのView
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ComadCell *cell = [[ComadCell alloc]initWithFrame:CGRectMake(0, 0, 380, 95)];
-    cell.comadInfo = [DateComad objectAtIndex:indexPath.row];
+    switch (indexPath.section) {
+        case 0:
+            cell.comadInfo = [[DateComad objectForKey:@"now"] objectAtIndex:indexPath.row];
+            break;
+        case 1:
+            cell.comadInfo = [[DateComad objectForKey:@"today"] objectAtIndex:indexPath.row];
+            break;
+        case 2:
+            cell.comadInfo = [[DateComad objectForKey:@"tomorrow"] objectAtIndex:indexPath.row];
+            break;
+        case 3:
+            cell.comadInfo = [[DateComad objectForKey:@"day_after_tomorrow"] objectAtIndex:indexPath.row];
+            break;
+        case 4:
+            cell.comadInfo = [[DateComad objectForKey:@"any_time"] objectAtIndex:indexPath.row];
+            break;
+        default:
+            break;
+    }
     [cell setComadCell];
     return cell;
 }
 
 // セクションの数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 5;
 }
 
 // セルの数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [DateComad count];
+    switch (section) {
+        case 0:{
+            NSLog(@"now: %d", [[DateComad objectForKey:@"now"] count]);
+            return [[DateComad objectForKey:@"now"] count];
+            break;
+        }
+        case 1:{
+            NSLog(@"today: %d", [[DateComad objectForKey:@"today"] count]);
+            return [[DateComad objectForKey:@"today"] count];
+            break;
+        }
+        case 2:{
+            NSLog(@"tomorrow: %d", [[DateComad objectForKey:@"tomorrow"] count]);
+            return [[DateComad objectForKey:@"tomorrow"] count];
+            break;
+        }
+        case 3:{
+            NSLog(@"day_after_tomorrow: %d", [[DateComad objectForKey:@"day_after_tomorrow"] count]);
+            return [[DateComad objectForKey:@"day_after_tomorrow"] count];
+            break;
+        }
+        case 4:{
+            NSLog(@"any_time: %d", [[DateComad objectForKey:@"any_time"] count]);
+            return [[DateComad objectForKey:@"any_time"] count];
+            break;
+        }
+        default:
+            return 0;
+            break;
+    }
+    return 0;
 }
 
 // セルの高さ
@@ -78,6 +126,26 @@
 
 // ヘッダーの高さ
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 0:{
+            break;
+        }
+        case 1:{
+            break;
+        }
+        case 2:{
+            break;
+        }
+        case 3:{
+            break;
+        }
+        case 4:{
+            break;
+        }
+        default:
+            return 0;
+            break;
+    }
     return 0;
 }
 

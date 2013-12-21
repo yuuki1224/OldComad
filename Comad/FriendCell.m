@@ -10,6 +10,7 @@
 #import "Image.h"
 #import "RoundedButton.h"
 #import "BasicLabel.h"
+#import "Basic.h"
 
 @implementation FriendCell
 @synthesize userInfo, groupInfo;
@@ -38,6 +39,7 @@
         baseView.backgroundColor = [UIColor colorWithRed:1.000 green:0.961 blue:0.898 alpha:1.0];
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         UIImage *thumbnailImage = [UIImage imageNamed: [userInfo objectForKey:@"image_name"]];
         UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImage];
         thumbnail.frame = CGRectMake(0, 0, 64, 64);
@@ -55,7 +57,11 @@
     }else {
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        UIImage *thumbnailImage = [UIImage imageNamed: [userInfo objectForKey:@"image_name"]];
+        
+        // Documents/image_name.jpgを取ってくるようにする
+        
+        NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, [userInfo objectForKey:@"image_name"]];
+        UIImage *thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
         UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImage];
         thumbnail.frame = CGRectMake(0, 0, 64, 64);
         

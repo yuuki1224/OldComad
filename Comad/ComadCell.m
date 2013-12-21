@@ -11,6 +11,7 @@
 #import "Image.h"
 #import "Date.h"
 #import "BasicLabel.h"
+#import "Basic.h"
 
 @implementation ComadCell
 
@@ -44,7 +45,8 @@
     cellView.layer.cornerRadius = 5;
     cellView.clipsToBounds = true;
     
-    UIImage *thumbnailImage = [UIImage imageNamed:[comadInfo objectForKey:@"imageName"]];
+    NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, [comadInfo objectForKey:@"image_name"]];
+    UIImage *thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
     UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     thumbnail.frame = CGRectMake(4.5, 4.5, 62, 62);
@@ -74,10 +76,11 @@
     UIImageView *datetimeIconView = [[UIImageView alloc]initWithImage: datetimeIcon];
     datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, 17.5, 17.5);
     BasicLabel *dateTime = [[BasicLabel alloc]initWithName:ShowUserComadId];
-    if([[comadInfo objectForKey:@"dateTime"] isEqualToString:@""]){
+    if([[comadInfo objectForKey:@"date_time"] isEqualToString:@""]){
         dateTime.text = @"未定";
     }else{
-        dateTime.text = [comadInfo objectForKey:@"dateTime"];
+        NSString *dateTimeString = [[comadInfo objectForKey:@"date_time"] stringByReplacingOccurrencesOfString:@"T" withString:@" "];
+        dateTime.text = [dateTimeString substringToIndex:([dateTimeString length] - 8)];
     }
     [dateTime sizeToFit];
     dateTime.frame = CGRectMake(93, title.frame.origin.y + title.frame.size.height + 5, dateTime.frame.size.width, dateTime.frame.size.height);
@@ -93,9 +96,10 @@
     
     //右上の時間
     NSString *createdTime = [comadInfo objectForKey:@"created_at"];
+    NSString *createdTimeReplace = [createdTime substringToIndex:([createdTime length] - 8)];
     NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
-    [inputFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSDate *createdAt = [inputFormatter dateFromString:createdTime];
+    [inputFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm"];
+    NSDate *createdAt = [inputFormatter dateFromString:createdTimeReplace];
     
     //現在時間
     NSDate* now = [NSDate date];
@@ -125,7 +129,7 @@
     
     //会話人数
     BasicLabel *conversationNum = [[BasicLabel alloc]initWithName:ComadId];
-    conversationNum.text = [NSString stringWithFormat:@"%d人が会話中",[[comadInfo objectForKey:@"people"] intValue]];
+    conversationNum.text = [NSString stringWithFormat:@"%d人が会話中",[[comadInfo objectForKey:@"people_num"] intValue]];
     
     //ピンク
     if([[comadInfo objectForKey:@"tense"] isEqualToString:@"なう"]){
@@ -134,11 +138,11 @@
     }else if ([[comadInfo objectForKey:@"tense"] isEqualToString:@"今日"]){
         conversationNum.textColor = [UIColor colorWithRed:1.000 green:0.729 blue:0.302 alpha:1.0];
     //緑
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"うぃる"]){
+    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日"]){
         conversationNum.textColor = [UIColor colorWithRed:0.329 green:0.773 blue:0.706 alpha:1.0];
     //青
     }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日以降"]){
-        conversationNum.textColor = [UIColor colorWithRed:0.329 green:0.773 blue:0.706 alpha:1.0];
+        conversationNum.textColor = [UIColor colorWithRed:0.298 green:0.537 blue:0.925 alpha:1.0];
     //紫
     }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"いつでも"]){
         conversationNum.textColor = [UIColor colorWithRed:0.471 green:0.349 blue:0.690 alpha:1.0];
@@ -149,7 +153,7 @@
     
     //コメント数
     BasicLabel *commentNum = [[BasicLabel alloc]initWithName:ShowUserComadId];
-    commentNum.text = [NSString stringWithFormat:@"%d件",[[comadInfo objectForKey:@"comments"] intValue]];
+    commentNum.text = [NSString stringWithFormat:@"%d件",[[comadInfo objectForKey:@"conversation_num"] intValue]];
     [commentNum sizeToFit];
     commentNum.frame = CGRectMake(cellView.frame.size.width - commentNum.frame.size.width - 5, dateTime.frame.origin.y + dateTime.frame.size.height + 5, commentNum.frame.size.width, commentNum.frame.size.height);
     
@@ -161,7 +165,7 @@
     }else if ([[comadInfo objectForKey:@"tense"] isEqualToString:@"今日"]){
         commentIconImageName = @"commentIconOrange.png";
         //緑
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"うぃる"]){
+    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日"]){
         commentIconImageName = @"commentIconGreen.png";
         //青
     }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日以降"]){
@@ -206,7 +210,7 @@
         ribbonImageName = @"nowRibbon.png";
     }else if ([[comadInfo objectForKey:@"tense"] isEqualToString:@"今日"]){
         ribbonImageName = @"todayRibbon.png";
-    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"うぃる"]){
+    }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日"]){
         ribbonImageName = @"tommorowRibbon.png";
     }else if([[comadInfo objectForKey:@"tense"] isEqualToString:@"明日以降"]){
         ribbonImageName = @"futureRibbon.png";
