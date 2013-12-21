@@ -5,5 +5,6 @@ pod 'SVProgressHUD'
 pod 'SocketRocket'
 pod 'socket.IO'
 pod 'Google-Maps-iOS-SDK'
-pod "URBSegmentedControl"
-pod "SVSegmentedControl"
+pod 'URBSegmentedControl'
+pod 'SVSegmentedControl'
+pod 'ASIHTTPRequest'

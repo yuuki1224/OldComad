@@ -109,10 +109,10 @@
     
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             [user objectForKey:@"id"], @"user_id",
-                            startTimeParam, @"start_time",
+                            startTimeParam, @"date_time",
                             locationParam, @"location",
-                            text, @"detail",
-                            timeSelect.select, @"timeSelect",nil];
+                            text, @"title",
+                            timeSelect.select, @"tense",nil];
     
     [client createNewComad:(NSDictionary *)params :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"お知らせ" message:@"コマドを作成しました" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];

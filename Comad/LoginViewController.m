@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "AFImageRequestOperation.h"
 #import "BasicLabel.h"
 #import "Basic.h"
 #import "SVProgressHUD.h"
@@ -84,6 +85,10 @@
         // 成功したら次の画面
         if (true) {
             [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
+            //画像のデータをこっちに持ってくる
+            NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL,[userInfo objectForKey:@"image_name"]];
+            NSURL *url = [NSURL URLWithString: imageUrl];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
             TabBarController *tc = [[TabBarController alloc]init];
             UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
             rootViewController.modalPresentationStyle = UIModalPresentationFormSheet;

@@ -55,6 +55,8 @@
     }else {
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        // Documents/image_name.jpgを取ってくるようにする
         UIImage *thumbnailImage = [UIImage imageNamed: [userInfo objectForKey:@"image_name"]];
         UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImage];
         thumbnail.frame = CGRectMake(0, 0, 64, 64);

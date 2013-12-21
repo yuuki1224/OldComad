@@ -10,7 +10,6 @@
 #import "ShowComadViewController+View.m"
 #import "MessageViewController.h"
 #import "EditProfileViewController.h"
-#import "CreateComadViewController.h"
 #import "Header.h"
 #import "Image.h"
 
@@ -53,8 +52,6 @@
 }
 
 - (void)inviteBtnClicked:(UIButton *)button {
-    CreateComadViewController *cc = [[CreateComadViewController alloc]init];
-    [self.navigationController pushViewController:cc animated:YES];
 }
 
 - (void)sendMessageBtnClicked:(UIButton *)button {
