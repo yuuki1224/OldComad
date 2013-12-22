@@ -61,6 +61,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     //friendsTable.contentInset = UIEdgeInsetsMake(-60.0, 0, 0, 0);
     [self.navigationController.tabBarController.tabBar setHidden:NO];
+    [friendsTable reloadData];
 }
 
 - (void)didReceiveMemoryWarning
