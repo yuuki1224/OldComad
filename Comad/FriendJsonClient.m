@@ -7,9 +7,7 @@
 //
 
 #import "FriendJsonClient.h"
-
-#define kBaseUrl @"http://localhost:3000//"
-#define kToken @"token"
+#import "Basic.h"
 
 @interface FriendJsonClient()
 @end
@@ -39,9 +37,7 @@ static FriendJsonClient* _sharedClient;
 - (void)getIndexWhenSuccess:(void (^)(AFHTTPRequestOperation *, NSHTTPURLResponse *, id))success failure:(void (^)(int, NSString *))failure {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *user = [defaults dictionaryForKey:@"user"];
-    //NSString *urlString = [NSString stringWithFormat:@"http://54.199.53.137:3000/api/friends/get_friends_list?user_id=%@", [user objectForKey:@"id"]];
-    //NSString *urlString = [NSString stringWithFormat:@"http://54.199.53.137:3000/api/friends/get_friends_list?user_id=1"];
-    NSString *urlString = [NSString stringWithFormat:@"http://localhost:3000/api/friends/get_friends_list?user_id=1"];
+    NSString *urlString = [NSString stringWithFormat:@"%@/api/friends/get_friends_list?user_id=%@", HOST_URL, [user objectForKey:@"id"]];
     NSURL *url = [NSURL URLWithString: urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success: ^(NSURLRequest *req, NSHTTPURLResponse *response, id JSON) {

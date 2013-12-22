@@ -15,6 +15,7 @@
 #import "Image.h"
 #import "LoginViewController.h"
 #import "SVProgressHUD.h"
+#import "Configuration.h"
 
 @interface SettingsViewController ()
 
@@ -71,9 +72,6 @@
             return 2;
             break;
         case 1:
-            return 2;
-            break;
-        case 2:
             return 1;
             break;
         default:
@@ -99,15 +97,9 @@
             break;
         case 1:
             if(indexPath.row == 0){
-                [cell setText:@"通知設定"];
-            }else if(indexPath.row == 1){
-                [cell setText:@"メール設定"];
-            }
-            break;
-        case 2:
-            if(indexPath.row == 0){
                 [cell setText:@"ログアウト"];
             }
+            break;
         default:
             break;
     }
@@ -116,7 +108,7 @@
 
 //セクションの数
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 2;
 }
 
 //ヘッダーのタイトル
@@ -155,15 +147,6 @@
             break;
         case 1:
             if(indexPath.row == 0){
-                NotificationSettingsViewController *ec = [[NotificationSettingsViewController alloc]init];
-                [self.navigationController pushViewController:ec animated:YES];
-            }else if (indexPath.row == 1){
-                MailSettingsViewController *mc = [[MailSettingsViewController alloc]init];
-                [self.navigationController pushViewController:mc animated:YES];
-            }
-            break;
-        case 2:
-            if(indexPath.row == 0){
                 UIAlertView *alert = [[UIAlertView alloc] init];
                 [alert setTitle:@"確認"];
                 [alert setMessage:@"本当にログアウトしますか？"];
@@ -186,7 +169,8 @@
             [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults removeObjectForKey:@"user"];
-            BOOL successful = [defaults synchronize];
+            [Configuration removeUser];
+            BOOL successful = [Configuration synchronize];
             if(successful){
                 LoginViewController *lc = [[LoginViewController alloc]init];
                 UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;

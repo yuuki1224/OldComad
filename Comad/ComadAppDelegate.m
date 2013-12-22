@@ -9,6 +9,7 @@
 #import "ComadAppDelegate.h"
 #import "TabBarController.h"
 #import "LoginViewController.h"
+#import "Configuration.h"
 
 @implementation ComadAppDelegate
 
@@ -29,8 +30,9 @@ static ComadAppDelegate* _sharedInstance = nil;
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
     //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];  //statusbar白くなる
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if([defaults objectForKey:@"user"]){
+
+    NSLog(@"アプリに入ったときのUserの値: %@",[Configuration user]);
+    if([Configuration user]){
         tc = [[TabBarController alloc]init];
         [self.window addSubview:tc.view];
     }else{

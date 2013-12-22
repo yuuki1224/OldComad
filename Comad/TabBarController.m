@@ -15,7 +15,7 @@
 #import "ShowUserViewController.h"
 #import "MessageViewController.h"
 #import "LoginViewController.h"
-
+#import "Configuration.h"
 #import "Image.h"
 
 @interface TabBarController ()
@@ -144,9 +144,6 @@
 
 //MessageViewControllerへ
 - (void)sendMessageBtnClickedDelegate:(int)friendId {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *dict = [defaults dictionaryForKey:@"user"];
-    
     [userModal removeFromSuperview];
     [blackMask removeFromSuperview];
     MessageViewController *mc = [[MessageViewController alloc]init];

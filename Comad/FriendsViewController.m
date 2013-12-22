@@ -11,7 +11,6 @@
 #import "Header.h"
 #import "UserModal.h"
 #import "AddFriendViewController.h"
-#import "CreateGroupViewController.h"
 #import "Image.h"
 #import "AddFriendViewController.h"
 #import "ShowUserViewController.h"
@@ -71,8 +70,6 @@
 }
 
 - (void)CreateGroupBtnClicked {
-    CreateGroupViewController *cc = [[CreateGroupViewController alloc]init];
-    [self.navigationController presentViewController:cc animated:YES completion:nil];
 }
 
 - (void)AddFriendBtnClicked {

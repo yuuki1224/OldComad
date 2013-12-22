@@ -8,7 +8,6 @@
 
 #import "AddFriendViewController.h"
 #import "AddFriendViewController+View.m"
-#import "CreateGroupViewController.h"
 #import "IdSearchViewController.h"
 #import "Header.h"
 #import "Image.h"
@@ -17,6 +16,7 @@
 #import "UserModal.h"
 #import "SVProgressHUD.h"
 #import "FriendJsonClient.h"
+#import "Configuration.h"
 
 @interface AddFriendViewController ()
 
@@ -84,8 +84,6 @@
 }
 
 - (void)createGroupClicked:(UIGestureRecognizer *)recognizer {
-    CreateGroupViewController *cc = [[CreateGroupViewController alloc]init];
-    [self.navigationController pushViewController:cc animated:YES];
 }
 
 //セルタップ時
@@ -117,8 +115,7 @@
 }
 
 - (void)addFriendBtnClickedDelegate:(int)friendId {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *userInfo = [defaults dictionaryForKey:@"user"];
+    NSDictionary *userInfo = [Configuration user];
     
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     [[FriendJsonClient sharedClient]addFriend:[[userInfo objectForKey:@"id"] intValue] friendId:friendId success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {

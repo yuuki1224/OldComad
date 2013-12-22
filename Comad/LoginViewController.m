@@ -12,6 +12,7 @@
 #import "Basic.h"
 #import "SVProgressHUD.h"
 #import "TabBarController.h"
+#import "Configuration.h"
 
 @interface LoginViewController ()
 
@@ -23,8 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        windowSize = [[UIScreen mainScreen] bounds];
-        self.view.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height);
+        self.view.frame = CGRectMake(0, 0, SCREEN_BOUNDS.size.width, SCREEN_BOUNDS.size.height);
         self.view.backgroundColor = [UIColor whiteColor];
     }
     return self;
@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     UIWebView *wv = [[UIWebView alloc] init];
-    wv.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height);
+    wv.frame = CGRectMake(0, 0, SCREEN_BOUNDS.size.width, SCREEN_BOUNDS.size.height);
     wv.backgroundColor = [UIColor whiteColor];
     wv.scrollView.scrollEnabled = NO;
     wv.delegate = self;
@@ -72,18 +72,27 @@
     NSString *json = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('user').getAttribute('data-user');"];
     NSString *status = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('status').getAttribute('data-status');"];
     
+    NSLog(@"");
+    NSLog(@"");
+    
     if([status isEqualToString:@"200"]){
         NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] forKey:@"user"];
         NSDictionary *userInfo = [dict objectForKey:@"user"];
-
-        //userDefaultに保存するように
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:userInfo forKey:@"user"];
-        BOOL successful = [defaults synchronize];
-        
+        NSDictionary *saveUser = @{
+                                   @"name": [userInfo objectForKey:@"name"],
+                                   @"id": [userInfo objectForKey:@"id"],
+                                   @"comad_id": [userInfo objectForKey:@"comad_id"],
+                                   @"image_name": [userInfo objectForKey:@"image_name"],
+                                   @"email":[userInfo objectForKey:@"email"],
+                                   @"occupation": [userInfo objectForKey:@"occupation"],
+                                   @"organization": [userInfo objectForKey:@"organization"],
+                                   @"description":[userInfo objectForKey:@"description"]
+                                   };
+        [Configuration setUser: saveUser];
+        BOOL successful = [Configuration synchronize];
         // 成功したら次の画面
-        if (true) {
+        if (successful) {
             [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
             //画像のデータをこっちに持ってくる
             NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL,[userInfo objectForKey:@"image_name"]];

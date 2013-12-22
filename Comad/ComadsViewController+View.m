@@ -17,8 +17,6 @@
     
     //ネットワーク通信してる
     [[ComadJsonClient sharedClient] getIndexWhenSuccess:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        NSLog(@"Get comads info: %@", responseObject);
-        
         NSDictionary *dateComad = [responseObject objectForKey:@"date_comads"];
         NSArray *newComad = [responseObject objectForKey:@"new_comads"];
         NSArray *popularComad = [responseObject objectForKey:@"popular_comads"];
@@ -31,15 +29,6 @@
         myComadTable.myComad = myComad;
         
         [SVProgressHUD dismiss];
-        /*
-         date_comad
-         new_comad
-        _willComads = [responseObject objectForKey:@"will"];
-        _groupComad = [responseObject objectForKey:@"group"];
-        _comads = [responseObject objectForKey:@"comad"];
-        [SVProgressHUD dismiss];
-        [self reloadData];
-         */
     } failure:^(int statusCode, NSString *errorString) {
         [SVProgressHUD dismiss];
     }];

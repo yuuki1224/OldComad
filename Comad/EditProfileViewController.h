@@ -23,8 +23,5 @@
 
 @property (nonatomic, retain)NSString *detail;
 @property (nonatomic, retain)NSString *question1;
-@property (nonatomic, retain)NSString *question2;
-@property (nonatomic, retain)NSString *question3;
-@property (nonatomic, retain)NSString *question4;
 -(void)configure;
 @end

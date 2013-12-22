@@ -10,6 +10,7 @@
 #import "MessagesListViewController+View.m"
 #import "Image.h"
 #import "Header.h"
+#import "Configuration.h"
 
 @interface MessagesListViewController ()
 
@@ -32,9 +33,7 @@
         
         [self.view addSubview:header];
         
-        //friendsをセット
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSData* friendsData = [defaults dataForKey:@"friends"];
+        NSData* friendsData = [Configuration friends];
         friendsArray = [NSKeyedUnarchiver unarchiveObjectWithData: friendsData];
         
         [self configure];

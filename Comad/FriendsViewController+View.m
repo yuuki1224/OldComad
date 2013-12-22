@@ -13,6 +13,7 @@
 #import "SVProgressHUD.h"
 #import "FriendJsonClient.h"
 #import "ShowUserViewController.h"
+#import "Configuration.h"
 
 @implementation FriendsViewController (View)
 
@@ -21,28 +22,22 @@
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     
     [[FriendJsonClient sharedClient] getIndexWhenSuccess:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        _newFriends = [responseObject objectForKey:@"new"];
+        [Configuration setUser:[responseObject objectForKey:@"me"]];
+        [Configuration synchronize];
+        
         _friends = [responseObject objectForKey:@"friends"];
-        _groups = [responseObject objectForKey:@"groups"];
         
         NSMutableArray *friendsMutableArray = [NSMutableArray array];
         for (int i = 0; [_friends count] > i; i++) {
             [friendsMutableArray addObject:[_friends objectAtIndex:i]];
         }
         
-        //userDefaultのfriendsにしまう。
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSData *friendsData = [NSKeyedArchiver archivedDataWithRootObject: friendsMutableArray];
-        [userDefaults setObject: friendsData forKey:@"friends"];
-        [userDefaults synchronize];
+        [Configuration setFriends:[responseObject objectForKey:@"friends"]];
+        [Configuration synchronize];
         
         [friendsTable reloadData];
         [SVProgressHUD dismiss];
     } failure:^(int statusCode, NSString *errorString) {
-        /*
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"サーバーにアクセスできません。" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-        */
         [SVProgressHUD dismiss];
     }];
 }
@@ -100,8 +95,8 @@
     FriendCell *cell = [[FriendCell alloc]init];
     //プロフィール
     if(indexPath.section == 1){
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        cell.userInfo = [defaults dictionaryForKey:@"user"];
+        NSDictionary * user = [Configuration user];
+        cell.userInfo = [Configuration user];
         [cell setFriendCell:NO];
         //新しいコマとも
     }else if(indexPath.section == 2){
@@ -242,7 +237,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //indexPathよりCellの情報取りたい
     FriendCell *cell = [friendsTable cellForRowAtIndexPath: indexPath];
     
     NSDictionary *userInfo= cell.userInfo;

@@ -13,6 +13,7 @@
 		BA03F6261836516F001E9BBE /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F6251836516F001E9BBE /* Date.m */; };
 		BA03F62918375D35001E9BBE /* AddFriendViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F62818375D35001E9BBE /* AddFriendViewController+View.m */; };
 		BA0EBB0F18617DF9005E69C7 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0EBB0E18617DF9005E69C7 /* ImageCache.m */; };
+		BA12B9331866C3EE0036D99B /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = BA12B9321866C3EE0036D99B /* Configuration.m */; };
 		BA1FE338184CA8AA00E61534 /* backForiOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE337184CA8AA00E61534 /* backForiOS6@2x.png */; };
 		BA1FE33E184CAADF00E61534 /* todayOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE339184CAADF00E61534 /* todayOff.png */; };
 		BA1FE33F184CAADF00E61534 /* nowOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE33A184CAADF00E61534 /* nowOff.png */; };
@@ -124,7 +125,6 @@
 		BA5151CC180A5C9400FD69D8 /* UserModal.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151CB180A5C9400FD69D8 /* UserModal.m */; };
 		BA5151E4180C116F00FD69D8 /* ShowComadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151E3180C116F00FD69D8 /* ShowComadViewController.m */; };
 		BA5151E7180C118800FD69D8 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151E6180C118800FD69D8 /* AddFriendViewController.m */; };
-		BA5151EA180C119A00FD69D8 /* CreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151E9180C119A00FD69D8 /* CreateGroupViewController.m */; };
 		BA5151F0180C11BE00FD69D8 /* ShowUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151EF180C11BE00FD69D8 /* ShowUserViewController.m */; };
 		BA5151F3180C11DD00FD69D8 /* MessagesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151F2180C11DD00FD69D8 /* MessagesListViewController.m */; };
 		BA5151F6180C11E900FD69D8 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5151F5180C11E900FD69D8 /* MessageViewController.m */; };
@@ -146,28 +146,19 @@
 		BAB1470B1837C8770078486B /* AddFriendMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1470A1837C8770078486B /* AddFriendMenu.m */; };
 		BAB147151837DAFD0078486B /* IdSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147141837DAFD0078486B /* IdSearchViewController.m */; };
 		BAB147201839D41F0078486B /* IdSearchViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */; };
-		BAB147231839D4430078486B /* CreateGroupViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB147221839D4430078486B /* CreateGroupViewController+View.m */; };
 		BAB6AB4B1856367400253C33 /* icon_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB6AB4A1856367400253C33 /* icon_2.png */; };
 		BAD4AF00180EFD7F0068104B /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD4AEFF180EFD7F0068104B /* back.png */; };
-		BADD95331825014900DAB12F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95321825014900DAB12F /* MapViewController.m */; };
-		BADD95361825016100DAB12F /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95351825016100DAB12F /* HistoryViewController.m */; };
 		BADD953918252C6D00DAB12F /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD953818252C6D00DAB12F /* EditProfileViewController.m */; };
 		BADD953C18252C7E00DAB12F /* EditAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD953B18252C7E00DAB12F /* EditAccountViewController.m */; };
 		BADD954E182574AE00DAB12F /* CreateComadFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD954D182574AE00DAB12F /* CreateComadFormCell.m */; };
 		BADD955518262F4600DAB12F /* BasicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD955418262F4600DAB12F /* BasicLabel.m */; };
 		BADD955918263C5800DAB12F /* EditTimeFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD955818263C5800DAB12F /* EditTimeFormViewController.m */; };
 		BADD955C18263C6C00DAB12F /* EditLoacationFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD955B18263C6C00DAB12F /* EditLoacationFormViewController.m */; };
-		BADD955F18263CA900DAB12F /* EditLimitFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD955E18263CA900DAB12F /* EditLimitFormViewController.m */; };
-		BADD956218263CE200DAB12F /* EditGroupOnlyFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD956118263CE200DAB12F /* EditGroupOnlyFormViewController.m */; };
-		BADD95651826679200DAB12F /* EditLocationStatusFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95641826679200DAB12F /* EditLocationStatusFormViewController.m */; };
 		BADD956B1827671800DAB12F /* EditProfileViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD956A1827671800DAB12F /* EditProfileViewController+View.m */; };
 		BADD9571182793B200DAB12F /* EditThumbnailMask.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD9570182793B200DAB12F /* EditThumbnailMask.m */; };
 		BADD957518279B7600DAB12F /* EditProfileFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD957418279B7600DAB12F /* EditProfileFormViewController.m */; };
 		BADD95781827A04400DAB12F /* EditTimeFormViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95771827A04400DAB12F /* EditTimeFormViewController+View.m */; };
 		BADD957B1827EECE00DAB12F /* EditProfileFormViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD957A1827EECE00DAB12F /* EditProfileFormViewController+View.m */; };
-		BADD957E18280CD200DAB12F /* EditLocationStatusFormViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD957D18280CD200DAB12F /* EditLocationStatusFormViewController+View.m */; };
-		BADD95811828B27300DAB12F /* EditLimitFormViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95801828B27300DAB12F /* EditLimitFormViewController+View.m */; };
-		BADD95841828BE6500DAB12F /* EditGroupOnlyFormViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95831828BE6500DAB12F /* EditGroupOnlyFormViewController+View.m */; };
 		BADD958A1828EDF300DAB12F /* EditAccountViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95891828EDF300DAB12F /* EditAccountViewController+View.m */; };
 		BADD958E1828F66A00DAB12F /* NotificationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD958D1828F66A00DAB12F /* NotificationSettingsViewController.m */; };
 		BADD95911828F67B00DAB12F /* NotificationSettingsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95901828F67B00DAB12F /* NotificationSettingsViewController+View.m */; };
@@ -192,7 +183,6 @@
 		BADD95CF18310AAE00DAB12F /* EditLoacationFormViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95CE18310AAE00DAB12F /* EditLoacationFormViewController+View.m */; };
 		BADD95D61832A6B500DAB12F /* ShowComadViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95D51832A6B500DAB12F /* ShowComadViewController+View.m */; };
 		BAE482981819384A00BB1456 /* ShowComad.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE482971819384A00BB1456 /* ShowComad.m */; };
-		BAE4829C18193F6A00BB1456 /* ShowGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE4829B18193F6A00BB1456 /* ShowGroup.m */; };
 		BAE4829E1819888F00BB1456 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE4829D1819888F00BB1456 /* Default-568h@2x.png */; };
 		BAE482A118198C0000BB1456 /* ShowUserList.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE482A018198C0000BB1456 /* ShowUserList.m */; };
 		BAE482A31819906E00BB1456 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE482A21819906E00BB1456 /* QuartzCore.framework */; };
@@ -222,6 +212,8 @@
 		BA03F62818375D35001E9BBE /* AddFriendViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AddFriendViewController+View.m"; sourceTree = "<group>"; };
 		BA0EBB0D18617DF9005E69C7 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
 		BA0EBB0E18617DF9005E69C7 /* ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
+		BA12B9311866C3EE0036D99B /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		BA12B9321866C3EE0036D99B /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		BA1FE337184CA8AA00E61534 /* backForiOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backForiOS6@2x.png"; sourceTree = "<group>"; };
 		BA1FE339184CAADF00E61534 /* todayOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todayOff.png; sourceTree = "<group>"; };
 		BA1FE33A184CAADF00E61534 /* nowOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nowOff.png; sourceTree = "<group>"; };
@@ -355,8 +347,6 @@
 		BA5151E3180C116F00FD69D8 /* ShowComadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowComadViewController.m; sourceTree = "<group>"; };
 		BA5151E5180C118800FD69D8 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		BA5151E6180C118800FD69D8 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
-		BA5151E8180C119A00FD69D8 /* CreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroupViewController.h; sourceTree = "<group>"; };
-		BA5151E9180C119A00FD69D8 /* CreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateGroupViewController.m; sourceTree = "<group>"; };
 		BA5151EE180C11BE00FD69D8 /* ShowUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowUserViewController.h; sourceTree = "<group>"; };
 		BA5151EF180C11BE00FD69D8 /* ShowUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowUserViewController.m; sourceTree = "<group>"; };
 		BA5151F1180C11DD00FD69D8 /* MessagesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesListViewController.h; sourceTree = "<group>"; };
@@ -393,13 +383,8 @@
 		BAB147131837DAFD0078486B /* IdSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdSearchViewController.h; sourceTree = "<group>"; };
 		BAB147141837DAFD0078486B /* IdSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdSearchViewController.m; sourceTree = "<group>"; };
 		BAB1471F1839D41F0078486B /* IdSearchViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IdSearchViewController+View.m"; sourceTree = "<group>"; };
-		BAB147221839D4430078486B /* CreateGroupViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreateGroupViewController+View.m"; sourceTree = "<group>"; };
 		BAB6AB4A1856367400253C33 /* icon_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_2.png; sourceTree = "<group>"; };
 		BAD4AEFF180EFD7F0068104B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		BADD95311825014900DAB12F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		BADD95321825014900DAB12F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		BADD95341825016100DAB12F /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
-		BADD95351825016100DAB12F /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		BADD953718252C6D00DAB12F /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		BADD953818252C6D00DAB12F /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		BADD953A18252C7E00DAB12F /* EditAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAccountViewController.h; sourceTree = "<group>"; };
@@ -412,12 +397,6 @@
 		BADD955818263C5800DAB12F /* EditTimeFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTimeFormViewController.m; sourceTree = "<group>"; };
 		BADD955A18263C6C00DAB12F /* EditLoacationFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditLoacationFormViewController.h; sourceTree = "<group>"; };
 		BADD955B18263C6C00DAB12F /* EditLoacationFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditLoacationFormViewController.m; sourceTree = "<group>"; };
-		BADD955D18263CA900DAB12F /* EditLimitFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditLimitFormViewController.h; sourceTree = "<group>"; };
-		BADD955E18263CA900DAB12F /* EditLimitFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditLimitFormViewController.m; sourceTree = "<group>"; };
-		BADD956018263CE200DAB12F /* EditGroupOnlyFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditGroupOnlyFormViewController.h; sourceTree = "<group>"; };
-		BADD956118263CE200DAB12F /* EditGroupOnlyFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditGroupOnlyFormViewController.m; sourceTree = "<group>"; };
-		BADD95631826679200DAB12F /* EditLocationStatusFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditLocationStatusFormViewController.h; sourceTree = "<group>"; };
-		BADD95641826679200DAB12F /* EditLocationStatusFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditLocationStatusFormViewController.m; sourceTree = "<group>"; };
 		BADD956A1827671800DAB12F /* EditProfileViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditProfileViewController+View.m"; sourceTree = "<group>"; };
 		BADD956F182793B200DAB12F /* EditThumbnailMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditThumbnailMask.h; sourceTree = "<group>"; };
 		BADD9570182793B200DAB12F /* EditThumbnailMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditThumbnailMask.m; sourceTree = "<group>"; };
@@ -425,9 +404,6 @@
 		BADD957418279B7600DAB12F /* EditProfileFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileFormViewController.m; sourceTree = "<group>"; };
 		BADD95771827A04400DAB12F /* EditTimeFormViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditTimeFormViewController+View.m"; sourceTree = "<group>"; };
 		BADD957A1827EECE00DAB12F /* EditProfileFormViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditProfileFormViewController+View.m"; sourceTree = "<group>"; };
-		BADD957D18280CD200DAB12F /* EditLocationStatusFormViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditLocationStatusFormViewController+View.m"; sourceTree = "<group>"; };
-		BADD95801828B27300DAB12F /* EditLimitFormViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditLimitFormViewController+View.m"; sourceTree = "<group>"; };
-		BADD95831828BE6500DAB12F /* EditGroupOnlyFormViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditGroupOnlyFormViewController+View.m"; sourceTree = "<group>"; };
 		BADD95891828EDF300DAB12F /* EditAccountViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditAccountViewController+View.m"; sourceTree = "<group>"; };
 		BADD958C1828F66A00DAB12F /* NotificationSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettingsViewController.h; sourceTree = "<group>"; };
 		BADD958D1828F66A00DAB12F /* NotificationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettingsViewController.m; sourceTree = "<group>"; };
@@ -460,8 +436,6 @@
 		BADD95D51832A6B500DAB12F /* ShowComadViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ShowComadViewController+View.m"; sourceTree = "<group>"; };
 		BAE482961819384A00BB1456 /* ShowComad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowComad.h; sourceTree = "<group>"; };
 		BAE482971819384A00BB1456 /* ShowComad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowComad.m; sourceTree = "<group>"; };
-		BAE4829A18193F6A00BB1456 /* ShowGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowGroup.h; sourceTree = "<group>"; };
-		BAE4829B18193F6A00BB1456 /* ShowGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowGroup.m; sourceTree = "<group>"; };
 		BAE4829D1819888F00BB1456 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BAE4829F18198C0000BB1456 /* ShowUserList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowUserList.h; sourceTree = "<group>"; };
 		BAE482A018198C0000BB1456 /* ShowUserList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowUserList.m; sourceTree = "<group>"; };
@@ -710,12 +684,12 @@
 		BA515170180900E200FD69D8 /* Comad */ = {
 			isa = PBXGroup;
 			children = (
-				BA5151CD180A658100FD69D8 /* Model */,
 				BA5151C31809B5AB00FD69D8 /* Images */,
+				BA5151CD180A658100FD69D8 /* Model */,
 				BA5151B7180968C200FD69D8 /* View */,
+				BA5151C61809B82800FD69D8 /* Controller */,
 				BA5151B4180964CD00FD69D8 /* ComadAppDelegate.h */,
 				BA5151B5180964CD00FD69D8 /* ComadAppDelegate.m */,
-				BA5151C61809B82800FD69D8 /* Controller */,
 				BA515182180900E200FD69D8 /* Images.xcassets */,
 				BA515171180900E200FD69D8 /* Supporting Files */,
 			);
@@ -760,7 +734,6 @@
 			children = (
 				BA515207180C5ADA00FD69D8 /* Share */,
 				BAE482AD181A78FD00BB1456 /* CreateComad */,
-				BAE4829918193F5C00BB1456 /* ShowGroup */,
 				BAE482951819383600BB1456 /* ShowComad */,
 				BAE4829118191F9000BB1456 /* ShowUser */,
 				BA5151FE180C148F00FD69D8 /* CreateGroup */,
@@ -816,9 +789,6 @@
 				BA5151E5180C118800FD69D8 /* AddFriendViewController.h */,
 				BA5151E6180C118800FD69D8 /* AddFriendViewController.m */,
 				BA03F62818375D35001E9BBE /* AddFriendViewController+View.m */,
-				BA5151E8180C119A00FD69D8 /* CreateGroupViewController.h */,
-				BA5151E9180C119A00FD69D8 /* CreateGroupViewController.m */,
-				BAB147221839D4430078486B /* CreateGroupViewController+View.m */,
 				BA5151EE180C11BE00FD69D8 /* ShowUserViewController.h */,
 				BA5151EF180C11BE00FD69D8 /* ShowUserViewController.m */,
 				BA03F6221836390F001E9BBE /* ShowUserViewController+View.m */,
@@ -832,10 +802,6 @@
 				BA5151F8180C120200FD69D8 /* SettingsViewController.m */,
 				BAE482B8181E645600BB1456 /* LoginViewController.h */,
 				BAE482B9181E645600BB1456 /* LoginViewController.m */,
-				BADD95311825014900DAB12F /* MapViewController.h */,
-				BADD95321825014900DAB12F /* MapViewController.m */,
-				BADD95341825016100DAB12F /* HistoryViewController.h */,
-				BADD95351825016100DAB12F /* HistoryViewController.m */,
 				BA21DFF9184B2767007F64FE /* AddComadViewController.h */,
 				BA21DFFA184B2767007F64FE /* AddComadViewController.m */,
 				BA21DFFD184B286E007F64FE /* AddComadViewController+View.m */,
@@ -858,6 +824,8 @@
 				BA03F61F18362164001E9BBE /* UserJsonClient.m */,
 				BA0EBB0D18617DF9005E69C7 /* ImageCache.h */,
 				BA0EBB0E18617DF9005E69C7 /* ImageCache.m */,
+				BA12B9311866C3EE0036D99B /* Configuration.h */,
+				BA12B9321866C3EE0036D99B /* Configuration.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1008,15 +976,6 @@
 				BADD955A18263C6C00DAB12F /* EditLoacationFormViewController.h */,
 				BADD955B18263C6C00DAB12F /* EditLoacationFormViewController.m */,
 				BADD95CE18310AAE00DAB12F /* EditLoacationFormViewController+View.m */,
-				BADD955D18263CA900DAB12F /* EditLimitFormViewController.h */,
-				BADD955E18263CA900DAB12F /* EditLimitFormViewController.m */,
-				BADD95801828B27300DAB12F /* EditLimitFormViewController+View.m */,
-				BADD956018263CE200DAB12F /* EditGroupOnlyFormViewController.h */,
-				BADD956118263CE200DAB12F /* EditGroupOnlyFormViewController.m */,
-				BADD95831828BE6500DAB12F /* EditGroupOnlyFormViewController+View.m */,
-				BADD95631826679200DAB12F /* EditLocationStatusFormViewController.h */,
-				BADD95641826679200DAB12F /* EditLocationStatusFormViewController.m */,
-				BADD957D18280CD200DAB12F /* EditLocationStatusFormViewController+View.m */,
 			);
 			name = CreateComadForm;
 			sourceTree = "<group>";
@@ -1068,15 +1027,6 @@
 				BAE482A5181A22CF00BB1456 /* Participation.m */,
 			);
 			name = ShowComad;
-			sourceTree = "<group>";
-		};
-		BAE4829918193F5C00BB1456 /* ShowGroup */ = {
-			isa = PBXGroup;
-			children = (
-				BAE4829A18193F6A00BB1456 /* ShowGroup.h */,
-				BAE4829B18193F6A00BB1456 /* ShowGroup.m */,
-			);
-			name = ShowGroup;
 			sourceTree = "<group>";
 		};
 		BAE482AD181A78FD00BB1456 /* CreateComad */ = {
@@ -1306,24 +1256,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BADD957E18280CD200DAB12F /* EditLocationStatusFormViewController+View.m in Sources */,
 				BADD95971828F8EF00DAB12F /* MailSettingsViewController+View.m in Sources */,
 				BA5151C01809B1C200FD69D8 /* FriendCell.m in Sources */,
-				BADD95331825014900DAB12F /* MapViewController.m in Sources */,
 				BA5151F0180C11BE00FD69D8 /* ShowUserViewController.m in Sources */,
 				BADD95B2182F4B5400DAB12F /* Conversation.m in Sources */,
 				BAB147201839D41F0078486B /* IdSearchViewController+View.m in Sources */,
 				BADD958E1828F66A00DAB12F /* NotificationSettingsViewController.m in Sources */,
 				BA21E00D184BAD43007F64FE /* TimeSelectButton.m in Sources */,
 				BADD955C18263C6C00DAB12F /* EditLoacationFormViewController.m in Sources */,
-				BADD955F18263CA900DAB12F /* EditLimitFormViewController.m in Sources */,
 				BA74F952183F743F00FE4629 /* Stamp.m in Sources */,
 				BA03F62018362164001E9BBE /* UserJsonClient.m in Sources */,
 				BADD955518262F4600DAB12F /* BasicLabel.m in Sources */,
-				BADD95811828B27300DAB12F /* EditLimitFormViewController+View.m in Sources */,
 				BA74F94F183D15EB00FE4629 /* SelectPeopleTableCell.m in Sources */,
-				BADD95841828BE6500DAB12F /* EditGroupOnlyFormViewController+View.m in Sources */,
-				BAE4829C18193F6A00BB1456 /* ShowGroup.m in Sources */,
 				BADD95CF18310AAE00DAB12F /* EditLoacationFormViewController+View.m in Sources */,
 				BADD953C18252C7E00DAB12F /* EditAccountViewController.m in Sources */,
 				BA1FE36A184D1AB800E61534 /* OtherViewController.m in Sources */,
@@ -1340,7 +1284,6 @@
 				BA2A74C41811858D00167837 /* ComadJsonClient.m in Sources */,
 				BA03F6231836390F001E9BBE /* ShowUserViewController+View.m in Sources */,
 				BA0EBB0F18617DF9005E69C7 /* ImageCache.m in Sources */,
-				BADD95651826679200DAB12F /* EditLocationStatusFormViewController.m in Sources */,
 				BADD95D61832A6B500DAB12F /* ShowComadViewController+View.m in Sources */,
 				BA74F94C183D15CE00FE4629 /* SelectPeopleTable.m in Sources */,
 				BADD95AF182F3E0900DAB12F /* MessageViewController+View.m in Sources */,
@@ -1350,7 +1293,6 @@
 				BA5151E4180C116F00FD69D8 /* ShowComadViewController.m in Sources */,
 				BADD9571182793B200DAB12F /* EditThumbnailMask.m in Sources */,
 				BA5151F9180C120200FD69D8 /* SettingsViewController.m in Sources */,
-				BA5151EA180C119A00FD69D8 /* CreateGroupViewController.m in Sources */,
 				BA21DFC718474EB0007F64FE /* MyComadViewController.m in Sources */,
 				BA03F6261836516F001E9BBE /* Date.m in Sources */,
 				BADD957B1827EECE00DAB12F /* EditProfileFormViewController+View.m in Sources */,
@@ -1366,16 +1308,15 @@
 				BADD95911828F67B00DAB12F /* NotificationSettingsViewController+View.m in Sources */,
 				BADD95941828F8E000DAB12F /* MailSettingsViewController.m in Sources */,
 				BAE482981819384A00BB1456 /* ShowComad.m in Sources */,
-				BAB147231839D4430078486B /* CreateGroupViewController+View.m in Sources */,
 				BADD95B5182F5AFA00DAB12F /* Bubble.m in Sources */,
 				BADD957518279B7600DAB12F /* EditProfileFormViewController.m in Sources */,
-				BADD956218263CE200DAB12F /* EditGroupOnlyFormViewController.m in Sources */,
 				BA515177180900E200FD69D8 /* main.m in Sources */,
 				BADD95AC182A59AD00DAB12F /* MessagesListViewController+View.m in Sources */,
 				BA21DFFE184B286E007F64FE /* AddComadViewController+View.m in Sources */,
 				BA2A74C118102C7800167837 /* FriendJsonClient.m in Sources */,
 				BADD954E182574AE00DAB12F /* CreateComadFormCell.m in Sources */,
 				BA51520A180C5B1100FD69D8 /* BlackMask.m in Sources */,
+				BA12B9331866C3EE0036D99B /* Configuration.m in Sources */,
 				BA03F62918375D35001E9BBE /* AddFriendViewController+View.m in Sources */,
 				BA2A74BB180FC5A200167837 /* ComadCell.m in Sources */,
 				BA21DFFB184B2767007F64FE /* AddComadViewController.m in Sources */,
@@ -1383,7 +1324,6 @@
 				BAE482BA181E645600BB1456 /* LoginViewController.m in Sources */,
 				BA21E001184B9C9D007F64FE /* TweetButton.m in Sources */,
 				BADD95CC1830ACC700DAB12F /* RoundedButton.m in Sources */,
-				BADD95361825016100DAB12F /* HistoryViewController.m in Sources */,
 				BA74F9551843E14300FE4629 /* FriendsViewController+View.m in Sources */,
 				BA5151B6180964CD00FD69D8 /* ComadAppDelegate.m in Sources */,
 				BA74F938183B7E7500FE4629 /* SpecialMoji.m in Sources */,

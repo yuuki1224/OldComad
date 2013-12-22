@@ -14,6 +14,7 @@
 #import "Image.h"
 #import "BasicLabel.h"
 #import "ShowUserViewController.h"
+#import "Configuration.h"
 
 @interface OtherViewController ()
 
@@ -119,13 +120,7 @@
 
 - (void)mypageTapped:(UITapGestureRecognizer *)sender {
     ShowUserViewController *sc = [[ShowUserViewController alloc]init];
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                         @"浅野友希", @"name",
-                         @"asano.png", @"image_name",
-                         @"エンジニア", @"occupation",
-                         @"yuuki1224", @"comad_id",
-                         @"学生エンジニアです。好きな言語はPHPです。", @"description", nil];
-    sc.userInfo = dic;
+    sc.userInfo = [Configuration user];
     sc.me = YES;
     sc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:sc animated:YES];

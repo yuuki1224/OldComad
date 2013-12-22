@@ -15,6 +15,7 @@
 #import "SocketIO.h"
 #import "SocketIOPacket.h"
 #import "RoundedButton.h"
+#import "Configuration.h"
 
 @interface ShowComadViewController ()
 
@@ -93,8 +94,7 @@
 - (void)intoRoom {
     socketIO = [[SocketIO alloc] initWithDelegate:self];
     socketIO.delegate = self;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *userInfo = [defaults objectForKey:@"user"];
+    NSDictionary *userInfo = [Configuration user];
     int userId = [[userInfo objectForKey:@"id"] intValue];
     int comadId = [[self.comadInfo objectForKey:@"id"] intValue];
     /*
@@ -110,8 +110,7 @@
 
 #pragma SocketIO Delegate
 - (void)socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *userInfo = [defaults objectForKey:@"user"];
+    NSDictionary *userInfo = [Configuration user];
     int userId = [[userInfo objectForKey:@"id"] intValue];
     
     if([packet.args[0] isEqual: @"endInit"]){

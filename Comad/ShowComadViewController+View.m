@@ -12,6 +12,7 @@
 #import "BasicLabel.h"
 #import "Image.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Configuration.h"
 
 @implementation ShowComadViewController (View)
 - (void)configure {
@@ -190,12 +191,11 @@
 #pragma ConversationTextBoxDelegate methods
 //sendButton
 - (void)sendClicked:(NSString *)text {
-    //userDefaultからとってくる
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"image_name"];
-    NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
+    NSString *imageName = [[Configuration user] objectForKey:@"image_name"];
+    NSString *userName = [[Configuration user] objectForKey:@"name"];
+    NSString *userId = [[Configuration user] objectForKey:@"id"];
     
-    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": [[defaults objectForKey:@"user"] objectForKey:@"id"], @"type": @"comad",  @"imageName": imageName, @"userName": userName, @"comadId": [self.comadInfo objectForKey:@"id"]}];
+    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": userId, @"type": @"comad",  @"imageName": imageName, @"userName": userName, @"comadId": [self.comadInfo objectForKey:@"id"]}];
 }
 
 //stamp出現
@@ -214,13 +214,12 @@
 - (void)stampClickedDelegate:(int)stampNum {
     [mask removeFromSuperview];
     [sm removeFromSuperview];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
-    NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
-    NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
+    NSString *imageName = [[Configuration user] objectForKey:@"imageName"];
+    NSString *userName = [[Configuration user] objectForKey:@"name"];
+    NSString *userId = [[Configuration user] objectForKey:@"id"];
     
-    [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": [[defaults objectForKey:@"user"] objectForKey:@"id"], @"type": @"comad",  @"imageName": imageName, @"userName": userName, @"comadId": [self.comadInfo objectForKey:@"id"]}];
+    [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": userId, @"type": @"comad",  @"imageName": imageName, @"userName": userName, @"comadId": [self.comadInfo objectForKey:@"id"]}];
 }
 
 - (void)blackMaskTapped {

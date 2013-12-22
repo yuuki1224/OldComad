@@ -20,7 +20,7 @@
 @end
 
 @implementation EditProfileViewController
-@synthesize userName, comadId, occupation, detail, question1, question2, question3, question4;
+@synthesize userName, comadId, occupation, detail, question1;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -70,13 +70,10 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *userInfo = [userDefaults valueForKey:@"user"];
     self.userName = [userInfo objectForKey:@"name"];
-    self.comadId = [userInfo objectForKey:@"comadId"];
+    self.comadId = [userInfo objectForKey:@"comad_id"];
     self.occupation = [userInfo objectForKey:@"occupation"];
-    self.detail = [userInfo objectForKey:@"detail"];
-    self.question1 = [userInfo objectForKey:@"question1"];
-    self.question2 = [userInfo objectForKey:@"question2"];
-    self.question3 = [userInfo objectForKey:@"question3"];
-    self.question4 = [userInfo objectForKey:@"question4"];
+    self.detail = [userInfo objectForKey:@"description"];
+    self.question1 = [userInfo objectForKey:@"organization"];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -128,18 +125,6 @@
                 ec.editText = self.question1;
                 ec.cellType = Question1;
                 break;
-            case 3:
-                ec.editText = self.question2;
-                ec.cellType = Question2;
-                break;
-            case 4:
-                ec.editText = self.question3;
-                ec.cellType = Question3;
-                break;
-            case 5:
-                ec.editText = self.question4;
-                ec.cellType = Question4;
-                break;
             default:
                 break;
         }
@@ -152,21 +137,19 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *nowUserInfo = [userDefaults valueForKey:@"user"];
     NSString *userId = [nowUserInfo objectForKey:@"id"];
-    NSString *imageName = [nowUserInfo objectForKey:@"imageName"];
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+    NSString *imageName = [nowUserInfo objectForKey:@"image_name"];
+    NSDictionary *newUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
                          userId, @"id",
                          self.userName, @"name",
-                         imageName, @"imageName",
-                         self.comadId, @"comadId",
+                         imageName, @"image_name",
+                         self.comadId, @"comad_id",
                          self.occupation, @"occupation",
-                         self.detail, @"detail",
-                         self.question1, @"question1",
-                         self.question2, @"question2",
-                         self.question3, @"question3",
-                         self.question4, @"question4", nil];
-    [userDefaults setValue:userInfo forKey: @"user"];
+                         self.detail, @"description",
+                         self.question1, @"organization",nil];
+    [userDefaults setValue:newUserInfo forKey: @"user"];
+    [userDefaults synchronize];
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
-    [[UserJsonClient sharedClient]updateUserProfile:userInfo :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
+    [[UserJsonClient sharedClient]updateUserProfile:newUserInfo :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
         [SVProgressHUD dismiss];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(int statusCode, NSString *errorString) {
@@ -191,15 +174,6 @@
             break;
         case Question1:
             self.question1 = text;
-            break;
-        case Question2:
-            self.question2 = text;
-            break;
-        case Question3:
-            self.question3 = text;
-            break;
-        case Question4:
-            self.question4 = text;
             break;
         default:
             break;

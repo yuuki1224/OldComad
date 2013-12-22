@@ -13,6 +13,7 @@
 #import "Image.h"
 #import "BlackMask.h"
 #import "SpecialMoji.h"
+#import "Configuration.h"
 
 @interface MessageViewController ()
 
@@ -36,8 +37,7 @@
         
         [self.view addSubview:header];
         
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        userId = [[[defaults objectForKey:@"user"] objectForKey:@"id"] intValue];
+        userId = [[[Configuration user] objectForKey:@"id"] intValue];
         
         [self configure];
     }
@@ -97,12 +97,10 @@
 }
 
 - (void)sendClicked:(NSString *)text {
-    //userDefaultからとってくる
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
-    NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
+    NSString *imageName = [[Configuration user] objectForKey:@"imageName"];
+    NSString *userName = [[Configuration user] objectForKey:@"name"];
     
-    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": [[defaults objectForKey:@"user"]objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
+    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": [[Configuration user] objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
 }
 
 - (void)plusClicked {
@@ -193,11 +191,10 @@
     [mask removeFromSuperview];
     [sm removeFromSuperview];
     NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *imageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
-    NSString *userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
+    NSString *imageName = [[Configuration user] objectForKey:@"imageName"];
+    NSString *userName = [[Configuration user] objectForKey:@"name"];
     
-    [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": [[defaults objectForKey:@"user"] objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
+    [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": [[Configuration user] objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
 }
 
 - (void)blackMaskTapped {

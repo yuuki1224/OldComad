@@ -171,7 +171,6 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
     cell.detailTextLabel.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:14.0f];
-    
     switch (indexPath.section) {
         case 0: {
             switch (indexPath.row) {
@@ -196,29 +195,11 @@
             break;
         }
         case 1: {
-            switch (indexPath.row) {
-                case 0:
-                    cell.detailTextLabel.text = self.detail;
-                    break;
-                default:
-                    break;
-            }
+            cell.detailTextLabel.text = self.detail;
             break;
         }
         case 2: {
             cell.detailTextLabel.text = self.question1;
-            break;
-        }
-        case 3: {
-            cell.detailTextLabel.text = self.question2;
-            break;
-        }
-        case 4: {
-            cell.detailTextLabel.text = self.question3;
-            break;
-        }
-        case 5: {
-            cell.detailTextLabel.text = self.question4;
             break;
         }
         default: {

@@ -55,10 +55,10 @@
     if(self.me){
         nameLabel.text = [userInfo objectForKey:@"name"];
         
-        if([[userInfo objectForKey:@"comadId"] isEqualToString:@""]){
+        if([[userInfo objectForKey:@"comad_id"] isEqualToString:@""]){
             userIdLabel.text = @"コマドIDは設定されていません。";
         }else{
-            userIdLabel.text = [userInfo objectForKey:@"comadId"];
+            userIdLabel.text = [userInfo objectForKey:@"comad_id"];
         }
         if(![[self.userInfo allKeys]containsObject:@"occupation"] || [[self.userInfo objectForKey:@"occupation"]isEqualToString:@""]){
             occupationLabel.text = @"職業";
@@ -73,7 +73,9 @@
         nameLabel.frame = CGRectMake(windowSize.size.width/2 - nameLabel.frame.size.width/2, 115, nameLabel.frame.size.width, nameLabel.frame.size.height);
         userIdLabel.frame = CGRectMake(windowSize.size.width/2 - userIdLabel.frame.size.width/2, 140, userIdLabel.frame.size.width, userIdLabel.frame.size.height);
         occupationLabel.frame = CGRectMake(windowSize.size.width/2 - occupationLabel.frame.size.width/2, 160, occupationLabel.frame.size.width, occupationLabel.frame.size.height);
+        
     }else{
+        
         nameLabel.text = [self.userInfo objectForKey:@"name"];
         if([[self.userInfo objectForKey:@"comad_id"] isEqualToString:@""]){
             userIdLabel.text = @"コマドIDは設定されていません。";
@@ -121,15 +123,15 @@
         
         [scrollView addSubview: editProfileBtn];
         
-        if(![[self.userInfo allKeys] containsObject:@"description"]){
+        if(![[userInfo allKeys] containsObject:@"description"]){
             [showUserList setContent:@"まだ入力されていません。"];
         }else {
-            [showUserList setContent:[self.userInfo objectForKey:@"description"]];
+            [showUserList setContent:[userInfo objectForKey:@"description"]];
         }
-        if(![[self.userInfo allKeys]containsObject:@"organization"]){
+        if(![[userInfo allKeys]containsObject:@"organization"]){
             [question1 setContent:@"まだ入力されていません。"];
         }else {
-            [question1 setContent:[self.userInfo objectForKey:@"organization"]];
+            [question1 setContent:[userInfo objectForKey:@"organization"]];
         }
     }else{
         UIImage *messageImage = [UIImage imageNamed:@"messageButton.png"];
