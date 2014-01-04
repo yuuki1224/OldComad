@@ -9,6 +9,7 @@
 #import "PopularComadViewController.h"
 #import "ComadCell.h"
 #import "ShowComadViewController.h"
+#import "Basic.h"
 
 @interface PopularComadViewController ()
 
@@ -52,6 +53,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if([PopularComad count] == 0){
+        BasicLabel *nameText = [[BasicLabel alloc]initWithName:FriendCellName];
+        nameText.text = @"現在該当のコマドがありません";
+        [nameText sizeToFit];
+        float width = nameText.frame.size.width;
+        float height = nameText.frame.size.height;
+        nameText.frame = CGRectMake((SCREEN_BOUNDS.size.width - width)/2, 32 - height/2, width, height);
+        [self.view addSubview: nameText];
+    }
 }
 
 // セルのView

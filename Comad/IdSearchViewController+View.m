@@ -80,7 +80,9 @@
 
 -(void)addButtonTapped:(UITapGestureRecognizer *)sender {
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
-    [[FriendJsonClient sharedClient]addFriend:10 friendId:self.addFriendID success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *user = [defaults dictionaryForKey:@"user"];
+    [[FriendJsonClient sharedClient]addFriend:[[user objectForKey:@"id"] intValue] friendId:self.addFriendID success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
         [SVProgressHUD dismiss];
         UIAlertView *alert = [[UIAlertView alloc]init];
         alert.delegate = self;
@@ -97,6 +99,7 @@
         [alert show];
     }];
 }
+
 
 -(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController popViewControllerAnimated:YES];

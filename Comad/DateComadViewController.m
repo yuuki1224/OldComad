@@ -9,6 +9,7 @@
 #import "DateComadViewController.h"
 #import "ComadCell.h"
 #import "ShowComadViewController.h"
+#import "Basic.h"
 
 @interface DateComadViewController ()
 
@@ -45,6 +46,19 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    int count = [[DateComad objectForKey:@"now"] count] + [[DateComad objectForKey:@"today"] count] + [[DateComad objectForKey:@"tomorrow"] count] + [[DateComad objectForKey:@"day_after_tomorrow"] count] + [[DateComad objectForKey:@"any_time"] count];
+    if(count == 0){
+        BasicLabel *nameText = [[BasicLabel alloc]initWithName:FriendCellName];
+        nameText.text = @"現在該当のコマドがありません";
+        [nameText sizeToFit];
+        float width = nameText.frame.size.width;
+        float height = nameText.frame.size.height;
+        nameText.frame = CGRectMake((SCREEN_BOUNDS.size.width - width)/2, 32 - height/2, width, height);
+        [self.view addSubview: nameText];
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -32,8 +32,10 @@
             [friendsMutableArray addObject:[_friends objectAtIndex:i]];
         }
         
-        [Configuration setFriends:[responseObject objectForKey:@"friends"]];
-        [Configuration synchronize];
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSData *friendsData = [NSKeyedArchiver archivedDataWithRootObject: friendsMutableArray];
+        [userDefaults setObject: friendsData forKey:@"friends"];
+        [userDefaults synchronize];
         
         [friendsTable reloadData];
         [SVProgressHUD dismiss];
@@ -77,7 +79,11 @@
             return [_groups count];
             break;
         case 4:
-            return [_friends count];
+            if([_friends count] == 0){
+                return 1;
+            }else{
+                return [_friends count];
+            }
             break;
         default:
             return 0;
@@ -108,8 +114,12 @@
         [cell setGroupCell];
         //コマとも
     }else if(indexPath.section == 4){
-        cell.userInfo = [_friends objectAtIndex:indexPath.row];
-        [cell setFriendCell:NO];
+        if([_friends count] == 0){
+            [cell setNoFriends];
+        }else{
+            cell.userInfo = [_friends objectAtIndex:indexPath.row];
+            [cell setFriendCell:NO];
+        }
     }else {
     }
     return  cell;
@@ -144,7 +154,7 @@
         }
         case 4:{
             if([_friends count] == 0){
-                return 0;
+                return 35;
             }else{
                 return 35.0;
             }
@@ -252,7 +262,10 @@
     }else if (indexPath.section == 3){
         //グループ表示
     }else if (indexPath.section == 4){
-        [self.delegate showModalView: userInfo];
+        if([_friends count] == 0){
+        }else {
+            [self.delegate showModalView: userInfo];
+        }
     }
 }
 

@@ -16,6 +16,7 @@
 #import "ShowUserViewController.h"
 #import "FriendCell.h"
 #import "BasicLabel.h"
+#import "SVProgressHUD.h"
 
 @interface FriendsViewController () {
 }
@@ -74,6 +75,7 @@
 }
 
 - (void)AddFriendBtnClicked {
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     AddFriendViewController *ac = [[AddFriendViewController alloc]init];
     [self.navigationController pushViewController:ac animated:NO];
 }
@@ -89,6 +91,7 @@
 }
 
 - (void)addFriendBtnClicked:(UIButton *)button {
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     AddFriendViewController *ac = [[AddFriendViewController alloc]init];
     ac.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:ac animated:YES];

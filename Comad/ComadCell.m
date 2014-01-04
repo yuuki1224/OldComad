@@ -59,7 +59,7 @@
     [name sizeToFit];
     name.frame = CGRectMake(77, 11, name.frame.size.width, name.frame.size.height);
     BasicLabel *comadId = [[BasicLabel alloc]initWithName:ComadId];
-    comadId.text = [comadInfo objectForKey:@"comadId"];
+    comadId.text = [comadInfo objectForKey:@"comad_id"];
     [comadId sizeToFit];
     comadId.frame = CGRectMake(name.frame.origin.x + name.frame.size.width + 5, name.frame.origin.y + 1, comadId.frame.size.width, comadId.frame.size.height);
     BasicLabel *title = [[BasicLabel alloc]initWithName:ComadCellTitle];

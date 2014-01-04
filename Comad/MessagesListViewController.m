@@ -32,9 +32,14 @@
         header.delegate = self;
         
         [self.view addSubview:header];
-        
-        NSData* friendsData = [Configuration friends];
-        friendsArray = [NSKeyedUnarchiver unarchiveObjectWithData: friendsData];
+
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSData *friendsData = [userDefaults objectForKey: @"friends"];
+        if(friendsData == nil){
+            friendsArray = [[NSArray alloc] init];
+        }else {
+            friendsArray = [NSKeyedUnarchiver unarchiveObjectWithData: friendsData];
+        }
         
         [self configure];
     }

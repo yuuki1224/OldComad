@@ -11,10 +11,8 @@
 #import "IdSearchViewController.h"
 #import "Header.h"
 #import "Image.h"
-#import "UserJsonClient.h"
 #import "BlackMask.h"
 #import "UserModal.h"
-#import "SVProgressHUD.h"
 #import "FriendJsonClient.h"
 #import "Configuration.h"
 
@@ -30,25 +28,13 @@
     if (self) {
         windowSize = [[UIScreen mainScreen] bounds];
         iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-        // Custom initialization
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    /*
-    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
-    [[UserJsonClient sharedClient] getAddFriendInfo:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        facebookFriends = responseObject;
-        NSLog(@"%i", [facebookFriends count]);
-        [SVProgressHUD dismiss];
-        [self configure];
-    } failure:^(int statusCode, NSString *errorString) {
-        NSLog(@"error");
-        [SVProgressHUD dismiss];
-    }];
-     */
+    [self setInfo];
     [self configure];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -125,6 +111,7 @@
         UIAlertView *alert = [[UIAlertView alloc]init];
         alert.title = @"お知らせ";
         alert.message = @"友達を追加しました";
+        alert.delegate = self;
         [alert addButtonWithTitle:@"閉じる"];
         [alert show];
     } failure:^(int statusCode, NSString *errorString) {
@@ -166,6 +153,11 @@
 #pragma HeaderDelagete methods
 
 - (void)backBtnClickedDelegate {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma UIAlertViewDelegate methods
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

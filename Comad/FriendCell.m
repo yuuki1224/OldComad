@@ -81,6 +81,16 @@
     [self addSubview: inviteButtonView];
 }
 
+- (void)setNoFriends {
+    BasicLabel *nameText = [[BasicLabel alloc]initWithName:FriendCellName];
+    nameText.text = @"現在コマド上で友達がいません。";
+    [nameText sizeToFit];
+    float width = nameText.frame.size.width;
+    float height = nameText.frame.size.height;
+    nameText.frame = CGRectMake((windowSize.size.width - width)/2, 32 - height/2, width, height);
+    [self addSubview: nameText];
+}
+
 - (void)inviteButtonTabpped:(UITapGestureRecognizer *)sender {
     [self.delegate inviteButtonClicked];
 }

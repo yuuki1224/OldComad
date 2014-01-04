@@ -13,7 +13,7 @@
 
 @implementation ComadAppDelegate
 
-@synthesize window, largeFont, smallFont;
+@synthesize window, largeFont, smallFont, friendReload;
 static ComadAppDelegate* _sharedInstance = nil;
 
 - (id)init {
@@ -21,7 +21,6 @@ static ComadAppDelegate* _sharedInstance = nil;
     if(!self){
         return nil;
     }
-
     _sharedInstance = self;
     return self;
 }
@@ -30,8 +29,8 @@ static ComadAppDelegate* _sharedInstance = nil;
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
     //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];  //statusbar白くなる
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-
-    NSLog(@"アプリに入ったときのUserの値: %@",[Configuration user]);
+    self.friendReload = NO;
+    
     if([Configuration user]){
         tc = [[TabBarController alloc]init];
         [self.window addSubview:tc.view];

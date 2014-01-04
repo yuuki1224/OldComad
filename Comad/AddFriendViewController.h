@@ -14,13 +14,15 @@
 #import "FriendCell.h"
 #import "Header.h"
 
-@interface AddFriendViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, AddFriendMenuDelegate, UserModalDelegate, FriendCellDelegate, BlackMaskDelegate, HeaderDelegate> {
+@interface AddFriendViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, AddFriendMenuDelegate, UserModalDelegate, FriendCellDelegate, BlackMaskDelegate, HeaderDelegate, UIAlertViewDelegate> {
     CGRect windowSize;
     float iOSVersion;
     UserModal *userModal;
     BlackMask *blackMask;
-    NSArray *facebookFriends;
+    UITableView *addFriendsTable;
+    NSMutableArray *facebookFriends;
 }
 
 -(void)configure;
+- (void)setInfo;
 @end

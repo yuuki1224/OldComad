@@ -10,8 +10,24 @@
 #import "AddFriendMenu.h"
 #import "BasicLabel.h"
 #import "FriendCell.h"
+#import "SVProgressHUD.h"
+#import "UserJsonClient.h"
 
 @implementation AddFriendViewController (View)
+- (void)setInfo {
+    [[UserJsonClient sharedClient] getAddFriendInfo:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
+        facebookFriends = [[NSMutableArray alloc]init];
+        for (int i = 0; [responseObject count] > i; i++) {
+            [facebookFriends addObject: [responseObject objectAtIndex: i]];
+        }
+        [SVProgressHUD dismiss];
+        [addFriendsTable reloadData];
+    } failure:^(int statusCode, NSString *errorString) {
+        NSLog(@"error");
+        [SVProgressHUD dismiss];
+    }];
+}
+
 - (void)configure {
     AddFriendMenu *menu = [[AddFriendMenu alloc]init];
     menu.delegate = self;
@@ -20,7 +36,7 @@
         menu.frame = CGRectMake(0, 48, windowSize.size.width, 87);
     }
     
-    UITableView *addFriendsTable = [[UITableView alloc]init];
+    addFriendsTable = [[UITableView alloc]init];
     if((int)iOSVersion == 7){
         addFriendsTable.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height);
     }else if((int)iOSVersion == 6){
@@ -38,11 +54,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return 3;
+            return [facebookFriends count];
             break;
         case 1:
             //return [facebookFriends count];
-            return 4;
+            return 0;
             break;
         default:
             break;
@@ -51,83 +67,13 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FriendCell *cell = [[FriendCell alloc]init];
-    NSDictionary *userInfo;
-    switch (indexPath.section) {
-        case 0:{
-            switch (indexPath.row) {
-                case 0:{
-                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"10", @"id",
-                                @"石丸翔也", @"name",
-                                @"ishimaru.png", @"image_name",
-                                @"mrk1869", @"comad_id",
-                                @"エンジニア", @"occupation",nil];
-                    break;
-                }
-                case 1:{
-                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"11", @"id",
-                                @"原美雪", @"name",
-                                @"hara.png", @"image_name",
-                                @"miyuk1", @"comad_id",
-                                @"デザイナー", @"occupation",nil];
-                    break;
-                }
-                case 2:{
-                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"12", @"id",
-                                @"安武沙也加", @"name",
-                                @"yasutake.png", @"image_name",
-                                @"sachan", @"comad_id",
-                                @"デザイナー", @"occupation",nil];
-                    break;
-                }
-                default:
-                    break;
-            }
-            break;
-        }
-        case 1:{
-            switch (indexPath.row) {
-                case 0:{
-                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"13", @"id",
-                                @"小澤佳祐", @"name",
-                                @"ozawa.png", @"image_name",nil];
-                    break;
-                }
-                case 1:{
-                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"14", @"id",
-                                @"山本翔大", @"name",
-                                @"yamamoto.png", @"image_name",nil];
-                    break;
-                }
-                case 2:{
-                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"16", @"id",
-                                @"繁谷悠", @"name",
-                                @"shigetani.png", @"image_name",nil];
-                    break;
-                }
-                case 3:{
-                    userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"17", @"id",
-                                @"高松直也", @"name",
-                                @"takamatsu.png", @"image_name",nil];
-                    break;
-                }
-            }
-            break;
-        }
-        default:
-            break;
-    }
+    NSDictionary *userInfo = [facebookFriends objectAtIndex: indexPath.row];
+  
     if(indexPath.section == 0){
         cell.userInfo = userInfo;
         [cell setFriendCell:NO];

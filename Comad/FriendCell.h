@@ -22,6 +22,7 @@
 - (void)setFriendCellWithURL;
 - (void)setGroupCell;
 - (void)setInviteButton;
+- (void)setNoFriends;
 @end
 
 @protocol FriendCellDelegate <NSObject>

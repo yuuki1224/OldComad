@@ -10,6 +10,7 @@
 #import "BasicLabel.h"
 #import "Image.h"
 #import "EditThumbnailMask.h"
+#import "Configuration.h"
 
 @implementation EditProfileViewController (View) 
 
@@ -81,7 +82,9 @@
         case 0:{
             header.frame = CGRectMake(0, 0, windowSize.size.width, 100);
             header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
-            UIImage *thumbnailImage = [UIImage imageNamed:@"asano.png"];
+            
+            NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, [[Configuration user] objectForKey:@"image_name"]];
+            UIImage *thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
             UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:80 resizeHeight:80];
             UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImageResize];
             thumbnail.frame = CGRectMake(20, (header.frame.size.height - 80)/2, 80, 80);

@@ -44,11 +44,18 @@
 
     self.tableView.frame = CGRectMake(0, 0, 300, 600);
     self.tableView.contentSize = CGSizeMake(300, 400);
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+}
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (void)viewWillAppear:(BOOL)animated {
+    if([NewComad count] == 0){
+        BasicLabel *nameText = [[BasicLabel alloc]initWithName:FriendCellName];
+        nameText.text = @"現在該当のコマドがありません";
+        [nameText sizeToFit];
+        float width = nameText.frame.size.width;
+        float height = nameText.frame.size.height;
+        nameText.frame = CGRectMake((windowSize.size.width - width)/2, 32 - height/2, width, height);
+        [self.view addSubview: nameText];
+    }
 }
 
 - (void)didReceiveMemoryWarning

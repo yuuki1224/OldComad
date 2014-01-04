@@ -621,6 +621,21 @@
 			name = SelectTime;
 			sourceTree = "<group>";
 		};
+		BA2685C71874854C00731FBF /* Comad */ = {
+			isa = PBXGroup;
+			children = (
+				BA21DFBC18474E7D007F64FE /* NewComadViewController.h */,
+				BA21DFBD18474E7D007F64FE /* NewComadViewController.m */,
+				BA21DFBF18474E95007F64FE /* DateComadViewController.h */,
+				BA21DFC018474E95007F64FE /* DateComadViewController.m */,
+				BA21DFC218474EA1007F64FE /* PopularComadViewController.h */,
+				BA21DFC318474EA1007F64FE /* PopularComadViewController.m */,
+				BA21DFC518474EB0007F64FE /* MyComadViewController.h */,
+				BA21DFC618474EB0007F64FE /* MyComadViewController.m */,
+			);
+			name = Comad;
+			sourceTree = "<group>";
+		};
 		BA2A74C91815058200167837 /* modal */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +784,7 @@
 		BA5151C61809B82800FD69D8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BA2685C71874854C00731FBF /* Comad */,
 				BAB147121837DAE00078486B /* AddFriend */,
 				BADD958B1828F60D00DAB12F /* Settings */,
 				BADD957218279B4700DAB12F /* EditProfileForm */,
@@ -835,14 +851,6 @@
 			children = (
 				BA2A74B9180FC5A200167837 /* ComadCell.h */,
 				BA2A74BA180FC5A200167837 /* ComadCell.m */,
-				BA21DFBC18474E7D007F64FE /* NewComadViewController.h */,
-				BA21DFBD18474E7D007F64FE /* NewComadViewController.m */,
-				BA21DFBF18474E95007F64FE /* DateComadViewController.h */,
-				BA21DFC018474E95007F64FE /* DateComadViewController.m */,
-				BA21DFC218474EA1007F64FE /* PopularComadViewController.h */,
-				BA21DFC318474EA1007F64FE /* PopularComadViewController.m */,
-				BA21DFC518474EB0007F64FE /* MyComadViewController.h */,
-				BA21DFC618474EB0007F64FE /* MyComadViewController.m */,
 			);
 			name = Comads;
 			sourceTree = "<group>";

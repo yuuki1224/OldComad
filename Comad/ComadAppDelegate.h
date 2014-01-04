@@ -17,6 +17,7 @@
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) UIFont *largeFont;
 @property (nonatomic, retain) UIFont *smallFont;
+@property (nonatomic) BOOL friendReload;
 
 +(ComadAppDelegate *)sharedAppDelegate;
 @end

@@ -16,6 +16,7 @@
 #import "TimeSelectButton.h"
 #import "EditTimeFormViewController.h"
 #import "EditLoacationFormViewController.h"
+#import "Configuration.h"
 
 @implementation AddComadViewController (View)
 - (void)configure {
@@ -31,7 +32,8 @@
     NSDictionary* userInfo = [defaults objectForKey:@"user"];
     
     //サムネイル、名前、ComadId
-    UIImage *thumbnailImage = [UIImage imageNamed:[userInfo objectForKey:@"imageName"]];
+    NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, [[Configuration user] objectForKey:@"image_name"]];
+    UIImage *thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
     UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     thumbnail.frame = CGRectMake(10, 5, 37, 37);
@@ -44,7 +46,7 @@
     comadId.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
     
     name.text = [userInfo objectForKey:@"name"];
-    comadId.text = [NSString stringWithFormat:@"@%@",[userInfo objectForKey:@"comadId"]];
+    comadId.text = [NSString stringWithFormat:@"@%@",[userInfo objectForKey:@"comad_id"]];
 
     [name sizeToFit];
     [comadId sizeToFit];
@@ -183,12 +185,19 @@
 
 - (void)timeFormTabpped:(UITapGestureRecognizer *)sender {
     EditTimeFormViewController *ec = [[EditTimeFormViewController alloc]init];
+    if(![datetime.text isEqualToString:@"未定"]){
+        NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
+        [inputFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        NSDate *formatterDate = [inputFormatter dateFromString: datetime.text];
+        ec.beforeEditTime = formatterDate;
+    }
     ec.delegate = self;
     [self.navigationController pushViewController:ec animated:YES];
 }
 
 - (void)locationFormTabpped:(UITapGestureRecognizer *)sender {
     EditLoacationFormViewController *ec = [[EditLoacationFormViewController alloc]init];
+    ec.location = location.text;
     ec.delegate = self;
     [self.navigationController pushViewController:ec animated:YES];
 }

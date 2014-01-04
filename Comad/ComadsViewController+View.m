@@ -35,7 +35,6 @@
 }
 
 - (void)configure {
-
     newComadTable = [[NewComadViewController alloc]init];
     dateComadTable = [[DateComadViewController alloc]init];
     popularComadTable = [[PopularComadViewController alloc]init];

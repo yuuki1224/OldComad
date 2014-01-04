@@ -77,6 +77,10 @@
     }else {
         placeholder.text = @"";
     }
+    if(wordLength > 30){
+        text.text = [text.text substringToIndex:29];;
+        wordCount.text = [NSString stringWithFormat:@"0/30"];
+    }
     NSRange searchResult = [text.text rangeOfString:@"\n"];
     if(searchResult.location != NSNotFound){
         text.text = [text.text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -84,6 +88,9 @@
         if(wordLength == 1){
             placeholder.text = @"ひとこと";
             wordCount.text = [NSString stringWithFormat:@"30/30"];
+        }else if(wordLength > 30){
+            text.text = [text.text substringToIndex:30];;
+            wordCount.text = [NSString stringWithFormat:@"0/30"];
         }
     }
 }

@@ -15,6 +15,7 @@
 #import "BasicLabel.h"
 #import "ShowUserViewController.h"
 #import "Configuration.h"
+#import "SVProgressHUD.h"
 
 @interface OtherViewController ()
 
@@ -113,6 +114,7 @@
 
 
 - (void)addFriendTapped:(UITapGestureRecognizer *)sender {
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     AddFriendViewController *ac = [[AddFriendViewController alloc]init];
     ac.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:ac animated:YES];
