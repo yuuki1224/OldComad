@@ -8,8 +8,6 @@
 
 #import "SettingsViewController.h"
 #import "EditProfileViewController.h"
-#import "EditAccountViewController.h"
-#import "MailSettingsViewController.h"
 #import "Header.h"
 #import "Image.h"
 #import "LoginViewController.h"
@@ -140,8 +138,6 @@
                 EditProfileViewController *ec = [[EditProfileViewController alloc]init];
                 [self.navigationController pushViewController:ec animated:YES];
             }else if(indexPath.row == 1){
-                EditAccountViewController *ec = [[EditAccountViewController alloc]init];
-                [self.navigationController pushViewController:ec animated:YES];
             }
             break;
         case 1:
