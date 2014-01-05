@@ -50,46 +50,46 @@
 - (void)addConversation:(NSString *)conversationText :(NSString *)userName :(NSString *)imageName{
     Bubble *bubble;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *meImageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
+    NSString *meImageName = [[defaults objectForKey:@"user"] objectForKey:@"image_name"];
     
     //自分のだったら右に付け足す
     if([meImageName isEqual:imageName]){
-        bubble = [[Bubble alloc]initWithName:Right];
-        bubble.mail = conversationText;
+        bubble = [[Bubble alloc]initWithName: Right];
+        bubble.sentence = conversationText;
         bubble.userName = [[defaults objectForKey:@"user"] objectForKey:@"name"];
         bubble.imageName = imageName;
         [bubble setLabel];
         
         CGSize bounds = CGSizeMake(150, 500);
         UILineBreakMode mode = UILineBreakModeWordWrap;
-        CGSize size = [bubble.mail sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode:mode];
+        CGSize size = [bubble.sentence sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode:mode];
         float height = size.height + 16;
         
         bubble.frame = CGRectMake(0, conversationHeight, windowSize.size.width, (int)height + 15);
         [self addSubview: bubble];
-        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
+        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + height + 49);
         conversationHeight += bubble.frame.size.height;
     
     //自分の以外だったら左に付け足す
     }else{
-        bubble = [[Bubble alloc]initWithName:Left];
-        bubble.mail = conversationText;
+        bubble = [[Bubble alloc]initWithName: Left];
+        bubble.sentence = conversationText;
         bubble.userName = userName;
         bubble.imageName = imageName;
         [bubble setLabel];
         
         CGSize bounds = CGSizeMake(150, 500);
         UILineBreakMode mode = UILineBreakModeWordWrap;
-        CGSize size = [bubble.mail sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode:mode];
+        CGSize size = [bubble.sentence sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode:mode];
         float height = size.height + 16;
         
-        bubble.frame = CGRectMake(0, conversationHeight, windowSize.size.width, (int)height + 30);
+        bubble.frame = CGRectMake(0, conversationHeight, windowSize.size.width, (int)height + 45);
         [self addSubview: bubble];
-        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
+        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + height + 69);
         conversationHeight += bubble.frame.size.height;
     }
     if(conversationHeight > 400){
-        [self setContentOffset:CGPointMake(0, conversationHeight - 215)];
+        [self setContentOffset: CGPointMake(0, conversationHeight - 318)];
     }
 }
 
@@ -100,7 +100,7 @@
     NSString *stampImageName = [dic objectForKey: [NSString stringWithFormat:@"%i", stampNum]];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *meImageName = [[defaults objectForKey:@"user"] objectForKey:@"imageName"];
+    NSString *meImageName = [[defaults objectForKey:@"user"] objectForKey:@"image_name"];
     
     //自分のだったら右に付け足す
     if([meImageName isEqual:imageName]){
@@ -109,7 +109,7 @@
         [stamp setStamp: stampImageName conversationHeight: conversationHeight];
         [self addSubview: stamp];
         
-        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
+        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 133);
         conversationHeight += stamp.frame.size.height;
     //自分以外だったら左に付け足す
     }else{
@@ -119,12 +119,11 @@
         [stamp setStamp: stampImageName conversationHeight:conversationHeight];
         [self addSubview: stamp];
         
-        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 200);
+        self.contentSize = CGSizeMake(windowSize.size.width, conversationHeight + 140);
         conversationHeight += stamp.frame.size.height;
     }
     if(conversationHeight > 400){
-        [self setContentOffset:CGPointMake(0, conversationHeight - 300)];
+        [self setContentOffset:CGPointMake(0, conversationHeight - 318)];
     }
 }
-
 @end

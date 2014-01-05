@@ -12,7 +12,6 @@
 		BA03F6231836390F001E9BBE /* ShowUserViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F6221836390F001E9BBE /* ShowUserViewController+View.m */; };
 		BA03F6261836516F001E9BBE /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F6251836516F001E9BBE /* Date.m */; };
 		BA03F62918375D35001E9BBE /* AddFriendViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03F62818375D35001E9BBE /* AddFriendViewController+View.m */; };
-		BA0EBB0F18617DF9005E69C7 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0EBB0E18617DF9005E69C7 /* ImageCache.m */; };
 		BA12B9331866C3EE0036D99B /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = BA12B9321866C3EE0036D99B /* Configuration.m */; };
 		BA1FE338184CA8AA00E61534 /* backForiOS6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE337184CA8AA00E61534 /* backForiOS6@2x.png */; };
 		BA1FE33E184CAADF00E61534 /* todayOff.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1FE339184CAADF00E61534 /* todayOff.png */; };
@@ -210,8 +209,6 @@
 		BA03F6241836516F001E9BBE /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
 		BA03F6251836516F001E9BBE /* Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Date.m; sourceTree = "<group>"; };
 		BA03F62818375D35001E9BBE /* AddFriendViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AddFriendViewController+View.m"; sourceTree = "<group>"; };
-		BA0EBB0D18617DF9005E69C7 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
-		BA0EBB0E18617DF9005E69C7 /* ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
 		BA12B9311866C3EE0036D99B /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
 		BA12B9321866C3EE0036D99B /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		BA1FE337184CA8AA00E61534 /* backForiOS6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backForiOS6@2x.png"; sourceTree = "<group>"; };
@@ -838,8 +835,6 @@
 				BA2A74C31811858D00167837 /* ComadJsonClient.m */,
 				BA03F61E18362164001E9BBE /* UserJsonClient.h */,
 				BA03F61F18362164001E9BBE /* UserJsonClient.m */,
-				BA0EBB0D18617DF9005E69C7 /* ImageCache.h */,
-				BA0EBB0E18617DF9005E69C7 /* ImageCache.m */,
 				BA12B9311866C3EE0036D99B /* Configuration.h */,
 				BA12B9321866C3EE0036D99B /* Configuration.m */,
 			);
@@ -1291,7 +1286,6 @@
 				BA21DFAC1847323F007F64FE /* ComadsViewController.m in Sources */,
 				BA2A74C41811858D00167837 /* ComadJsonClient.m in Sources */,
 				BA03F6231836390F001E9BBE /* ShowUserViewController+View.m in Sources */,
-				BA0EBB0F18617DF9005E69C7 /* ImageCache.m in Sources */,
 				BADD95D61832A6B500DAB12F /* ShowComadViewController+View.m in Sources */,
 				BA74F94C183D15CE00FE4629 /* SelectPeopleTable.m in Sources */,
 				BADD95AF182F3E0900DAB12F /* MessageViewController+View.m in Sources */,

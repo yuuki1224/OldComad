@@ -14,6 +14,8 @@
 #import "RoundedButton.h"
 #import "UserJsonClient.h"
 #import "SVProgressHUD.h"
+#import "Basic.h"
+#import "AFHTTPClient.h"
 
 @interface EditProfileViewController ()
 
@@ -150,9 +152,33 @@
     [userDefaults synchronize];
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     [[UserJsonClient sharedClient]updateUserProfile:newUserInfo :^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        [SVProgressHUD dismiss];
-        [self.navigationController popViewControllerAnimated:YES];
+        //成功したら
+        if(profileImage){
+            // 引き続き写真アップロード
+            NSURL *baseUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/user/update_image", HOST_URL]];
+            NSData *receiveData = [[NSData alloc]initWithData: UIImageJPEGRepresentation(profileImage, 1.0)];
+            NSDictionary *params = @{@"user_id": [nowUserInfo objectForKey:@"id"]};
+            
+            AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL: baseUrl];
+            
+            NSMutableURLRequest *request = [client multipartFormRequestWithMethod:@"POST" path:@"/api/user/update_image" parameters: params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                [formData appendPartWithFileData:receiveData name:@"profileImage" fileName:@"profile.jpg" mimeType:@"image/jpeg"];
+            }];
+            AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest: request];
+            [operation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+                if(totalBytesExpectedToWrite == totalBytesWritten){
+                    [SVProgressHUD dismiss];
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+            }];
+            NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+            [queue addOperation:operation];
+        }else{
+            [SVProgressHUD dismiss];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     } failure:^(int statusCode, NSString *errorString) {
+        //失敗したら
         [SVProgressHUD dismiss];
         [self.navigationController popViewControllerAnimated:YES];
     }];
@@ -181,7 +207,6 @@
 }
 
 #pragma HeaderDelagete methods
-
 - (void)backBtnClickedDelegate {
     [self.navigationController popViewControllerAnimated:YES];
 }

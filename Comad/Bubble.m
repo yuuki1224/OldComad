@@ -10,7 +10,7 @@
 #import "BasicLabel.h"
 
 @implementation Bubble
-@synthesize userName, mail, bubbleHeight, imageName;
+@synthesize userName, sentence, bubbleHeight, imageName;
 
 - (id)initWithName:(Side)name {
     self = [super init];
@@ -47,11 +47,11 @@
 }
 
 -(void)drawRightBubble {
-    //self.mailに入ってる文字を描画する
+    //self.sentenceに入ってる文字を描画する
     CGSize bounds = CGSizeMake(150, 500);
     
     UILineBreakMode mode = UILineBreakModeWordWrap;
-    CGSize size = [self.mail sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode: mode];
+    CGSize size = [self.sentence sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode: mode];
     int rowNum = (int)size.height/14;
     
     float height = size.height + 16;
@@ -112,7 +112,7 @@
     CGRect textRect = CGRectMake(bubbleRect.origin.x + 10 , bubbleRect.origin.y + 8, bubbleRect.size.width - 23 , bubbleRect.size.height - 16);
     
     //NSString *text = @"こんにちは。\n吹き出し描いたよ。\nくちばし部分の構造は下の絵を見てね。";
-    NSString *text = self.mail;
+    NSString *text = self.sentence;
     [[UIColor colorWithWhite:0.1 alpha:1] set];
     [text drawInRect:textRect withFont:[UIFont systemFontOfSize:12]];
     
@@ -125,7 +125,7 @@
     CGSize bounds = CGSizeMake(150, 500);
     
     UILineBreakMode mode = UILineBreakModeWordWrap;
-    CGSize size = [self.mail sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode: mode];
+    CGSize size = [self.sentence sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:bounds lineBreakMode: mode];
     int rowNum = (int)size.height/14;
     
     float height = size.height + 16;
@@ -183,7 +183,7 @@
     
     //テキスト
     CGRect textRect = CGRectMake(bubbleRect.origin.x + 18, bubbleRect.origin.y + 8, bubbleRect.size.width - 25 , bubbleRect.size.height - 16);;
-    NSString *text = self.mail;
+    NSString *text = self.sentence;
     [[UIColor colorWithWhite:0.1 alpha:1] set];
     [text drawInRect:textRect withFont:[UIFont systemFontOfSize:12]];
     
@@ -200,7 +200,10 @@
     
     //画像描画
     CGContextClip(context);
-    UIImage *profImage = [UIImage imageNamed: imageName];
+    
+    NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, imageName];
+    NSData *urlImage = [NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]];
+    UIImage *profImage = [[UIImage alloc] initWithData: urlImage];
     [profImage drawInRect: profRect];
     
     //縁取り
@@ -215,7 +218,7 @@
     //保存してた状態に戻す
     CGContextRestoreGState(context);
     
-    nameLabel.frame = CGRectMake(13, bubbleRect.origin.y + bubbleRect.size.height - 35, nameLabel.frame.size.width, nameLabel.frame.size.height);
+    nameLabel.frame = CGRectMake(10, bubbleRect.origin.y + bubbleRect.size.height + 22, nameLabel.frame.size.width, nameLabel.frame.size.height);
     timeLabel.frame = CGRectMake(bubbleRect.origin.x + bubbleRect.size.width + 10, bubbleRect.origin.y + bubbleRect.size.height - 10, timeLabel.frame.size.width, timeLabel.frame.size.height);
     [self addSubview:nameLabel];
     [self addSubview:timeLabel];

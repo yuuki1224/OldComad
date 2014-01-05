@@ -215,7 +215,7 @@
     [mask removeFromSuperview];
     [sm removeFromSuperview];
     NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
-    NSString *imageName = [[Configuration user] objectForKey:@"imageName"];
+    NSString *imageName = [[Configuration user] objectForKey:@"image_name"];
     NSString *userName = [[Configuration user] objectForKey:@"name"];
     NSString *userId = [[Configuration user] objectForKey:@"id"];
     

@@ -16,7 +16,7 @@
     BasicLabel *timeLabel;
 }
 @property (nonatomic, retain)NSString *userName;
-@property (nonatomic, retain)NSString *mail;
+@property (nonatomic, retain)NSString *sentence;
 @property (nonatomic, retain)NSString *imageName;
 @property (nonatomic)float bubbleHeight;
 @property (nonatomic)Side side;

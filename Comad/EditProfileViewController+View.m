@@ -11,6 +11,9 @@
 #import "Image.h"
 #import "EditThumbnailMask.h"
 #import "Configuration.h"
+#import "AFHTTPRequestOperation.h"
+#import "AFHTTPClient.h"
+#import "Basic.h"
 
 @implementation EditProfileViewController (View) 
 
@@ -82,11 +85,14 @@
         case 0:{
             header.frame = CGRectMake(0, 0, windowSize.size.width, 100);
             header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
-            
-            NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, [[Configuration user] objectForKey:@"image_name"]];
-            UIImage *thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
-            UIImage *thumbnailImageResize = [Image resizeImage:thumbnailImage resizeWidth:80 resizeHeight:80];
-            UIImageView *thumbnail = [[UIImageView alloc]initWithImage:thumbnailImageResize];
+            UIImage *thumbnailImage;
+            if(profileImage){                
+                thumbnailImage = profileImage;
+            }else{
+                NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, [[Configuration user] objectForKey:@"image_name"]];
+                thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
+            }
+            UIImageView *thumbnail = [[UIImageView alloc]initWithImage: thumbnailImage];
             thumbnail.frame = CGRectMake(20, (header.frame.size.height - 80)/2, 80, 80);
             EditThumbnailMask *mask = [[EditThumbnailMask alloc]init];
             mask.frame = CGRectMake(0, (thumbnail.frame.size.height - 20), 80, 20);
@@ -120,36 +126,6 @@
             header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
             BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
             headerLabel.text = @"所属";
-            [headerLabel sizeToFit];
-            headerLabel.frame = CGRectMake(10, header.frame.size.height - 20, headerLabel.frame.size.width, headerLabel.frame.size.height);
-            [header addSubview:headerLabel];
-            break;
-        }
-        case 3:{
-            header.frame = CGRectMake(0, 0, windowSize.size.width, 70);
-            header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
-            BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
-            headerLabel.text = @"好きな言語は?";
-            [headerLabel sizeToFit];
-            headerLabel.frame = CGRectMake(10, header.frame.size.height - 20, headerLabel.frame.size.width, headerLabel.frame.size.height);
-            [header addSubview:headerLabel];
-            break;
-        }
-        case 4:{
-            header.frame = CGRectMake(0, 0, windowSize.size.width, 70);
-            header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
-            BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
-            headerLabel.text = @"使えるAdobe製品は?";
-            [headerLabel sizeToFit];
-            headerLabel.frame = CGRectMake(10, header.frame.size.height - 20, headerLabel.frame.size.width, headerLabel.frame.size.height);
-            [header addSubview:headerLabel];
-            break;
-        }
-        case 5:{
-            header.frame = CGRectMake(0, 0, windowSize.size.width, 70);
-            header.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
-            BasicLabel *headerLabel = [[BasicLabel alloc]initWithName:EditProfileHeaderTitle];
-            headerLabel.text = @"好きなエディターは?";
             [headerLabel sizeToFit];
             headerLabel.frame = CGRectMake(10, header.frame.size.height - 20, headerLabel.frame.size.width, headerLabel.frame.size.height);
             [header addSubview:headerLabel];
@@ -228,9 +204,7 @@
 - (void)tapped:(UITapGestureRecognizer *)recognizer {
     UIActionSheet *as = [[UIActionSheet alloc] init];
     as.title = @"選択してください。";
-    [as addButtonWithTitle:@"カメラでとる"];
     [as addButtonWithTitle:@"アルバムから選ぶ"];
-    [as addButtonWithTitle:@"写真を削除する"];
     [as addButtonWithTitle:@"キャンセル"];
     as.cancelButtonIndex = 3;
     as.delegate = self;
@@ -238,54 +212,39 @@
     [as showInView:self.view];
 }
 
+//アルバムを開く
+-(void)doAlbum {
+    [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    [picker setDelegate:self];
+    
+    [self presentModalViewController:picker animated:YES];
+}
+
+#pragma UIImagePickerController Delegate methods
+//画像が選択された時に呼ばれる。
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSURL *path = [info objectForKey: UIImagePickerControllerReferenceURL];
+    //画像をチェンジ
+    profileImage = image;
+    imagePath = path;
+      NSLog(@"%@", path);
+    
+    [self dismissModalViewControllerAnimated:YES];
+    [editProfileTable reloadData];
+}
+
+// 選択がキャンセルされた時に呼ばれる。
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissModalViewControllerAnimated:YES]; // モーダルビューを閉じる
+}
+
 -(void)actionSheet:(UIActionSheet*)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
-        case 0:{
-            //カメラ起動
-            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-            {
-                /*
-                UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
-                // カメラかライブラリからの読込指定。カメラを指定。
-                [imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
-                // トリミングなどを行うか否か
-                [imagePickerController setAllowsEditing:YES];
-                // Delegate
-                [imagePickerController setDelegate:self];
-                
-                // アニメーションをしてカメラUIを起動
-                [self presentViewController:imagePickerController animated:YES completion:nil];
-                 */
-            }
-            else
-            {
-            }
-            break;
-        }
-        case 1: {
+        case 0: {
             //アルバムから選択
-            if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
-            {
-                /*
-                UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
-                [imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-                [imagePickerController setAllowsEditing:YES];
-                [imagePickerController setDelegate:self];
-                
-                //[self presentViewController:imagePickerController animated:YES completion:nil];
-                // iPadの場合はUIPopoverControllerを使う
-                popover = [[UIPopoverController alloc]initWithContentViewController:imagePickerController];
-                //[popover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-                 */
-            }
-            else
-            {
-            }
-            break;
-        }
-        case 2: {
-            //写真を削除　→アラート出るように
-            break;
+            [self doAlbum];
         }
         default:
             break;

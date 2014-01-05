@@ -50,7 +50,7 @@
         
         nameLabel.text = userName;
         [nameLabel sizeToFit];
-        nameLabel.frame = CGRectMake(15, 50, nameLabel.frame.size.width, nameLabel.frame.size.height);
+        nameLabel.frame = CGRectMake(10, 108, nameLabel.frame.size.width, nameLabel.frame.size.height);
         NSDate *now = [NSDate date];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"HH:mm a"];
@@ -60,9 +60,11 @@
         [self addSubview:nameLabel];
         [self addSubview:timeLabel];
         
-        UIImage *thumbnailImage = [UIImage imageNamed: imageName];
+        NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, imageName];
+        NSData *urlImage = [NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]];
+        UIImage *thumbnailImage = [[UIImage alloc]initWithData: urlImage];
         UIImageView *thumbnail = [[UIImageView alloc]initWithImage: thumbnailImage];
-        thumbnail.frame = CGRectMake(18, 65, 40, 40);
+        thumbnail.frame = CGRectMake(15, 65, 40, 40);
         [self addSubview:thumbnail];
     }
 }

@@ -113,16 +113,14 @@
     NSDictionary *userInfo = [Configuration user];
     int userId = [[userInfo objectForKey:@"id"] intValue];
     
+    //部屋に入った時
     if([packet.args[0] isEqual: @"endInit"]){
-        //roomName = packet.args[1];
         NSArray *messages = packet.args[2];
         
         NSLog(@"recieved : %@", packet.args[1]);
         NSString *count = [NSString stringWithFormat:@"%lu", (unsigned long)[packet.args[2] count]];
         if([count isEqualToString:@"0"]){
-            NSLog(@"aaa");
         }else{
-            NSLog(@"bbb");
             for (int i = 0; [count intValue]>i; i++) {
                 //自分のIDのとき
                 if([[messages[i] objectForKey:@"user_id"] isEqual:@(userId)]){
@@ -161,8 +159,8 @@
                 }
             }
         }
+    //部屋にいるときに受信した時
     }else if([packet.args[0] isEqual: @"comadMessage"]){
-        /*
         NSString *statement = packet.args[2];
         NSString *imageName = packet.args[3];
         NSString *userName = packet.args[4];
@@ -193,8 +191,6 @@
                 [conversation addConversation:statement :userName :imageName];
             }
         }
-         */
-        NSLog(@"ここはいけてるよ");
     }
 }
 
