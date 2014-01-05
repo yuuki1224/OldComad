@@ -195,11 +195,13 @@
 #pragma ConversationTextBoxDelegate methods
 //sendButton
 - (void)sendClicked:(NSString *)text {
-    NSString *imageName = [[Configuration user] objectForKey:@"image_name"];
-    NSString *userName = [[Configuration user] objectForKey:@"name"];
-    NSString *userId = [[Configuration user] objectForKey:@"id"];
-    
-    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": userId, @"type": @"comad",  @"imageName": imageName, @"userName": userName, @"comadId": [self.comadInfo objectForKey:@"id"]}];
+    if(![text isEqualToString:@""]){
+        NSString *imageName = [[Configuration user] objectForKey:@"image_name"];
+        NSString *userName = [[Configuration user] objectForKey:@"name"];
+        NSString *userId = [[Configuration user] objectForKey:@"id"];
+        
+        [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": userId, @"type": @"comad",  @"imageName": imageName, @"userName": userName, @"comadId": [self.comadInfo objectForKey:@"id"]}];
+    }
 }
 
 //stamp出現

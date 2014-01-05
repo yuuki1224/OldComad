@@ -52,6 +52,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     if(isOffline){
         [self.view makeToast:@"ネットワークにつながっていないため、現在メッセージは利用できません。"];
     }else{
@@ -69,6 +70,10 @@
         conversation.scrollsToTop = conversation.conversationHeight - 100;
         [self.navigationController.tabBarController.tabBar setHidden:YES];
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,10 +106,12 @@
 }
 
 - (void)sendClicked:(NSString *)text {
-    NSString *imageName = [[Configuration user] objectForKey:@"image_name"];
-    NSString *userName = [[Configuration user] objectForKey:@"name"];
-    
-    [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": [[Configuration user] objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
+    if(![text isEqualToString:@""]){
+        NSString *imageName = [[Configuration user] objectForKey:@"image_name"];
+        NSString *userName = [[Configuration user] objectForKey:@"name"];
+        
+        [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": [[Configuration user] objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
+    }
 }
 
 - (void)plusClicked {
@@ -204,5 +211,19 @@
 - (void)backBtnClickedDelegate {
     [socketIO disconnect];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)keyboardWillShow:(NSNotification*)note {
+    CGRect keyboardFrameEnd = [[note.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGRect windowSize = [[UIScreen mainScreen] bounds];
+    [UIView animateWithDuration:0.35f
+                     animations:^{
+                         if((int)iOSVersion == 7){
+                             textBox.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height, textBox.frame.size.width, textBox.frame.size.height);
+                         }else if((int)iOSVersion == 6){
+                             textBox.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height - 75, textBox.frame.size.width, textBox.frame.size.height);
+                         }
+                     }];
 }
 @end

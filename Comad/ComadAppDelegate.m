@@ -33,10 +33,12 @@ static ComadAppDelegate* _sharedInstance = nil;
     
     if([Configuration user]){
         tc = [[TabBarController alloc]init];
-        [self.window addSubview:tc.view];
+        //[self.window addSubview:tc.view];
+        [self.window setRootViewController: tc];
     }else{
         lc = [[LoginViewController alloc]init];
-        [self.window addSubview:lc.view];
+        //[self.window addSubview:lc.view];
+        [self.window setRootViewController: lc];
     }
     [self.window makeKeyAndVisible];
 }

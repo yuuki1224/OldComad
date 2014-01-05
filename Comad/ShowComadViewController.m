@@ -71,6 +71,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [self configure];
     textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
     
@@ -84,6 +85,10 @@
     }else{
         [self intoRoom];
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -239,6 +244,20 @@
 - (void)backBtnClickedDelegate {
     [socketIO disconnect];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)keyboardWillShow:(NSNotification*)note {
+    CGRect keyboardFrameEnd = [[note.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGRect windowSize = [[UIScreen mainScreen] bounds];
+    [UIView animateWithDuration:0.35f
+                     animations:^{
+                         if((int)iOSVersion == 7){
+                             textBox.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height, textBox.frame.size.width, textBox.frame.size.height);
+                         }else if((int)iOSVersion == 6){
+                             textBox.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height - 75, textBox.frame.size.width, textBox.frame.size.height);
+                         }
+                     }];
 }
 
 @end
