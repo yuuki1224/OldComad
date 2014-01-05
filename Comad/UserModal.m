@@ -130,7 +130,7 @@
 }
 
 - (void)blockBtnClicked {
-    [self.delegate blockBtnClickedDelegate];
+    int userId = [[userInfo objectForKey:@"id"] intValue];
+    [self.delegate blockBtnClickedDelegate: userId];
 }
-
 @end

@@ -133,14 +133,30 @@
     }];
 }
 
-- (void)blockBtnClickedDelegate {
-    [userModal removeFromSuperview];
-    [blackMask removeFromSuperview];
-    UIAlertView *alert = [[UIAlertView alloc]init];
-    alert.title = @"お知らせ";
-    alert.message = @"ブロックしました";
-    [alert addButtonWithTitle:@"閉じる"];
-    [alert show];
+- (void)blockBtnClickedDelegate:(int)persionId {
+    NSDictionary *userInfo = [Configuration user];
+    
+    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
+    [[FriendJsonClient sharedClient]blockPerson:[[userInfo objectForKey:@"id"] intValue] personId:persionId success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
+        [userModal removeFromSuperview];
+        [blackMask removeFromSuperview];
+        [SVProgressHUD dismiss];
+        UIAlertView *alert = [[UIAlertView alloc]init];
+        alert.title = @"お知らせ";
+        alert.delegate = self;
+        alert.message = @"ブロックしました";
+        [alert addButtonWithTitle:@"閉じる"];
+        [alert show];
+    } failure:^(int statusCode, NSString *errorString) {
+        [userModal removeFromSuperview];
+        [blackMask removeFromSuperview];
+        [SVProgressHUD dismiss];
+        UIAlertView *alert = [[UIAlertView alloc]init];
+        alert.title = @"お知らせ";
+        alert.message = @"ブロックに失敗しました。";
+        [alert addButtonWithTitle:@"閉じる"];
+        [alert show];
+    }];
 }
 
 - (void)inviteButtonClicked {

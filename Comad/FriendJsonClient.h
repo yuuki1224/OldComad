@@ -15,4 +15,6 @@
                     failure:(void (^)(int statusCode, NSString *errorString))failure;
 - (void)addFriend:(int)comadId friendId:(int)friendId success:(void (^)(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject))success
           failure:(void (^)(int statusCode, NSString *errorString))failure;
+- (void)blockPerson:(int)comadId personId:(int)personId success:(void (^)(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject))success
+          failure:(void (^)(int statusCode, NSString *errorString))failure;
 @end

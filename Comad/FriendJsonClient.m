@@ -68,4 +68,19 @@ static FriendJsonClient* _sharedClient;
     [operation start];
 }
 
+- (void)blockPerson:(int)comadId personId:(int)personId success:(void (^)(AFHTTPRequestOperation *, NSHTTPURLResponse *, id))success failure:(void (^)(int, NSString *))failure {
+    NSString *urlString = [NSString stringWithFormat:@"http://localhost:3000/api/friends/block_person?user_id=%i&friend_id=%i", comadId, personId];
+    NSURL *url = [NSURL URLWithString: urlString];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success: ^(NSURLRequest *req, NSHTTPURLResponse *response, id JSON) {
+        success(req, response, JSON);
+    }
+        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            NSLog(@"prcessing2");
+            int status = 404;
+            failure(status, @"error");
+    }];
+    [operation start];
+}
 @end
