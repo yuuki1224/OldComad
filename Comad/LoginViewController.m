@@ -13,6 +13,7 @@
 #import "SVProgressHUD.h"
 #import "TabBarController.h"
 #import "Configuration.h"
+#import "Toast+UIView.h"
 
 @interface LoginViewController ()
 
@@ -59,7 +60,7 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [SVProgressHUD dismiss];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"サーバーにアクセスできません。" message:@"ネットワークに繋がっていないか、サーバーが止まってます。" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"サーバーにアクセスできません。" message:@"ネットワークに繋がっていないため現在コマドは利用できません。" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
 }
 
@@ -71,9 +72,6 @@
     
     NSString *json = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('user').getAttribute('data-user');"];
     NSString *status = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('status').getAttribute('data-status');"];
-    
-    NSLog(@"");
-    NSLog(@"");
     
     if([status isEqualToString:@"200"]){
         NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
@@ -93,28 +91,26 @@
         BOOL successful = [Configuration synchronize];
         // 成功したら次の画面
         if (successful) {
-            [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
-            //画像のデータをこっちに持ってくる
-            NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL,[userInfo objectForKey:@"image_name"]];
-            NSURL *url = [NSURL URLWithString: imageUrl];
-            NSURLRequest *request = [NSURLRequest requestWithURL:url];
-            TabBarController *tc = [[TabBarController alloc]init];
-            UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
-            rootViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-            rootViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-            [self presentViewController:tc animated:YES completion:nil];
+            if(isOffline){
+                [self.view makeToast:@"ネットワークにつながっていないため、現在コマドは利用できません。"];
+            }else{
+                [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
+                //画像のデータをこっちに持ってくる
+                NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL,[userInfo objectForKey:@"image_name"]];
+                NSURL *url = [NSURL URLWithString: imageUrl];
+                NSURLRequest *request = [NSURLRequest requestWithURL:url];
+                TabBarController *tc = [[TabBarController alloc]init];
+                UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+                rootViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+                rootViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+                [self presentViewController:tc animated:YES completion:nil];
+            }
         }
     }
 }
 
 // あとで消す
 -(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
-    TabBarController *tc = [[TabBarController alloc]init];
-    UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
-    rootViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-    rootViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:tc animated:YES completion:nil];
 }
 
 @end

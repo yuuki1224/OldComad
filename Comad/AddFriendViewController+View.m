@@ -57,7 +57,6 @@
             return [facebookFriends count];
             break;
         case 1:
-            //return [facebookFriends count];
             return 0;
             break;
         default:

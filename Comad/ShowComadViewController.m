@@ -16,6 +16,7 @@
 #import "SocketIOPacket.h"
 #import "RoundedButton.h"
 #import "Configuration.h"
+#import "Toast+UIView.h"
 
 @interface ShowComadViewController ()
 
@@ -72,12 +73,17 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self configure];
     textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
-    [self intoRoom];
+    
     showComad = [[ShowComad alloc]init];
     showComad.comadInfo = self.comadInfo;
     
     [showComad setLabel];
     [scrollView addSubview: showComad];
+    if(isOffline){
+        [self.view makeToast:@"ネットワークにつながっていないため、現在メッセージは利用できません。"];
+    }else{
+        [self intoRoom];
+    }
 }
 
 - (void)didReceiveMemoryWarning

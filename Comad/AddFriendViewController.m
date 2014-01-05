@@ -15,6 +15,8 @@
 #import "UserModal.h"
 #import "FriendJsonClient.h"
 #import "Configuration.h"
+#import "Toast+UIView.h"
+#import "SVProgressHUD.h"
 
 @interface AddFriendViewController ()
 
@@ -34,7 +36,6 @@
 
 - (void)viewDidLoad
 {
-    [self setInfo];
     [self configure];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -44,6 +45,12 @@
     [header setTitle:@"友達追加"];
     [header setBackBtn];
     header.delegate = self;
+    if(isOffline){
+        [SVProgressHUD dismiss];
+        [self.view makeToast:@"ネットワークにつながっていないため、現在友達追加は利用できません。"];
+    }else{
+        [self setInfo];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

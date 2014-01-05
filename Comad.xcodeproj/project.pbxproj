@@ -159,8 +159,6 @@
 		BADD95781827A04400DAB12F /* EditTimeFormViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95771827A04400DAB12F /* EditTimeFormViewController+View.m */; };
 		BADD957B1827EECE00DAB12F /* EditProfileFormViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD957A1827EECE00DAB12F /* EditProfileFormViewController+View.m */; };
 		BADD958A1828EDF300DAB12F /* EditAccountViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95891828EDF300DAB12F /* EditAccountViewController+View.m */; };
-		BADD958E1828F66A00DAB12F /* NotificationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD958D1828F66A00DAB12F /* NotificationSettingsViewController.m */; };
-		BADD95911828F67B00DAB12F /* NotificationSettingsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95901828F67B00DAB12F /* NotificationSettingsViewController+View.m */; };
 		BADD95941828F8E000DAB12F /* MailSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95931828F8E000DAB12F /* MailSettingsViewController.m */; };
 		BADD95971828F8EF00DAB12F /* MailSettingsViewController+View.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD95961828F8EF00DAB12F /* MailSettingsViewController+View.m */; };
 		BADD95A7182A4D9200DAB12F /* comadPlus.png in Resources */ = {isa = PBXBuildFile; fileRef = BADD95A6182A4D9200DAB12F /* comadPlus.png */; };
@@ -402,9 +400,6 @@
 		BADD95771827A04400DAB12F /* EditTimeFormViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditTimeFormViewController+View.m"; sourceTree = "<group>"; };
 		BADD957A1827EECE00DAB12F /* EditProfileFormViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditProfileFormViewController+View.m"; sourceTree = "<group>"; };
 		BADD95891828EDF300DAB12F /* EditAccountViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EditAccountViewController+View.m"; sourceTree = "<group>"; };
-		BADD958C1828F66A00DAB12F /* NotificationSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettingsViewController.h; sourceTree = "<group>"; };
-		BADD958D1828F66A00DAB12F /* NotificationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettingsViewController.m; sourceTree = "<group>"; };
-		BADD95901828F67B00DAB12F /* NotificationSettingsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NotificationSettingsViewController+View.m"; sourceTree = "<group>"; };
 		BADD95921828F8E000DAB12F /* MailSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailSettingsViewController.h; sourceTree = "<group>"; };
 		BADD95931828F8E000DAB12F /* MailSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailSettingsViewController.m; sourceTree = "<group>"; };
 		BADD95961828F8EF00DAB12F /* MailSettingsViewController+View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MailSettingsViewController+View.m"; sourceTree = "<group>"; };
@@ -450,8 +445,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA1FE3A3184FAAB600E61534 /* Social.framework in Frameworks */,
 				BADD95C9182FE18000DAB12F /* SystemConfiguration.framework in Frameworks */,
+				BA1FE3A3184FAAB600E61534 /* Social.framework in Frameworks */,
 				BADD95C7182FE17200DAB12F /* OpenGLES.framework in Frameworks */,
 				BADD95C5182FE16700DAB12F /* libstdc++.dylib in Frameworks */,
 				BADD95C3182FE15A00DAB12F /* libicucore.dylib in Frameworks */,
@@ -1002,9 +997,6 @@
 				BADD953A18252C7E00DAB12F /* EditAccountViewController.h */,
 				BADD953B18252C7E00DAB12F /* EditAccountViewController.m */,
 				BADD95891828EDF300DAB12F /* EditAccountViewController+View.m */,
-				BADD958C1828F66A00DAB12F /* NotificationSettingsViewController.h */,
-				BADD958D1828F66A00DAB12F /* NotificationSettingsViewController.m */,
-				BADD95901828F67B00DAB12F /* NotificationSettingsViewController+View.m */,
 				BADD95921828F8E000DAB12F /* MailSettingsViewController.h */,
 				BADD95931828F8E000DAB12F /* MailSettingsViewController.m */,
 				BADD95961828F8EF00DAB12F /* MailSettingsViewController+View.m */,
@@ -1264,7 +1256,6 @@
 				BA5151F0180C11BE00FD69D8 /* ShowUserViewController.m in Sources */,
 				BADD95B2182F4B5400DAB12F /* Conversation.m in Sources */,
 				BAB147201839D41F0078486B /* IdSearchViewController+View.m in Sources */,
-				BADD958E1828F66A00DAB12F /* NotificationSettingsViewController.m in Sources */,
 				BA21E00D184BAD43007F64FE /* TimeSelectButton.m in Sources */,
 				BADD955C18263C6C00DAB12F /* EditLoacationFormViewController.m in Sources */,
 				BA74F952183F743F00FE4629 /* Stamp.m in Sources */,
@@ -1307,7 +1298,6 @@
 				BAE482A6181A22CF00BB1456 /* Participation.m in Sources */,
 				BA21DFBE18474E7D007F64FE /* NewComadViewController.m in Sources */,
 				BADD95781827A04400DAB12F /* EditTimeFormViewController+View.m in Sources */,
-				BADD95911828F67B00DAB12F /* NotificationSettingsViewController+View.m in Sources */,
 				BADD95941828F8E000DAB12F /* MailSettingsViewController.m in Sources */,
 				BAE482981819384A00BB1456 /* ShowComad.m in Sources */,
 				BADD95B5182F5AFA00DAB12F /* Bubble.m in Sources */,

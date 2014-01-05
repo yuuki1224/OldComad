@@ -14,6 +14,7 @@
 #import "BlackMask.h"
 #import "SpecialMoji.h"
 #import "Configuration.h"
+#import "Toast+UIView.h"
 
 @interface MessageViewController ()
 
@@ -51,20 +52,23 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    switch (type) {
-        case PrivateMessage:{
-            [self intoRoom];
-            break;
+    if(isOffline){
+        [self.view makeToast:@"ネットワークにつながっていないため、現在メッセージは利用できません。"];
+    }else{
+        switch (type) {
+            case PrivateMessage:{
+                [self intoRoom];
+                break;
+            }
+            case GroupMessage:{
+                break;
+            }
+            default:
+                break;
         }
-        case GroupMessage:{
-            break;
-        }
-        default:
-            break;
+        conversation.scrollsToTop = conversation.conversationHeight - 100;
+        [self.navigationController.tabBarController.tabBar setHidden:YES];
     }
-    
-    conversation.scrollsToTop = conversation.conversationHeight - 100;
-    [self.navigationController.tabBarController.tabBar setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,7 +101,7 @@
 }
 
 - (void)sendClicked:(NSString *)text {
-    NSString *imageName = [[Configuration user] objectForKey:@"imageName"];
+    NSString *imageName = [[Configuration user] objectForKey:@"image_name"];
     NSString *userName = [[Configuration user] objectForKey:@"name"];
     
     [socketIO sendEvent:@"message" withData:@{@"message": text, @"userId": [[Configuration user] objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];
@@ -123,28 +127,20 @@
         NSArray *messages = packet.args[2];
         
         for (int i = 0; [messages count]>i; i++) {
+            NSString *content = [messages[i] objectForKey:@"content"];
+            NSRange range = [content rangeOfString:@"(stamp_"];
+            NSString *imageName = [messages[i] objectForKey:@"image_name"];
+            NSString *userName = [messages[i] objectForKey:@"user_name"];
             //自分のIDのとき
             if([[messages[i] objectForKey:@"user_id"] isEqual:@(userId)]){
-                NSString *content = [messages[i] objectForKey:@"content"];
-                NSRange range = [content rangeOfString:@"(stamp_"];
-                NSString *imageName = [messages[i] objectForKey:@"image_name"];
-                NSString *userName = [messages[i] objectForKey:@"user_name"];
-                
                 if (range.location != NSNotFound) {
-                    //stampがあった場合 左側の描画
                     NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
                     [conversation addStamp:[stampNum intValue] :userName :imageName];
                 } else {
-                    //stampがない場合
                     [conversation addConversation:content :userName :imageName];
                 }
             //相手のIDのとき
             }else{
-                NSString *content = [messages[i] objectForKey:@"content"];
-                NSRange range = [content rangeOfString:@"(stamp_"];
-                NSString *imageName = [messages[i] objectForKey:@"image_name"];
-                NSString *userName = [messages[i] objectForKey:@"user_name"];
-                
                 if (range.location != NSNotFound) {
                     //stampがあった場合 左側の描画
                     NSString *stampNum = [content substringWithRange: NSMakeRange(7, content.length - 8)];
@@ -183,6 +179,7 @@
             }
         }
     }
+    conversation.contentSize = CGSizeMake(windowSize.size.width, conversation.contentSize.height + 70);
 }
 
 # pragma SpecialMojiDelegate
@@ -191,7 +188,7 @@
     [mask removeFromSuperview];
     [sm removeFromSuperview];
     NSString *stampName = [NSString stringWithFormat:@"(stamp_%i)", stampNum];
-    NSString *imageName = [[Configuration user] objectForKey:@"imageName"];
+    NSString *imageName = [[Configuration user] objectForKey:@"image_name"];
     NSString *userName = [[Configuration user] objectForKey:@"name"];
     
     [socketIO sendEvent:@"message" withData:@{@"message": stampName, @"userId": [[Configuration user] objectForKey:@"id"], @"type": @"private", @"roomName": roomName, @"imageName": imageName, @"userName": userName}];

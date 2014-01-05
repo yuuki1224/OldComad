@@ -29,7 +29,8 @@
     cellView.layer.cornerRadius = 5;
     cellView.clipsToBounds = true;
     
-    UIImage *thumbnailImage = [UIImage imageNamed:[self.comadInfo objectForKey:@"image_name"]];
+    NSString *imageUrl = [NSString stringWithFormat:@"%@/images/profile/%@",HOST_URL, [self.comadInfo objectForKey:@"image_name"]];
+    UIImage *thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
     UIImage *cornerThumbnail = [Image makeCornerRoundImage:thumbnailImage];
     UIImageView *thumbnail = [[UIImageView alloc]initWithImage:cornerThumbnail];
     thumbnail.frame = CGRectMake(4.5, 4.5, 62, 62);
@@ -45,21 +46,24 @@
     comadId.text = [self.comadInfo objectForKey:@"comad_id"];
     [comadId sizeToFit];
     comadId.frame = CGRectMake(name.frame.origin.x + name.frame.size.width + 5, name.frame.origin.y + 1, comadId.frame.size.width, comadId.frame.size.height);
+    
+    //タイトル
     BasicLabel *title = [[BasicLabel alloc]initWithName:ComadCellTitle];
+    title.numberOfLines = 2;
     if([[self.comadInfo objectForKey:@"title"] isEqualToString:@""]){
         title.text = @"タイトルなし";
     }else{
         title.text = [self.comadInfo objectForKey:@"title"];
     }
+    title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height + 3, 180, 0);
     [title sizeToFit];
-    title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height + 3, title.frame.size.width, title.frame.size.height);
     
     //時間
     UIImage *datetimeIcon = [UIImage imageNamed:@"datetimeIcon.png"];
     UIImageView *datetimeIconView = [[UIImageView alloc]initWithImage: datetimeIcon];
     datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, 17.5, 17.5);
     BasicLabel *dateTime = [[BasicLabel alloc]initWithName:ShowUserComadId];
-    if([[self.comadInfo objectForKey:@"date_time"] isEqualToString:@""]){
+    if([[self.comadInfo objectForKey:@"date_time"] isEqual:[NSNull null]]){
         dateTime.text = @"未定";
     }else{
         NSString *dateTimeString = [[self.comadInfo objectForKey:@"date_time"] stringByReplacingOccurrencesOfString:@"T" withString:@" "];

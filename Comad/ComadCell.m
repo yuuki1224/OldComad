@@ -54,29 +54,37 @@
     
     [cellView addSubview:thumbnail];
 
+    //名前
     BasicLabel *name = [[BasicLabel alloc]initWithName:BlueTitle];
     name.text = [comadInfo objectForKey:@"name"];
     [name sizeToFit];
     name.frame = CGRectMake(77, 11, name.frame.size.width, name.frame.size.height);
+    
+    /*
+    //コマドID
     BasicLabel *comadId = [[BasicLabel alloc]initWithName:ComadId];
     comadId.text = [comadInfo objectForKey:@"comad_id"];
     [comadId sizeToFit];
     comadId.frame = CGRectMake(name.frame.origin.x + name.frame.size.width + 5, name.frame.origin.y + 1, comadId.frame.size.width, comadId.frame.size.height);
+     */
+    
+    //タイトル
     BasicLabel *title = [[BasicLabel alloc]initWithName:ComadCellTitle];
+    title.numberOfLines = 2;
     if([[comadInfo objectForKey:@"title"] isEqualToString:@""]){
         title.text = @"タイトルなし";
     }else{
         title.text = [comadInfo objectForKey:@"title"];
     }
+    title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height + 3, 180, 0);
     [title sizeToFit];
-    title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height + 3, title.frame.size.width, title.frame.size.height);
     
     //時間
     UIImage *datetimeIcon = [UIImage imageNamed:@"datetimeIcon.png"];
     UIImageView *datetimeIconView = [[UIImageView alloc]initWithImage: datetimeIcon];
     datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, 17.5, 17.5);
     BasicLabel *dateTime = [[BasicLabel alloc]initWithName:ShowUserComadId];
-    if([[comadInfo objectForKey:@"date_time"] isEqualToString:@""]){
+    if([[comadInfo objectForKey:@"date_time"] isEqual:[NSNull null]]){
         dateTime.text = @"未定";
     }else{
         NSString *dateTimeString = [[comadInfo objectForKey:@"date_time"] stringByReplacingOccurrencesOfString:@"T" withString:@" "];
@@ -191,7 +199,7 @@
     }
     
     [cellView addSubview: name];
-    [cellView addSubview: comadId];
+    //[cellView addSubview: comadId];
     [cellView addSubview: title];
     [cellView addSubview: dateTime];
     [cellView addSubview: datetimeIconView];
