@@ -166,5 +166,6 @@
 #pragma UIAlertViewDelegate methods
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController popViewControllerAnimated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"friendRefresh" object:self userInfo:Nil];
 }
 @end

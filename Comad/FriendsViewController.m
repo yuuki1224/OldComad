@@ -49,6 +49,7 @@
         [self setInfo];
         //テーブルをセットする
         [self configure];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData:) name:@"friendRefresh" object:nil];
     }
     return self;
 }
@@ -68,7 +69,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)CreateGroupBtnClicked {
@@ -166,6 +166,8 @@
     [search resignFirstResponder];
     //searchする。
 }
- */
-
+*/
+- (void)refreshData:(NSNotification *)notification{
+    [self setInfo];
+}
 @end

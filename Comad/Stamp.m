@@ -8,6 +8,7 @@
 
 #import "Stamp.h"
 #import "Image.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation Stamp
 @synthesize side, userName, imageName;
@@ -64,6 +65,12 @@
         NSData *urlImage = [NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]];
         UIImage *thumbnailImage = [[UIImage alloc]initWithData: urlImage];
         UIImageView *thumbnail = [[UIImageView alloc]initWithImage: thumbnailImage];
+        thumbnail.layer.cornerRadius = 5;
+        thumbnail.clipsToBounds = true;
+        [thumbnail.layer setMasksToBounds: YES];
+        [thumbnail.layer setBorderWidth: 0.5f];
+        [thumbnail.layer setBorderColor:[[UIColor colorWithRed:0.600 green:0.600 blue:0.600 alpha:1.0] CGColor]];
+        
         thumbnail.frame = CGRectMake(15, 65, 40, 40);
         [self addSubview:thumbnail];
     }

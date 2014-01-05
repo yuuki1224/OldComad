@@ -48,7 +48,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -87,12 +86,6 @@
         case PrivateMessage:{
             socketIO = [[SocketIO alloc] initWithDelegate:self];
             socketIO.delegate = self;
-            /*
-            [socketIO connectToHost:@"54.199.53.137"
-                             onPort:9000
-                         withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]
-             ];
-             */
              [socketIO connectToHost:@"localhost"
                               onPort:9000
                           withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]
