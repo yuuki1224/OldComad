@@ -12,6 +12,7 @@
 
 @interface SpecialMoji : UIView <UICollectionViewDelegate, UICollectionViewDataSource>{
     CGRect windowSize;
+    float iOSVersion;
 }
 
 @property (nonatomic, weak) id<SpecialMojiDelegate> delegate;

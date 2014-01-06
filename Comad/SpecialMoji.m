@@ -16,6 +16,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         windowSize = [[UIScreen mainScreen] bounds];
+        iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         self.backgroundColor = [UIColor whiteColor];
         self.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - 230);
         [self setView];
@@ -39,7 +40,12 @@
     layout.minimumLineSpacing = 1.0f;
     
     //UICollectionView
-    UICollectionView *stamps = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - 230) collectionViewLayout:layout];
+    UICollectionView *stamps = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 20, windowSize.size.width, windowSize.size.height - 230) collectionViewLayout:layout];
+    if((int)iOSVersion == 6){
+        stamps.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height - 230);
+    }else if((int)iOSVersion == 7){
+        stamps.frame = CGRectMake(0, 10, windowSize.size.width, windowSize.size.height - 230);
+    }
     stamps.backgroundColor = [UIColor whiteColor];
     stamps.delegate = self;
     stamps.dataSource = self;

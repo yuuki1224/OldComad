@@ -36,7 +36,6 @@
         [self.view addSubview: header];
         [self setAddComadBtnInHeader];
         
-        [self.view addSubview: header];
         //タブのデザイン設定
         self.delegate = self;
         
@@ -54,7 +53,6 @@
         self.selectedIndex = 0;
         //Tab背景画像のセット
         [self setTabBarImage];
-        
     }
     return self;
 }
@@ -90,12 +88,12 @@
     if((int)iOSVersion == 7){
         btn.frame = CGRectMake(windowSize.size.width - 35, 40, imageResize.size.width, imageResize.size.height);
     }else if((int)iOSVersion == 6){
-        btn.frame = CGRectMake(windowSize.size.width - 35, 17, imageResize.size.width, imageResize.size.height);
+        btn.frame = CGRectMake(windowSize.size.width - 35, 37, imageResize.size.width, imageResize.size.height);
     }
-    [btn setImage:imageResize forState:UIControlStateNormal];
+    [btn setImage:image forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(addComadBtnClicked:)forControlEvents:UIControlEventTouchDown];
     
-    [header addSubview: btn];
+    [self.view addSubview: btn];
 }
 
 //Tab背景画像をセットする

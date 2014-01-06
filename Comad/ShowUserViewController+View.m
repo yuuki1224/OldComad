@@ -21,7 +21,7 @@
     scrollView = [[UIScrollView alloc]init];
     if((int)iOSVersion == 7){
         scrollView.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 77);
-        scrollView.contentSize = CGSizeMake(windowSize.size.width, 640);
+        scrollView.contentSize = CGSizeMake(windowSize.size.width, windowSize.size.height - 77);
     }else if((int)iOSVersion == 6){
         scrollView.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height);
         scrollView.contentSize = CGSizeMake(windowSize.size.width, 500);

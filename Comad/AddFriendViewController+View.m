@@ -38,13 +38,15 @@
     
     addFriendsTable = [[UITableView alloc]init];
     if((int)iOSVersion == 7){
-        addFriendsTable.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height);
+        addFriendsTable.frame = CGRectMake(0, 143, windowSize.size.width, windowSize.size.height);
+        addFriendsTable.delegate = self;
+        addFriendsTable.dataSource = self;
     }else if((int)iOSVersion == 6){
         addFriendsTable.frame = CGRectMake(0, 0, windowSize.size.width, windowSize.size.height -16);
+        addFriendsTable.delegate = self;
+        addFriendsTable.dataSource = self;
+        addFriendsTable.contentInset = UIEdgeInsetsMake(133, 0, 0, 0);
     }
-    addFriendsTable.delegate = self;
-    addFriendsTable.dataSource = self;
-    addFriendsTable.contentInset = UIEdgeInsetsMake(133, 0, 0, 0);
     
     [self.view addSubview: addFriendsTable];
     [self.view addSubview: menu];

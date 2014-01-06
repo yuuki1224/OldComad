@@ -9,6 +9,7 @@
 #import "UserModal.h"
 #import "Image.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Basic.h"
 
 @implementation UserModal
 @synthesize userInfo;
@@ -20,11 +21,8 @@
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 4;
         self.clipsToBounds = true;
-        if((int)iOSVersion == 7){
-            self.frame = CGRectMake(25, 180, 269, 190);
-        }else if ((int)iOSVersion == 6){
-            self.frame = CGRectMake(25, 145, 269, 190);
-        }
+        self.frame = CGRectMake(25, 145, 269, 190);
+        
         UIButton *closeModalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         closeModalBtn.backgroundColor = [UIColor whiteColor];
         UIImage *closeImage = [UIImage imageNamed:@"close.png"];

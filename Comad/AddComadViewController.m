@@ -81,7 +81,11 @@
     int wordLength = text.text.length;
     wordCount.text = [NSString stringWithFormat:@"%d/30", 30 - wordLength];
     [wordCount sizeToFit];
-    wordCount.frame = CGRectMake(tv.frame.size.width - wordCount.frame.size.width - 15, tv.frame.size.height - wordCount.frame.size.height, wordCount.frame.size.width, wordCount.frame.size.height);
+    if((int)iOSVersion == 6){
+        wordCount.frame = CGRectMake(tv.frame.size.width - wordCount.frame.size.width - 15, tv.frame.size.height - wordCount.frame.size.height, wordCount.frame.size.width, wordCount.frame.size.height);
+    }else if((int)iOSVersion == 7){
+        wordCount.frame = CGRectMake(tv.frame.size.width - wordCount.frame.size.width - 5, tv.frame.size.height - wordCount.frame.size.height - 5, wordCount.frame.size.width, wordCount.frame.size.height);
+    }
     if(wordLength == 0){
         placeholder.text = @"ひとこと";
     }else {

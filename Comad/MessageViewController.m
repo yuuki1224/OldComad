@@ -219,11 +219,10 @@
 -(void)keyboardWillShow:(NSNotification*)note {
     CGRect keyboardFrameEnd = [[note.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
-    CGRect windowSize = [[UIScreen mainScreen] bounds];
     [UIView animateWithDuration:0.35f
                      animations:^{
                          if((int)iOSVersion == 7){
-                             textBox.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height, textBox.frame.size.width, textBox.frame.size.height);
+                             textBox.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height - 55, textBox.frame.size.width, textBox.frame.size.height);
                          }else if((int)iOSVersion == 6){
                              textBox.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height - 75, textBox.frame.size.width, textBox.frame.size.height);
                          }

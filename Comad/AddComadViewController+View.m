@@ -46,7 +46,11 @@
     comadId.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
     
     name.text = [userInfo objectForKey:@"name"];
-    comadId.text = [NSString stringWithFormat:@"@%@",[userInfo objectForKey:@"comad_id"]];
+    if([[userInfo objectForKey:@"comad_id"] isEqualToString:@""]){
+        comadId.text = @"";
+    }else {
+        comadId.text = [NSString stringWithFormat:@"@%@",[userInfo objectForKey:@"comad_id"]];
+    }
 
     [name sizeToFit];
     [comadId sizeToFit];
@@ -82,7 +86,11 @@
     wordCount = [[BasicLabel alloc]initWithName:GrayLabel];
     wordCount.text = @"0/30";
     [wordCount sizeToFit];
-    wordCount.frame = CGRectMake(tv.frame.size.width - wordCount.frame.size.width - 10, tv.frame.size.height - wordCount.frame.size.height, wordCount.frame.size.width, wordCount.frame.size.height);
+    if((int)iOSVersion == 6){
+        wordCount.frame = CGRectMake(tv.frame.size.width - wordCount.frame.size.width - 10, tv.frame.size.height - wordCount.frame.size.height, wordCount.frame.size.width, wordCount.frame.size.height);
+    }else if((int)iOSVersion == 7){
+        wordCount.frame = CGRectMake(tv.frame.size.width - wordCount.frame.size.width - 5, tv.frame.size.height - wordCount.frame.size.height - 5, wordCount.frame.size.width, wordCount.frame.size.height);
+    }
     
     [tv addSubview: wordCount];
     [bubble addSubview: tv];

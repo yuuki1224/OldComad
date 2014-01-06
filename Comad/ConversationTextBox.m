@@ -160,6 +160,21 @@
     }
 }
 
+//keyboardの大きさ取得
+-(void)keyboardWillShow:(NSNotification*)note {
+    CGRect keyboardFrameEnd = [[note.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGRect windowSize = [[UIScreen mainScreen] bounds];
+    [UIView animateWithDuration:0.35f
+                     animations:^{
+                         if((int)iOSVersion == 7){
+                             self.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height, self.frame.size.width, self.frame.size.height);
+                         }else if((int)iOSVersion == 6){
+                             self.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height - 75, self.frame.size.width, self.frame.size.height);
+                         }
+                     }];
+}
+
 -(void)send:(UIButton *)btn {
     [self.delegate sendClicked: tf.text];
     tf.text = @"";
