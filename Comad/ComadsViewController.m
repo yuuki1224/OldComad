@@ -41,9 +41,9 @@
         self.delegate = self;
         
         //Tabの背景色を載せるViewを作成
-        //CGSize tabBarSize = [self.tabBar frame].size;
-        if((int)iOSVersion == 7.00){
-            self.tabBar.frame = CGRectMake(5, 82, windowSize.size.width - 10, 50);
+        if((int)iOSVersion == 7){
+            //self.tabBar.frame = CGRectMake(3, 82, windowSize.size.width - 6, 48);
+            self.tabBar.frame = CGRectMake(3, 82, 315, 48);
         }else if((int)iOSVersion == 6){
             self.tabBar.frame = CGRectMake(3, 124, 315.5, 48);
         }

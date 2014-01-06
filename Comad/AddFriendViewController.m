@@ -43,8 +43,20 @@
     Header *header = [[Header alloc]init];
     [self.view addSubview: header];
     [header setTitle:@"友達追加"];
-    [header setBackBtn];
-    header.delegate = self;
+    if((int)iOSVersion == 6){
+        [header setBackBtn];
+        header.delegate = self;
+        [self.view addSubview:header];
+    }else if((int)iOSVersion == 7){
+        NSString *backImageName = @"back.png";
+        UIImage *buttonImage = [UIImage imageNamed:backImageName];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake(15, 40, 10, 17.5);
+        [btn setImage:buttonImage forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
+        [self.view addSubview:header];
+        [self.view addSubview:btn];
+    }
     if(isOffline){
         [SVProgressHUD dismiss];
         [self.view makeToast:@"ネットワークにつながっていないため、現在友達追加は利用できません。"];
@@ -183,5 +195,9 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     [self.navigationController popViewControllerAnimated:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"friendRefresh" object:self userInfo:Nil];
+}
+
+- (void)backBtnClicked:(UIButton *)button {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

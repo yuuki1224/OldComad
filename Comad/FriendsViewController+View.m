@@ -22,8 +22,9 @@
     [SVProgressHUD showWithStatus:@"Loading" maskType:SVProgressHUDMaskTypeBlack];
     
     [[FriendJsonClient sharedClient] getIndexWhenSuccess:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *response, id responseObject) {
-        [Configuration setUser:[responseObject objectForKey:@"me"]];
-        [Configuration synchronize];
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSLog(@"responseObject: %@", [responseObject objectForKey:@"me"]);
+        //[userDefaults setObject: [responseObject objectForKey:@"me"] forKey:@"user"];
         
         _friends = [responseObject objectForKey:@"friends"];
         
@@ -32,7 +33,6 @@
             [friendsMutableArray addObject:[_friends objectAtIndex:i]];
         }
         
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSData *friendsData = [NSKeyedArchiver archivedDataWithRootObject: friendsMutableArray];
         [userDefaults setObject: friendsData forKey:@"friends"];
         [userDefaults synchronize];

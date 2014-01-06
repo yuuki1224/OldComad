@@ -33,10 +33,20 @@
         self.view.backgroundColor = [UIColor whiteColor];
         Header *header = [[Header alloc]init];
         [header setTitle:@"メッセージ"];
-        [header setBackBtn];
-        header.delegate = self;
-        
-        [self.view addSubview:header];
+        if((int)iOSVersion == 6){
+            [header setBackBtn];
+            header.delegate = self;
+            [self.view addSubview:header];
+        }else if((int)iOSVersion == 7){
+            NSString *backImageName = @"back.png";
+            UIImage *buttonImage = [UIImage imageNamed:backImageName];
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            btn.frame = CGRectMake(15, 40, 10, 17.5);
+            [btn setImage:buttonImage forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
+            [self.view addSubview:header];
+            [self.view addSubview:btn];
+        }
         
         userId = [[[Configuration user] objectForKey:@"id"] intValue];
         
@@ -218,5 +228,9 @@
                              textBox.frame = CGRectMake(0, windowSize.size.height - keyboardFrameEnd.size.height - 75, textBox.frame.size.width, textBox.frame.size.height);
                          }
                      }];
+}
+
+- (void)backBtnClicked:(UIButton *)button {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

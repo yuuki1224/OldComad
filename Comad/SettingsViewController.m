@@ -29,10 +29,20 @@
         iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         Header *header = [[Header alloc]init];
         [header setTitle:@"設定"];
-        [header setBackBtn];
-        header.delegate = self;
-        
-        [self.view addSubview:header];
+        if((int)iOSVersion == 6){
+            [header setBackBtn];
+            header.delegate = self;
+            [self.view addSubview:header];
+        }else if((int)iOSVersion == 7){
+            NSString *backImageName = @"back.png";
+            UIImage *buttonImage = [UIImage imageNamed:backImageName];
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            btn.frame = CGRectMake(15, 40, 10, 17.5);
+            [btn setImage:buttonImage forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
+            [self.view addSubview:header];
+            [self.view addSubview:btn];
+        }
         
         self.view.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
         //tableView設置
@@ -183,6 +193,10 @@
 #pragma HeaderDelagete methods
 
 - (void)backBtnClickedDelegate {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)backBtnClicked:(UIButton *)button {
     [self.navigationController popViewControllerAnimated:YES];
 }
 

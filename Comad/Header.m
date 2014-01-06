@@ -92,7 +92,7 @@
     UIImage *buttonImage = [UIImage imageNamed:backImageName];
     UIImageView *buttonImageView = [[UIImageView alloc]initWithImage: buttonImage];
     if((int)iOSVersion == 7){
-        buttonImageView.frame = CGRectMake(15, 36, 20, 28);
+        buttonImageView.frame = CGRectMake(15, 40, 10, 17.5);
     }else if ((int)iOSVersion == 6){
         buttonImageView.frame = CGRectMake(15, 18, 10, 17.5);
     }

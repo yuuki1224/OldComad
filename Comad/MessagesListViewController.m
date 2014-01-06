@@ -28,10 +28,20 @@
         self.view.backgroundColor = [UIColor whiteColor];
         Header *header = [[Header alloc]init];
         [header setTitle:@"メッセージ一覧"];
-        [header setBackBtn];
-        header.delegate = self;
-        
-        [self.view addSubview:header];
+        if((int)iOSVersion == 6){
+            [header setBackBtn];
+            header.delegate = self;
+            [self.view addSubview:header];
+        }else if((int)iOSVersion == 7){
+            NSString *backImageName = @"back.png";
+            UIImage *buttonImage = [UIImage imageNamed:backImageName];
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            btn.frame = CGRectMake(15, 40, 10, 17.5);
+            [btn setImage:buttonImage forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(backBtnClicked:)forControlEvents:UIControlEventTouchDown];
+            [self.view addSubview:header];
+            [self.view addSubview:btn];
+        }
 
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSData *friendsData = [userDefaults objectForKey: @"friends"];
@@ -53,6 +63,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"subviews: %@",[self.view subviews]);
     [self.navigationController.tabBarController.tabBar setHidden:YES];
 }
 
@@ -67,4 +78,9 @@
 - (void)backBtnClickedDelegate {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (void)backBtnClicked:(UIButton *)button {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

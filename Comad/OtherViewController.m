@@ -46,47 +46,60 @@
         
         UIImage *addFriendImage = [UIImage imageNamed:@"otherAddFriend.png"];
         UIImageView *addFriendButton = [[UIImageView alloc]initWithImage:addFriendImage];
-        addFriendButton.frame = CGRectMake(29, 68, 68, 70);
         UITapGestureRecognizer *addFriendTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addFriendTapped:)];
         addFriendButton.userInteractionEnabled = YES;
         [addFriendButton addGestureRecognizer:addFriendTapGesture];
         BasicLabel *addFriendLabel = [[BasicLabel alloc]initWithName:OtherLabel];
         addFriendLabel.text = @"友達追加";
         [addFriendLabel sizeToFit];
-        addFriendLabel.frame = CGRectMake(37, addFriendButton.frame.origin.y + addFriendButton.frame.size.height + 8, addFriendLabel.frame.size.width, addFriendLabel.frame.size.height);
         
         UIImage *mypageImage = [UIImage imageNamed:@"otherMypage.png"];
         UIImageView *mypageButton = [[UIImageView alloc]initWithImage:mypageImage];
-        mypageButton.frame = CGRectMake(addFriendButton.frame.origin.x + addFriendButton.frame.size.width + 29, addFriendButton.frame.origin.y, 68, 70);
         UITapGestureRecognizer *mypageTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(mypageTapped:)];
         mypageButton.userInteractionEnabled = YES;
         [mypageButton addGestureRecognizer:mypageTapGesture];
         BasicLabel *mypageLabel = [[BasicLabel alloc]initWithName:OtherLabel];
         mypageLabel.text = @"マイページ";
         [mypageLabel sizeToFit];
-        mypageLabel.frame = CGRectMake(128, addFriendLabel.frame.origin.y, mypageLabel.frame.size.width, mypageLabel.frame.size.height);
         
         UIImage *messageImage = [UIImage imageNamed:@"otherMessage.png"];
         UIImageView *messageButton = [[UIImageView alloc]initWithImage:messageImage];
-        messageButton.frame = CGRectMake(mypageButton.frame.origin.x + mypageButton.frame.size.width + 29, addFriendButton.frame.origin.y, 68, 70);
         UITapGestureRecognizer *messageTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(messageTapped:)];
         messageButton.userInteractionEnabled = YES;
         [messageButton addGestureRecognizer:messageTapGesture];
         BasicLabel *messageLabel = [[BasicLabel alloc]initWithName:OtherLabel];
         messageLabel.text = @"メッセージ";
         [messageLabel sizeToFit];
-        messageLabel.frame = CGRectMake(224, addFriendLabel.frame.origin.y, messageLabel.frame.size.width, messageLabel.frame.size.height);
         
         UIImage *settingImage = [UIImage imageNamed:@"otherSetting.png"];
         UIImageView *settingButton = [[UIImageView alloc]initWithImage:settingImage];
-        settingButton.frame = CGRectMake(addFriendButton.frame.origin.x, addFriendButton.frame.origin.y + addFriendButton.frame.size.height + 30, 68, 70);
+
         UITapGestureRecognizer *settingTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(settingTapped:)];
         settingButton.userInteractionEnabled = YES;
         [settingButton addGestureRecognizer:settingTapGesture];
         BasicLabel *settingLabel = [[BasicLabel alloc]initWithName:OtherLabel];
         settingLabel.text = @"設定";
         [settingLabel sizeToFit];
-        settingLabel.frame = CGRectMake(50, settingButton.frame.origin.y + settingButton.frame.size.height + 8, settingLabel.frame.size.width, settingLabel.frame.size.height);
+        
+        if ((int)iOSVersion == 6) {
+            addFriendButton.frame = CGRectMake(29, 68, 68, 70);
+            addFriendLabel.frame = CGRectMake(37, addFriendButton.frame.origin.y + addFriendButton.frame.size.height + 8, addFriendLabel.frame.size.width, addFriendLabel.frame.size.height);
+            mypageButton.frame = CGRectMake(addFriendButton.frame.origin.x + addFriendButton.frame.size.width + 29, addFriendButton.frame.origin.y, 68, 70);
+            mypageLabel.frame = CGRectMake(128, addFriendLabel.frame.origin.y, mypageLabel.frame.size.width, mypageLabel.frame.size.height);
+            messageButton.frame = CGRectMake(mypageButton.frame.origin.x + mypageButton.frame.size.width + 29, addFriendButton.frame.origin.y, 68, 70);
+            messageLabel.frame = CGRectMake(224, addFriendLabel.frame.origin.y, messageLabel.frame.size.width, messageLabel.frame.size.height);
+            settingButton.frame = CGRectMake(addFriendButton.frame.origin.x, addFriendButton.frame.origin.y + addFriendButton.frame.size.height + 30, 68, 70);
+            settingLabel.frame = CGRectMake(50, settingButton.frame.origin.y + settingButton.frame.size.height + 8, settingLabel.frame.size.width, settingLabel.frame.size.height);
+        }else if((int)iOSVersion == 7) {
+            addFriendButton.frame = CGRectMake(29, 90, 68, 70);
+            addFriendLabel.frame = CGRectMake(37, addFriendButton.frame.origin.y + addFriendButton.frame.size.height + 8, addFriendLabel.frame.size.width, addFriendLabel.frame.size.height);
+            mypageButton.frame = CGRectMake(addFriendButton.frame.origin.x + addFriendButton.frame.size.width + 29, addFriendButton.frame.origin.y, 68, 70);
+            mypageLabel.frame = CGRectMake(128, addFriendLabel.frame.origin.y, mypageLabel.frame.size.width, mypageLabel.frame.size.height);
+            messageButton.frame = CGRectMake(mypageButton.frame.origin.x + mypageButton.frame.size.width + 29, addFriendButton.frame.origin.y, 68, 70);
+            messageLabel.frame = CGRectMake(224, addFriendLabel.frame.origin.y, messageLabel.frame.size.width, messageLabel.frame.size.height);
+            settingButton.frame = CGRectMake(addFriendButton.frame.origin.x, addFriendButton.frame.origin.y + addFriendButton.frame.size.height + 30, 68, 70);
+            settingLabel.frame = CGRectMake(50, settingButton.frame.origin.y + settingButton.frame.size.height + 8, settingLabel.frame.size.width, settingLabel.frame.size.height);
+        }
         
         [self.view addSubview:addFriendButton];
         [self.view addSubview:addFriendLabel];
