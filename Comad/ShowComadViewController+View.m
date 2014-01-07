@@ -18,6 +18,9 @@
 - (void)configure {
     //UIView *baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 48)];
     UIScrollView *baseView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 123)];
+    if((int)iOSVersion == 7){
+        baseView.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 132);
+    }
     baseView.contentSize = CGSizeMake(windowSize.size.width, windowSize.size.height);
     baseView.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
     baseView.userInteractionEnabled = YES;
@@ -186,7 +189,11 @@
     [baseView addSubview:conversation];
     
     textBox = [[ConversationTextBox alloc]init];
-    textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
+    if((int)iOSVersion == 6){
+        textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
+    }else if((int)iOSVersion == 7){
+        //textBox.frame = CGRectMake(0, windowSize.size.height, windowSize.size.width, 55);
+    }
     textBox.delegate = self;
     [self.view addSubview: baseView];
     [self.view addSubview: textBox];

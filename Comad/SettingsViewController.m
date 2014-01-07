@@ -47,6 +47,11 @@
         self.view.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
         //tableView設置
         UITableView *settingsView = [[UITableView alloc]initWithFrame:CGRectMake(0, 48, windowSize.size.width, windowSize.size.height) style:UITableViewStyleGrouped];
+        if((int)iOSVersion == 6){
+            settingsView.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height);
+        }else if((int)iOSVersion == 7){
+            settingsView.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height);
+        }
         [self.view addSubview:settingsView];
         settingsView.dataSource = self;
         settingsView.delegate = self;

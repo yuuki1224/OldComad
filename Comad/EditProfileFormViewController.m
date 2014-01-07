@@ -54,11 +54,20 @@
     }
     
     if((int)iOSVersion == 7){
+        /*
         RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
         [button setTitleInButton:@"作成"];
         button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
         //[button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
+         */
+        UIImage *buttonImage = [UIImage imageNamed:@"done.png"];
+        UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
+        createButton.frame = CGRectMake(windowSize.size.width - 52.5, 35, 42.5, 28.5);
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(saveClicked:)];
+        [createButton addGestureRecognizer: tapGesture];
+        createButton.userInteractionEnabled = YES;
+        [self.view addSubview: createButton];
     }else if((int)iOSVersion == 6){
         //UIImageView *button = [[UIImageView alloc]initWithFrame:CGRectMake(windowSize.size.width - 60, 10, 48, 28)];
         UIImage *buttonImage = [UIImage imageNamed:@"done.png"];

@@ -53,11 +53,20 @@
         }
         
         if((int)iOSVersion == 7){
+            /*
             RoundedButton *button = [[RoundedButton alloc] initWithName:HeaderDone];
             [button setTitleInButton:@"作成"];
             button.frame = CGRectMake(windowSize.size.width - 60, 37, 48, 28);
             //[button addTarget:self action:@selector(saveClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:button];
+            */
+            UIImage *buttonImage = [UIImage imageNamed:@"tweetButton.png"];
+            UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
+            createButton.frame = CGRectMake(windowSize.size.width - 30, 45, 18.5, 20);
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tweetButtonClicked:)];
+            [createButton addGestureRecognizer: tapGesture];
+            createButton.userInteractionEnabled = YES;
+            [self.view addSubview: createButton];
         }else if((int)iOSVersion == 6){
             UIImage *buttonImage = [UIImage imageNamed:@"tweetButton.png"];
             UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
@@ -83,7 +92,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [self configure];
-    textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
+    if((int)iOSVersion == 6){
+        textBox.frame = CGRectMake(0, 405, windowSize.size.width, 55);
+    }else if((int)iOSVersion == 7){
+        textBox.frame = CGRectMake(0, windowSize.size.height - 55, windowSize.size.width, 55);
+    }
     
     showComad = [[ShowComad alloc]init];
     showComad.comadInfo = self.comadInfo;

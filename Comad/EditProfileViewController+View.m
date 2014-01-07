@@ -21,7 +21,8 @@
     iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     editProfileTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 77, windowSize.size.width, 495) style:UITableViewStylePlain];
     if((int)iOSVersion == 7){
-        editProfileTable.frame = CGRectMake(0, 77, windowSize.size.width, 495);
+        editProfileTable.frame = CGRectMake(0, 77, windowSize.size.width, windowSize.size.height - 65);
+        editProfileTable.contentSize = CGSizeMake(windowSize.size.width, 1000);
     }else if((int)iOSVersion == 6){
         editProfileTable.frame = CGRectMake(0, 48, windowSize.size.width, windowSize.size.height - 65);
         editProfileTable.contentSize = CGSizeMake(windowSize.size.width, 1000);
@@ -202,14 +203,25 @@
 }
 
 - (void)tapped:(UITapGestureRecognizer *)recognizer {
-    UIActionSheet *as = [[UIActionSheet alloc] init];
-    as.title = @"選択してください。";
-    [as addButtonWithTitle:@"アルバムから選ぶ"];
-    [as addButtonWithTitle:@"キャンセル"];
-    as.cancelButtonIndex = 3;
-    as.delegate = self;
-    
-    [as showInView:self.view];
+    if((int)iOSVersion == 6){
+        UIActionSheet *as = [[UIActionSheet alloc] init];
+        as.title = @"選択してください。";
+        [as addButtonWithTitle:@"アルバムから選ぶ"];
+        [as addButtonWithTitle:@"キャンセル"];
+        as.cancelButtonIndex = 3;
+        as.delegate = self;
+        
+        [as showInView:self.view];
+    }else if((int)iOSVersion == 7){
+        UIActionSheet *as = [[UIActionSheet alloc] init];
+        as.title = @"選択してください。";
+        [as addButtonWithTitle:@"アルバムから選ぶ"];
+        [as addButtonWithTitle:@"キャンセル"];
+        as.cancelButtonIndex = 1;
+        as.delegate = self;
+        
+        [as showInView: self.view.window];
+    }
 }
 
 //アルバムを開く

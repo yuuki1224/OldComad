@@ -82,7 +82,6 @@
     //時間
     UIImage *datetimeIcon = [UIImage imageNamed:@"datetimeIcon.png"];
     UIImageView *datetimeIconView = [[UIImageView alloc]initWithImage: datetimeIcon];
-    datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, 17.5, 17.5);
     BasicLabel *dateTime = [[BasicLabel alloc]initWithName:ShowUserComadId];
     if([[comadInfo objectForKey:@"date_time"] isEqual:[NSNull null]]){
         dateTime.text = @"未定";
@@ -91,6 +90,8 @@
         dateTime.text = [dateTimeString substringToIndex:([dateTimeString length] - 8)];
     }
     [dateTime sizeToFit];
+    
+    datetimeIconView.frame = CGRectMake(77, title.frame.origin.y + title.frame.size.height + 3, 17.5, 17.5);
     dateTime.frame = CGRectMake(93, title.frame.origin.y + title.frame.size.height + 5, dateTime.frame.size.width, dateTime.frame.size.height);
     
     //場所
@@ -193,6 +194,15 @@
         dateTime.frame = CGRectMake(93, 50, dateTime.frame.size.width, dateTime.frame.size.height);
         locationIconView.frame = CGRectMake(76, 66, 14.5, 19);
         location.frame = CGRectMake(93, 68, location.frame.size.width, location.frame.size.height);
+        conversationNum.frame = CGRectMake(cellView.frame.size.width - conversationNum.frame.size.width - 5, dateTime.frame.origin.y, conversationNum.frame.size.width, conversationNum.frame.size.height);
+        commentNum.frame = CGRectMake(cellView.frame.size.width - commentNum.frame.size.width - 5, location.frame.origin.y, commentNum.frame.size.width, commentNum.frame.size.height);
+        commentIconView.frame = CGRectMake(commentNum.frame.origin.x - 16, location.frame.origin.y, 13.5, 11.5);
+    }else if((int)iOSVersion == 7){
+        title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height - 2, title.frame.size.width, title.frame.size.height);
+        datetimeIconView.frame = CGRectMake(75, 53, 17.5, 17.5);
+        dateTime.frame = CGRectMake(93, 55, dateTime.frame.size.width, dateTime.frame.size.height);
+        locationIconView.frame = CGRectMake(76, 71, 14.5, 19);
+        location.frame = CGRectMake(93, 73, location.frame.size.width, location.frame.size.height);
         conversationNum.frame = CGRectMake(cellView.frame.size.width - conversationNum.frame.size.width - 5, dateTime.frame.origin.y, conversationNum.frame.size.width, conversationNum.frame.size.height);
         commentNum.frame = CGRectMake(cellView.frame.size.width - commentNum.frame.size.width - 5, location.frame.origin.y, commentNum.frame.size.width, commentNum.frame.size.height);
         commentIconView.frame = CGRectMake(commentNum.frame.origin.x - 16, location.frame.origin.y, 13.5, 11.5);

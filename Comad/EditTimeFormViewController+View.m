@@ -27,7 +27,11 @@
     datePicker.minuteInterval = 30;
     datePicker.frame = CGRectMake(0, windowSize.size.height - datePicker.frame.size.height, windowSize.size.width, datePicker.frame.size.height);
     
-    timeTable.frame = CGRectMake(0, 68, windowSize.size.width, 40);
+    if((int)iOSVersion == 6){
+        timeTable.frame = CGRectMake(0, 68, windowSize.size.width, 40);
+    }else if((int)iOSVersion == 7){
+        timeTable.frame = CGRectMake(0, 95, windowSize.size.width, 40);
+    }
     [self.view addSubview:timeTable];
     [self.view addSubview:datePicker];
     [datePicker addTarget:self action:@selector(changeDatePicker:) forControlEvents:UIControlEventValueChanged];
