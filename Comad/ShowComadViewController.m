@@ -62,7 +62,7 @@
             */
             UIImage *buttonImage = [UIImage imageNamed:@"tweetButton.png"];
             UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
-            createButton.frame = CGRectMake(windowSize.size.width - 30, 45, 18.5, 20);
+            createButton.frame = CGRectMake(windowSize.size.width - 30, 40, 18.5, 20);
             UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tweetButtonClicked:)];
             [createButton addGestureRecognizer: tapGesture];
             createButton.userInteractionEnabled = YES;
@@ -131,11 +131,7 @@
     NSDictionary *userInfo = [Configuration user];
     int userId = [[userInfo objectForKey:@"id"] intValue];
     int comadId = [[self.comadInfo objectForKey:@"id"] intValue];
-    /*
-    [socketIO connectToHost:@"54.199.53.137"
-                     onPort:9000
-                 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]];
-     */
+
     [socketIO connectToHost:@"localhost"
                      onPort:9000
                  withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]];
