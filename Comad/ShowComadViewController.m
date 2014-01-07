@@ -62,7 +62,7 @@
             */
             UIImage *buttonImage = [UIImage imageNamed:@"tweetButton.png"];
             UIImageView *createButton = [[UIImageView alloc]initWithImage:buttonImage];
-            createButton.frame = CGRectMake(windowSize.size.width - 30, 40, 18.5, 20);
+            createButton.frame = CGRectMake(windowSize.size.width - 35, 40, 18.5, 20);
             UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tweetButtonClicked:)];
             [createButton addGestureRecognizer: tapGesture];
             createButton.userInteractionEnabled = YES;
@@ -231,7 +231,11 @@
         switch (result) {
             case SLComposeViewControllerResultCancelled:
                 //textbox下げる
-                textBox.frame = CGRectMake(0, windowSize.size.height - 75, windowSize.size.width, 55);
+                if((int)iOSVersion == 6){
+                    textBox.frame = CGRectMake(0, windowSize.size.height - 75, windowSize.size.width, 55);
+                }else if((int)iOSVersion == 7){
+                    textBox.frame = CGRectMake(0, windowSize.size.height - 55, windowSize.size.width, 55);
+                }
                 [self dismissViewControllerAnimated:YES completion:nil];
                 break;
             case SLComposeViewControllerResultDone:

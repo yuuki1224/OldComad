@@ -129,6 +129,12 @@
         dateTime.frame = CGRectMake(93, 50, dateTime.frame.size.width, dateTime.frame.size.height);
         locationIconView.frame = CGRectMake(76, 66, 14.5, 19);
         location.frame = CGRectMake(93, 68, location.frame.size.width, location.frame.size.height);
+    }else if((int)iOSVersion == 7){
+        title.frame = CGRectMake(77, name.frame.origin.y + name.frame.size.height - 2, title.frame.size.width, title.frame.size.height);
+        datetimeIconView.frame = CGRectMake(75, 53, 17.5, 17.5);
+        dateTime.frame = CGRectMake(93, 55, dateTime.frame.size.width, dateTime.frame.size.height);
+        locationIconView.frame = CGRectMake(76, 71, 14.5, 19);
+        location.frame = CGRectMake(93, 73, location.frame.size.width, location.frame.size.height);
     }
     
     [cellView addSubview: name];
