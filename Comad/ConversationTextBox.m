@@ -29,65 +29,38 @@
         }
         
         UIView *backView = [[UIView alloc]init];
-        if((int)iOSVersion == 7){
-            backView.backgroundColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
-        }else if((int)iOSVersion == 6){
-            backView.backgroundColor = [UIColor colorWithRed:0.855 green:0.855 blue:0.827 alpha:1.0];
-        }
+        backView.backgroundColor = [UIColor colorWithRed:0.855 green:0.855 blue:0.827 alpha:1.0];
         backView.frame = CGRectMake(0, 0, windowSize.size.width, 55);
         
-        if((int)iOSVersion == 7){
-            tf = [[UITextField alloc] initWithFrame:CGRectMake(55, 12, 200, 30)];
-            tf.borderStyle = UITextBorderStyleRoundedRect;
-            tf.delegate = self;
-            tf.keyboardType = UIKeyboardTypeDefault;
-            [backView addSubview: tf];
-            
-            UIButton *sendBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            sendBtn.backgroundColor = [UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1.0];
-            [sendBtn setTintColor:[UIColor whiteColor]];
-            [sendBtn setFont:[UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f]];
-            [sendBtn setTitleEdgeInsets:UIEdgeInsetsMake(6, 0, 0, 0)];
-            [sendBtn setTitle:@"送信" forState:UIControlStateNormal];
-            sendBtn.frame = CGRectMake(windowSize.size.width - 63, 14, 40, 27);
-            [sendBtn addTarget:self action:@selector(send:) forControlEvents:UIControlEventTouchUpInside];
-            [backView addSubview:sendBtn];
-            
-            RoundedButton *plus = [[RoundedButton alloc]initWithName:Plus];
-            plus.frame = CGRectMake(12, 12, 31, 31);
-            [plus addTarget:self action:@selector(plusTapped:) forControlEvents:UIControlEventTouchUpInside];
-            [backView addSubview:plus];
-        }else if((int)iOSVersion == 6){
-            UIImage *textViewBackImage = [UIImage imageNamed:@"textField.png"];
-            UIImageView *textViewBack = [[UIImageView alloc]initWithImage:textViewBackImage];
-            textViewBack.frame = CGRectMake(48, 12, 207.5, 32.5);
-            textViewBack.userInteractionEnabled = YES;
-            textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, textViewBack.frame.size.width, textViewBack.frame.size.height)];
-            textView.backgroundColor = [UIColor whiteColor];
-            textView.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
-            textView.delegate = self;
-            textView.layer.cornerRadius = 5;
-            textView.clipsToBounds = true;
-            [textViewBack addSubview: textView];
-            
-            UIImage *sendImage = [UIImage imageNamed:@"submit.png"];
-            UIImageView *sendBtn = [[UIImageView alloc]initWithImage:sendImage];
-            sendBtn.frame = CGRectMake(windowSize.size.width - 60, 12, 52.5, 31.5);
-            UITapGestureRecognizer *sendTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(sendClicked:)];
-            [sendBtn addGestureRecognizer: sendTapGesture];
-            sendBtn.userInteractionEnabled = YES;
-            
-            UIImage *addStampImage = [UIImage imageNamed:@"addStampButton.png"];
-            UIImageView *addStampBtn = [[UIImageView alloc]initWithImage:addStampImage];
-            addStampBtn.frame = CGRectMake(12, 12, 32, 33);
-            UITapGestureRecognizer *addStampTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addStampClicked:)];
-            [addStampBtn addGestureRecognizer:addStampTapGesture];
-            addStampBtn.userInteractionEnabled = YES;
-            
-            [backView addSubview: textViewBack];
-            [backView addSubview: sendBtn];
-            [backView addSubview: addStampBtn];
-        }
+        UIImage *textViewBackImage = [UIImage imageNamed:@"textField.png"];
+        UIImageView *textViewBack = [[UIImageView alloc]initWithImage:textViewBackImage];
+        textViewBack.frame = CGRectMake(48, 12, 207.5, 32.5);
+        textViewBack.userInteractionEnabled = YES;
+        textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, textViewBack.frame.size.width, textViewBack.frame.size.height)];
+        textView.backgroundColor = [UIColor whiteColor];
+        textView.font = [UIFont fontWithName:@"HiraKakuProN-W3" size:12.0f];
+        textView.delegate = self;
+        textView.layer.cornerRadius = 5;
+        textView.clipsToBounds = true;
+        [textViewBack addSubview: textView];
+        
+        UIImage *sendImage = [UIImage imageNamed:@"submit.png"];
+        UIImageView *sendBtn = [[UIImageView alloc]initWithImage:sendImage];
+        sendBtn.frame = CGRectMake(windowSize.size.width - 60, 12, 52.5, 31.5);
+        UITapGestureRecognizer *sendTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(sendClicked:)];
+        [sendBtn addGestureRecognizer: sendTapGesture];
+        sendBtn.userInteractionEnabled = YES;
+        
+        UIImage *addStampImage = [UIImage imageNamed:@"addStampButton.png"];
+        UIImageView *addStampBtn = [[UIImageView alloc]initWithImage:addStampImage];
+        addStampBtn.frame = CGRectMake(12, 12, 32, 33);
+        UITapGestureRecognizer *addStampTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(addStampClicked:)];
+        [addStampBtn addGestureRecognizer:addStampTapGesture];
+        addStampBtn.userInteractionEnabled = YES;
+        
+        [backView addSubview: textViewBack];
+        [backView addSubview: sendBtn];
+        [backView addSubview: addStampBtn];
         
         [self addSubview: backView];
     }
