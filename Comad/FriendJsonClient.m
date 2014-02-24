@@ -52,8 +52,7 @@ static FriendJsonClient* _sharedClient;
 }
 
 - (void)addFriend:(int)comadId friendId:(int)friendId success:(void (^)(AFHTTPRequestOperation *, NSHTTPURLResponse *, id))success failure:(void (^)(int, NSString *))failure {
-    //NSString *urlString = [NSString stringWithFormat:@"http://54.199.53.137:3000/api/friends/add_friend?user_id=%i&friend_id=%i", comadId, friendId];
-    NSString *urlString = [NSString stringWithFormat:@"http://localhost:3000/api/friends/add_friend?user_id=%i&friend_id=%i", comadId, friendId];
+    NSString *urlString = [NSString stringWithFormat:@"%@/api/friends/add_friend?user_id=%i&friend_id=%i", HOST_URL, comadId, friendId];
     NSURL *url = [NSURL URLWithString: urlString];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -61,7 +60,6 @@ static FriendJsonClient* _sharedClient;
         success(req, response, JSON);
     }
         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-            NSLog(@"prcessing2");
             int status = 404;
             failure(status, @"error");
     }];
@@ -69,7 +67,7 @@ static FriendJsonClient* _sharedClient;
 }
 
 - (void)blockPerson:(int)comadId personId:(int)personId success:(void (^)(AFHTTPRequestOperation *, NSHTTPURLResponse *, id))success failure:(void (^)(int, NSString *))failure {
-    NSString *urlString = [NSString stringWithFormat:@"http://localhost:3000/api/friends/block_person?user_id=%i&friend_id=%i", comadId, personId];
+    NSString *urlString = [NSString stringWithFormat:@"%@/api/friends/block_person?user_id=%i&friend_id=%i", HOST_URL, comadId, personId];
     NSURL *url = [NSURL URLWithString: urlString];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -77,7 +75,6 @@ static FriendJsonClient* _sharedClient;
         success(req, response, JSON);
     }
         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-            NSLog(@"prcessing2");
             int status = 404;
             failure(status, @"error");
     }];

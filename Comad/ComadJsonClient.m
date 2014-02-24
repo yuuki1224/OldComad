@@ -52,7 +52,7 @@ static ComadJsonClient* _sharedClient;
 
 - (void)createNewComad:(NSDictionary *)params :(void (^)(AFHTTPRequestOperation *, NSHTTPURLResponse *, id))success failure:(void (^)(int, NSString *))failure {
     //NSURL *url = [NSURL URLWithString:@"http://54.199.53.137:3000/api/comads/create_comad"];
-    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/api/comads/create_comad"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/comads/create_comad", HOST_URL]];
     AFHTTPClient *httpClient = [[AFHTTPClient alloc]initWithBaseURL:url];
     NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"/api/comads/create_comad" parameters:params];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
@@ -66,14 +66,12 @@ static ComadJsonClient* _sharedClient;
 }
 
 - (void)attendComad:(NSString *)userId :(NSString *)comadId :(void (^)(AFHTTPRequestOperation *, NSHTTPURLResponse *, id))success failure:(void (^)(int, NSString *))failure {
-    //NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://54.199.53.137:3000/api/comads/attend_comad?user_id=%@&comad_id=%@", userId ,comadId]];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/api/comads/attend_comad?user_id=%@&comad_id=%@", userId ,comadId]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/comads/attend_comad?user_id=%@&comad_id=%@", HOST_URL, userId ,comadId]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success: ^(NSURLRequest *req, NSHTTPURLResponse *response, id JSON) {
         success(req, response, JSON);
     }failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"prcessing2");
         int status = 404;
         failure(status, @"error");
     }];

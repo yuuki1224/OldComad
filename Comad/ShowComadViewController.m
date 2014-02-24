@@ -147,7 +147,6 @@
     if([packet.args[0] isEqual: @"endInit"]){
         NSArray *messages = packet.args[2];
         
-        NSLog(@"recieved : %@", packet.args[1]);
         NSString *count = [NSString stringWithFormat:@"%lu", (unsigned long)[packet.args[2] count]];
         if([count isEqualToString:@"0"]){
         }else{
@@ -256,7 +255,6 @@
         title = [self.comadInfo objectForKey:@"title"];
     }
     
-    //NSString *tweetStatement = [NSString stringWithFormat:@"%@ http://54.199.53.137:3000/comad/%d COMAD（コマド）#Comad", title, comadId];
     NSString *tweetStatement = [NSString stringWithFormat:@"%@ http://localhost:3000/comad/%d COMAD（コマド）#Comad", title, comadId];
     [twitterPostVC setInitialText:tweetStatement];
     [self presentViewController:twitterPostVC animated:YES completion:nil];

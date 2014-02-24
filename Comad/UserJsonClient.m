@@ -37,7 +37,7 @@ static UserJsonClient* _sharedClient;
 }
 
 - (void)updateUserProfile:(NSDictionary *)params :(void (^)(AFHTTPRequestOperation *, NSHTTPURLResponse *, id))success failure:(void (^)(int, NSString *))failure {
-    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/api/user/update_profile"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/user/update_profile", HOST_URL]];
     AFHTTPClient *httpClient = [[AFHTTPClient alloc]initWithBaseURL:url];
     NSMutableURLRequest *request = [httpClient requestWithMethod:@"PUT" path:@"/api/user/update_profile" parameters:params];
     NSLog(@"procession 2");

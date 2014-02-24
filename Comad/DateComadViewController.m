@@ -12,7 +12,7 @@
 #import "Basic.h"
 
 @interface DateComadViewController ()
-
+    
 @end
 
 @implementation DateComadViewController
@@ -23,9 +23,11 @@
     self = [super initWithStyle:style];
     if (self) {
         iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+        windowSize = [[UIScreen mainScreen] bounds];
+        
         // Custom initialization
         self.view.backgroundColor = [UIColor colorWithRed:0.902 green:0.890 blue:0.875 alpha:1.0];
-        self.view.frame = CGRectMake(0, 127, 380, 400);
+        //self.view.frame = CGRectMake(0, 127, 380, 400);
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         if((int)iOSVersion == 7){
@@ -33,6 +35,9 @@
         }else if((int)iOSVersion == 6){
             self.tableView.contentInset = UIEdgeInsetsMake(105, 0, 0, 0);
         }
+        
+        self.tableView.frame = CGRectMake(0, 133, windowSize.size.width, windowSize.size.height - 200);
+        
     }
     return self;
 }

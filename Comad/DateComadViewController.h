@@ -10,6 +10,7 @@
 
 @interface DateComadViewController : UITableViewController {
     float iOSVersion;
+    CGRect windowSize;
 }
 
 

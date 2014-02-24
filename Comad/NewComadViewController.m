@@ -33,6 +33,7 @@
         }else if((int)iOSVersion == 6){
             self.tableView.contentInset = UIEdgeInsetsMake(105, 0, 0, 0);
         }
+        self.tableView.frame = CGRectMake(0, 133, windowSize.size.width, windowSize.size.height - 200);
         sc = [[ShowComadViewController alloc]init];
     }
     return self;
@@ -42,8 +43,8 @@
 {
     [super viewDidLoad];
 
-    self.tableView.frame = CGRectMake(0, 0, 300, 600);
-    self.tableView.contentSize = CGSizeMake(300, 400);
+    //self.tableView.frame = CGRectMake(0, 0, 300, 600);
+    //self.tableView.contentSize = CGSizeMake(300, 400);
 }
 
 - (void)viewWillAppear:(BOOL)animated {

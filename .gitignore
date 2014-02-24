@@ -24,3 +24,5 @@ Pods/*
 Podfile.lock
 
 Comad/Comad/*
+
+Podfile

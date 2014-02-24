@@ -10,3 +10,7 @@ pod 'SVSegmentedControl'
 pod 'ASIHTTPRequest'
 pod 'Reachability'
 pod 'Toast'
+
+target :ComadTests, :exclusive => true do
+  pod 'Kiwi/XCTest'
+end
